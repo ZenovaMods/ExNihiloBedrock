@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "resourcePack.addon.description",
+    "name": "resourcePack.addon.name",
+    "uuid": "1000dc1e-612b-4ea5-bdf8-4c3d762c504a",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 14, 0]
+  },
+  "modules": [
+    {
+      "description": "resourcePack.addon.description",
+      "type": "resources",
+      "uuid": "530cefc1-9c33-4b7b-8bb9-d7a87214b9dc",
+      "version": [0, 0, 1]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+item.itemMaterial.removed.name=Removed From Mod
+item.itemMaterial.porcelain_clay.name=Porcelain Clay
+item.itemMaterial.silkworm.name=Silkworm
+item.itemMaterial.grass_seeds.name=Grass Seeds
+item.itemMaterial.ancient_spores.name=Ancient Spores
+item.itemMaterial.doll.name=Porcelain Doll
+
+itemGroup.name.resources=Ex Nihilo Materials

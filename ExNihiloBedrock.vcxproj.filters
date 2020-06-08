@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ExNihiloBedrock.cpp" />
+    <ClCompile Include="source\items\ENItems.cpp">
+      <Filter>items</Filter>
+    </ClCompile>
+    <ClCompile Include="source\items\ItemResource.cpp">
+      <Filter>items</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\minecraft\BlockLegacy.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockSource.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockSourceListener.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\IWorldRegistriesProvider.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Level.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Random.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\SharedPtr.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\VanillaBlockRegistry.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\VanillaBlockTypeRegistry.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ItemRegistry.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\VanillaItems.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\CreativeItemCategory.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Item.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\UseAnimation.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockPos.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Vec3.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Vec2.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\items\ENItems.h">
+      <Filter>items</Filter>
+    </ClInclude>
+    <ClInclude Include="source\items\ItemResource.h">
+      <Filter>items</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\TextureAtlasItem.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\TextureUVCoordinateSet.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ItemDescriptor.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Block.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ItemStack.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Actor.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="source\modinfo.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="source\init.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="minecraft">
+      <UniqueIdentifier>{2691b4d5-fd00-45fd-b4fd-3f05ffbe1eea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="items">
+      <UniqueIdentifier>{b91c0f33-0dce-482c-8b63-d63812d49f83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

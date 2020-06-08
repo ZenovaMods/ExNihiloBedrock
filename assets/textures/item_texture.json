@@ -1,0 +1,16 @@
+{
+    "resource_pack_name": "exnihilobedrock",
+    "texture_name": "atlas.items",
+    "texture_data": {
+      "itemMaterial": {
+        "textures": [
+          "textures/items/itemPebble",
+          "textures/items/porcelainClay",
+          "textures/items/silkworm",
+          "textures/items/ancientSpores",
+          "textures/items/grassSeeds",
+          "textures/items/doll"
+        ]
+      }
+    }
+}

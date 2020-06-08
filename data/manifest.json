@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "behaviorPack.addon.description",
+    "name": "behaviorPack.addon.name",
+    "uuid": "a23ac8a7-e047-48a7-9c05-c248d8698dbc",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 14, 0]
+  },
+  "modules": [
+    {
+      "description": "behaviorPack.addon.description",
+      "type": "data",
+      "uuid": "33406272-e089-430b-9f70-21b13429f137",
+      "version": [0, 0, 1]
+    }
+  ]
+}

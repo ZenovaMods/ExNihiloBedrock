@@ -9,6 +9,9 @@
     <ClCompile Include="source\items\ItemResource.cpp">
       <Filter>items</Filter>
     </ClCompile>
+    <ClCompile Include="source\items\ItemCookedSilkworm.cpp">
+      <Filter>items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\minecraft\BlockLegacy.h">
@@ -84,6 +87,12 @@
       <Filter>minecraft</Filter>
     </ClInclude>
     <ClInclude Include="include\minecraft\Actor.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\items\ItemCookedSilkworm.h">
+      <Filter>items</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\FoodItemComponent.h">
       <Filter>minecraft</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,9 @@
           "textures/items/grassSeeds",
           "textures/items/doll"
         ]
+      },
+      "itemCookedSilkworm": {
+        "textures": "textures/items/silkwormCooked"
       }
     }
 }

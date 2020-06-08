@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Mon Jun 08 2020 17:52:33 UTC
+; Generated on Mon Jun 08 2020 19:24:24 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -412,8 +412,8 @@ global ?isEmissive@Item@@UEBA_NH@Z
 ?isEmissive@Item@@UEBA_NH@Z:
 	mov rax, [rel Item_vtable]
 	jmp [rax+656]
-global ?getIcon@Item@@UEBAAEBVTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
-?getIcon@Item@@UEBAAEBVTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z:
+global ?getIcon@Item@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+?getIcon@Item@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z:
 	mov rax, [rel Item_vtable]
 	jmp [rax+664]
 global ?getIconYOffset@Item@@UEBAHXZ

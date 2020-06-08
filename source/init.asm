@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Mon Jun 08 2020 16:28:55 UTC
+; Generated on Mon Jun 08 2020 17:52:33 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -7,7 +7,7 @@ extern _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_
 extern _addCreativeItem_Item__SAXPEAV1_F_Z_ptr
 extern _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr
-extern __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr
+extern __0ItemStackBase__QEAA_AEBVItem__HH_Z_ptr
 extern _set_ItemStackBase__QEAAXH_Z_ptr
 extern _getAuxValue_ItemStackBase__QEBAFXZ_ptr
 extern _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr
@@ -40,9 +40,9 @@ global ?getIconTextureUVSet@Item@@SAAEBUTextureUVCoordinateSet@@AEBVTextureAtlas
 ?getIconTextureUVSet@Item@@SAAEBUTextureUVCoordinateSet@@AEBVTextureAtlasItem@@HH@Z:
 	mov rax, [rel _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr]
 	jmp rax
-global ??0ItemStackBase@@IEAA@AEBVItem@@HH@Z
-??0ItemStackBase@@IEAA@AEBVItem@@HH@Z:
-	mov rax, [rel __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr]
+global ??0ItemStackBase@@QEAA@AEBVItem@@HH@Z
+??0ItemStackBase@@QEAA@AEBVItem@@HH@Z:
+	mov rax, [rel __0ItemStackBase__QEAA_AEBVItem__HH_Z_ptr]
 	jmp rax
 global ?set@ItemStackBase@@QEAAXH@Z
 ?set@ItemStackBase@@QEAAXH@Z:

@@ -4,7 +4,7 @@ class BlockSource;
 
 class Actor {
 private:
-    char filler[0x310];
+    char filler[0x318];
     BlockSource* mRegion;
 
 public:

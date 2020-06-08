@@ -87,7 +87,7 @@
         "?getInteractText@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z",
         "?getAnimationFrameFor@Item@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z",
         "?isEmissive@Item@@UEBA_NH@Z",
-        "?getIcon@Item@@UEBAAEBVTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z",
+        "?getIcon@Item@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z",
         "?getIconYOffset@Item@@UEBAHXZ",
         "?setIcon@Item@@UEAAAEAV1@AEBUTextureUVCoordinateSet@@@Z",
         "?setIcon@Item@@UEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",

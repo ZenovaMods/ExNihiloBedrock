@@ -184,6 +184,7 @@
     <ClInclude Include="include\minecraft\BlockSource.h" />
     <ClInclude Include="include\minecraft\BlockSourceListener.h" />
     <ClInclude Include="include\minecraft\CreativeItemCategory.h" />
+    <ClInclude Include="include\minecraft\FoodItemComponent.h" />
     <ClInclude Include="include\minecraft\ItemStack.h" />
     <ClInclude Include="include\minecraft\Item.h" />
     <ClInclude Include="include\minecraft\ItemDescriptor.h" />
@@ -201,10 +202,12 @@
     <ClInclude Include="include\minecraft\Vec2.h" />
     <ClInclude Include="include\minecraft\Vec3.h" />
     <ClInclude Include="source\items\ENItems.h" />
+    <ClInclude Include="source\items\ItemCookedSilkworm.h" />
     <ClInclude Include="source\items\ItemResource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\items\ENItems.cpp" />
+    <ClCompile Include="source\items\ItemCookedSilkworm.cpp" />
     <ClCompile Include="source\items\ItemResource.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ExNihiloBedrock.cpp" />

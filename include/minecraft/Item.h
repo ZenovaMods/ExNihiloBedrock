@@ -22,7 +22,6 @@ class IDataInput;
 class ReadOnlyBinaryStream;
 class IDataOutput;
 class ItemDescriptor;
-enum class CooldownType;
 enum class BlockShape;
 enum class InHandUpdateType;
 enum class ItemUseMethod;
@@ -59,6 +58,14 @@ class SemVersion {
 
 class BaseGameVersion {
     SemVersion mSemVersion;
+};
+
+enum class CooldownType : int {
+    TypeNone = -1,
+    ChorusFruit,
+    EnderPearl,
+    IceBomb,
+    Count
 };
 
 class Item {

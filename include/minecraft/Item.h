@@ -25,7 +25,6 @@ class ItemDescriptor;
 enum class BlockShape;
 enum class InHandUpdateType;
 enum class ItemUseMethod;
-class TextureUVCoordinateSet;
 class TextureAtlasItem;
 class FoodItemComponent;
 class SeedItemComponent;
@@ -40,6 +39,7 @@ class BlockLegacy;
 
 
 typedef unsigned char byte;
+typedef unsigned char FacingID;
 
 class HashedString {
     unsigned long mStrHash;
@@ -218,10 +218,10 @@ public:
         *mInCreativeGroup = false;
     }
 private:
-    virtual bool _checkUseOnPermissions(Actor&, ItemInstance&, const unsigned char&, const BlockPos&) const;
-    virtual bool _checkUseOnPermissions(Actor&, ItemStack&, const unsigned char&, const BlockPos&) const;
-    virtual bool _calculatePlacePos(ItemInstance&, Actor&, unsigned char&, BlockPos&) const;
-    virtual bool _calculatePlacePos(ItemStack&, Actor&, unsigned char&, BlockPos&) const;
-    virtual bool _useOn(ItemInstance&, Actor&, BlockPos, unsigned char, float, float, float) const;
-    virtual bool _useOn(ItemStack&, Actor&, BlockPos, unsigned char, float, float, float) const;
+    virtual bool _checkUseOnPermissions(Actor&, ItemInstance&, const FacingID&, const BlockPos&) const;
+    virtual bool _checkUseOnPermissions(Actor&, ItemStack&, const FacingID&, const BlockPos&) const;
+    virtual bool _calculatePlacePos(ItemInstance&, Actor&, FacingID&, BlockPos&) const;
+    virtual bool _calculatePlacePos(ItemStack&, Actor&, FacingID&, BlockPos&) const;
+    virtual bool _useOn(ItemInstance&, Actor&, BlockPos, FacingID, float, float, float) const;
+    virtual bool _useOn(ItemStack&, Actor&, BlockPos, FacingID, float, float, float) const;
 };

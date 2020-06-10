@@ -180,6 +180,7 @@
     <ClInclude Include="include\minecraft\Actor.h" />
     <ClInclude Include="include\minecraft\Block.h" />
     <ClInclude Include="include\minecraft\BlockLegacy.h" />
+    <ClInclude Include="include\minecraft\BlockPlanterItem.h" />
     <ClInclude Include="include\minecraft\BlockPos.h" />
     <ClInclude Include="include\minecraft\BlockSource.h" />
     <ClInclude Include="include\minecraft\BlockSourceListener.h" />
@@ -192,11 +193,13 @@
     <ClInclude Include="include\minecraft\IWorldRegistriesProvider.h" />
     <ClInclude Include="include\minecraft\Level.h" />
     <ClInclude Include="include\minecraft\Random.h" />
+    <ClInclude Include="include\minecraft\SaplingType.h" />
     <ClInclude Include="include\minecraft\SharedPtr.h" />
     <ClInclude Include="include\minecraft\TextureAtlasItem.h" />
     <ClInclude Include="include\minecraft\TextureUVCoordinateSet.h" />
     <ClInclude Include="include\minecraft\UseAnimation.h" />
     <ClInclude Include="include\minecraft\VanillaBlockRegistry.h" />
+    <ClInclude Include="include\minecraft\VanillaBlockStates.h" />
     <ClInclude Include="include\minecraft\VanillaBlockTypeRegistry.h" />
     <ClInclude Include="include\minecraft\VanillaItems.h" />
     <ClInclude Include="include\minecraft\Vec2.h" />
@@ -204,11 +207,13 @@
     <ClInclude Include="source\items\ENItems.h" />
     <ClInclude Include="source\items\ItemCookedSilkworm.h" />
     <ClInclude Include="source\items\ItemResource.h" />
+    <ClInclude Include="source\items\seeds\ItemSeedBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\items\ENItems.cpp" />
     <ClCompile Include="source\items\ItemCookedSilkworm.cpp" />
     <ClCompile Include="source\items\ItemResource.cpp" />
+    <ClCompile Include="source\items\seeds\ItemSeedBase.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ExNihiloBedrock.cpp" />
   </ItemGroup>

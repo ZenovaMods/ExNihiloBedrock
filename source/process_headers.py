@@ -131,13 +131,14 @@ def generate_init_func_x86(size):
         output_asm(a["mangled_name"] + ":")
         output_asm("\tmov rax, [rel " + mangled_name_to_variable(a["mangled_name"]) + "_ptr" + "]")
         output_asm("\tjmp rax")
-    i = 0
     for vtable in vtable_list:
+        i = 0
         for a in vtable["functions"]:
-            output_asm("global " + a)
-            output_asm(a + ":")
-            output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
-            output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
+            if a:
+                output_asm("global " + a)
+                output_asm(a + ":")
+                output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
+                output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
             i += 1
 
 def generate_init_func_arm():

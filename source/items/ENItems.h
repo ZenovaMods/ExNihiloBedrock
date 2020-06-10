@@ -8,6 +8,7 @@ class CrookBase;
 class ItemResource;
 class ItemCookedSilkworm;
 class ItemSeedBase;
+class BlockPlanterItem;
 
 class ENItems {
 public:
@@ -23,7 +24,9 @@ public:
 	static WeakPtr<ItemResource> resources;
 	static WeakPtr<ItemCookedSilkworm> cookedSilkworm;
 
+	static WeakPtr<ItemSeedBase> itemSeedSaplings;
 	static std::vector<WeakPtr<ItemSeedBase>> itemSeeds;
+
 
 	static void init();
 	static void initCreativeCategories();

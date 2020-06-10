@@ -14,6 +14,28 @@
       },
       "itemCookedSilkworm": {
         "textures": "textures/items/silkwormCooked"
+      },
+      "itemSeed": {
+        "textures": [
+          "textures/items/seedOak",
+          "textures/items/seedSpruce",
+          "textures/items/seedBirch",
+          "textures/items/seedJungle",
+          "textures/items/seedAcacia",
+          "textures/items/seedDarkOak"
+        ]
+      },
+      "itemSeedCactus": {
+        "textures": "textures/items/seedCactus"
+      },
+      "itemSeedSugarcane": {
+        "textures": "textures/items/seedSugarcane"
+      },
+      "itemSeedCarrot": {
+        "textures": "textures/items/seedCarrot"
+      },
+      "itemSeedPotato": {
+        "textures": "textures/items/seedPotato"
       }
     }
 }

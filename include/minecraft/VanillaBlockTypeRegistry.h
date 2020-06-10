@@ -5,5 +5,9 @@
 
 
 namespace VanillaBlockTypes {
-	extern WeakPtr<BlockLegacy>* mCobblestone;
+	extern WeakPtr<BlockLegacy>* mGrass;
+	extern WeakPtr<BlockLegacy>* mDirt;
+	extern WeakPtr<BlockLegacy>* mLeaves;
+	extern WeakPtr<BlockLegacy>* mMycelium;
+	extern WeakPtr<BlockLegacy>* mLeaves2;
 }

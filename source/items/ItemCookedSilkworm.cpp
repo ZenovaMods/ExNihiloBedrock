@@ -4,6 +4,6 @@
 
 ItemCookedSilkworm::ItemCookedSilkworm(const std::string& name, int id) : Item(name, id) {
 	setUseAnimation(UseAnimation::EAT);
-	setMaxUseDuration(1);
+	setMaxUseDuration(32);
 	mFoodComponent = std::make_unique<FoodItemComponent>(*this, 2, 0.6F);
 }

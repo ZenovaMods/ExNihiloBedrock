@@ -4,6 +4,8 @@
 #include "SharedPtr.h"
 
 typedef unsigned short DataID;
+class ItemState;
+enum class SaplingType;
 
 class Block {
 private:
@@ -13,7 +15,11 @@ private:
 public:
     virtual ~Block();
 
+    const BlockLegacy& getLegacyBlock() const;
+
     const DataID& getDataDEPRECATED() const {
         return mData;
     }
+
+    const Block* getSaplingType(const ItemState&, SaplingType) const;
 };

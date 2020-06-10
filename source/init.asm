@@ -1,8 +1,9 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Mon Jun 08 2020 19:24:24 UTC
+; Generated on Wed Jun 10 2020 01:46:34 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
+extern __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr
 extern _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr
 extern _addCreativeItem_Item__SAXPEAV1_F_Z_ptr
 extern _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
@@ -12,17 +13,24 @@ extern _set_ItemStackBase__QEAAXH_Z_ptr
 extern _getAuxValue_ItemStackBase__QEBAFXZ_ptr
 extern _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr
 extern _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr
+extern _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr
+extern _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr
 extern _registerItem_ItemRegistry__SAXV_$SharedPtr_VItem_____Z_ptr
 extern _registerItems_VanillaItems__SAX_N_Z_ptr
 extern _initCreativeCategories_VanillaItems__SAXXZ_ptr
 extern _initCreativeItemsCallback_VanillaItems__SAXPEAVActorInfoRegistry__PEAVBlockDefinitionGroup___N_Z_ptr
 extern _initClientData_VanillaItems__SAXXZ_ptr
 extern Item_vtable
+extern BlockPlanterItem_vtable
 
 SECTION .text
 global ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
 ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z:
 	mov rax, [rel __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr]
+	jmp rax
+global ??0BlockPlanterItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlock@@_N@Z
+??0BlockPlanterItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlock@@_N@Z:
+	mov rax, [rel __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr]
 	jmp rax
 global ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z
 ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z:
@@ -59,6 +67,14 @@ global ?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
 global ?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z
 ?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z:
 	mov rax, [rel _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr]
+	jmp rax
+global ?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ
+?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ:
+	mov rax, [rel _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr]
+	jmp rax
+global ?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z
+?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z:
+	mov rax, [rel _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr]
 	jmp rax
 global ?registerItem@ItemRegistry@@SAXV?$SharedPtr@VItem@@@@@Z
 ?registerItem@ItemRegistry@@SAXV?$SharedPtr@VItem@@@@@Z:
@@ -472,3 +488,15 @@ global ?_useOn@Item@@EEBA_NAEAVItemInstance@@AEAVActor@@VBlockPos@@EMMM@Z
 ?_useOn@Item@@EEBA_NAEAVItemInstance@@AEAVActor@@VBlockPos@@EMMM@Z:
 	mov rax, [rel Item_vtable]
 	jmp [rax+776]
+global ??1BlockPlanterItem@@UEAA@XZ
+??1BlockPlanterItem@@UEAA@XZ:
+	mov rax, [rel BlockPlanterItem_vtable]
+	jmp [rax+0]
+global ?_calculatePlacePos@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+?_calculatePlacePos@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@AEAEAEAVBlockPos@@@Z:
+	mov rax, [rel BlockPlanterItem_vtable]
+	jmp [rax+752]
+global ?_useOn@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z
+?_useOn@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z:
+	mov rax, [rel BlockPlanterItem_vtable]
+	jmp [rax+768]

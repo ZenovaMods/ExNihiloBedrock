@@ -23,7 +23,7 @@ public:
 	virtual Item& setIcon(const std::string&, int);
 
 private:
-	virtual bool _useOn(ItemStack&, Actor&, BlockPos, unsigned char, float, float, float) const;
+	virtual bool _useOn(ItemStack&, Actor&, BlockPos, FacingID, float, float, float) const;
 
 	static ItemStackBase* getResourceStack(const std::string&);
 	static ItemStackBase* getResourceStack(const std::string&, int);

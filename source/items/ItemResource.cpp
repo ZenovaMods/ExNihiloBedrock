@@ -7,6 +7,7 @@
 #include "minecraft/ItemDescriptor.h"
 #include "minecraft/ItemStack.h"
 #include "minecraft/VanillaBlockRegistry.h"
+#include "minecraft/VanillaBlockTypeRegistry.h"
 
 const std::string ItemResource::PORCELAIN_CLAY = "porcelain_clay";
 const std::string ItemResource::SILKWORM = "silkworm";
@@ -45,19 +46,19 @@ Item& ItemResource::setIcon(const std::string& name, int id) {
 	return *this;
 }
 
-bool ItemResource::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, unsigned char face, float clickX, float clickY, float clickZ) const {
+bool ItemResource::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, FacingID face, float clickX, float clickY, float clickZ) const {
 	short auxValue = instance.getAuxValue();
 	if (names[auxValue] == SILKWORM) {
-		const Block* block = &entity.getRegion().getBlock(pos);
-		if (block != NULL && (block == *VanillaBlocks::mLeaves || block == *VanillaBlocks::mLeaves2)) {
+		const BlockLegacy& block = entity.getRegion().getBlock(pos).getLegacyBlock();
+		if (&block != NULL && (block == **VanillaBlockTypes::mLeaves || block == **VanillaBlockTypes::mLeaves2)) {
 			//BlockInfestedLeaves::infestLeafBlock(player.getRegion(), pos);
 			instance.remove(1);
 			return true;
 		}
 	}
 	if (names[auxValue] == ANCIENT_SPORES || names[auxValue] == GRASS_SEEDS) {
-		const Block* block = &entity.getRegion().getBlock(pos);
-		if (block != NULL && block == *VanillaBlocks::mDirt) {
+		const BlockLegacy& block = entity.getRegion().getBlock(pos).getLegacyBlock();
+		if (&block != NULL && block == **VanillaBlockTypes::mDirt) {
 			Block* transformTo = names[auxValue] == ANCIENT_SPORES ? *VanillaBlocks::mMycelium : *VanillaBlocks::mGrass;
 			entity.getRegion().setBlock(pos, *transformTo, 3, nullptr);
 			instance.remove(1);

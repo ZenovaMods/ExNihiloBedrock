@@ -12,6 +12,9 @@
     <ClCompile Include="source\items\ItemCookedSilkworm.cpp">
       <Filter>items</Filter>
     </ClCompile>
+    <ClCompile Include="source\items\seeds\ItemSeedBase.cpp">
+      <Filter>items\seeds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\minecraft\BlockLegacy.h">
@@ -95,6 +98,18 @@
     <ClInclude Include="include\minecraft\FoodItemComponent.h">
       <Filter>minecraft</Filter>
     </ClInclude>
+    <ClInclude Include="include\minecraft\VanillaBlockStates.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockPlanterItem.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\SaplingType.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\items\seeds\ItemSeedBase.h">
+      <Filter>items\seeds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />
@@ -108,6 +123,9 @@
     </Filter>
     <Filter Include="items">
       <UniqueIdentifier>{b91c0f33-0dce-482c-8b63-d63812d49f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="items\seeds">
+      <UniqueIdentifier>{8fb10c88-3430-4d89-a10c-080eb0ad2811}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

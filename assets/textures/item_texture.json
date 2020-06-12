@@ -2,6 +2,21 @@
     "resource_pack_name": "exnihilobedrock",
     "texture_name": "atlas.items",
     "texture_data": {
+      "itemHammer": {
+        "textures": [
+          "textures/items/hammerWood",
+          "textures/items/hammerStone",
+          "textures/items/hammerIron",
+          "textures/items/hammerDiamond",
+          "textures/items/hammerGold"
+        ]
+      },
+      "itemCrook": {
+        "textures": [
+          "textures/items/crookWood",
+          "textures/items/crookBone"
+        ]
+      },
       "itemMaterial": {
         "textures": [
           "textures/items/itemPebble",
@@ -22,20 +37,12 @@
           "textures/items/seedBirch",
           "textures/items/seedJungle",
           "textures/items/seedAcacia",
-          "textures/items/seedDarkOak"
+          "textures/items/seedDarkOak",
+          "textures/items/seedCactus",
+          "textures/items/seedSugarcane",
+          "textures/items/seedCarrot",
+          "textures/items/seedPotato"
         ]
-      },
-      "itemSeedCactus": {
-        "textures": "textures/items/seedCactus"
-      },
-      "itemSeedSugarcane": {
-        "textures": "textures/items/seedSugarcane"
-      },
-      "itemSeedCarrot": {
-        "textures": "textures/items/seedCarrot"
-      },
-      "itemSeedPotato": {
-        "textures": "textures/items/seedPotato"
       }
     }
 }

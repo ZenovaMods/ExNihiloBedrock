@@ -3,8 +3,6 @@
 #include "BlockLegacy.h"
 #include "SharedPtr.h"
 
-typedef unsigned short DataID;
-class ItemState;
 enum class SaplingType;
 
 class Block {

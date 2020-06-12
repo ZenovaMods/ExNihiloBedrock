@@ -42,7 +42,7 @@ def read_json(file):
     for key in reader:
         if key == "vtable":
             for obj in reader[key]:
-                vtable_list.append({"name": obj["name"], "address": obj.get("address", ""), "functions": obj.get("functions", []), "overload": obj.get("overload", "null")})
+                vtable_list.append({"name": obj["name"], "parent": obj.get("parent", ""), "address": obj.get("address", ""), "functions": obj.get("functions", []), "overload": obj.get("overload", "null")})
         if key == "functions":
             for obj in reader[key]:
                 symbol_list.append({"mangled_name": obj["name"], "address": obj.get("address", ""), "signature": obj.get("signature", ""), "overload": obj.get("overload", "null")})
@@ -110,12 +110,10 @@ def generate_init_cpp():
 #NASM, MASM doesn't allow long identifiers
 def generate_init_func_x86(size):
     if size == 64:
-        word_name = "qword"
         reg = "rax"
         pointer_size = 8
         output_asm("bits 64")
     if size == 32:
-        word_name = "dword"
         reg = "eax"
         pointer_size = 4
 
@@ -133,12 +131,24 @@ def generate_init_func_x86(size):
         output_asm("\tjmp rax")
     for vtable in vtable_list:
         i = 0
+        vtable_parent_str = vtable["parent"]
+        vtable_parent = {}
+        if vtable_parent_str:
+            vtable_parent = next((x for x in vtable_list if vtable_parent_str == x["name"]), {})
+
+        print(vtable["name"] + "\n")
         for a in vtable["functions"]:
-            if a:
-                output_asm("global " + a)
-                output_asm(a + ":")
-                output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
-                output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
+            if vtable_parent:
+                vtable_func_parent = a.replace(vtable["name"], vtable_parent["name"], 1)
+                for b in vtable_parent["functions"][i:]:
+                    if vtable_func_parent == b:
+                        break
+                    i += 1
+
+            output_asm("global " + a)
+            output_asm(a + ":")
+            output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
+            output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
             i += 1
 
 def generate_init_func_arm():

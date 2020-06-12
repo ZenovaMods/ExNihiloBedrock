@@ -36,6 +36,9 @@ item.itemSeedCactus.name=Cactus Seed
 item.itemSeedDarkOak.name=Dark Oak Seed
 
 itemGroup.name.resources=Ex Nihilo Materials
+itemGroup.name.seeds=Ex Nihilo Seeds
+itemGroup.name.hammers=Ex Nihilo Hammers
+itemGroup.name.crooks=Ex Nihilo Crooks
 
 tile.blockDust.name=Dust
 tile.blockNetherrackCrushed.name=Crushed Netherrack

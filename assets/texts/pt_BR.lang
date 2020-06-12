@@ -36,6 +36,9 @@ item.itemSeedCactus.name=Semente de Cactus
 item.itemSeedDarkOak.name=Semente de Carvalho Escuro
 
 itemGroup.name.resources=Ex Nihilo Materiais
+itemGroup.name.seeds=Ex Nihilo Sementes
+itemGroup.name.hammers=Ex Nihilo Marretas
+itemGroup.name.crooks=Ex Nihilo Cajados
 
 tile.blockDust.name=Pó
 tile.blockNetherrackCrushed.name=Netherrack Esmagada

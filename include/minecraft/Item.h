@@ -10,7 +10,7 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class CompoundTag;
-enum class Color;
+class Color;
 class Player;
 class BlockSource;
 class Container;
@@ -69,6 +69,23 @@ enum class CooldownType : int {
 };
 
 class Item {
+public:
+    class Tier {
+    private:
+        const int mLevel;
+        const int mUses;
+        const float mSpeed;
+        const int mDamage;
+        const int mEnchantmentValue;
+
+    public:
+        Tier(int level, int uses, float speed, int damage, int enchantmentValue) : mLevel(level), mUses(uses), mSpeed(speed), mDamage(damage), mEnchantmentValue(enchantmentValue) {}
+        int getUses() const { return mUses; }
+        float getSpeed() const { return mSpeed; }
+        int getAttackDamageBonus() const { return mDamage; }
+        int getLevel() const { return mLevel; }
+        int getEnchantmentValue() const { return mEnchantmentValue; }
+    };
 protected:
     byte m_maxStackSize;
     std::string m_textureAtlasFile;
@@ -208,6 +225,14 @@ public:
         mAllowOffhand = offhand;
         return *this;
     }
+
+    const WeakPtr<BlockLegacy>& getLegacyBlock() const {
+        return mLegacyBlock;
+    }
+    const std::string& getDescriptionId() const {
+        return mDescriptionId;
+    }
+    const std::string& getCommandName() const;
 
     static const TextureAtlasItem& getTextureItem(const std::string&);
     static const TextureUVCoordinateSet& getIconTextureUVSet(const TextureAtlasItem&, int, int);

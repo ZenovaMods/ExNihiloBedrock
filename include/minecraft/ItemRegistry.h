@@ -4,6 +4,7 @@
 #include <string>
 
 #include "SharedPtr.h"
+#include "Block.h"
 
 class Item;
 
@@ -24,5 +25,20 @@ public:
 	static void registerItem(SharedPtr<Item>);
 	static void shutdown();
 	
+
+	static WeakPtr<Item> lookupByName(int&, int&, const std::string&);
+	static WeakPtr<Item> lookupByName(int&, const std::string&);
+	static WeakPtr<Item> lookupByName(const std::string& inString) {
+		int itemAux;
+		return lookupByName(itemAux, inString);
+	}
+	static WeakPtr<Item> getItem(const short);
+	static WeakPtr<Item> getItem(const Block& block) {
+		return getItem(block.getLegacyBlock());
+	}
+	static WeakPtr<Item> getItem(const BlockLegacy& blockLegacy) {
+		return getItem(blockLegacy.getBlockItemId());
+	}
+
 	static std::vector<SharedPtr<Item>>* mItemRegistry;
 };

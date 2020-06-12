@@ -36,6 +36,9 @@ item.itemSeedCactus.name=仙人掌种子
 item.itemSeedDarkOak.name=黑色橡木种子
 
 itemGroup.name.resources=Ex Nihilo材料
+itemGroup.name.seeds=Ex Nihilo种子
+itemGroup.name.hammers=Ex Nihilo锤子
+itemGroup.name.crooks=Ex Nihilo钩
 
 tile.blockDust.name=尘土
 tile.blockNetherrackCrushed.name=粉碎的地狱岩

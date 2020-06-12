@@ -56,4 +56,5 @@ public:
     int nextInt(int n) {
         return mRandom.get().nextInt(n);
     }
+    float nextFloat();
 };

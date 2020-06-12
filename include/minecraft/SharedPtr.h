@@ -96,7 +96,8 @@ public:
 };
 
 template<typename T>
-struct WeakPtr {
+class WeakPtr {
+public:
     SharedCounter<T>* counter = nullptr;
 
     WeakPtr(T* val = nullptr) {
@@ -157,15 +158,15 @@ struct WeakPtr {
         return WeakPtr<T>(new T(std::forward(args...)));
     }
 
-    T& operator*() {
+    T& operator*() const {
         return *counter->value;
     }
 
-    T* operator->() {
+    T* operator->() const {
         return counter->value;
     }
 
-    T* get() {
+    T* get() const {
         if (!counter)
             return nullptr;
         return counter->value;

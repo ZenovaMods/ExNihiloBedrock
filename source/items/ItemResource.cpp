@@ -69,13 +69,13 @@ bool ItemResource::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, Faci
 	return false;
 }
 
-ItemStackBase* ItemResource::getResourceStack(const std::string& name) {
+ItemInstance* ItemResource::getResourceStack(const std::string& name) {
 	return getResourceStack(name, 1);
 }
 
-ItemStackBase* ItemResource::getResourceStack(const std::string& name, int quantity) {
+ItemInstance* ItemResource::getResourceStack(const std::string& name, int quantity) {
 	for (int i = 0; i < 6; i++) {
 		if (names[i] == name)
-			return new ItemStackBase(*ENItems::resources, quantity, i);
+			return new ItemInstance(*ENItems::resources, quantity, i);
 	}
 }

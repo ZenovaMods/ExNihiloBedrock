@@ -25,6 +25,7 @@ public:
 private:
 	virtual bool _useOn(ItemStack&, Actor&, BlockPos, FacingID, float, float, float) const;
 
-	static ItemStackBase* getResourceStack(const std::string&);
-	static ItemStackBase* getResourceStack(const std::string&, int);
+public:
+	static ItemInstance* getResourceStack(const std::string&);
+	static ItemInstance* getResourceStack(const std::string&, int);
 };

@@ -150,7 +150,7 @@
       "name": "BlockLegacy",
       "address": "0x2B8E7D0",
       "functions": [
-        "??1BlockLegacy@@UEAA@XZ",
+        "",
         "?tick@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
         "?getStateFromLegacyData@BlockLegacy@@UEBAAEBVBlock@@G@Z",
         "?getNextBlockPermutation@BlockLegacy@@UEBAPEBVBlock@@AEBV2@@Z",
@@ -617,6 +617,10 @@
     {
       "name": "?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
       "address": "0x16D9640"
+    },
+    {
+      "name": "??1BlockLegacy@@UEAA@XZ",
+      "address": "0x164F200"
     }
   ]
 }

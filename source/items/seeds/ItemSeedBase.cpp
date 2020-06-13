@@ -32,6 +32,6 @@ Item& ItemSeedBase::setIcon(const std::string& name, int id) {
 	Item::setIcon(name, id);
 	if (hasSubItems) {
 		textureItem = getTextureItem(name);
-		return *this;
 	}
+	return *this;
 }

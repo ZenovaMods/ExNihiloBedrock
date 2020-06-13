@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Sat Jun 13 2020 01:48:15 UTC
+// Generated on Sat Jun 13 2020 02:54:43 UTC
 
 #include <Zenova/Hook.h>
 #include "minecraft/VanillaBlockRegistry.h"
@@ -100,6 +100,7 @@ extern "C" {
 	void* _shutdown_VanillaWorldSystems__YAXXZ_ptr;
 	void* _registerBlocks_VanillaBlockTypes__YAXXZ_ptr;
 	void* _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
+	void* __1BlockLegacy__UEAA_XZ_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
@@ -166,6 +167,7 @@ void InitBedrockPointers() {
 	_shutdown_VanillaWorldSystems__YAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1B53370));
 	_registerBlocks_VanillaBlockTypes__YAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16E0AB0));
 	_lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16D9640));
+	__1BlockLegacy__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x164F200));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));

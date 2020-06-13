@@ -78,4 +78,6 @@ ItemInstance* ItemResource::getResourceStack(const std::string& name, int quanti
 		if (names[i] == name)
 			return new ItemInstance(*ENItems::resources, quantity, i);
 	}
+
+	return nullptr;
 }

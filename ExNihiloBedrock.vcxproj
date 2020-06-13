@@ -165,6 +165,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsManaged>false</CompileAsManaged>
       <AdditionalIncludeDirectories>../Zenova/ZenovaAPI/src;../Zenova/ZenovaAPI/inc;../Zenova/Common;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -173,27 +174,37 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>ZenovaAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ZENOVA_DATA);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\minecraft\AABB.h" />
     <ClInclude Include="include\minecraft\Actor.h" />
     <ClInclude Include="include\minecraft\Block.h" />
+    <ClInclude Include="include\minecraft\BlockGraphics.h" />
+    <ClInclude Include="include\minecraft\BlockItem.h" />
     <ClInclude Include="include\minecraft\BlockLegacy.h" />
     <ClInclude Include="include\minecraft\BlockPlanterItem.h" />
     <ClInclude Include="include\minecraft\BlockPos.h" />
     <ClInclude Include="include\minecraft\BlockSource.h" />
     <ClInclude Include="include\minecraft\BlockSourceListener.h" />
+    <ClInclude Include="include\minecraft\BlockState.h" />
+    <ClInclude Include="include\minecraft\BlockTypeRegistry.h" />
+    <ClInclude Include="include\minecraft\Color.h" />
     <ClInclude Include="include\minecraft\CreativeItemCategory.h" />
     <ClInclude Include="include\minecraft\DiggerItem.h" />
     <ClInclude Include="include\minecraft\EnchantUtils.h" />
     <ClInclude Include="include\minecraft\FoodItemComponent.h" />
+    <ClInclude Include="include\minecraft\HeavyBlock.h" />
     <ClInclude Include="include\minecraft\ItemStack.h" />
     <ClInclude Include="include\minecraft\Item.h" />
     <ClInclude Include="include\minecraft\ItemDescriptor.h" />
     <ClInclude Include="include\minecraft\ItemRegistry.h" />
     <ClInclude Include="include\minecraft\IWorldRegistriesProvider.h" />
     <ClInclude Include="include\minecraft\Level.h" />
+    <ClInclude Include="include\minecraft\LootComponent.h" />
+    <ClInclude Include="include\minecraft\Material.h" />
+    <ClInclude Include="include\minecraft\Mutex.h" />
     <ClInclude Include="include\minecraft\Random.h" />
     <ClInclude Include="include\minecraft\SaplingType.h" />
     <ClInclude Include="include\minecraft\SharedPtr.h" />
@@ -208,7 +219,10 @@
     <ClInclude Include="include\minecraft\VanillaItemTiers.h" />
     <ClInclude Include="include\minecraft\Vec2.h" />
     <ClInclude Include="include\minecraft\Vec3.h" />
+    <ClInclude Include="include\minecraft\Version.h" />
     <ClInclude Include="include\minecraft\WorldSystems.h" />
+    <ClInclude Include="source\blocks\BlockBaseFalling.h" />
+    <ClInclude Include="source\blocks\ENBlocks.h" />
     <ClInclude Include="source\handlers\HandlerCrook.h" />
     <ClInclude Include="source\handlers\HandlerHammer.h" />
     <ClInclude Include="source\items\ENItems.h" />
@@ -241,6 +255,8 @@
     <ClInclude Include="source\util\StringUtils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\blocks\BlockBaseFalling.cpp" />
+    <ClCompile Include="source\blocks\ENBlocks.cpp" />
     <ClCompile Include="source\handlers\HandlerCrook.cpp" />
     <ClCompile Include="source\handlers\HandlerHammer.cpp" />
     <ClCompile Include="source\items\ENItems.cpp" />

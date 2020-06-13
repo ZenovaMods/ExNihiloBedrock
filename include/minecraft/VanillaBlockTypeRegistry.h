@@ -13,4 +13,6 @@ namespace VanillaBlockTypes {
 	extern WeakPtr<BlockLegacy>* mLeaves;
 	extern WeakPtr<BlockLegacy>* mMycelium;
 	extern WeakPtr<BlockLegacy>* mLeaves2;
+
+	extern void registerBlocks();
 }

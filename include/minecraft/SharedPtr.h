@@ -4,171 +4,173 @@
 
 #include <atomic>
 #include <utility>
+#include <algorithm>
 
 template<typename T>
 struct SharedCounter {
-    /* volatile ? */ T* value;
-    std::atomic<int> shared, weak;
+    T* ptr;
+    std::atomic<int> share_count = 0, weak_count = 0;
 
-    SharedCounter(T* value) : value(value) {}
+    SharedCounter(T* p) : ptr(p) {}
 
-    void addSharedRef() { ++shared; }
-
-    void addWeakRef() { --shared; }
+    void addSharedRef() { share_count++; }
+    void addWeakRef() { weak_count++; }
 
     bool releaseSharedRef() {
-        if (--shared == 0) {
-            if (value != nullptr) {
-                T* oldValue = value;
-                value = nullptr;
-                delete oldValue;
+        if (--share_count == 0) {
+            if (ptr) {
+                T* tmp = ptr;
+                ptr = nullptr;
+                delete tmp;
             }
-            return (weak == 0);
+            return (weak_count == 0);
         }
         return false;
     }
 
     bool releaseWeakRef() {
-        return (--weak == 0 && value);
+        return (--weak_count == 0 && !ptr);
     }
 };
-#include <iostream>
+
 template<typename T>
 class SharedPtr {
 public:
-    SharedCounter<T>* counter = nullptr;
+    SharedCounter<T>* pc = nullptr;
 
-    SharedPtr(T* val = nullptr) {
-        if (val) {
-            counter = new SharedCounter<T>(val);
-			counter->shared = 0;
-            counter->addSharedRef();
+    SharedPtr() {}
+
+    SharedPtr(std::nullptr_t) {}
+
+    SharedPtr(T* rawPtr) {
+        if (rawPtr) {
+            pc = new SharedCounter<T>(rawPtr);
+            pc->addSharedRef();
         }
     }
 
-    SharedPtr(SharedPtr const& a) : counter(a.counter) {
-        if (counter)
-            counter->addSharedRef();
+    SharedPtr(const SharedPtr& sp) : pc(sp.pc) {
+        if (pc)
+            pc->addSharedRef();
     }
 
-	template<typename T2>
-	SharedPtr(SharedPtr<T2> const& ptr) {
-		counter = (SharedCounter<T>*)ptr.counter;
-		counter->addSharedRef();
-	}
-
-    void reset() {
-        if (counter && counter->releaseSharedRef())
-            delete counter;
-        counter = nullptr;
-    }
-
-    SharedPtr& operator=(SharedPtr const& ptr) {
-        reset();
-        this->counter = ptr.counter;
-        if (counter)
-            counter->addSharedRef();
-        return *this;
+    template<typename T2>
+    SharedPtr(SharedPtr<T2> const& sp) {
+        pc = reinterpret_cast<SharedCounter<T>*>(sp.pc);
+        if (pc)
+            pc->addSharedRef();
     }
 
     ~SharedPtr() {
         reset();
     }
 
-	template <typename... Args>
-	static SharedPtr<T> make(Args&&... args) {
-		return SharedPtr<T>(new T(std::forward<Args>(args)...));
-	}
-
-    T& operator*() {
-        return *counter->value;
-    }
-
-    T* operator->() {
-        return counter->value;
-    }
-
-    T* get() {
-        if (!counter)
+    T* get() const {
+        if (!pc)
             return nullptr;
-        return counter->value;
+        return pc->ptr;
+    }
+
+    T& operator*() const {
+        return *pc->ptr;
+    }
+
+    T* operator->() const {
+        return pc->ptr;
+    }
+
+    SharedPtr& operator=(const SharedPtr& other) {
+        SharedPtr<T> tmp = other;
+        std::swap(pc, tmp.pc);
+        return *this;
+    }
+
+    void reset() {
+        if (pc && pc->releaseSharedRef())
+            delete pc;
+        pc = nullptr;
+    }
+
+    template <typename... Args>
+    static SharedPtr<T> make(Args&&... args) {
+        return SharedPtr<T>(new T(std::forward<Args>(args)...));
     }
 };
 
 template<typename T>
 class WeakPtr {
 public:
-    SharedCounter<T>* counter = nullptr;
+    SharedCounter<T>* pc = nullptr;
 
-    WeakPtr(T* val = nullptr) {
-        if (val) {
-            counter = new SharedCounter<T>(val);
-            counter->addWeakRef();
-        }
+    WeakPtr() {}
+
+    WeakPtr(std::nullptr_t) {}
+
+    WeakPtr(const SharedPtr<T>& sp) : pc(sp.pc) {
+        if (pc)
+            pc->addWeakRef();
     }
 
-	WeakPtr(WeakPtr const& ptr) {
-		counter = ptr.counter;
-		++counter->weak;
-	}
-
-    WeakPtr(WeakPtr&& ptr) noexcept {
-        counter = std::move(ptr.counter);
-        ptr.counter = nullptr;
+    WeakPtr(const WeakPtr& wp) : pc(wp.pc) {
+        if (pc)
+            pc->addWeakRef();
     }
 
-	template<typename T2>
-	WeakPtr(WeakPtr<T2> const& ptr) {
-		counter = (SharedCounter<T>*)ptr.counter;
-		++counter->weak;
-	}
-
-	template<typename T2>
-	WeakPtr(SharedPtr<T2> const& ptr) {
-		counter = (SharedCounter<T>*)ptr.counter;
-		++counter->weak;
-	}
-
-    WeakPtr& operator=(WeakPtr const& ptr) {
-        reset();
-        this->counter = ptr.counter;
-        if (counter)
-            counter->addWeakRef();
-        return *this;
-    }
-
-    WeakPtr& operator=(WeakPtr&& ptr) {
-        counter = std::move(ptr.counter);
-        ptr.counter = nullptr;
-        return *this;
-    }
-
-    void reset() {
-        if (counter && counter->releaseWeakRef())
-            delete counter;
-        counter = nullptr;
+    template<typename T2>
+    WeakPtr(const WeakPtr<T2>& sp) {
+        pc = reinterpret_cast<SharedCounter<T>*>(sp.pc);
+        if (pc)
+            pc->addWeakRef();
     }
 
     ~WeakPtr() {
         reset();
     };
 
-    template <typename... Args>
-    static WeakPtr<T> make(Args&&... args) {
-        return WeakPtr<T>(new T(std::forward(args...)));
+    WeakPtr& operator=(const WeakPtr& other) {
+        WeakPtr<T> tmp(other);
+        std::swap(pc, tmp.pc);
+        return *this;
     }
 
-    T& operator*() const {
-        return *counter->value;
+    WeakPtr& operator=(const SharedPtr<T>& other) {
+        SharedPtr<T> tmp(other);
+        std::swap(pc, tmp.pc);
+        return *this;
     }
 
-    T* operator->() const {
-        return counter->value;
+    bool operator==(T* p) {
+        if (pc) {
+            return (pc->ptr == p);
+        }
+
+        return (p == nullptr);
+    }
+
+    void reset() {
+        if (pc && pc->releaseWeakRef())
+            delete pc;
+        pc = nullptr;
     }
 
     T* get() const {
-        if (!counter)
-            return nullptr;
-        return counter->value;
+        return (pc) ? pc->ptr : nullptr;
+    }
+
+    operator T* () const {
+        return get();
+    }
+
+    T& operator*() const {
+        return *pc->ptr;
+    }
+
+    T* operator->() const {
+        return pc->ptr;
+    }
+
+    const WeakPtr<T>& null() {
+        static WeakPtr<T> wnull;
+        return wnull;
     }
 };

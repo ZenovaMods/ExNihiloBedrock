@@ -1,12 +1,14 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Fri Jun 12 2020 02:09:24 UTC
+; Generated on Sat Jun 13 2020 01:48:15 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
 extern __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr
 extern __0DiggerItem__IEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HHAEBVTier_Item__AEBV_$vector_PEBVBlock__V_$allocator_PEBVBlock___std___2__Z_ptr
+extern __0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr
 extern _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr
 extern _addCreativeItem_Item__SAXPEAV1_F_Z_ptr
+extern _addCreativeItem_Item__SAXAEBVBlock___Z_ptr
 extern _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr
 extern _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr
@@ -27,6 +29,7 @@ extern _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr
 extern _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr
 extern _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr
 extern _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr
+extern __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr
 extern _getBlockItemId_BlockLegacy__QEBAFXZ_ptr
 extern _tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr
 extern _popResource_BlockLegacy__QEBAPEAVItemActor__AEAVBlockSource__AEBVBlockPos__AEBVItemInstance___Z_ptr
@@ -45,10 +48,20 @@ extern _getSelectedItem_Player__QEBAAEBVItemStack__XZ_ptr
 extern _causeFoodExhaustion_Player__QEAAXM_Z_ptr
 extern _getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr
 extern _hasEnchant_EnchantUtils__SA_NW4Type_Enchant__AEBVItemStackBase___Z_ptr
+extern _toLower_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr
+extern _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr
+extern _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr
+extern _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr
+extern _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr
+extern _shutdown_VanillaWorldSystems__YAXXZ_ptr
+extern _registerBlocks_VanillaBlockTypes__YAXXZ_ptr
+extern _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
+extern BlockItem_vtable
 extern BlockLegacy_vtable
+extern HeavyBlock_vtable
 extern ItemStackBase_vtable
 extern ItemInstance_vtable
 extern ItemStack_vtable
@@ -66,6 +79,10 @@ global ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocato
 ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z:
 	mov rax, [rel __0DiggerItem__IEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HHAEBVTier_Item__AEBV_$vector_PEBVBlock__V_$allocator_PEBVBlock___std___2__Z_ptr]
 	jmp rax
+global ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z:
+	mov rax, [rel __0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
+	jmp rax
 global ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z
 ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z:
 	mov rax, [rel _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr]
@@ -73,6 +90,10 @@ global ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?
 global ?addCreativeItem@Item@@SAXPEAV1@F@Z
 ?addCreativeItem@Item@@SAXPEAV1@F@Z:
 	mov rax, [rel _addCreativeItem_Item__SAXPEAV1_F_Z_ptr]
+	jmp rax
+global ?addCreativeItem@Item@@SAXAEBVBlock@@@Z
+?addCreativeItem@Item@@SAXAEBVBlock@@@Z:
+	mov rax, [rel _addCreativeItem_Item__SAXAEBVBlock___Z_ptr]
 	jmp rax
 global ?getTextureItem@Item@@SAAEBVTextureAtlasItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?getTextureItem@Item@@SAAEBVTextureAtlasItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
@@ -154,6 +175,10 @@ global ?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z
 ?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z:
 	mov rax, [rel _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr]
 	jmp rax
+global ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
+??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z:
+	mov rax, [rel __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr]
+	jmp rax
 global ?getBlockItemId@BlockLegacy@@QEBAFXZ
 ?getBlockItemId@BlockLegacy@@QEBAFXZ:
 	mov rax, [rel _getBlockItemId_BlockLegacy__QEBAFXZ_ptr]
@@ -225,6 +250,38 @@ global ?getEnchantLevel@EnchantUtils@@SAHW4Type@Enchant@@AEBVItemStackBase@@@Z
 global ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z
 ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z:
 	mov rax, [rel _hasEnchant_EnchantUtils__SA_NW4Type_Enchant__AEBVItemStackBase___Z_ptr]
+	jmp rax
+global ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z:
+	mov rax, [rel _toLower_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
+	jmp rax
+global ?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z
+?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z:
+	mov rax, [rel _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr]
+	jmp rax
+global ?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z
+?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z:
+	mov rax, [rel _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr]
+	jmp rax
+global ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
+?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z:
+	mov rax, [rel _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr]
+	jmp rax
+global ?init@WorldSystems@@SAXPEAVResourcePackManager@@@Z
+?init@WorldSystems@@SAXPEAVResourcePackManager@@@Z:
+	mov rax, [rel _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr]
+	jmp rax
+global ?shutdown@VanillaWorldSystems@@YAXXZ
+?shutdown@VanillaWorldSystems@@YAXXZ:
+	mov rax, [rel _shutdown_VanillaWorldSystems__YAXXZ_ptr]
+	jmp rax
+global ?registerBlocks@VanillaBlockTypes@@YAXXZ
+?registerBlocks@VanillaBlockTypes@@YAXXZ:
+	mov rax, [rel _registerBlocks_VanillaBlockTypes__YAXXZ_ptr]
+	jmp rax
+global ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:
@@ -661,6 +718,46 @@ global ?_calculatePlacePos@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@AEA
 global ?_useOn@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z
 ?_useOn@BlockPlanterItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z:
 	mov rax, [rel BlockPlanterItem_vtable]
+	jmp [rax+768]
+global ??1BlockItem@@UEAA@XZ
+??1BlockItem@@UEAA@XZ:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+0]
+global ?isExperimental@BlockItem@@UEBA_NPEBVItemDescriptor@@@Z
+?isExperimental@BlockItem@@UEBA_NPEBVItemDescriptor@@@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+32]
+global ?isDestructive@BlockItem@@UEBA_NH@Z
+?isDestructive@BlockItem@@UEBA_NH@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+264]
+global ?isValidAuxValue@BlockItem@@UEBA_NH@Z
+?isValidAuxValue@BlockItem@@UEBA_NH@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+336]
+global ?buildDescriptionId@BlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@AEBV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z
+?buildDescriptionId@BlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@AEBV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+504]
+global ?isEmissive@BlockItem@@UEBA_NH@Z
+?isEmissive@BlockItem@@UEBA_NH@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+656]
+global ?getIcon@BlockItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+?getIcon@BlockItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+664]
+global ?getIconYOffset@BlockItem@@UEBAHXZ
+?getIconYOffset@BlockItem@@UEBAHXZ:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+672]
+global ?_calculatePlacePos@BlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+?_calculatePlacePos@BlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@AEAEAEAVBlockPos@@@Z:
+	mov rax, [rel BlockItem_vtable]
+	jmp [rax+752]
+global ?_useOn@BlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z
+?_useOn@BlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z:
+	mov rax, [rel BlockItem_vtable]
 	jmp [rax+768]
 global ??1BlockLegacy@@UEAA@XZ
 ??1BlockLegacy@@UEAA@XZ:
@@ -1286,6 +1383,38 @@ global ?dealsContactDamage@BlockLegacy@@UEBA_NAEBVActor@@AEBVBlock@@_N@Z
 ?dealsContactDamage@BlockLegacy@@UEBA_NAEBVActor@@AEBVBlock@@_N@Z:
 	mov rax, [rel BlockLegacy_vtable]
 	jmp [rax+1240]
+global ?tick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+?tick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+8]
+global ?onPlace@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+?onPlace@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+456]
+global ?neighborChanged@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+?neighborChanged@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+672]
+global ?animateTick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+?animateTick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+1104]
+global ?falling@HeavyBlock@@UEBA_NXZ
+?falling@HeavyBlock@@UEBA_NXZ:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+1264]
+global ?onLand@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+?onLand@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+1272]
+global ?isFreeToFall@HeavyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+?isFreeToFall@HeavyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+1280]
+global ?startFalling@HeavyBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@_N@Z
+?startFalling@HeavyBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@_N@Z:
+	mov rax, [rel HeavyBlock_vtable]
+	jmp [rax+1288]
 global ??1ItemStackBase@@UEAA@XZ
 ??1ItemStackBase@@UEAA@XZ:
 	mov rax, [rel ItemStackBase_vtable]

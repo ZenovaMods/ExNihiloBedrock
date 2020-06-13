@@ -5,10 +5,13 @@
 #include "minecraft/VanillaItems.h"
 #include "minecraft/BlockLegacy.h"
 #include "minecraft/ItemStack.h"
-#include "minecraft/ItemRegistry.h"
 #include "minecraft/WorldSystems.h"
+#include "minecraft/BlockGraphics.h"
+#include "minecraft/VanillaItems.h"
+#include "minecraft/VanillaBlockTypeRegistry.h"
 
 #include "items/ENItems.h"
+#include "blocks/ENBlocks.h"
 #include "handlers/HandlerCrook.h"
 #include "handlers/HandlerHammer.h"
 #include "registries/HammerRegistry.h"
@@ -20,6 +23,7 @@ void registerItems(bool b1) {
 	_registerItems(b1);
 
 	ENItems::init();
+	ENBlocks::initBlockItems();
 }
 
 void (*_initCreativeCategories)();
@@ -34,6 +38,7 @@ void initCreativeItemsCallback(class ActorInfoRegistry* actorInfoRegistry, class
 	_initCreativeItemsCallback(actorInfoRegistry, blockDefinitionGroup, b1);
 
 	ENItems::initCreativeItemsCallback();
+	ENBlocks::initCreativeBlocksCallback();
 }
 
 void (*_initClientData)();
@@ -54,8 +59,35 @@ void initWorldSystems(WorldSystems* self, ResourcePackManager* rpm) {
 	}
 }
 
+void (*_shutdownWorldSystems)();
+void shutdownWorldSystems() {
+	Zenova::Platform::DebugPause();
+	auto& registry = *BlockTypeRegistry::mBlockLookupMap;
+	Zenova_Info(std::to_string(registry.size()));
+
+	_shutdownWorldSystems();
+
+	Zenova::Platform::DebugPause();
+	Zenova_Info(std::to_string(registry.size()));
+}
+
+void (*_registerBlocks)();
+void registerBlocks() {
+	_registerBlocks();
+
+	ENBlocks::init();
+}
+
+void (*_registerLooseBlockGraphics)(std::vector<Json::Value>&, const BlockPalette&);
+void registerLooseBlockGraphics(std::vector<Json::Value>& json, const BlockPalette& palette) {
+	ENBlocks::initGraphics(json);
+
+	_registerLooseBlockGraphics(json, palette);
+}
+
 void (*_BlockLegacy_playerDestroy)(BlockLegacy*, Player&, const BlockPos&, const Block&);
 void BlockLegacy_playerDestroy(BlockLegacy* self, Player& player, const BlockPos& pos, const Block& block) {
+	Zenova::Platform::DebugPause();
 	if (!HandlerHammer::hammer(block, pos, player) && !HandlerCrook::crook(block, pos, player))
 		_BlockLegacy_playerDestroy(self, player, pos, block);
 }
@@ -70,12 +102,15 @@ private:
 
 		defaultRecipes = new ExNihiloDefaultRecipes();
 
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1594D20)), registerItems, (void**)&_registerItems);
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15A3320)), initCreativeCategories, (void**)&_initCreativeCategories);
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15A45F0)), initCreativeItemsCallback, (void**)&_initCreativeItemsCallback);
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15A01D0)), initClientData, (void**)&_initClientData);
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1651220)), BlockLegacy_playerDestroy, (void**)&_BlockLegacy_playerDestroy);
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x19151A0)), initWorldSystems, (void**)&_initWorldSystems);
+		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, (void**)&_registerItems);
+		Zenova::Hook::Create(&VanillaItems::initCreativeCategories, &initCreativeCategories, (void**)&_initCreativeCategories);
+		Zenova::Hook::Create(&VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, (void**)&_initCreativeItemsCallback);
+		Zenova::Hook::Create(&VanillaItems::initClientData, &initClientData, (void**)&_initClientData);
+		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1651220)), &BlockLegacy_playerDestroy, (void**)&_BlockLegacy_playerDestroy);
+		Zenova::Hook::Create(&WorldSystems::init, &initWorldSystems, (void**)&_initWorldSystems);
+		Zenova::Hook::Create(&VanillaWorldSystems::shutdown, &shutdownWorldSystems, (void**)&_shutdownWorldSystems);
+		Zenova::Hook::Create(&BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, (void**)&_registerLooseBlockGraphics);
+		Zenova::Hook::Create(&VanillaBlockTypes::registerBlocks, &registerBlocks, (void**)&_registerBlocks);
 	}
 
 	virtual ~ExNihiloBedrock() {}

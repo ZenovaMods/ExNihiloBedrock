@@ -5,6 +5,7 @@
 
 #include "SharedPtr.h"
 #include "Block.h"
+#include "Zenova.h"
 
 class Item;
 
@@ -16,8 +17,14 @@ public:
 	}
 
 	template<typename T, typename... Args>
+	static WeakPtr<T> registerBlockItem(const std::string& name, const BlockLegacy& block, Args&&... args) {
+		//Zenova::Platform::DebugPause();
+		return ItemRegistry::registerItemShared<T>(name, block.getBlockItemId(), std::forward<Args>(args)...);
+	}
+
+	template<typename T, typename... Args>
 	static WeakPtr<T> registerItemShared(Args&&... args) {
-		SharedPtr<Item> itemReg = SharedPtr<T>::make(std::forward<Args>(args)...);
+		SharedPtr<T> itemReg = SharedPtr<T>::make(std::forward<Args>(args)...);
 		ItemRegistry::registerItem(itemReg);
 		return itemReg;
 	}

@@ -130,6 +130,23 @@
       ]
     },
     {
+      "name": "BlockItem",
+      "parent": "Item",
+      "address": "0x2B6F258",
+      "functions": [
+        "??1BlockItem@@UEAA@XZ",
+        "?isExperimental@BlockItem@@UEBA_NPEBVItemDescriptor@@@Z",
+        "?isDestructive@BlockItem@@UEBA_NH@Z",
+        "?isValidAuxValue@BlockItem@@UEBA_NH@Z",
+        "?buildDescriptionId@BlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@AEBV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z",
+        "?isEmissive@BlockItem@@UEBA_NH@Z",
+        "?getIcon@BlockItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z",
+        "?getIconYOffset@BlockItem@@UEBAHXZ",
+        "?_calculatePlacePos@BlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@AEAEAEAVBlockPos@@@Z",
+        "?_useOn@BlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z"
+      ]
+    },
+    {
       "name": "BlockLegacy",
       "address": "0x2B8E7D0",
       "functions": [
@@ -292,6 +309,23 @@
       ]
     },
     {
+      "name": "HeavyBlock",
+      "parent": "BlockLegacy",
+      "address": "0x2BA8488",
+      "functions": [
+        "?tick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
+        "?onPlace@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?neighborChanged@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z",
+        "?animateTick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
+        "",
+        "",
+        "?falling@HeavyBlock@@UEBA_NXZ",
+        "?onLand@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?isFreeToFall@HeavyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?startFalling@HeavyBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@_N@Z"
+      ]
+    },
+    {
       "name": "ItemStackBase",
       "address": "0x2B76AF8",
       "functions": [
@@ -326,6 +360,7 @@
     "#include \"minecraft/VanillaBlockTypeRegistry.h\"",
     "#include \"minecraft/VanillaItemTiers.h\"",
     "#include \"minecraft/ItemRegistry.h\"",
+    "#include \"minecraft/BlockTypeRegistry.h\"",
     "#include \"minecraft/WorldSystems.h\"",
     "#include \"minecraft/Item.h\""
   ],
@@ -361,6 +396,7 @@
     "Item::Tier* VanillaItemTiers::DIAMOND": "0x2A39A38",
     "Item::Tier* VanillaItemTiers::GOLD": "0x2A39A50",
     "std::vector<SharedPtr<Item>>* ItemRegistry::mItemRegistry": "0x3060118",
+    "std::unordered_map<std::string, SharedPtr<BlockLegacy>>* BlockTypeRegistry::mBlockLookupMap": "0x3061390",
     "bool* Item::mInCreativeGroup": "0x30507BA",
     "bool* WorldSystems::mInitialized": "0x30507BE"
   },
@@ -379,12 +415,20 @@
       "address": "0x1547810"
     },
     {
+      "name": "??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",
+      "address": "0x1514950"
+    },
+    {
       "name": "?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z",
       "address": "0x1560AB0"
     },
     {
       "name": "?addCreativeItem@Item@@SAXPEAV1@F@Z",
       "address": "0x1560C90"
+    },
+    {
+      "name": "?addCreativeItem@Item@@SAXAEBVBlock@@@Z",
+      "address": "0x1560BD0"
     },
     {
       "name": "?getTextureItem@Item@@SAAEBVTextureAtlasItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -467,6 +511,10 @@
       "address": "0x15AD390"
     },
     {
+      "name": "??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z",
+      "address": "0x164EC50"
+    },
+    {
       "name": "?getBlockItemId@BlockLegacy@@QEBAFXZ",
       "address": "0x1651D90"
     },
@@ -537,6 +585,38 @@
     {
       "name": "?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z",
       "address": "0x15507A0"
+    },
+    {
+      "name": "?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z",
+      "address": "0x0E52DA0"
+    },
+    {
+      "name": "?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z",
+      "address": "0x099C240"
+    },
+    {
+      "name": "?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z",
+      "address": "0x099CA10"
+    },
+    {
+      "name": "?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z",
+      "address": "0x1892CB0"
+    },
+    {
+      "name": "?init@WorldSystems@@SAXPEAVResourcePackManager@@@Z",
+      "address": "0x19151A0"
+    },
+    {
+      "name": "?shutdown@VanillaWorldSystems@@YAXXZ",
+      "address": "0x1B53370"
+    },
+    {
+      "name": "?registerBlocks@VanillaBlockTypes@@YAXXZ",
+      "address": "0x16E0AB0"
+    },
+    {
+      "name": "?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "address": "0x16D9640"
     }
   ]
 }

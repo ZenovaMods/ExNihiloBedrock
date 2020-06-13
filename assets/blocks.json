@@ -1,0 +1,25 @@
+{
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "blockDust": {
+    "isotropic": true,
+    "textures": "blockDust",
+    "brightness_gamma": 0.55,
+    "sound": "cloth"
+  },
+  "blockEndstoneCrushed": {
+    "isotropic": true,
+    "textures": "blockEndstoneCrushed",
+    "brightness_gamma": 0.55,
+    "sound": "gravel"
+  },
+  "blockNetherrackCrushed": {
+    "isotropic": true,
+    "textures": "blockNetherrackCrushed",
+    "brightness_gamma": 0.55,
+    "sound": "gravel"
+  }
+}

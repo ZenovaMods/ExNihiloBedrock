@@ -54,6 +54,12 @@
     <ClCompile Include="source\handlers\HandlerCrook.cpp">
       <Filter>handlers</Filter>
     </ClCompile>
+    <ClCompile Include="source\blocks\BlockBaseFalling.cpp">
+      <Filter>blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="source\blocks\ENBlocks.cpp">
+      <Filter>blocks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\minecraft\BlockLegacy.h">
@@ -242,6 +248,45 @@
     <ClInclude Include="include\minecraft\WorldSystems.h">
       <Filter>minecraft</Filter>
     </ClInclude>
+    <ClInclude Include="include\minecraft\BlockGraphics.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockItem.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockTypeRegistry.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\HeavyBlock.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Color.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Version.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\AABB.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\BlockState.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\LootComponent.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Mutex.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Material.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\blocks\BlockBaseFalling.h">
+      <Filter>blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="source\blocks\ENBlocks.h">
+      <Filter>blocks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />
@@ -279,6 +324,9 @@
     </Filter>
     <Filter Include="handlers">
       <UniqueIdentifier>{c657bc96-9f52-41fc-9edb-cdc5baba26c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blocks">
+      <UniqueIdentifier>{13fc8a42-eade-4f9f-96e9-c3027f6e9296}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

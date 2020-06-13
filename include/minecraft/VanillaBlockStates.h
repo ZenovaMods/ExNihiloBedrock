@@ -1,6 +1,6 @@
 #pragma once
 
-class ItemState {};
+class ItemState;
 
 namespace VanillaStates {
 	extern ItemState* SaplingType;

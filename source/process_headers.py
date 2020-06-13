@@ -145,10 +145,11 @@ def generate_init_func_x86(size):
                         break
                     i += 1
 
-            output_asm("global " + a)
-            output_asm(a + ":")
-            output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
-            output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
+            if a:
+                output_asm("global " + a)
+                output_asm(a + ":")
+                output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
+                output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
             i += 1
 
 def generate_init_func_arm():

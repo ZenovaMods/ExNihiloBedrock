@@ -41,6 +41,7 @@ void ENItems::init() {
 	cookedSilkworm = ItemRegistry::registerItem<ItemCookedSilkworm>("silkwormCooked", 4008);
 
 	itemSeedSaplings = ItemRegistry::registerItem<ItemSeedBase>("itemSeed", 4009, **VanillaBlocks::mSapling, true);
+	itemSeeds.clear();
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedCactus", 4010, **VanillaBlocks::mCactus));
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedSugarcane", 4011, **VanillaBlocks::mReeds));
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedCarrot", 4012, **VanillaBlocks::mCarrotCrop));

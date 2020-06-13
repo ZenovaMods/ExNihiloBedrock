@@ -4,17 +4,24 @@
 #include <string>
 #include <vector>
 
+#include "AABB.h"
+#include "BlockState.h"
+#include "CreativeItemCategory.h"
+#include "Color.h"
+#include "LootComponent.h"
+#include "Mutex.h"
+#include "Version.h"
+#include "Material.h"
+#include "SharedPtr.h"
+#include "BlockTypeRegistry.h"
+
 class Block;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Container;
-class Color;
-class ItemState;
 class ItemInstance;
-class AABB;
 class Vec3;
-class BaseGameVersion;
 class Actor;
 class Mob;
 class Player;
@@ -30,11 +37,61 @@ typedef std::function<const Block& (const BlockPos&)> GetBlockFunction;
 typedef unsigned short DataID;
 typedef unsigned char FacingID;
 typedef unsigned char Brightness;
+typedef unsigned short NewBlockID;
 
 enum class FertilizerType : unsigned char;
+enum class BlockActorType : int;
 enum class BlockRenderLayer : unsigned int;
 enum class BlockSupportType : int;
-enum class BlockProperty : unsigned long;
+enum class BlockProperty : unsigned long long {
+    None,
+    Stair,
+    HalfSlab,
+    Hopper = 4,
+    TopSnow = 8,
+    FenceGate = 16,
+    Leaf = 32,
+    ThinConnects2D = 64,
+    Connects2D = 128,
+    Carpet = 256,
+    Button = 512,
+    Door = 1024,
+    Portal = 2048,
+    Heavy = 4096,
+    Snow = 8192,
+    Trap = 16384,
+    Sign = 32768,
+    Walkable = 65536,
+    PressurePlate = 131072,
+    PistonBlockGrabber = 262144,
+    TopSolidBlocking = 524288,
+    SolidBlocking = 1048576,
+    CubeShaped = 2097152,
+    Power_NO = 4194304,
+    Power_BlockDown = 8388608,
+    Immovable = 16777216,
+    BreakOnPush = 33554432,
+    Piston = 67108864,
+    InfiniBurn = 134217728,
+    RequiresWorldBuilder = 268435456,
+    CausesDamage = 536870912,
+    BreaksWhenFallenOnByHeavy = 1073741824,
+    OnlyPistonPush = 2147483648,
+    Liquid = 4294967296,
+    CanBeBuiltOver = 8589934592,
+    SnowRecoverable = 17179869184,
+    Scaffolding = 34359738368,
+    CanSupportCenterHangingBlock = 68719476736,
+    BreaksWhenHitByArrow = 137438953472,
+    Unwalkable = 274877906944,
+    Impenetrable = 549755813888,
+    Hollow = 1099511627776,
+    OperatorBlock = 2199023255552,
+    SupportedByFlowerPot = 4398046511104,
+    PreventsJumping = 8796093022208,
+    ContainsHoney = 17592186044416,
+    Slime = 35184372088832
+};
 
 class BlockLegacy {
 public:
@@ -46,7 +103,7 @@ public:
     BlockRenderLayer mRenderLayer;
     bool mRenderLayerCanRenderAsOpaque;
     BlockProperty mProperties;
-    /*BlockActorType mBlockEntityType;
+    BlockActorType mBlockEntityType;
     bool mAnimatedTexture;
     float mBrightnessGamma;
     float mThickness;
@@ -85,7 +142,7 @@ private:
     bool mExperimental;
     bool mIsVanilla;
 public:
-    Unique<LootComponent> mLootComponent;
+    std::unique_ptr<LootComponent> mLootComponent;
 private:
     AABB mVisualShape;
     unsigned int mBitsUsed;
@@ -96,7 +153,8 @@ private:
     Bedrock::Threading::SharedMutex mLegacyDataLookupTableMutex;
     std::vector<long> mLegacyDataLookupTable;
 
-public:*/
+public:
+    BlockLegacy(const std::string&, int, const Material&);
     virtual ~BlockLegacy();
     virtual void tick(BlockSource&, const BlockPos&, Random&) const;
     virtual const Block& getStateFromLegacyData(DataID) const;
@@ -258,6 +316,19 @@ public:*/
     Block& getDefaultState() const;
     short getBlockItemId() const;
     ItemActor* popResource(BlockSource&, const BlockPos&, const ItemInstance&) const;
+    WeakPtr<BlockLegacy> createWeakPtr() {
+        return BlockTypeRegistry::lookupByName(getRawNameId());
+    }
+    const std::string& getDescriptionId() const {
+        return mDescriptionId;
+    }
+    const std::string& getRawNameId() const {
+        return mRawNameId;
+    }
+    BlockLegacy& setCategory(CreativeItemCategory category) {
+        mCreativeCategory = category;
+        return *this;
+    }
     bool operator==(const BlockLegacy& rhs) const {
         return this == &rhs;
     }

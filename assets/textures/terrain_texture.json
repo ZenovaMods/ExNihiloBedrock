@@ -1,0 +1,17 @@
+{
+  "resource_pack_name": "exnihilobedrock",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "blockDust": {
+      "textures": "textures/blocks/blockDust"
+    },
+    "blockEndstoneCrushed": {
+      "textures": "textures/blocks/blockEndstoneCrushed"
+    },
+    "blockNetherrackCrushed": {
+      "textures": "textures/blocks/blockNetherrackCrushed"
+    }
+  }
+}

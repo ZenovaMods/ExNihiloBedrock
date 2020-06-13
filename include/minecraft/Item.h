@@ -36,6 +36,7 @@ class BlockLegacy;
 
 #include "BlockPos.h"
 #include "TextureUVCoordinateSet.h"
+#include "Version.h"
 
 
 typedef unsigned char byte;
@@ -44,20 +45,6 @@ typedef unsigned char FacingID;
 class HashedString {
     unsigned long mStrHash;
     std::string mStr;
-};
-class SemVersion {
-    uint16_t mMajor;
-    uint16_t mMinor;
-    uint16_t mPatch;
-    std::string mPreRelease;
-    std::string mBuildMeta;
-    std::string mFullVersionString;
-    bool mValidVersion;
-    bool mAnyVersion;
-};
-
-class BaseGameVersion {
-    SemVersion mSemVersion;
 };
 
 enum class CooldownType : int {
@@ -239,6 +226,7 @@ public:
 
     static void beginCreativeGroup(const std::string&, Item*, short, const CompoundTag*);
     static void addCreativeItem(Item*, short);
+    static void addCreativeItem(const Block&);
     static void endCreativeGroup() {
         *mInCreativeGroup = false;
     }

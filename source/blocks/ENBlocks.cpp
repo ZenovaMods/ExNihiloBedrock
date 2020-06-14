@@ -4,6 +4,7 @@
 #include "minecraft/ItemRegistry.h"
 #include "minecraft/BlockTypeRegistry.h"
 #include "minecraft/Block.h"
+#include "minecraft/BlockDefinitionGroup.h"
 #include "minecraft/BlockGraphics.h"
 #include "minecraft/Item.h"
 
@@ -15,24 +16,24 @@ WeakPtr<BlockLegacy> ENBlocks::netherrackCrushed;
 WeakPtr<BlockLegacy> ENBlocks::endstoneCrushed;
 
 __declspec(noinline)
-void ENBlocks::init() {
-	dust = BlockTypeRegistry::registerBlock<BlockBaseFalling>("blockDust", 1000)
+void ENBlocks::init(BlockDefinitionGroup* blockGroup) {
+	dust = BlockTypeRegistry::registerBlock<BlockBaseFalling>("exnihilo:blockDust", blockGroup->getNextBlockId())
 		.setCategory(CreativeItemCategory::BLOCKS)
 		.setDestroyTime(0.7F)
+		.setIsVanillaBlock(false)
 		.createWeakPtr();
 
-	netherrackCrushed = BlockTypeRegistry::registerBlock<BlockBaseFalling>("blockNetherrackCrushed", 1001)
+	netherrackCrushed = BlockTypeRegistry::registerBlock<BlockBaseFalling>("exnihilo:blockNetherrackCrushed", blockGroup->getNextBlockId())
 		.setCategory(CreativeItemCategory::BLOCKS)
 		.setDestroyTime(0.7F)
+		.setIsVanillaBlock(false)
 		.createWeakPtr();
 
-	endstoneCrushed = BlockTypeRegistry::registerBlock<BlockBaseFalling>("blockEndstoneCrushed", 1002)
+	endstoneCrushed = BlockTypeRegistry::registerBlock<BlockBaseFalling>("exnihilo:blockEndstoneCrushed", blockGroup->getNextBlockId())
 		.setCategory(CreativeItemCategory::BLOCKS)
 		.setDestroyTime(0.7F)
+		.setIsVanillaBlock(false)
 		.createWeakPtr();
-
-	Zenova::Platform::DebugPause();
-	Zenova_Info("pog");
 }
 
 __declspec(noinline)
@@ -50,7 +51,7 @@ void ENBlocks::initGraphics(std::vector<Json::Value>& json) {
 }
 
 __declspec(noinline)
-void ENBlocks::initCreativeBlocksCallback() {
+void ENBlocks::initCreativeBlocks() {
 	Item::addCreativeItem(dust->getDefaultState());
 	Item::addCreativeItem(netherrackCrushed->getDefaultState());
 	Item::addCreativeItem(endstoneCrushed->getDefaultState());

@@ -181,6 +181,7 @@
     <ClInclude Include="include\minecraft\AABB.h" />
     <ClInclude Include="include\minecraft\Actor.h" />
     <ClInclude Include="include\minecraft\Block.h" />
+    <ClInclude Include="include\minecraft\BlockDefinitionGroup.h" />
     <ClInclude Include="include\minecraft\BlockGraphics.h" />
     <ClInclude Include="include\minecraft\BlockItem.h" />
     <ClInclude Include="include\minecraft\BlockLegacy.h" />

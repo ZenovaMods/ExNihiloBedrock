@@ -287,6 +287,9 @@
     <ClInclude Include="source\blocks\ENBlocks.h">
       <Filter>blocks</Filter>
     </ClInclude>
+    <ClInclude Include="include\minecraft\BlockDefinitionGroup.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />

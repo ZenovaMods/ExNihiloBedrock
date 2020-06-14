@@ -15,7 +15,6 @@ public:
 
     template<typename T, typename... Args>
     static T& registerBlock(Args&&... args) {
-        //Zenova::Platform::DebugPause();
         SharedPtr<T> blockReg = SharedPtr<T>::make(std::forward<Args>(args)...);
         (*mBlockLookupMap)[Util::toLower(blockReg->getRawNameId())] = blockReg;
         return *blockReg;

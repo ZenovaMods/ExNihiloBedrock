@@ -46,6 +46,10 @@ public:
 	static WeakPtr<Item> getItem(const BlockLegacy& blockLegacy) {
 		return getItem(blockLegacy.getBlockItemId());
 	}
+	static short getMaxItemID() {
+		return *mMaxItemID;
+	}
 
+	static short* mMaxItemID;
 	static std::vector<SharedPtr<Item>>* mItemRegistry;
 };

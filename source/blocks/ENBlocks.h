@@ -4,6 +4,7 @@
 
 #include "minecraft/SharedPtr.h"
 
+class BlockDefinitionGroup;
 class BlockLegacy;
 namespace Json { class Value; }
 
@@ -13,8 +14,8 @@ public:
 	static WeakPtr<BlockLegacy> netherrackCrushed;
 	static WeakPtr<BlockLegacy> endstoneCrushed;
 
-	static void init();
+	static void init(BlockDefinitionGroup*);
 	static void initBlockItems();
 	static void initGraphics(std::vector<Json::Value>&);
-	static void initCreativeBlocksCallback();
+	static void initCreativeBlocks();
 };

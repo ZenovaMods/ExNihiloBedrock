@@ -329,6 +329,13 @@ public:
         mCreativeCategory = category;
         return *this;
     }
+    bool isVanilla() const {
+        return mIsVanilla;
+    }
+    BlockLegacy& setIsVanillaBlock(bool isVanilla) {
+        mIsVanilla = isVanilla;
+        return *this;
+    }
     bool operator==(const BlockLegacy& rhs) const {
         return this == &rhs;
     }

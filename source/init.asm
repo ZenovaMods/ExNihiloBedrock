@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Sat Jun 13 2020 02:54:43 UTC
+; Generated on Sun Jun 14 2020 02:46:09 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -57,6 +57,7 @@ extern _shutdown_VanillaWorldSystems__YAXXZ_ptr
 extern _registerBlocks_VanillaBlockTypes__YAXXZ_ptr
 extern _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern __1BlockLegacy__UEAA_XZ_ptr
+extern _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
@@ -287,6 +288,10 @@ global ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$bas
 global ??1BlockLegacy@@UEAA@XZ
 ??1BlockLegacy@@UEAA@XZ:
 	mov rax, [rel __1BlockLegacy__UEAA_XZ_ptr]
+	jmp rax
+global ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ
+?registerBlocks@BlockDefinitionGroup@@QEAAXXZ:
+	mov rax, [rel _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:

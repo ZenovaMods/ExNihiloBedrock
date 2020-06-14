@@ -396,6 +396,7 @@
     "Item::Tier* VanillaItemTiers::DIAMOND": "0x2A39A38",
     "Item::Tier* VanillaItemTiers::GOLD": "0x2A39A50",
     "std::vector<SharedPtr<Item>>* ItemRegistry::mItemRegistry": "0x3060118",
+    "short* ItemRegistry::mMaxItemID": "0x30507BC",
     "std::unordered_map<std::string, SharedPtr<BlockLegacy>>* BlockTypeRegistry::mBlockLookupMap": "0x3061390",
     "bool* Item::mInCreativeGroup": "0x30507BA",
     "bool* WorldSystems::mInitialized": "0x30507BE"
@@ -621,6 +622,10 @@
     {
       "name": "??1BlockLegacy@@UEAA@XZ",
       "address": "0x164F200"
+    },
+    {
+      "name": "?registerBlocks@BlockDefinitionGroup@@QEAAXXZ",
+      "address": "0x169EDC0"
     }
   ]
 }

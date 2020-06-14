@@ -27,25 +27,25 @@ WeakPtr<ItemSeedBase> ENItems::itemSeedSaplings;
 std::vector<WeakPtr<ItemSeedBase>> ENItems::itemSeeds;
 
 void ENItems::init() {
-	hammerWood = ItemRegistry::registerItem<HammerBase>("hammerWood", 4000, 64, *VanillaItemTiers::WOOD);
-	hammerStone = ItemRegistry::registerItem<HammerBase>("hammerStone", 4001, 128, *VanillaItemTiers::STONE);
-	hammerIron = ItemRegistry::registerItem<HammerBase>("hammerIron", 4002, 512, *VanillaItemTiers::IRON);
-	hammerDiamond = ItemRegistry::registerItem<HammerBase>("hammerDiamond", 4003, 4096, *VanillaItemTiers::DIAMOND);
-	hammerGold = ItemRegistry::registerItem<HammerBase>("hammerGold", 4004, 64, *VanillaItemTiers::GOLD);
+	hammerWood = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerWood", ItemRegistry::getMaxItemID(), 64, *VanillaItemTiers::WOOD);
+	hammerStone = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerStone", ItemRegistry::getMaxItemID(), 128, *VanillaItemTiers::STONE);
+	hammerIron = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerIron", ItemRegistry::getMaxItemID(), 512, *VanillaItemTiers::IRON);
+	hammerDiamond = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerDiamond", ItemRegistry::getMaxItemID(), ItemRegistry::getMaxItemID(), *VanillaItemTiers::DIAMOND);
+	hammerGold = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerGold", ItemRegistry::getMaxItemID(), 64, *VanillaItemTiers::GOLD);
 
-	crookWood = ItemRegistry::registerItem<CrookBase>("crookWood", 4005, 64);
-	crookBone = ItemRegistry::registerItem<CrookBase>("crookBone", 4006, 256);
+	crookWood = ItemRegistry::registerItem<CrookBase>("exnihilo:crookWood", ItemRegistry::getMaxItemID(), 64);
+	crookBone = ItemRegistry::registerItem<CrookBase>("exnihilo:crookBone", ItemRegistry::getMaxItemID(), 256);
 
-	resources = ItemRegistry::registerItem<ItemResource>("itemMaterial", 4007);
+	resources = ItemRegistry::registerItem<ItemResource>("exnihilo:itemMaterial", ItemRegistry::getMaxItemID());
 
-	cookedSilkworm = ItemRegistry::registerItem<ItemCookedSilkworm>("silkwormCooked", 4008);
+	cookedSilkworm = ItemRegistry::registerItem<ItemCookedSilkworm>("exnihilo:silkwormCooked", ItemRegistry::getMaxItemID());
 
-	itemSeedSaplings = ItemRegistry::registerItem<ItemSeedBase>("itemSeed", 4009, **VanillaBlocks::mSapling, true);
+	itemSeedSaplings = ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeed", ItemRegistry::getMaxItemID(), **VanillaBlocks::mSapling, true);
 	itemSeeds.clear();
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedCactus", 4010, **VanillaBlocks::mCactus));
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedSugarcane", 4011, **VanillaBlocks::mReeds));
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedCarrot", 4012, **VanillaBlocks::mCarrotCrop));
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("itemSeedPotato", 4013, **VanillaBlocks::mPotatoCrop));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCactus", ItemRegistry::getMaxItemID(), **VanillaBlocks::mCactus));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedSugarcane", ItemRegistry::getMaxItemID(), **VanillaBlocks::mReeds));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCarrot", ItemRegistry::getMaxItemID(), **VanillaBlocks::mCarrotCrop));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedPotato", ItemRegistry::getMaxItemID(), **VanillaBlocks::mPotatoCrop));
 }
 
 void ENItems::initCreativeCategories() {
@@ -63,7 +63,7 @@ void ENItems::initCreativeCategories() {
 		item->setCategory(CreativeItemCategory::ITEMS);
 }
 
-void ENItems::initCreativeItemsCallback() {
+void ENItems::initCreativeItems() {
 	Item::beginCreativeGroup("itemGroup.name.hammers", hammerWood.get(), 1, nullptr);
 	Item::addCreativeItem(hammerWood.get(), 0);
 	Item::addCreativeItem(hammerStone.get(), 0);

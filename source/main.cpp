@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Sat Jun 13 2020 02:54:43 UTC
+// Generated on Sun Jun 14 2020 02:46:09 UTC
 
 #include <Zenova/Hook.h>
 #include "minecraft/VanillaBlockRegistry.h"
@@ -41,6 +41,7 @@ Item::Tier* VanillaItemTiers::IRON = reinterpret_cast<Item::Tier*>(Zenova::Hook:
 Item::Tier* VanillaItemTiers::DIAMOND = reinterpret_cast<Item::Tier*>(Zenova::Hook::SlideAddress(0x2A39A38));
 Item::Tier* VanillaItemTiers::GOLD = reinterpret_cast<Item::Tier*>(Zenova::Hook::SlideAddress(0x2A39A50));
 std::vector<SharedPtr<Item>>* ItemRegistry::mItemRegistry = reinterpret_cast<std::vector<SharedPtr<Item>>*>(Zenova::Hook::SlideAddress(0x3060118));
+short* ItemRegistry::mMaxItemID = reinterpret_cast<short*>(Zenova::Hook::SlideAddress(0x30507BC));
 std::unordered_map<std::string, SharedPtr<BlockLegacy>>* BlockTypeRegistry::mBlockLookupMap = reinterpret_cast<std::unordered_map<std::string, SharedPtr<BlockLegacy>>*>(Zenova::Hook::SlideAddress(0x3061390));
 bool* Item::mInCreativeGroup = reinterpret_cast<bool*>(Zenova::Hook::SlideAddress(0x30507BA));
 bool* WorldSystems::mInitialized = reinterpret_cast<bool*>(Zenova::Hook::SlideAddress(0x30507BE));
@@ -101,6 +102,7 @@ extern "C" {
 	void* _registerBlocks_VanillaBlockTypes__YAXXZ_ptr;
 	void* _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 	void* __1BlockLegacy__UEAA_XZ_ptr;
+	void* _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
@@ -168,6 +170,7 @@ void InitBedrockPointers() {
 	_registerBlocks_VanillaBlockTypes__YAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16E0AB0));
 	_lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16D9640));
 	__1BlockLegacy__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x164F200));
+	_registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x169EDC0));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));

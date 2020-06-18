@@ -18,19 +18,19 @@ WeakPtr<BlockLegacy> ENBlocks::endstoneCrushed;
 __declspec(noinline)
 void ENBlocks::init(BlockDefinitionGroup* blockGroup) {
 	dust = BlockTypeRegistry::registerBlock<BlockBaseFalling>("exnihilo:blockDust", blockGroup->getNextBlockId())
-		.setCategory(CreativeItemCategory::BLOCKS)
+		.setCategory(CreativeItemCategory::DECORATIONS)
 		.setDestroyTime(0.7F)
 		.setIsVanillaBlock(false)
 		.createWeakPtr();
 
 	netherrackCrushed = BlockTypeRegistry::registerBlock<BlockBaseFalling>("exnihilo:blockNetherrackCrushed", blockGroup->getNextBlockId())
-		.setCategory(CreativeItemCategory::BLOCKS)
+		.setCategory(CreativeItemCategory::DECORATIONS)
 		.setDestroyTime(0.7F)
 		.setIsVanillaBlock(false)
 		.createWeakPtr();
 
 	endstoneCrushed = BlockTypeRegistry::registerBlock<BlockBaseFalling>("exnihilo:blockEndstoneCrushed", blockGroup->getNextBlockId())
-		.setCategory(CreativeItemCategory::BLOCKS)
+		.setCategory(CreativeItemCategory::DECORATIONS)
 		.setDestroyTime(0.7F)
 		.setIsVanillaBlock(false)
 		.createWeakPtr();

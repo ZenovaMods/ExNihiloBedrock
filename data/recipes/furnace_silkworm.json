@@ -2,11 +2,11 @@
   "format_version": "1.12",
   "minecraft:recipe_furnace": {
     "description": {
-      "identifier": "minecraft:furnace_silkworm"
+      "identifier": "exnihilo:furnace_silkworm"
     },
 
     "tags": ["furnace", "smoker", "campfire"],
-    "input": "minecraft:itemmaterial:2",
-    "output": "minecraft:silkwormcooked"
+    "input": "exnihilo:itemmaterial:2",
+    "output": "exnihilo:silkwormcooked"
   }
 }

@@ -3,6 +3,7 @@ import datetime
 import os
 import argparse
 import json
+import re
 #from itanium_demangler import parse as demangle
 
 parser = argparse.ArgumentParser(description='Processes headers')
@@ -11,6 +12,7 @@ parser.add_argument('-p', '--platform', type=str, help='platform', choices=['win
 parser.add_argument('input', metavar='file', type=str, nargs='+', help='input json symbol maps')
 args = parser.parse_args()
 out_file_cpp = open("main.cpp", "w")
+out_file_header = open("main.h", "w")
 out_file_asm = open("init.asm", "w")
 arch = args.arch
 platform = args.platform
@@ -18,6 +20,7 @@ in_files = args.input
 
 symbol_list = []
 vtable_list = []
+vtable_output = []
 var_list = []
 include_list = []
 cxx_output = ""
@@ -29,6 +32,13 @@ def output_cpp(text):
     cxx_output += "CXX: " + text
     if out_file_cpp is not None:
         out_file_cpp.write(text)
+
+def output_header_cpp(text):
+    text += "\n"
+    global cxx_output
+    cxx_output += "CXX: " + text
+    if out_file_header is not None:
+        out_file_header.write(text)
 
 def output_asm(text):
     text += "\n"
@@ -69,8 +79,17 @@ def mangled_name_to_variable(str):
     return str
 
 def generate_init_cpp():
+    output_header_cpp("#pragma once")
+    output_header_cpp("")
+    output_header_cpp("extern \"C\" {")
+    for a in symbol_list:
+        output_header_cpp("\textern void* " + mangled_name_to_variable(a["mangled_name"]) + "_ptr;")
+    for a in vtable_list:
+        output_header_cpp("\textern void* " + a["name"] + "_vtable;")
+    output_header_cpp("}")
     output_cpp("")
     output_cpp("#include <Zenova/Hook.h>")
+    output_cpp("#include \"main.h\"")
     for a in include_list:
         output_cpp(a)
     output_cpp("")
@@ -107,6 +126,41 @@ def generate_init_cpp():
             output_cpp("\t" + name_legal + "_ptr = reinterpret_cast<void*>(Zenova::Hook::FindVtable(\"" + a["mangled_name"] + "\"));")
     output_cpp("}")
 
+def process_vtable(vtable):
+    vtable_out = next((x for x in vtable_output if vtable["name"] == x["name"]), {})
+    if not vtable_out:
+        vtable_out["name"] = vtable["name"]
+        vtable_out["functions_out"] = []
+        vtable_out["functions_in"] = []
+        vtable_out["parents"] = []
+        i = 0
+        vtable_parent_str = vtable["parent"]
+        vtable_parent_out = {}
+        if vtable_parent_str:
+            vtable_parent = next((x for x in vtable_list if x["name"] == vtable_parent_str), {})
+            if vtable_parent:
+                vtable_parent_out = process_vtable(vtable_parent)
+                vtable_out["parents"].append(vtable_parent_out)
+                vtable_out["parents"].extend(vtable_parent_out["parents"])
+        for a in vtable["functions"]:
+            func_name_base = a.replace(vtable["name"] + "@@", "@@", 1)
+            if len(vtable_out["parents"]) > 0:
+                for parent in vtable_out["parents"]:
+                    func_name_base = re.sub('(@@@.*)' + parent["name"] + '@@', r'\g<1>1@', func_name_base)
+                for b in vtable_parent_out["functions_in"][i:]:
+                    if func_name_base == b[0]:
+                        break
+                    vtable_out["functions_in"].append([b[0], i])
+                    i += 1
+            vtable_out["functions_in"].append([func_name_base, i])
+            if a:
+                vtable_out["functions_out"].append([a, i])
+            i += 1
+    vtable_output.append(vtable_out)
+    return vtable_out
+            
+        
+
 #NASM, MASM doesn't allow long identifiers
 def generate_init_func_x86(size):
     if size == 64:
@@ -130,27 +184,13 @@ def generate_init_func_x86(size):
         output_asm("\tmov rax, [rel " + mangled_name_to_variable(a["mangled_name"]) + "_ptr" + "]")
         output_asm("\tjmp rax")
     for vtable in vtable_list:
-        i = 0
-        vtable_parent_str = vtable["parent"]
-        vtable_parent = {}
-        if vtable_parent_str:
-            vtable_parent = next((x for x in vtable_list if vtable_parent_str == x["name"]), {})
-
-        print(vtable["name"] + "\n")
-        for a in vtable["functions"]:
-            if vtable_parent:
-                vtable_func_parent = a.replace(vtable["name"], vtable_parent["name"], 1)
-                for b in vtable_parent["functions"][i:]:
-                    if vtable_func_parent == b:
-                        break
-                    i += 1
-
-            if a:
-                output_asm("global " + a)
-                output_asm(a + ":")
-                output_asm("\tmov " + reg + ", [rel " + vtable["name"] + "_vtable]")
-                output_asm("\tjmp [" + reg + "+" + str(i * pointer_size) + "]")
-            i += 1
+        vtable_out = process_vtable(vtable)
+        print(vtable_out["name"] + "\n")
+        for a in vtable_out["functions_out"]:
+            output_asm("global " + a[0])
+            output_asm(a[0] + ":")
+            output_asm("\tmov " + reg + ", [rel " + vtable_out["name"] + "_vtable]")
+            output_asm("\tjmp [" + reg + "+" + str(a[1] * pointer_size) + "]")
 
 def generate_init_func_arm():
     i = 0
@@ -172,6 +212,8 @@ def generate_init_func():
     gen_time = datetime.datetime.utcnow().strftime("%a %b %d %Y %H:%M:%S UTC")
     output_cpp("// This file was automatically generated using tools/process_csv.py")
     output_cpp("// Generated on " + gen_time)
+    output_header_cpp("// This file was automatically generated using tools/process_csv.py")
+    output_header_cpp("// Generated on " + gen_time)
     generate_init_cpp()
     generate_windows_cpp()
 
@@ -193,5 +235,6 @@ for file_path in in_files:
 generate_init_func()
 print(cxx_output)
 print(asm_output)
+out_file_cpp.close()
 out_file_cpp.close()
 out_file_asm.close()

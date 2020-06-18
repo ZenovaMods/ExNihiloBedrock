@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "minecraft/ItemStack.h"
-#include "minecraft/Actor.h"
+#include "minecraft/Player.h"
 #include "minecraft/Level.h"
 #include "minecraft/EnchantUtils.h"
 #include "minecraft/Block.h"

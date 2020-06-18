@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Sun Jun 14 2020 02:46:09 UTC
+; Generated on Thu Jun 18 2020 17:35:09 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -12,11 +12,15 @@ extern _addCreativeItem_Item__SAXAEBVBlock___Z_ptr
 extern _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr
 extern _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr
+extern __1ItemStackBase__UEAA_XZ_ptr
 extern __0ItemStackBase__IEAA_XZ_ptr
 extern __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr
 extern __0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr
 extern __0ItemStackBase__IEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr
 extern __0ItemStackBase__IEAA_AEBV0__Z_ptr
+extern __0ItemStack__QEAA_XZ_ptr
+extern __0ItemStack__QEAA_AEBVItem__H_Z_ptr
+extern __0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr
 extern __0ItemInstance__QEAA_XZ_ptr
 extern __0ItemInstance__QEAA_AEBVItem__HH_Z_ptr
 extern __0ItemInstance__QEAA_AEBVBlockLegacy__H_Z_ptr
@@ -57,16 +61,36 @@ extern _shutdown_VanillaWorldSystems__YAXXZ_ptr
 extern _registerBlocks_VanillaBlockTypes__YAXXZ_ptr
 extern _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern __1BlockLegacy__UEAA_XZ_ptr
+extern __1Actor__UEAA_XZ_ptr
 extern _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr
+extern _spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr
+extern _spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr
+extern _spawnItem_Spawner__QEAAPEAVItemActor__AEAVBlockSource__AEBVItemStack__PEAVActor__AEBVVec3__H_Z_ptr
+extern __0ActorDefinitionIdentifier__QEAA_W4ActorType___Z_ptr
+extern __initialize_ActorDefinitionIdentifier__AEAAXXZ_ptr
+extern __extractIdentifier_ActorDefinitionIdentifier__CAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEAU1__Z_ptr
+extern _computeHash_HashedString__SA_KPEBD_Z_ptr
+extern _initFactory_ProjectileFactory__SAXXZ_ptr
+extern _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr
+extern _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr
+extern __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr
+extern __1ItemSpriteRenderer__UEAA_XZ_ptr
+extern _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr
+extern _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr
+extern _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr
+extern _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr
+extern _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
 extern BlockItem_vtable
 extern BlockLegacy_vtable
 extern HeavyBlock_vtable
-extern ItemStackBase_vtable
 extern ItemInstance_vtable
 extern ItemStack_vtable
+extern Actor_vtable
+extern Mob_vtable
+extern Player_vtable
 
 SECTION .text
 global ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
@@ -109,6 +133,10 @@ global ?getCommandName@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$al
 ?getCommandName@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:
 	mov rax, [rel _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr]
 	jmp rax
+global ??1ItemStackBase@@UEAA@XZ
+??1ItemStackBase@@UEAA@XZ:
+	mov rax, [rel __1ItemStackBase__UEAA_XZ_ptr]
+	jmp rax
 global ??0ItemStackBase@@IEAA@XZ
 ??0ItemStackBase@@IEAA@XZ:
 	mov rax, [rel __0ItemStackBase__IEAA_XZ_ptr]
@@ -128,6 +156,18 @@ global ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
 global ??0ItemStackBase@@IEAA@AEBV0@@Z
 ??0ItemStackBase@@IEAA@AEBV0@@Z:
 	mov rax, [rel __0ItemStackBase__IEAA_AEBV0__Z_ptr]
+	jmp rax
+global ??0ItemStack@@QEAA@XZ
+??0ItemStack@@QEAA@XZ:
+	mov rax, [rel __0ItemStack__QEAA_XZ_ptr]
+	jmp rax
+global ??0ItemStack@@QEAA@AEBVItem@@H@Z
+??0ItemStack@@QEAA@AEBVItem@@H@Z:
+	mov rax, [rel __0ItemStack__QEAA_AEBVItem__H_Z_ptr]
+	jmp rax
+global ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z
+??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z:
+	mov rax, [rel __0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr]
 	jmp rax
 global ??0ItemInstance@@QEAA@XZ
 ??0ItemInstance@@QEAA@XZ:
@@ -289,9 +329,81 @@ global ??1BlockLegacy@@UEAA@XZ
 ??1BlockLegacy@@UEAA@XZ:
 	mov rax, [rel __1BlockLegacy__UEAA_XZ_ptr]
 	jmp rax
+global ??1Actor@@UEAA@XZ
+??1Actor@@UEAA@XZ:
+	mov rax, [rel __1Actor__UEAA_XZ_ptr]
+	jmp rax
 global ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ
 ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ:
 	mov rax, [rel _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr]
+	jmp rax
+global ?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z
+?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z:
+	mov rax, [rel _spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr]
+	jmp rax
+global ?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z
+?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z:
+	mov rax, [rel _spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr]
+	jmp rax
+global ?spawnItem@Spawner@@QEAAPEAVItemActor@@AEAVBlockSource@@AEBVItemStack@@PEAVActor@@AEBVVec3@@H@Z
+?spawnItem@Spawner@@QEAAPEAVItemActor@@AEAVBlockSource@@AEBVItemStack@@PEAVActor@@AEBVVec3@@H@Z:
+	mov rax, [rel _spawnItem_Spawner__QEAAPEAVItemActor__AEAVBlockSource__AEBVItemStack__PEAVActor__AEBVVec3__H_Z_ptr]
+	jmp rax
+global ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
+??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z:
+	mov rax, [rel __0ActorDefinitionIdentifier__QEAA_W4ActorType___Z_ptr]
+	jmp rax
+global ?_initialize@ActorDefinitionIdentifier@@AEAAXXZ
+?_initialize@ActorDefinitionIdentifier@@AEAAXXZ:
+	mov rax, [rel __initialize_ActorDefinitionIdentifier__AEAAXXZ_ptr]
+	jmp rax
+global ?_extractIdentifier@ActorDefinitionIdentifier@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAU1@@Z
+?_extractIdentifier@ActorDefinitionIdentifier@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAU1@@Z:
+	mov rax, [rel __extractIdentifier_ActorDefinitionIdentifier__CAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEAU1__Z_ptr]
+	jmp rax
+global ?computeHash@HashedString@@SA_KPEBD@Z
+?computeHash@HashedString@@SA_KPEBD@Z:
+	mov rax, [rel _computeHash_HashedString__SA_KPEBD_Z_ptr]
+	jmp rax
+global ?initFactory@ProjectileFactory@@SAXXZ
+?initFactory@ProjectileFactory@@SAXXZ:
+	mov rax, [rel _initFactory_ProjectileFactory__SAXXZ_ptr]
+	jmp rax
+global ?EntityCanonicalName@@YAAEBVHashedString@@W4ActorType@@@Z
+?EntityCanonicalName@@YAAEBVHashedString@@W4ActorType@@@Z:
+	mov rax, [rel _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr]
+	jmp rax
+global ?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z
+?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z:
+	mov rax, [rel _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr]
+	jmp rax
+global ??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z
+??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z:
+	mov rax, [rel __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr]
+	jmp rax
+global ??1ItemSpriteRenderer@@UEAA@XZ
+??1ItemSpriteRenderer@@UEAA@XZ:
+	mov rax, [rel __1ItemSpriteRenderer__UEAA_XZ_ptr]
+	jmp rax
+global ?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z
+?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z:
+	mov rax, [rel _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr]
+	jmp rax
+global ?getRenderer@ActorRenderDispatcher@@QEBAPEAVActorRenderer@@AEBVHashedString@@@Z
+?getRenderer@ActorRenderDispatcher@@QEBAPEAVActorRenderer@@AEBVHashedString@@@Z:
+	mov rax, [rel _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr]
+	jmp rax
+global ?getDataDrivenRenderer@ActorRenderDispatcher@@QEBAPEAVDataDrivenRenderer@@AEBVHashedString@@@Z
+?getDataDrivenRenderer@ActorRenderDispatcher@@QEBAPEAVDataDrivenRenderer@@AEBVHashedString@@@Z:
+	mov rax, [rel _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr]
+	jmp rax
+global ?registerActorInfo@ActorInfoRegistry@@QEAAXAEBUActorInfo@@@Z
+?registerActorInfo@ActorInfoRegistry@@QEAAXAEBUActorInfo@@@Z:
+	mov rax, [rel _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr]
+	jmp rax
+global ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z
+?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z:
+	mov rax, [rel _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:
@@ -1421,14 +1533,6 @@ global ?startFalling@HeavyBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@
 ?startFalling@HeavyBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@_N@Z:
 	mov rax, [rel HeavyBlock_vtable]
 	jmp [rax+1288]
-global ??1ItemStackBase@@UEAA@XZ
-??1ItemStackBase@@UEAA@XZ:
-	mov rax, [rel ItemStackBase_vtable]
-	jmp [rax+0]
-global ??1ItemInstance@@UEAA@XZ
-??1ItemInstance@@UEAA@XZ:
-	mov rax, [rel ItemInstance_vtable]
-	jmp [rax+0]
 global ?reinit@ItemInstance@@UEAAXAEBVBlockLegacy@@H@Z
 ?reinit@ItemInstance@@UEAAXAEBVBlockLegacy@@H@Z:
 	mov rax, [rel ItemInstance_vtable]
@@ -1437,10 +1541,6 @@ global ?reinit@ItemInstance@@MEAAXAEBVItem@@HH@Z
 ?reinit@ItemInstance@@MEAAXAEBVItem@@HH@Z:
 	mov rax, [rel ItemInstance_vtable]
 	jmp [rax+16]
-global ??1ItemStack@@UEAA@XZ
-??1ItemStack@@UEAA@XZ:
-	mov rax, [rel ItemStack_vtable]
-	jmp [rax+0]
 global ?reinit@ItemStack@@UEAAXAEBVBlockLegacy@@H@Z
 ?reinit@ItemStack@@UEAAXAEBVBlockLegacy@@H@Z:
 	mov rax, [rel ItemStack_vtable]
@@ -1449,3 +1549,2327 @@ global ?reinit@ItemStack@@MEAAXAEBVItem@@HH@Z
 ?reinit@ItemStack@@MEAAXAEBVItem@@HH@Z:
 	mov rax, [rel ItemStack_vtable]
 	jmp [rax+16]
+global ?hasComponent@Actor@@UEBA_NAEBVHashString@Util@@@Z
+?hasComponent@Actor@@UEBA_NAEBVHashString@Util@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+0]
+global ?reloadHardcoded@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
+?reloadHardcoded@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+8]
+global ?reloadHardcodedClient@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
+?reloadHardcodedClient@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+16]
+global ?initializeComponents@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
+?initializeComponents@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+24]
+global ?reloadComponents@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
+?reloadComponents@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+32]
+global ?reset@Actor@@UEAAXXZ
+?reset@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+48]
+global ?getOnDeathExperience@Actor@@UEAAHXZ
+?getOnDeathExperience@Actor@@UEAAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+56]
+global ?getOwnerEntityType@Actor@@UEAA?AW4ActorType@@XZ
+?getOwnerEntityType@Actor@@UEAA?AW4ActorType@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+64]
+global ?remove@Actor@@UEAAXXZ
+?remove@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+72]
+global ?setPos@Actor@@UEAAXAEBVVec3@@@Z
+?setPos@Actor@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+80]
+global ?getPos@Actor@@UEBAAEBVVec3@@XZ
+?getPos@Actor@@UEBAAEBVVec3@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+88]
+global ?getPosOld@Actor@@UEBAAEBVVec3@@XZ
+?getPosOld@Actor@@UEBAAEBVVec3@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+96]
+global ?getPosExtrapolated@Actor@@UEBA?BVVec3@@M@Z
+?getPosExtrapolated@Actor@@UEBA?BVVec3@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+104]
+global ?getAttachPos@Actor@@UEBA?AVVec3@@W4ActorLocation@@M@Z
+?getAttachPos@Actor@@UEBA?AVVec3@@W4ActorLocation@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+112]
+global ?getFiringPos@Actor@@UEBA?AVVec3@@XZ
+?getFiringPos@Actor@@UEBA?AVVec3@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+120]
+global ?setRot@Actor@@UEAAXAEBVVec2@@@Z
+?setRot@Actor@@UEAAXAEBVVec2@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+128]
+global ?move@Actor@@UEAAXAEBVVec3@@@Z
+?move@Actor@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+136]
+global ?getInterpolatedRidingPosition@Actor@@UEBA?AVVec3@@M@Z
+?getInterpolatedRidingPosition@Actor@@UEBA?AVVec3@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+144]
+global ?getInterpolatedBodyRot@Actor@@UEBAMM@Z
+?getInterpolatedBodyRot@Actor@@UEBAMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+152]
+global ?getInterpolatedHeadRot@Actor@@UEBAMM@Z
+?getInterpolatedHeadRot@Actor@@UEBAMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+160]
+global ?getInterpolatedBodyYaw@Actor@@UEBAMM@Z
+?getInterpolatedBodyYaw@Actor@@UEBAMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+168]
+global ?getYawSpeedInDegreesPerSecond@Actor@@UEBAMXZ
+?getYawSpeedInDegreesPerSecond@Actor@@UEBAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+176]
+global ?getInterpolatedWalkAnimSpeed@Actor@@UEBAMM@Z
+?getInterpolatedWalkAnimSpeed@Actor@@UEBAMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+184]
+global ?getInterpolatedRidingOffset@Actor@@UEBA?AVVec3@@M@Z
+?getInterpolatedRidingOffset@Actor@@UEBA?AVVec3@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+192]
+global ?checkBlockCollisions@Actor@@UEAAXXZ
+?checkBlockCollisions@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+200]
+global ?checkBlockCollisions@Actor@@UEAAXAEBVAABB@@@Z
+?checkBlockCollisions@Actor@@UEAAXAEBVAABB@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+208]
+global ?breaksFallingBlocks@Actor@@UEBA_NXZ
+?breaksFallingBlocks@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+216]
+global ?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z
+?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+224]
+global ?moveRelative@Actor@@UEAAXMMMM@Z
+?moveRelative@Actor@@UEAAXMMMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+232]
+global ?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH@Z
+?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+240]
+global ?tryTeleportTo@Actor@@UEAA_NAEBVVec3@@_N1HH@Z
+?tryTeleportTo@Actor@@UEAA_NAEBVVec3@@_N1HH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+248]
+global ?chorusFruitTeleport@Actor@@UEAAXAEAVVec3@@@Z
+?chorusFruitTeleport@Actor@@UEAAXAEAVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+256]
+global ?lerpTo@Actor@@UEAAXAEBVVec3@@AEBVVec2@@H@Z
+?lerpTo@Actor@@UEAAXAEBVVec3@@AEBVVec2@@H@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+264]
+global ?lerpMotion@Actor@@UEAAXAEBVVec3@@@Z
+?lerpMotion@Actor@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+272]
+global ?getAddPacket@Actor@@UEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@XZ
+?getAddPacket@Actor@@UEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+280]
+global ?normalTick@Actor@@UEAAXXZ
+?normalTick@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+288]
+global ?baseTick@Actor@@UEAAXXZ
+?baseTick@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+296]
+global ?rideTick@Actor@@UEAAXXZ
+?rideTick@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+304]
+global ?positionRider@Actor@@UEAAXAEAV1@M@Z
+?positionRider@Actor@@UEAAXAEAV1@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+312]
+global ?getRidingHeight@Actor@@UEAAMXZ
+?getRidingHeight@Actor@@UEAAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+320]
+global ?startRiding@Actor@@UEAA_NAEAV1@@Z
+?startRiding@Actor@@UEAA_NAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+328]
+global ?addRider@Actor@@UEAAXAEAV1@@Z
+?addRider@Actor@@UEAAXAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+336]
+global ?flagRiderToRemove@Actor@@UEAAXAEAV1@@Z
+?flagRiderToRemove@Actor@@UEAAXAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+344]
+global ?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
+?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+352]
+global ?intersects@Actor@@UEBA_NAEBVVec3@@0@Z
+?intersects@Actor@@UEBA_NAEBVVec3@@0@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+360]
+global ?isFree@Actor@@UEAA_NAEBVVec3@@@Z
+?isFree@Actor@@UEAA_NAEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+368]
+global ?isFree@Actor@@UEAA_NAEBVVec3@@M@Z
+?isFree@Actor@@UEAA_NAEBVVec3@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+376]
+global ?isInWall@Actor@@UEBA_NXZ
+?isInWall@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+384]
+global ?isInvisible@Actor@@UEBA_NXZ
+?isInvisible@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+392]
+global ?canShowNameTag@Actor@@UEBA_NXZ
+?canShowNameTag@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+400]
+global ?canExistInPeaceful@Actor@@UEBA_NXZ
+?canExistInPeaceful@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+408]
+global ?setNameTagVisible@Actor@@UEAAX_N@Z
+?setNameTagVisible@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+416]
+global ?getNameTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+?getNameTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+424]
+global ?getNameTagAsHash@Actor@@UEBAKXZ
+?getNameTagAsHash@Actor@@UEBAKXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+432]
+global ?getFormattedNameTag@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+?getFormattedNameTag@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+440]
+global ?filterFormattedNameTag@Actor@@UEAAXAEBVUIProfanityContext@@@Z
+?filterFormattedNameTag@Actor@@UEAAXAEBVUIProfanityContext@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+448]
+global ?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+456]
+global ?getAlwaysShowNameTag@Actor@@UEBA_NXZ
+?getAlwaysShowNameTag@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+464]
+global ?setScoreTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?setScoreTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+472]
+global ?getScoreTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+?getScoreTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+480]
+global ?isInWater@Actor@@UEBA_NXZ
+?isInWater@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+488]
+global ?hasEnteredWater@Actor@@UEBA_NXZ
+?hasEnteredWater@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+496]
+global ?isImmersedInWater@Actor@@UEBA_NXZ
+?isImmersedInWater@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+504]
+global ?isInWaterOrRain@Actor@@UEBA_NXZ
+?isInWaterOrRain@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+512]
+global ?isInLava@Actor@@UEBA_NXZ
+?isInLava@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+520]
+global ?isUnderLiquid@Actor@@UEBA_NW4MaterialType@@@Z
+?isUnderLiquid@Actor@@UEBA_NW4MaterialType@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+528]
+global ?isOverWater@Actor@@UEBA_NXZ
+?isOverWater@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+536]
+global ?makeStuckInBlock@Actor@@UEAAXM@Z
+?makeStuckInBlock@Actor@@UEAAXM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+544]
+global ?getCameraOffset@Actor@@UEBAMXZ
+?getCameraOffset@Actor@@UEBAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+552]
+global ?getShadowHeightOffs@Actor@@UEAAMXZ
+?getShadowHeightOffs@Actor@@UEAAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+560]
+global ?getShadowRadius@Actor@@UEBAMXZ
+?getShadowRadius@Actor@@UEBAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+568]
+global ?getHeadLookVector@Actor@@UEAA?AVVec3@@M@Z
+?getHeadLookVector@Actor@@UEAA?AVVec3@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+576]
+global ?canSeeInvisible@Actor@@UEBA_NXZ
+?canSeeInvisible@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+584]
+global ?canSee@Actor@@UEBA_NAEBVVec3@@@Z
+?canSee@Actor@@UEBA_NAEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+592]
+global ?canSee@Actor@@UEBA_NAEBV1@@Z
+?canSee@Actor@@UEBA_NAEBV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+600]
+global ?isSkyLit@Actor@@UEAA_NM@Z
+?isSkyLit@Actor@@UEAA_NM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+608]
+global ?getBrightness@Actor@@UEBAMM@Z
+?getBrightness@Actor@@UEBAMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+616]
+global ?interactPreventDefault@Actor@@UEAA_NXZ
+?interactPreventDefault@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+624]
+global ?playerTouch@Actor@@UEAAXAEAVPlayer@@@Z
+?playerTouch@Actor@@UEAAXAEAVPlayer@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+632]
+global ?onAboveBubbleColumn@Actor@@UEAAX_N@Z
+?onAboveBubbleColumn@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+640]
+global ?onInsideBubbleColumn@Actor@@UEAAX_N@Z
+?onInsideBubbleColumn@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+648]
+global ?isImmobile@Actor@@UEBA_NXZ
+?isImmobile@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+656]
+global ?isSilent@Actor@@UEAA_NXZ
+?isSilent@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+664]
+global ?isPickable@Actor@@UEAA_NXZ
+?isPickable@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+672]
+global ?isFishable@Actor@@UEBA_NXZ
+?isFishable@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+680]
+global ?isSleeping@Actor@@UEBA_NXZ
+?isSleeping@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+688]
+global ?isShootable@Actor@@UEAA_NXZ
+?isShootable@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+696]
+global ?isSneaking@Actor@@UEBA_NXZ
+?isSneaking@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+704]
+global ?setSneaking@Actor@@UEAAX_N@Z
+?setSneaking@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+712]
+global ?isBlocking@Actor@@UEBA_NXZ
+?isBlocking@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+720]
+global ?isDamageBlocked@Actor@@UEBA_NAEBVActorDamageSource@@@Z
+?isDamageBlocked@Actor@@UEBA_NAEBVActorDamageSource@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+728]
+global ?isAlive@Actor@@UEBA_NXZ
+?isAlive@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+736]
+global ?isOnFire@Actor@@UEBA_NXZ
+?isOnFire@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+744]
+global ?isOnHotBlock@Actor@@UEBA_NXZ
+?isOnHotBlock@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+752]
+global ?isCreativeModeAllowed@Actor@@UEAA_NXZ
+?isCreativeModeAllowed@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+760]
+global ?isSurfaceMob@Actor@@UEBA_NXZ
+?isSurfaceMob@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+768]
+global ?isTargetable@Actor@@UEBA_NXZ
+?isTargetable@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+776]
+global ?canAttack@Actor@@UEBA_NPEAV1@_N@Z
+?canAttack@Actor@@UEBA_NPEAV1@_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+784]
+global ?setTarget@Actor@@UEAAXPEAV1@@Z
+?setTarget@Actor@@UEAAXPEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+792]
+global ?findAttackTarget@Actor@@UEAAPEAV1@XZ
+?findAttackTarget@Actor@@UEAAPEAV1@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+800]
+global ?isValidTarget@Actor@@UEBA_NPEAV1@@Z
+?isValidTarget@Actor@@UEBA_NPEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+808]
+global ?attack@Actor@@UEAA_NAEAV1@@Z
+?attack@Actor@@UEAA_NAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+816]
+global ?performRangedAttack@Actor@@UEAAXAEAV1@M@Z
+?performRangedAttack@Actor@@UEAAXAEAV1@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+824]
+global ?adjustDamageAmount@Actor@@UEBAXAEAH@Z
+?adjustDamageAmount@Actor@@UEBAXAEAH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+832]
+global ?getEquipmentCount@Actor@@UEBAHXZ
+?getEquipmentCount@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+840]
+global ?setOwner@Actor@@UEAAXVActorUniqueID@@@Z
+?setOwner@Actor@@UEAAXVActorUniqueID@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+848]
+global ?setSitting@Actor@@UEAAX_N@Z
+?setSitting@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+856]
+global ?onTame@Actor@@UEAAXXZ
+?onTame@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+864]
+global ?onFailedTame@Actor@@UEAAXXZ
+?onFailedTame@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+872]
+global ?getInventorySize@Actor@@UEBAHXZ
+?getInventorySize@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+880]
+global ?getEquipSlots@Actor@@UEBAHXZ
+?getEquipSlots@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+888]
+global ?getChestSlots@Actor@@UEBAHXZ
+?getChestSlots@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+896]
+global ?setStanding@Actor@@UEAAX_N@Z
+?setStanding@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+904]
+global ?canPowerJump@Actor@@UEBA_NXZ
+?canPowerJump@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+912]
+global ?setCanPowerJump@Actor@@UEAAX_N@Z
+?setCanPowerJump@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+920]
+global ?isJumping@Actor@@UEBA_NXZ
+?isJumping@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+928]
+global ?isEnchanted@Actor@@UEBA_NXZ
+?isEnchanted@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+936]
+global ?rideJumped@Actor@@UEAAXXZ
+?rideJumped@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+944]
+global ?rideLanded@Actor@@UEAAXAEBVVec3@@0@Z
+?rideLanded@Actor@@UEAAXAEBVVec3@@0@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+952]
+global ?shouldRender@Actor@@UEBA_NXZ
+?shouldRender@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+960]
+global ?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z
+?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+968]
+global ?actuallyHurt@Actor@@UEAAXHPEBVActorDamageSource@@_N@Z
+?actuallyHurt@Actor@@UEAAXHPEBVActorDamageSource@@_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+976]
+global ?animateHurt@Actor@@UEAAXXZ
+?animateHurt@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+984]
+global ?doFireHurt@Actor@@UEAA_NH@Z
+?doFireHurt@Actor@@UEAA_NH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+992]
+global ?onLightningHit@Actor@@UEAAXXZ
+?onLightningHit@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1000]
+global ?onBounceStarted@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+?onBounceStarted@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1008]
+global ?feed@Actor@@UEAAXH@Z
+?feed@Actor@@UEAAXH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1016]
+global ?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z
+?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1024]
+global ?getPickRadius@Actor@@UEAAMXZ
+?getPickRadius@Actor@@UEAAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1032]
+global ?getActorRendererId@Actor@@UEBAAEBVHashedString@@XZ
+?getActorRendererId@Actor@@UEBAAEBVHashedString@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1040]
+global ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVItemStack@@M@Z
+?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVItemStack@@M@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1048]
+global ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@HM@Z
+?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@HM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1056]
+global ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@H@Z
+?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@H@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1064]
+global ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HHM@Z
+?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HHM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1072]
+global ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HH@Z
+?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1080]
+global ?despawn@Actor@@UEAAXXZ
+?despawn@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1088]
+global ?killed@Actor@@UEAAXAEAV1@@Z
+?killed@Actor@@UEAAXAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1096]
+global ?awardKillScore@Actor@@UEAAXAEAV1@H@Z
+?awardKillScore@Actor@@UEAAXAEAV1@H@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1104]
+global ?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
+?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1112]
+global ?getArmor@Actor@@UEBAAEBVItemStack@@W4ArmorSlot@@@Z
+?getArmor@Actor@@UEBAAEBVItemStack@@W4ArmorSlot@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1120]
+global ?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
+?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1128]
+global ?getArmorMaterialTextureTypeInSlot@Actor@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
+?getArmorMaterialTextureTypeInSlot@Actor@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1136]
+global ?getArmorColorInSlot@Actor@@UEBAMW4ArmorSlot@@H@Z
+?getArmorColorInSlot@Actor@@UEBAMW4ArmorSlot@@H@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1144]
+global ?setEquippedSlot@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
+?setEquippedSlot@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1152]
+global ?setEquippedSlot@Actor@@UEAAXW4ArmorSlot@@HH@Z
+?setEquippedSlot@Actor@@UEAAXW4ArmorSlot@@HH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1160]
+global ?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ
+?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1168]
+global ?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z
+?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1176]
+global ?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z
+?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1184]
+global ?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ
+?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1192]
+global ?consumeTotem@Actor@@UEAA_NXZ
+?consumeTotem@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1200]
+global ?save@Actor@@UEAA_NAEAVCompoundTag@@@Z
+?save@Actor@@UEAA_NAEAVCompoundTag@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1208]
+global ?saveWithoutId@Actor@@UEAAXAEAVCompoundTag@@@Z
+?saveWithoutId@Actor@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1216]
+global ?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1224]
+global ?loadLinks@Actor@@UEAAXAEBVCompoundTag@@AEAV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@AEAVDataLoadHelper@@@Z
+?loadLinks@Actor@@UEAAXAEBVCompoundTag@@AEAV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1232]
+global ?getEntityTypeId@Actor@@UEBA?AW4ActorType@@XZ
+?getEntityTypeId@Actor@@UEBA?AW4ActorType@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1240]
+global ?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ
+?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1248]
+global ?getSourceUniqueID@Actor@@UEBA?AVActorUniqueID@@XZ
+?getSourceUniqueID@Actor@@UEBA?AVActorUniqueID@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1256]
+global ?setOnFire@Actor@@UEAAXH@Z
+?setOnFire@Actor@@UEAAXH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1264]
+global ?getHandleWaterAABB@Actor@@UEBA?AVAABB@@XZ
+?getHandleWaterAABB@Actor@@UEBA?AVAABB@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1272]
+global ?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z
+?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1280]
+global ?getPortalCooldown@Actor@@UEBAHXZ
+?getPortalCooldown@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1288]
+global ?getPortalWaitTime@Actor@@UEBAHXZ
+?getPortalWaitTime@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1296]
+global ?getDimensionId@Actor@@UEBAHXZ
+?getDimensionId@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1304]
+global ?canChangeDimensions@Actor@@UEBA_NXZ
+?canChangeDimensions@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1312]
+global ?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z
+?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1320]
+global ?changeDimension@Actor@@UEAAXH_N@Z
+?changeDimension@Actor@@UEAAXH_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1328]
+global ?getControllingPlayer@Actor@@UEBA?AVActorUniqueID@@XZ
+?getControllingPlayer@Actor@@UEBA?AVActorUniqueID@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1336]
+global ?checkFallDamage@Actor@@UEAAXM_N@Z
+?checkFallDamage@Actor@@UEAAXM_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1344]
+global ?causeFallDamage@Actor@@UEAAXM@Z
+?causeFallDamage@Actor@@UEAAXM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1352]
+global ?handleFallDistanceOnServer@Actor@@UEAAXM_N@Z
+?handleFallDistanceOnServer@Actor@@UEAAXM_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1360]
+global ?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z
+?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1368]
+global ?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@_N@Z
+?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1376]
+global ?onSynchedDataUpdate@Actor@@UEAAXH@Z
+?onSynchedDataUpdate@Actor@@UEAAXH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1384]
+global ?canAddRider@Actor@@UEBA_NAEAV1@@Z
+?canAddRider@Actor@@UEBA_NAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1392]
+global ?canBePulledIntoVehicle@Actor@@UEBA_NXZ
+?canBePulledIntoVehicle@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1400]
+global ?inCaravan@Actor@@UEBA_NXZ
+?inCaravan@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1408]
+global ?isLeashableType@Actor@@UEAA_NXZ
+?isLeashableType@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1416]
+global ?tickLeash@Actor@@UEAAXXZ
+?tickLeash@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1424]
+global ?sendMotionPacketIfNeeded@Actor@@UEAAXXZ
+?sendMotionPacketIfNeeded@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1432]
+global ?canSynchronizeNewEntity@Actor@@UEBA_NXZ
+?canSynchronizeNewEntity@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1440]
+global ?stopRiding@Actor@@UEAAX_N00@Z
+?stopRiding@Actor@@UEAAX_N00@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1448]
+global ?startSwimming@Actor@@UEAAXXZ
+?startSwimming@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1456]
+global ?stopSwimming@Actor@@UEAAXXZ
+?stopSwimming@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1464]
+global ?buildDebugInfo@Actor@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?buildDebugInfo@Actor@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1472]
+global ?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ
+?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1480]
+global ?getMutableAttribute@Actor@@UEAAPEAVAttributeInstance@@AEBVAttribute@@@Z
+?getMutableAttribute@Actor@@UEAAPEAVAttributeInstance@@AEBVAttribute@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1488]
+global ?getAttribute@Actor@@UEBAAEBVAttributeInstance@@AEBVAttribute@@@Z
+?getAttribute@Actor@@UEBAAEBVAttributeInstance@@AEBVAttribute@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1496]
+global ?getDeathTime@Actor@@UEBAHXZ
+?getDeathTime@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1504]
+global ?heal@Actor@@UEAAXH@Z
+?heal@Actor@@UEAAXH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1512]
+global ?isInvertedHealAndHarm@Actor@@UEBA_NXZ
+?isInvertedHealAndHarm@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1520]
+global ?canBeAffected@Actor@@UEBA_NAEBVMobEffectInstance@@@Z
+?canBeAffected@Actor@@UEBA_NAEBVMobEffectInstance@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1528]
+global ?canBeAffected@Actor@@UEBA_NH@Z
+?canBeAffected@Actor@@UEBA_NH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1536]
+global ?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z
+?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1544]
+global ?onEffectAdded@Actor@@UEAAXAEAVMobEffectInstance@@@Z
+?onEffectAdded@Actor@@UEAAXAEAVMobEffectInstance@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1552]
+global ?onEffectUpdated@Actor@@UEAAXAEBVMobEffectInstance@@@Z
+?onEffectUpdated@Actor@@UEAAXAEBVMobEffectInstance@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1560]
+global ?onEffectRemoved@Actor@@UEAAXAEAVMobEffectInstance@@@Z
+?onEffectRemoved@Actor@@UEAAXAEAVMobEffectInstance@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1568]
+global ?getAnimationComponent@Actor@@UEAAAEAVAnimationComponent@@XZ
+?getAnimationComponent@Actor@@UEAAAEAVAnimationComponent@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1576]
+global ?openContainerComponent@Actor@@UEAAXAEAVPlayer@@@Z
+?openContainerComponent@Actor@@UEAAXAEAVPlayer@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1584]
+global ?swing@Actor@@UEAAXXZ
+?swing@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1592]
+global ?useItem@Actor@@UEAAXAEAVItemStack@@W4ItemUseMethod@@_N@Z
+?useItem@Actor@@UEAAXAEAVItemStack@@W4ItemUseMethod@@_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1600]
+global ?hasOutputSignal@Actor@@UEBA_NE@Z
+?hasOutputSignal@Actor@@UEBA_NE@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1608]
+global ?getOutputSignal@Actor@@UEBAHXZ
+?getOutputSignal@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1616]
+global ?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1624]
+global ?getMapDecorationRotation@Actor@@UEBAMXZ
+?getMapDecorationRotation@Actor@@UEBAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1632]
+global ?getRiderYRotation@Actor@@UEBAMAEBV1@@Z
+?getRiderYRotation@Actor@@UEBAMAEBV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1640]
+global ?getYHeadRot@Actor@@UEBAMXZ
+?getYHeadRot@Actor@@UEBAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1648]
+global ?isWorldBuilder@Actor@@UEAA_NXZ
+?isWorldBuilder@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1656]
+global ?isCreative@Actor@@UEBA_NXZ
+?isCreative@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1664]
+global ?isAdventure@Actor@@UEBA_NXZ
+?isAdventure@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1672]
+global ?add@Actor@@UEAA_NAEAVItemStack@@@Z
+?add@Actor@@UEAA_NAEAVItemStack@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1680]
+global ?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z
+?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1688]
+global ?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1696]
+global ?canDestroyBlock@Actor@@UEBA_NAEBVBlock@@@Z
+?canDestroyBlock@Actor@@UEBA_NAEBVBlock@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1704]
+global ?setAuxValue@Actor@@UEAAXH@Z
+?setAuxValue@Actor@@UEAAXH@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1712]
+global ?setSize@Actor@@UEAAXMM@Z
+?setSize@Actor@@UEAAXMM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1720]
+global ?getLifeSpan@Actor@@UEBAHXZ
+?getLifeSpan@Actor@@UEBAHXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1728]
+global ?onOrphan@Actor@@UEAAXXZ
+?onOrphan@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1736]
+global ?wobble@Actor@@UEAAXXZ
+?wobble@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1744]
+global ?wasHurt@Actor@@UEAA_NXZ
+?wasHurt@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1752]
+global ?startSpinAttack@Actor@@UEAAXXZ
+?startSpinAttack@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1760]
+global ?stopSpinAttack@Actor@@UEAAXXZ
+?stopSpinAttack@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1768]
+global ?setDamageNearbyMobs@Actor@@UEAAX_N@Z
+?setDamageNearbyMobs@Actor@@UEAAX_N@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1776]
+global ?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z
+?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1784]
+global ?reloadLootTable@Actor@@UEAAXPEBVEquipmentTableDescription@@@Z
+?reloadLootTable@Actor@@UEAAXPEBVEquipmentTableDescription@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1792]
+global ?reloadLootTable@Actor@@UEAAXXZ
+?reloadLootTable@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1800]
+global ?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ
+?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1808]
+global ?kill@Actor@@UEAAXXZ
+?kill@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1816]
+global ?die@Actor@@UEAAXAEBVActorDamageSource@@@Z
+?die@Actor@@UEAAXAEBVActorDamageSource@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1824]
+global ?shouldTick@Actor@@UEBA_NXZ
+?shouldTick@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1832]
+global ?updateEntitySpecificMolangVariables@Actor@@UEAAXAEAVRenderParams@@@Z
+?updateEntitySpecificMolangVariables@Actor@@UEAAXAEAVRenderParams@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1840]
+global ?canMakeStepSound@Actor@@UEBA_NXZ
+?canMakeStepSound@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1848]
+global ?outOfWorld@Actor@@UEAAXXZ
+?outOfWorld@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1856]
+global ?_hurt@Actor@@UEAA_NAEBVActorDamageSource@@H_N1@Z
+?_hurt@Actor@@UEAA_NAEBVActorDamageSource@@H_N1@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1864]
+global ?markHurt@Actor@@UEAAXXZ
+?markHurt@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1872]
+global ?readAdditionalSaveData@Actor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+?readAdditionalSaveData@Actor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1880]
+global ?addAdditionalSaveData@Actor@@UEAAXAEAVCompoundTag@@@Z
+?addAdditionalSaveData@Actor@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1888]
+global ?_playStepSound@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+?_playStepSound@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1896]
+global ?_playFlySound@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+?_playFlySound@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1904]
+global ?_makeFlySound@Actor@@UEBA_NXZ
+?_makeFlySound@Actor@@UEBA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1912]
+global ?checkInsideBlocks@Actor@@UEAAXM@Z
+?checkInsideBlocks@Actor@@UEAAXM@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1920]
+global ?pushOutOfBlocks@Actor@@UEAAXAEBVVec3@@@Z
+?pushOutOfBlocks@Actor@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1928]
+global ?updateWaterState@Actor@@UEAA_NXZ
+?updateWaterState@Actor@@UEAA_NXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1936]
+global ?doWaterSplashEffect@Actor@@UEAAXXZ
+?doWaterSplashEffect@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1944]
+global ?spawnTrailBubbles@Actor@@UEAAXXZ
+?spawnTrailBubbles@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1952]
+global ?updateInsideBlock@Actor@@UEAAXXZ
+?updateInsideBlock@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1960]
+global ?getLootTable@Actor@@UEAAPEAVLootTable@@XZ
+?getLootTable@Actor@@UEAAPEAVLootTable@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1968]
+global ?getDefaultLootTable@Actor@@UEAAPEAVLootTable@@XZ
+?getDefaultLootTable@Actor@@UEAAPEAVLootTable@@XZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1976]
+global ?_removeRider@Actor@@UEAAXAEBVActorUniqueID@@_N1@Z
+?_removeRider@Actor@@UEAAXAEBVActorUniqueID@@_N1@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1984]
+global ?_onSizeUpdated@Actor@@UEAAXXZ
+?_onSizeUpdated@Actor@@UEAAXXZ:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+1992]
+global ?_doAutoAttackOnTouch@Actor@@UEAAXAEAV1@@Z
+?_doAutoAttackOnTouch@Actor@@UEAAXAEAV1@@Z:
+	mov rax, [rel Actor_vtable]
+	jmp [rax+2000]
+global ?hasComponent@Mob@@UEBA_NAEBVHashString@Util@@@Z
+?hasComponent@Mob@@UEBA_NAEBVHashString@Util@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+0]
+global ?reloadHardcoded@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+?reloadHardcoded@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+8]
+global ?reloadHardcodedClient@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+?reloadHardcodedClient@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+16]
+global ?initializeComponents@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+?initializeComponents@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+24]
+global ?getInterpolatedBodyRot@Mob@@UEBAMM@Z
+?getInterpolatedBodyRot@Mob@@UEBAMM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+152]
+global ?getInterpolatedHeadRot@Mob@@UEBAMM@Z
+?getInterpolatedHeadRot@Mob@@UEBAMM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+160]
+global ?getInterpolatedBodyYaw@Mob@@UEBAMM@Z
+?getInterpolatedBodyYaw@Mob@@UEBAMM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+168]
+global ?getYawSpeedInDegreesPerSecond@Mob@@UEBAMXZ
+?getYawSpeedInDegreesPerSecond@Mob@@UEBAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+176]
+global ?blockedByShield@Mob@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
+?blockedByShield@Mob@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+224]
+global ?teleportTo@Mob@@UEAAXAEBVVec3@@_NHH@Z
+?teleportTo@Mob@@UEAAXAEBVVec3@@_NHH@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+240]
+global ?lerpTo@Mob@@UEAAXAEBVVec3@@AEBVVec2@@H@Z
+?lerpTo@Mob@@UEAAXAEBVVec3@@AEBVVec2@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+264]
+global ?normalTick@Mob@@UEAAXXZ
+?normalTick@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+288]
+global ?baseTick@Mob@@UEAAXXZ
+?baseTick@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+296]
+global ?rideTick@Mob@@UEAAXXZ
+?rideTick@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+304]
+global ?startRiding@Mob@@UEAA_NAEAVActor@@@Z
+?startRiding@Mob@@UEAA_NAEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+328]
+global ?addRider@Mob@@UEAAXAEAVActor@@@Z
+?addRider@Mob@@UEAAXAEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+336]
+global ?playerTouch@Mob@@UEAAXAEAVPlayer@@@Z
+?playerTouch@Mob@@UEAAXAEAVPlayer@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+632]
+global ?isImmobile@Mob@@UEBA_NXZ
+?isImmobile@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+656]
+global ?isPickable@Mob@@UEAA_NXZ
+?isPickable@Mob@@UEAA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+672]
+global ?isSleeping@Mob@@UEBA_NXZ
+?isSleeping@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+688]
+global ?isShootable@Mob@@UEAA_NXZ
+?isShootable@Mob@@UEAA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+696]
+global ?isBlocking@Mob@@UEBA_NXZ
+?isBlocking@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+720]
+global ?isAlive@Mob@@UEBA_NXZ
+?isAlive@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+736]
+global ?isSurfaceMob@Mob@@UEBA_NXZ
+?isSurfaceMob@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+768]
+global ?setTarget@Mob@@UEAAXPEAVActor@@@Z
+?setTarget@Mob@@UEAAXPEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+792]
+global ?attack@Mob@@UEAA_NAEAVActor@@@Z
+?attack@Mob@@UEAA_NAEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+816]
+global ?canPowerJump@Mob@@UEBA_NXZ
+?canPowerJump@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+912]
+global ?isJumping@Mob@@UEBA_NXZ
+?isJumping@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+928]
+global ?actuallyHurt@Mob@@UEAAXHPEBVActorDamageSource@@_N@Z
+?actuallyHurt@Mob@@UEAAXHPEBVActorDamageSource@@_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+976]
+global ?animateHurt@Mob@@UEAAXXZ
+?animateHurt@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+984]
+global ?doFireHurt@Mob@@UEAA_NH@Z
+?doFireHurt@Mob@@UEAA_NH@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+992]
+global ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
+?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1024]
+global ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
+?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1128]
+global ?getArmorMaterialTextureTypeInSlot@Mob@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
+?getArmorMaterialTextureTypeInSlot@Mob@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1136]
+global ?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z
+?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1144]
+global ?setEquippedSlot@Mob@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
+?setEquippedSlot@Mob@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1152]
+global ?setEquippedSlot@Mob@@UEAAXW4ArmorSlot@@HH@Z
+?setEquippedSlot@Mob@@UEAAXW4ArmorSlot@@HH@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1160]
+global ?setOnFire@Mob@@UEAAXH@Z
+?setOnFire@Mob@@UEAAXH@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1264]
+global ?causeFallDamage@Mob@@UEAAXM@Z
+?causeFallDamage@Mob@@UEAAXM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1352]
+global ?canBePulledIntoVehicle@Mob@@UEBA_NXZ
+?canBePulledIntoVehicle@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1400]
+global ?inCaravan@Mob@@UEBA_NXZ
+?inCaravan@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1408]
+global ?stopRiding@Mob@@UEAAX_N00@Z
+?stopRiding@Mob@@UEAAX_N00@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1448]
+global ?buildDebugInfo@Mob@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?buildDebugInfo@Mob@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1472]
+global ?getDeathTime@Mob@@UEBAHXZ
+?getDeathTime@Mob@@UEBAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1504]
+global ?swing@Mob@@UEAAXXZ
+?swing@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1592]
+global ?getYHeadRot@Mob@@UEBAMXZ
+?getYHeadRot@Mob@@UEBAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1648]
+global ?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z
+?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1784]
+global ?kill@Mob@@UEAAXXZ
+?kill@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1816]
+global ?die@Mob@@UEAAXAEBVActorDamageSource@@@Z
+?die@Mob@@UEAAXAEBVActorDamageSource@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1824]
+global ?updateEntitySpecificMolangVariables@Mob@@UEAAXAEAVRenderParams@@@Z
+?updateEntitySpecificMolangVariables@Mob@@UEAAXAEAVRenderParams@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1840]
+global ?outOfWorld@Mob@@UEAAXXZ
+?outOfWorld@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1856]
+global ?_hurt@Mob@@UEAA_NAEBVActorDamageSource@@H_N1@Z
+?_hurt@Mob@@UEAA_NAEBVActorDamageSource@@H_N1@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1864]
+global ?readAdditionalSaveData@Mob@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+?readAdditionalSaveData@Mob@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1880]
+global ?addAdditionalSaveData@Mob@@UEAAXAEAVCompoundTag@@@Z
+?addAdditionalSaveData@Mob@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1888]
+global ?_playStepSound@Mob@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+?_playStepSound@Mob@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1896]
+global ?_removeRider@Mob@@UEAAXAEBVActorUniqueID@@_N1@Z
+?_removeRider@Mob@@UEAAXAEBVActorUniqueID@@_N1@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1984]
+global ?_onSizeUpdated@Mob@@UEAAXXZ
+?_onSizeUpdated@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+1992]
+global ?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z
+?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2008]
+global ?resolveDeathLoot@Mob@@UEAAXHAEBVActorDamageSource@@@Z
+?resolveDeathLoot@Mob@@UEAAXHAEBVActorDamageSource@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2016]
+global ?spawnAnim@Mob@@UEAAXXZ
+?spawnAnim@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2024]
+global ?setSleeping@Mob@@UEAAX_N@Z
+?setSleeping@Mob@@UEAAX_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2032]
+global ?isSprinting@Mob@@UEBA_NXZ
+?isSprinting@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2040]
+global ?setSprinting@Mob@@UEAAX_N@Z
+?setSprinting@Mob@@UEAAX_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2048]
+global ?playAmbientSound@Mob@@UEAAXXZ
+?playAmbientSound@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2056]
+global ?getAmbientSound@Mob@@UEAA?AW4LevelSoundEvent@@XZ
+?getAmbientSound@Mob@@UEAA?AW4LevelSoundEvent@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2064]
+global ?getAmbientSoundPostponeTicks@Mob@@UEAAHXZ
+?getAmbientSoundPostponeTicks@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2072]
+global ?getItemInHandIcon@Mob@@UEAAPEBUTextureUVCoordinateSet@@AEBVItemStack@@H@Z
+?getItemInHandIcon@Mob@@UEAAPEBUTextureUVCoordinateSet@@AEBVItemStack@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2080]
+global ?getSpeed@Mob@@UEBAMXZ
+?getSpeed@Mob@@UEBAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2088]
+global ?setSpeed@Mob@@UEAAXM@Z
+?setSpeed@Mob@@UEAAXM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2096]
+global ?getJumpPower@Mob@@UEBAMXZ
+?getJumpPower@Mob@@UEBAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2104]
+global ?hurtEffects@Mob@@UEAA_NAEBVActorDamageSource@@H_N1@Z
+?hurtEffects@Mob@@UEAA_NAEBVActorDamageSource@@H_N1@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2112]
+global ?getMeleeWeaponDamageBonus@Mob@@UEAAHPEAV1@@Z
+?getMeleeWeaponDamageBonus@Mob@@UEAAHPEAV1@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2120]
+global ?getMeleeKnockbackBonus@Mob@@UEAAHXZ
+?getMeleeKnockbackBonus@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2128]
+global ?travel@Mob@@UEAAXMMM@Z
+?travel@Mob@@UEAAXMMM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2136]
+global ?applyFinalFriction@Mob@@UEAAXM_N@Z
+?applyFinalFriction@Mob@@UEAAXM_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2144]
+global ?updateWalkAnim@Mob@@UEAAXXZ
+?updateWalkAnim@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2152]
+global ?aiStep@Mob@@UEAAXXZ
+?aiStep@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2160]
+global ?pushActors@Mob@@UEAAXXZ
+?pushActors@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2168]
+global ?lookAt@Mob@@UEAAXPEAVActor@@MM@Z
+?lookAt@Mob@@UEAAXPEAVActor@@MM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2176]
+global ?isLookingAtAnEntity@Mob@@UEAA_NXZ
+?isLookingAtAnEntity@Mob@@UEAA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2184]
+global ?checkSpawnRules@Mob@@UEAA_N_N@Z
+?checkSpawnRules@Mob@@UEAA_N_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2192]
+global ?checkSpawnObstruction@Mob@@UEBA_NXZ
+?checkSpawnObstruction@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2200]
+global ?shouldDespawn@Mob@@UEBA_NXZ
+?shouldDespawn@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2208]
+global ?getAttackAnim@Mob@@UEAAMM@Z
+?getAttackAnim@Mob@@UEAAMM@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2216]
+global ?getItemUseDuration@Mob@@UEAAHXZ
+?getItemUseDuration@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2224]
+global ?getItemUseStartupProgress@Mob@@UEAAMXZ
+?getItemUseStartupProgress@Mob@@UEAAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2232]
+global ?getItemUseIntervalProgress@Mob@@UEAAMXZ
+?getItemUseIntervalProgress@Mob@@UEAAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2240]
+global ?getItemuseIntervalAxis@Mob@@UEAAHXZ
+?getItemuseIntervalAxis@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2248]
+global ?getTimeAlongSwing@Mob@@UEAAHXZ
+?getTimeAlongSwing@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2256]
+global ?ate@Mob@@UEAAXXZ
+?ate@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2264]
+global ?getMaxHeadXRot@Mob@@UEAAMXZ
+?getMaxHeadXRot@Mob@@UEAAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2272]
+global ?getLastHurtByMob@Mob@@UEAAPEAV1@XZ
+?getLastHurtByMob@Mob@@UEAAPEAV1@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2280]
+global ?setLastHurtByMob@Mob@@UEAAXPEAV1@@Z
+?setLastHurtByMob@Mob@@UEAAXPEAV1@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2288]
+global ?getLastHurtByPlayer@Mob@@UEAAPEAVPlayer@@XZ
+?getLastHurtByPlayer@Mob@@UEAAPEAVPlayer@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2296]
+global ?setLastHurtByPlayer@Mob@@UEAAXPEAVPlayer@@@Z
+?setLastHurtByPlayer@Mob@@UEAAXPEAVPlayer@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2304]
+global ?getLastHurtMob@Mob@@UEAAPEAV1@XZ
+?getLastHurtMob@Mob@@UEAAPEAV1@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2312]
+global ?setLastHurtMob@Mob@@UEAAXPEAVActor@@@Z
+?setLastHurtMob@Mob@@UEAAXPEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2320]
+global ?isAlliedTo@Mob@@UEAA_NPEAV1@@Z
+?isAlliedTo@Mob@@UEAA_NPEAV1@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2328]
+global ?doHurtTarget@Mob@@UEAA_NPEAVActor@@@Z
+?doHurtTarget@Mob@@UEAA_NPEAVActor@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2336]
+global ?canBeControlledByRider@Mob@@UEAA_NXZ
+?canBeControlledByRider@Mob@@UEAA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2344]
+global ?leaveCaravan@Mob@@UEAAXXZ
+?leaveCaravan@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2352]
+global ?joinCaravan@Mob@@UEAAXPEAV1@@Z
+?joinCaravan@Mob@@UEAAXPEAV1@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2360]
+global ?hasCaravanTail@Mob@@UEBA_NXZ
+?hasCaravanTail@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2368]
+global ?getCaravanHead@Mob@@UEBA?AVActorUniqueID@@XZ
+?getCaravanHead@Mob@@UEBA?AVActorUniqueID@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2376]
+global ?getArmorValue@Mob@@UEAAHXZ
+?getArmorValue@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2384]
+global ?getArmorCoverPercentage@Mob@@UEBAMXZ
+?getArmorCoverPercentage@Mob@@UEBAMXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2392]
+global ?hurtArmor@Mob@@UEAAXH@Z
+?hurtArmor@Mob@@UEAAXH@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2400]
+global ?containerChanged@Mob@@UEAAXH@Z
+?containerChanged@Mob@@UEAAXH@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2408]
+global ?updateEquipment@Mob@@UEAAXXZ
+?updateEquipment@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2416]
+global ?clearEquipment@Mob@@UEAAHXZ
+?clearEquipment@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2424]
+global ?getAllArmor@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+?getAllArmor@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2432]
+global ?getAllArmorID@Mob@@UEBA?AV?$vector@HV?$allocator@H@std@@@std@@XZ
+?getAllArmorID@Mob@@UEBA?AV?$vector@HV?$allocator@H@std@@@std@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2440]
+global ?getAllHand@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+?getAllHand@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2448]
+global ?getAllEquipment@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+?getAllEquipment@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2456]
+global ?getArmorTypeHash@Mob@@UEAAHXZ
+?getArmorTypeHash@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2464]
+global ?sendInventory@Mob@@UEAAX_N@Z
+?sendInventory@Mob@@UEAAX_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2472]
+global ?sendArmor@Mob@@UEAAXXZ
+?sendArmor@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2480]
+global ?getDamageAfterMagicAbsorb@Mob@@UEAAHAEBVActorDamageSource@@H@Z
+?getDamageAfterMagicAbsorb@Mob@@UEAAHAEBVActorDamageSource@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2488]
+global ?createAIGoals@Mob@@UEAA_NXZ
+?createAIGoals@Mob@@UEAA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2496]
+global ?onBorn@Mob@@UEAAXAEAVActor@@0@Z
+?onBorn@Mob@@UEAAXAEAVActor@@0@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2504]
+global ?setItemSlot@Mob@@UEAA_NW4EquipmentSlot@@AEBVItemStack@@@Z
+?setItemSlot@Mob@@UEAA_NW4EquipmentSlot@@AEBVItemStack@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2512]
+global ?goDownInWater@Mob@@UEAAXXZ
+?goDownInWater@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2520]
+global ?setTransitioningSitting@Mob@@UEAAX_N@Z
+?setTransitioningSitting@Mob@@UEAAX_N@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2528]
+global ?attackAnimation@Mob@@UEAAXPEAVActor@@M@Z
+?attackAnimation@Mob@@UEAAXPEAVActor@@M@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2536]
+global ?getAttackTime@Mob@@UEAAHXZ
+?getAttackTime@Mob@@UEAAHXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2544]
+global ?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z
+?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2552]
+global ?canExistWhenDisallowMob@Mob@@UEBA_NXZ
+?canExistWhenDisallowMob@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2560]
+global ?useNewAi@Mob@@UEBA_NXZ
+?useNewAi@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2568]
+global ?ascendLadder@Mob@@UEAAXXZ
+?ascendLadder@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2576]
+global ?ascendScaffolding@Mob@@UEAAXXZ
+?ascendScaffolding@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2584]
+global ?descendScaffolding@Mob@@UEAAXXZ
+?descendScaffolding@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2592]
+global ?initBodyControl@Mob@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
+?initBodyControl@Mob@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2600]
+global ?jumpFromGround@Mob@@UEAAXXZ
+?jumpFromGround@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2608]
+global ?updateAi@Mob@@UEAAXXZ
+?updateAi@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2616]
+global ?newServerAiStep@Mob@@UEAAXXZ
+?newServerAiStep@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2624]
+global ?_serverAiMobStep@Mob@@UEAAXXZ
+?_serverAiMobStep@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2632]
+global ?getDamageAfterEnchantReduction@Mob@@UEAAHAEBVActorDamageSource@@H@Z
+?getDamageAfterEnchantReduction@Mob@@UEAAHAEBVActorDamageSource@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2640]
+global ?getDamageAfterArmorAbsorb@Mob@@UEAAHAEBVActorDamageSource@@H@Z
+?getDamageAfterArmorAbsorb@Mob@@UEAAHAEBVActorDamageSource@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2648]
+global ?dropEquipment@Mob@@UEAAXXZ
+?dropEquipment@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2656]
+global ?dropEquipment@Mob@@UEAAXAEBVActorDamageSource@@H@Z
+?dropEquipment@Mob@@UEAAXAEBVActorDamageSource@@H@Z:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2664]
+global ?dropBags@Mob@@UEAAXXZ
+?dropBags@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2672]
+global ?dropContainer@Mob@@UEAAXXZ
+?dropContainer@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2680]
+global ?tickDeath@Mob@@UEAAXXZ
+?tickDeath@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2688]
+global ?_endJump@Mob@@UEAAXXZ
+?_endJump@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2696]
+global ?updateGliding@Mob@@UEAAXXZ
+?updateGliding@Mob@@UEAAXXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2704]
+global ?_allowAscendingScaffolding@Mob@@UEBA_NXZ
+?_allowAscendingScaffolding@Mob@@UEBA_NXZ:
+	mov rax, [rel Mob_vtable]
+	jmp [rax+2712]
+global ?reloadHardcoded@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+?reloadHardcoded@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+8]
+global ?initializeComponents@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+?initializeComponents@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+24]
+global ?remove@Player@@UEAAXXZ
+?remove@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+72]
+global ?getAttachPos@Player@@UEBA?AVVec3@@W4ActorLocation@@M@Z
+?getAttachPos@Player@@UEBA?AVVec3@@W4ActorLocation@@M@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+112]
+global ?move@Player@@UEAAXAEBVVec3@@@Z
+?move@Player@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+136]
+global ?teleportTo@Player@@UEAAXAEBVVec3@@_NHH@Z
+?teleportTo@Player@@UEAAXAEBVVec3@@_NHH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+240]
+global ?getAddPacket@Player@@UEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@XZ
+?getAddPacket@Player@@UEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+280]
+global ?normalTick@Player@@UEAAXXZ
+?normalTick@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+288]
+global ?rideTick@Player@@UEAAXXZ
+?rideTick@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+304]
+global ?getRidingHeight@Player@@UEAAMXZ
+?getRidingHeight@Player@@UEAAMXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+320]
+global ?getFormattedNameTag@Player@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+?getFormattedNameTag@Player@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+440]
+global ?getAlwaysShowNameTag@Player@@UEBA_NXZ
+?getAlwaysShowNameTag@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+464]
+global ?getCameraOffset@Player@@UEBAMXZ
+?getCameraOffset@Player@@UEBAMXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+552]
+global ?isImmobile@Player@@UEBA_NXZ
+?isImmobile@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+656]
+global ?isSleeping@Player@@UEBA_NXZ
+?isSleeping@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+688]
+global ?isShootable@Player@@UEAA_NXZ
+?isShootable@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+696]
+global ?isBlocking@Player@@UEBA_NXZ
+?isBlocking@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+720]
+global ?isDamageBlocked@Player@@UEBA_NAEBVActorDamageSource@@@Z
+?isDamageBlocked@Player@@UEBA_NAEBVActorDamageSource@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+728]
+global ?isCreativeModeAllowed@Player@@UEAA_NXZ
+?isCreativeModeAllowed@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+760]
+global ?attack@Player@@UEAA_NAEAVActor@@@Z
+?attack@Player@@UEAA_NAEAVActor@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+816]
+global ?adjustDamageAmount@Player@@UEBAXAEAH@Z
+?adjustDamageAmount@Player@@UEBAXAEAH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+832]
+global ?isJumping@Player@@UEBA_NXZ
+?isJumping@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+928]
+global ?isInvulnerableTo@Player@@UEBA_NAEBVActorDamageSource@@@Z
+?isInvulnerableTo@Player@@UEBA_NAEBVActorDamageSource@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+968]
+global ?actuallyHurt@Player@@UEAAXHPEBVActorDamageSource@@_N@Z
+?actuallyHurt@Player@@UEAAXHPEBVActorDamageSource@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+976]
+global ?onBounceStarted@Player@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+?onBounceStarted@Player@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1008]
+global ?feed@Player@@UEAAXH@Z
+?feed@Player@@UEAAXH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1016]
+global ?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z
+?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1024]
+global ?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ
+?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1040]
+global ?awardKillScore@Player@@UEAAXAEAVActor@@H@Z
+?awardKillScore@Player@@UEAAXAEAVActor@@H@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1104]
+global ?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
+?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1112]
+global ?getCarriedItem@Player@@UEBAAEBVItemStack@@XZ
+?getCarriedItem@Player@@UEBAAEBVItemStack@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1168]
+global ?setCarriedItem@Player@@UEAAXAEBVItemStack@@@Z
+?setCarriedItem@Player@@UEAAXAEBVItemStack@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1176]
+global ?setOffhandSlot@Player@@UEAAXAEBVItemStack@@@Z
+?setOffhandSlot@Player@@UEAAXAEBVItemStack@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1184]
+global ?getEquippedTotem@Player@@UEBAAEBVItemStack@@XZ
+?getEquippedTotem@Player@@UEBAAEBVItemStack@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1192]
+global ?consumeTotem@Player@@UEAA_NXZ
+?consumeTotem@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1200]
+global ?getEntityTypeId@Player@@UEBA?AW4ActorType@@XZ
+?getEntityTypeId@Player@@UEBA?AW4ActorType@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1240]
+global ?getPortalCooldown@Player@@UEBAHXZ
+?getPortalCooldown@Player@@UEBAHXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1288]
+global ?getPortalWaitTime@Player@@UEBAHXZ
+?getPortalWaitTime@Player@@UEBAHXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1296]
+global ?onSynchedDataUpdate@Player@@UEAAXH@Z
+?onSynchedDataUpdate@Player@@UEAAXH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1384]
+global ?canAddRider@Player@@UEBA_NAEAVActor@@@Z
+?canAddRider@Player@@UEBA_NAEAVActor@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1392]
+global ?canBePulledIntoVehicle@Player@@UEBA_NXZ
+?canBePulledIntoVehicle@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1400]
+global ?sendMotionPacketIfNeeded@Player@@UEAAXXZ
+?sendMotionPacketIfNeeded@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1432]
+global ?startSwimming@Player@@UEAAXXZ
+?startSwimming@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1456]
+global ?stopSwimming@Player@@UEAAXXZ
+?stopSwimming@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1464]
+global ?getCommandPermissionLevel@Player@@UEBA?AW4CommandPermissionLevel@@XZ
+?getCommandPermissionLevel@Player@@UEBA?AW4CommandPermissionLevel@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1480]
+global ?getAnimationComponent@Player@@UEAAAEAVAnimationComponent@@XZ
+?getAnimationComponent@Player@@UEAAAEAVAnimationComponent@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1576]
+global ?useItem@Player@@UEAAXAEAVItemStack@@W4ItemUseMethod@@_N@Z
+?useItem@Player@@UEAAXAEAVItemStack@@W4ItemUseMethod@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1600]
+global ?getMapDecorationRotation@Player@@UEBAMXZ
+?getMapDecorationRotation@Player@@UEBAMXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1632]
+global ?isWorldBuilder@Player@@UEAA_NXZ
+?isWorldBuilder@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1656]
+global ?isCreative@Player@@UEBA_NXZ
+?isCreative@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1664]
+global ?isAdventure@Player@@UEBA_NXZ
+?isAdventure@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1672]
+global ?add@Player@@UEAA_NAEAVItemStack@@@Z
+?add@Player@@UEAA_NAEAVItemStack@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1680]
+global ?drop@Player@@UEAA_NAEBVItemStack@@_N@Z
+?drop@Player@@UEAA_NAEBVItemStack@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1688]
+global ?startSpinAttack@Player@@UEAAXXZ
+?startSpinAttack@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1760]
+global ?stopSpinAttack@Player@@UEAAXXZ
+?stopSpinAttack@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1768]
+global ?die@Player@@UEAAXAEBVActorDamageSource@@@Z
+?die@Player@@UEAAXAEBVActorDamageSource@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1824]
+global ?_hurt@Player@@UEAA_NAEBVActorDamageSource@@H_N1@Z
+?_hurt@Player@@UEAA_NAEBVActorDamageSource@@H_N1@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1864]
+global ?readAdditionalSaveData@Player@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+?readAdditionalSaveData@Player@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1880]
+global ?addAdditionalSaveData@Player@@UEAAXAEAVCompoundTag@@@Z
+?addAdditionalSaveData@Player@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1888]
+global ?_onSizeUpdated@Player@@UEAAXXZ
+?_onSizeUpdated@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+1992]
+global ?setSleeping@Player@@UEAAX_N@Z
+?setSleeping@Player@@UEAAX_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2032]
+global ?getSpeed@Player@@UEBAMXZ
+?getSpeed@Player@@UEBAMXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2088]
+global ?setSpeed@Player@@UEAAXM@Z
+?setSpeed@Player@@UEAAXM@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2096]
+global ?travel@Player@@UEAAXMMM@Z
+?travel@Player@@UEAAXMMM@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2136]
+global ?aiStep@Player@@UEAAXXZ
+?aiStep@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2160]
+global ?getItemUseDuration@Player@@UEAAHXZ
+?getItemUseDuration@Player@@UEAAHXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2224]
+global ?getItemUseStartupProgress@Player@@UEAAMXZ
+?getItemUseStartupProgress@Player@@UEAAMXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2232]
+global ?getItemUseIntervalProgress@Player@@UEAAMXZ
+?getItemUseIntervalProgress@Player@@UEAAMXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2240]
+global ?getAllHand@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+?getAllHand@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2448]
+global ?getAllEquipment@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+?getAllEquipment@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2456]
+global ?sendInventory@Player@@UEAAX_N@Z
+?sendInventory@Player@@UEAAX_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2472]
+global ?canExistWhenDisallowMob@Player@@UEBA_NXZ
+?canExistWhenDisallowMob@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2560]
+global ?useNewAi@Player@@UEBA_NXZ
+?useNewAi@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2568]
+global ?initBodyControl@Player@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
+?initBodyControl@Player@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2600]
+global ?jumpFromGround@Player@@UEAAXXZ
+?jumpFromGround@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2608]
+global ?updateAi@Player@@UEAAXXZ
+?updateAi@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2616]
+global ?dropEquipment@Player@@UEAAXXZ
+?dropEquipment@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2656]
+global ?dropEquipment@Player@@UEAAXAEBVActorDamageSource@@H@Z
+?dropEquipment@Player@@UEAAXAEBVActorDamageSource@@H@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2664]
+global ?updateGliding@Player@@UEAAXXZ
+?updateGliding@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2704]
+global ?prepareRegion@Player@@UEAAXAEAVChunkSource@@@Z
+?prepareRegion@Player@@UEAAXAEAVChunkSource@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2720]
+global ?destroyRegion@Player@@UEAAXXZ
+?destroyRegion@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2728]
+global ?suspendRegion@Player@@UEAAXXZ
+?suspendRegion@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2736]
+global ?_fireWillChangeDimension@Player@@UEAAXXZ
+?_fireWillChangeDimension@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2744]
+global ?_fireDimensionChanged@Player@@UEAAXXZ
+?_fireDimensionChanged@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2752]
+global ?changeDimensionWithCredits@Player@@UEAAXH@Z
+?changeDimensionWithCredits@Player@@UEAAXH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2760]
+global ?tickWorld@Player@@UEAAHAEBVTick@@@Z
+?tickWorld@Player@@UEAAHAEBVTick@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2768]
+global ?frameUpdate@Player@@UEAAXAEAVFrameUpdateContextBase@@@Z
+?frameUpdate@Player@@UEAAXAEAVFrameUpdateContextBase@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2776]
+global ?getTickingOffsets@Player@@UEBAAEBV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@XZ
+?getTickingOffsets@Player@@UEBAAEBV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2784]
+global ?moveView@Player@@UEAAXXZ
+?moveView@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2792]
+global ?moveSpawnView@Player@@UEAAXAEBVVec3@@@Z
+?moveSpawnView@Player@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2800]
+global ?setName@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?setName@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2808]
+global ?checkMovementStats@Player@@UEAAXAEBVVec3@@@Z
+?checkMovementStats@Player@@UEAAXAEBVVec3@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2816]
+global ?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ
+?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2824]
+global ?isAutoJumpEnabled@Player@@UEBA_NXZ
+?isAutoJumpEnabled@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2832]
+global ?respawn@Player@@UEAAXXZ
+?respawn@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2840]
+global ?resetRot@Player@@UEAAXXZ
+?resetRot@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2848]
+global ?resetPos@Player@@UEAAX_N@Z
+?resetPos@Player@@UEAAX_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2856]
+global ?isInTrialMode@Player@@UEAA_NXZ
+?isInTrialMode@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2864]
+global ?hasResource@Player@@UEAA_NH@Z
+?hasResource@Player@@UEAA_NH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2872]
+global ?completeUsingItem@Player@@UEAAXXZ
+?completeUsingItem@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2880]
+global ?setPermissions@Player@@UEAAXW4CommandPermissionLevel@@@Z
+?setPermissions@Player@@UEAAXW4CommandPermissionLevel@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2888]
+global ?startCrafting@Player@@UEAAXAEBVBlockPos@@_N@Z
+?startCrafting@Player@@UEAAXAEBVBlockPos@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2896]
+global ?startStonecutting@Player@@UEAAXAEBVBlockPos@@@Z
+?startStonecutting@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2904]
+global ?startDestroying@Player@@UEAAXXZ
+?startDestroying@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2912]
+global ?stopDestroying@Player@@UEAAXXZ
+?stopDestroying@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2920]
+global ?openContainer@Player@@UEAAXAEBVActorUniqueID@@@Z
+?openContainer@Player@@UEAAXAEBVActorUniqueID@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2928]
+global ?openContainer@Player@@UEAAXAEBVBlockPos@@@Z
+?openContainer@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2936]
+global ?openFurnace@Player@@UEAAXAEBVBlockPos@@@Z
+?openFurnace@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2944]
+global ?openBlastFurnace@Player@@UEAAXAEBVBlockPos@@@Z
+?openBlastFurnace@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2952]
+global ?openSmoker@Player@@UEAAXAEBVBlockPos@@@Z
+?openSmoker@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2960]
+global ?openEnchanter@Player@@UEAAXAEBVBlockPos@@@Z
+?openEnchanter@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2968]
+global ?openAnvil@Player@@UEAAXAEBVBlockPos@@@Z
+?openAnvil@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2976]
+global ?openGrindstone@Player@@UEAAXAEBVBlockPos@@@Z
+?openGrindstone@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2984]
+global ?openBrewingStand@Player@@UEAAXAEBVBlockPos@@@Z
+?openBrewingStand@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+2992]
+global ?openHopper@Player@@UEAAXAEBVActorUniqueID@@@Z
+?openHopper@Player@@UEAAXAEBVActorUniqueID@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3000]
+global ?openHopper@Player@@UEAAXAEBVBlockPos@@@Z
+?openHopper@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3008]
+global ?openDispenser@Player@@UEAAXAEBVBlockPos@@_N@Z
+?openDispenser@Player@@UEAAXAEBVBlockPos@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3016]
+global ?openBeacon@Player@@UEAAXAEBVBlockPos@@@Z
+?openBeacon@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3024]
+global ?openPortfolio@Player@@UEAAXXZ
+?openPortfolio@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3032]
+global ?openBook@Player@@UEAAXH_NHPEAVBlockActor@@@Z
+?openBook@Player@@UEAAXH_NHPEAVBlockActor@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3040]
+global ?openCommandBlock@Player@@UEAAXAEBVBlockPos@@@Z
+?openCommandBlock@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3048]
+global ?openCommandBlockMinecart@Player@@UEAAXAEBVActorUniqueID@@@Z
+?openCommandBlockMinecart@Player@@UEAAXAEBVActorUniqueID@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3056]
+global ?openHorseInventory@Player@@UEAAXAEBVActorUniqueID@@@Z
+?openHorseInventory@Player@@UEAAXAEBVActorUniqueID@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3064]
+global ?openTrading@Player@@UEAAXAEBVActorUniqueID@@_N@Z
+?openTrading@Player@@UEAAXAEBVActorUniqueID@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3072]
+global ?canOpenContainerScreen@Player@@UEAA_NXZ
+?canOpenContainerScreen@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3080]
+global ?openChalkboard@Player@@UEAAXAEAVChalkboardBlockActor@@_N@Z
+?openChalkboard@Player@@UEAAXAEAVChalkboardBlockActor@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3088]
+global ?openNpcInteractScreen@Player@@UEAAXAEAVActor@@@Z
+?openNpcInteractScreen@Player@@UEAAXAEAVActor@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3096]
+global ?openInventory@Player@@UEAAXXZ
+?openInventory@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3104]
+global ?openStructureEditor@Player@@UEAAXAEBVBlockPos@@@Z
+?openStructureEditor@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3112]
+global ?openLabTable@Player@@UEAAXAEBVBlockPos@@@Z
+?openLabTable@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3120]
+global ?openElementConstructor@Player@@UEAAXAEBVBlockPos@@@Z
+?openElementConstructor@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3128]
+global ?openCompoundCreator@Player@@UEAAXAEBVBlockPos@@@Z
+?openCompoundCreator@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3136]
+global ?openMaterialReducer@Player@@UEAAXAEBVBlockPos@@@Z
+?openMaterialReducer@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3144]
+global ?openLoom@Player@@UEAAXAEBVBlockPos@@@Z
+?openLoom@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3152]
+global ?openStonecutter@Player@@UEAAXAEBVBlockPos@@@Z
+?openStonecutter@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3160]
+global ?openCartographyTable@Player@@UEAAXAEBVBlockPos@@@Z
+?openCartographyTable@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3168]
+global ?displayChatMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+?displayChatMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3176]
+global ?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3184]
+global ?displayLocalizableMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
+?displayLocalizableMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3192]
+global ?displayTextObjectMessage@Player@@UEAAXAEBVTextObjectRoot@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+?displayTextObjectMessage@Player@@UEAAXAEBVTextObjectRoot@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3200]
+global ?displayWhisperMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
+?displayWhisperMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3208]
+global ?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z
+?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3216]
+global ?stopSleepInBed@Player@@UEAAX_N0@Z
+?stopSleepInBed@Player@@UEAAX_N0@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3224]
+global ?canStartSleepInBed@Player@@UEAA_NXZ
+?canStartSleepInBed@Player@@UEAA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3232]
+global ?getSleepTimer@Player@@UEBAHXZ
+?getSleepTimer@Player@@UEBAHXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3240]
+global ?getPreviousTickSleepTimer@Player@@UEBAHXZ
+?getPreviousTickSleepTimer@Player@@UEBAHXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3248]
+global ?openSign@Player@@UEAAXAEBVBlockPos@@@Z
+?openSign@Player@@UEAAXAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3256]
+global ?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3264]
+global ?isLocalPlayer@Player@@UEBA_NXZ
+?isLocalPlayer@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3272]
+global ?isHostingPlayer@Player@@UEBA_NXZ
+?isHostingPlayer@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3280]
+global ?isLoading@Player@@UEBA_NXZ
+?isLoading@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3288]
+global ?isPlayerInitialized@Player@@UEBA_NXZ
+?isPlayerInitialized@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3296]
+global ?stopLoading@Player@@UEAAXXZ
+?stopLoading@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3304]
+global ?registerTrackedBoss@Player@@UEAAXVActorUniqueID@@@Z
+?registerTrackedBoss@Player@@UEAAXVActorUniqueID@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3312]
+global ?unRegisterTrackedBoss@Player@@UEAAXVActorUniqueID@@@Z
+?unRegisterTrackedBoss@Player@@UEAAXVActorUniqueID@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3320]
+global ?setPlayerGameType@Player@@UEAAXW4GameType@@@Z
+?setPlayerGameType@Player@@UEAAXW4GameType@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3328]
+global ?_crit@Player@@UEAAXAEAVActor@@@Z
+?_crit@Player@@UEAAXAEAVActor@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3336]
+global ?getEventing@Player@@UEBAPEAVIMinecraftEventing@@XZ
+?getEventing@Player@@UEBAPEAVIMinecraftEventing@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3344]
+global ?getUserId@Player@@UEBAIXZ
+?getUserId@Player@@UEBAIXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3352]
+global ?sendEventPacket@Player@@UEBAXAEAVEventPacket@@@Z
+?sendEventPacket@Player@@UEBAXAEAVEventPacket@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3360]
+global ?addExperience@Player@@UEAAXH@Z
+?addExperience@Player@@UEAAXH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3368]
+global ?addLevels@Player@@UEAAXH@Z
+?addLevels@Player@@UEAAXH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3376]
+global ?setContainerData@Player@@UEAAXAEAVIContainerManager@@HH@Z
+?setContainerData@Player@@UEAAXAEAVIContainerManager@@HH@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3384]
+global ?slotChanged@Player@@UEAAXAEAVIContainerManager@@HAEBVItemStack@@1_N@Z
+?slotChanged@Player@@UEAAXAEAVIContainerManager@@HAEBVItemStack@@1_N@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3392]
+global ?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1@Z
+?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3400]
+global ?refreshContainer@Player@@UEAAXAEAVIContainerManager@@@Z
+?refreshContainer@Player@@UEAAXAEAVIContainerManager@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3408]
+global ?deleteContainerManager@Player@@UEAAXXZ
+?deleteContainerManager@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3416]
+global ?setFieldOfViewModifier@Player@@UEAAXM@Z
+?setFieldOfViewModifier@Player@@UEAAXM@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3424]
+global ?isPositionRelevant@Player@@UEAA_NHAEBVBlockPos@@@Z
+?isPositionRelevant@Player@@UEAA_NHAEBVBlockPos@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3432]
+global ?isEntityRelevant@Player@@UEAA_NAEBVActor@@@Z
+?isEntityRelevant@Player@@UEAA_NAEBVActor@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3440]
+global ?isTeacher@Player@@UEBA_NXZ
+?isTeacher@Player@@UEBA_NXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3448]
+global ?onSuspension@Player@@UEAAXXZ
+?onSuspension@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3456]
+global ?onLinkedSlotsChanged@Player@@UEAAXXZ
+?onLinkedSlotsChanged@Player@@UEAAXXZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3464]
+global ?startCooldown@Player@@UEAAXPEBVItem@@@Z
+?startCooldown@Player@@UEAAXPEBVItem@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3472]
+global ?getItemCooldownLeft@Player@@UEBAHW4CooldownType@@@Z
+?getItemCooldownLeft@Player@@UEBAHW4CooldownType@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3480]
+global ?isItemInCooldown@Player@@UEBA_NW4CooldownType@@@Z
+?isItemInCooldown@Player@@UEBA_NW4CooldownType@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3488]
+global ?sendInventoryTransaction@Player@@UEBAXAEBVInventoryTransaction@@@Z
+?sendInventoryTransaction@Player@@UEBAXAEBVInventoryTransaction@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3496]
+global ?sendComplexInventoryTransaction@Player@@UEBAXV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@@Z
+?sendComplexInventoryTransaction@Player@@UEBAXV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3504]
+global ?sendNetworkPacket@Player@@UEBAXAEAVPacket@@@Z
+?sendNetworkPacket@Player@@UEBAXAEAVPacket@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3512]
+global ?getPlayerEventCoordinator@Player@@UEAAAEAVPlayerEventCoordinator@@XZ
+?getPlayerEventCoordinator@Player@@UEAAAEAVPlayerEventCoordinator@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3520]
+global ?getMoveInputHandler@Player@@UEAAPEAVMoveInputHandler@@XZ
+?getMoveInputHandler@Player@@UEAAPEAVMoveInputHandler@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3528]
+global ?getInputMode@Player@@UEBA?AW4InputMode@@XZ
+?getInputMode@Player@@UEBA?AW4InputMode@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3536]
+global ?getPlayMode@Player@@UEBA?AW4ClientPlayMode@@XZ
+?getPlayMode@Player@@UEBA?AW4ClientPlayMode@@XZ:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3544]
+global ?reportMovementTelemetry@Player@@UEAAXW4MovementEventType@@@Z
+?reportMovementTelemetry@Player@@UEAAXW4MovementEventType@@@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3552]
+global ?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z
+?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z:
+	mov rax, [rel Player_vtable]
+	jmp [rax+3560]

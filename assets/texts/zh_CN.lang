@@ -7,10 +7,10 @@ item.exnihilo:hammerDiamond.name=金锤
 item.exnihilo:crookWood.name=木钩
 item.exnihilo:crookBone.name=骨钩
 
-item.exnihilo:itemPebble.stone.name=圆石石子儿
-item.exnihilo:itemPebble.granite.name=花岗岩石子儿
-item.exnihilo:itemPebble.diorite.name=闪长岩石子儿
-item.exnihilo:itemPebble.andesite.name=安山岩石子儿
+item.exnihilo:pebble.stone.name=圆石石子儿
+item.exnihilo:pebble.granite.name=花岗岩石子儿
+item.exnihilo:pebble.diorite.name=闪长岩石子儿
+item.exnihilo:pebble.andesite.name=安山岩石子儿
 
 item.exnihilo:itemMaterial.removed.name=已从Mod中移除
 item.exnihilo:itemMaterial.porcelain_clay.name=瓷土
@@ -37,6 +37,7 @@ item.exnihilo:itemSeedDarkOak.name=黑色橡木种子
 
 itemGroup.name.resources=Ex Nihilo材料
 itemGroup.name.seeds=Ex Nihilo种子
+itemGroup.name.pebbles=Ex Nihilo卵石
 itemGroup.name.hammers=Ex Nihilo锤子
 itemGroup.name.crooks=Ex Nihilo钩
 

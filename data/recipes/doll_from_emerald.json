@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "exnihilo:doll_from_emerald"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "xyx",
+      " x ",
+      "x x"
+    ],
+    "key": {
+      "x": {
+        "item": "exnihilo:itemmaterial:1"
+      },
+      "y": {
+        "item": "minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "exnihilo:itemmaterial:5"
+    }
+  }
+}

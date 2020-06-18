@@ -1,6 +1,7 @@
 #include "Zenova.h"
 
 #include <iostream>
+#include "main.h"
 
 #include "minecraft/VanillaItems.h"
 #include "minecraft/BlockLegacy.h"
@@ -9,9 +10,13 @@
 #include "minecraft/BlockGraphics.h"
 #include "minecraft/VanillaItems.h"
 #include "minecraft/BlockDefinitionGroup.h"
+#include "minecraft/ActorType.h"
+#include "minecraft/ProjectileFactory.h"
+#include "minecraft/ActorRenderDispatcher.h"
 
 #include "items/ENItems.h"
 #include "blocks/ENBlocks.h"
+#include "entities/ENEntities.h"
 #include "handlers/HandlerCrook.h"
 #include "handlers/HandlerHammer.h"
 #include "registries/HammerRegistry.h"
@@ -79,6 +84,20 @@ void BlockLegacy_playerDestroy(BlockLegacy* self, Player& player, const BlockPos
 		_BlockLegacy_playerDestroy(self, player, pos, block);
 }
 
+void (*_initProjectileFactory)();
+void initProjectileFactory() {
+	_initProjectileFactory();
+
+	ENEntities::initProjectileMap();
+}
+
+void (*_initEntityRenderers)(ActorRenderDispatcher*, GeometryGroup&, mce::TextureGroup&, BlockTessellator&, const ActorResourceDefinitionGroup&, const SemVersion&);
+void initEntityRenderers(ActorRenderDispatcher* self, GeometryGroup& geometry, mce::TextureGroup& textures, BlockTessellator& blockTessellator, const ActorResourceDefinitionGroup& definitions, const SemVersion& version) {
+	_initEntityRenderers(self, geometry, textures, blockTessellator, definitions, version);
+
+	ENEntities::initRenderers(self, textures);
+}
+
 class ExNihiloBedrock : public Zenova::Mod {
 private:
 	ExNihiloDefaultRecipes* defaultRecipes;
@@ -89,14 +108,18 @@ private:
 
 		defaultRecipes = new ExNihiloDefaultRecipes();
 
+		ENEntities::initEntityMap();
+
 		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, (void**)&_registerItems);
 		Zenova::Hook::Create(&VanillaItems::initCreativeCategories, &initCreativeCategories, (void**)&_initCreativeCategories);
 		Zenova::Hook::Create(&VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, (void**)&_initCreativeItemsCallback);
 		Zenova::Hook::Create(&VanillaItems::initClientData, &initClientData, (void**)&_initClientData);
-		Zenova::Platform::CreateHook(reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1651220)), &BlockLegacy_playerDestroy, (void**)&_BlockLegacy_playerDestroy);
+		Zenova::Hook::Create(BlockLegacy_vtable, &BlockLegacy::playerDestroy, &BlockLegacy_playerDestroy, (void**)&_BlockLegacy_playerDestroy);
 		Zenova::Hook::Create(&WorldSystems::init, &initWorldSystems, (void**)&_initWorldSystems);
 		Zenova::Hook::Create(&BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, (void**)&_registerLooseBlockGraphics);
 		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, (void**)&_registerBlocks);
+		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, (void**)&_initProjectileFactory);
+		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, (void**)&_initEntityRenderers);
 	}
 
 	virtual ~ExNihiloBedrock() {}

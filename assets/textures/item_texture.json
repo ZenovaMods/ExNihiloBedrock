@@ -30,6 +30,14 @@
       "itemCookedSilkworm": {
         "textures": "textures/items/silkwormCooked"
       },
+      "itemPebble": {
+        "textures": [
+          "textures/items/itemPebble",
+          "textures/items/itemPebble",
+          "textures/items/itemPebble",
+          "textures/items/itemPebble"
+        ]
+      },
       "itemSeed": {
         "textures": [
           "textures/items/seedOak",

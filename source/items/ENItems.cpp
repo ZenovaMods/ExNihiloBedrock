@@ -1,11 +1,15 @@
 #include "ENItems.h"
 
+#include <Zenova.h>
+
 #include "minecraft/ItemRegistry.h"
 #include "minecraft/BlockPlanterItem.h"
 #include "minecraft/VanillaBlockRegistry.h"
 #include "minecraft/VanillaItemTiers.h"
+#include "minecraft/ItemStack.h"
 
 #include "ItemResource.h"
+#include "ItemPebble.h"
 #include "ItemCookedSilkworm.h"
 #include "seeds/ItemSeedBase.h"
 #include "tools/CrookBase.h"
@@ -22,6 +26,7 @@ WeakPtr<CrookBase> ENItems::crookBone;
 
 WeakPtr<ItemResource> ENItems::resources;
 WeakPtr<ItemCookedSilkworm> ENItems::cookedSilkworm;
+WeakPtr<ItemPebble> ENItems::pebbles;
 
 WeakPtr<ItemSeedBase> ENItems::itemSeedSaplings;
 std::vector<WeakPtr<ItemSeedBase>> ENItems::itemSeeds;
@@ -39,6 +44,7 @@ void ENItems::init() {
 	resources = ItemRegistry::registerItem<ItemResource>("exnihilo:itemMaterial", ItemRegistry::getMaxItemID());
 
 	cookedSilkworm = ItemRegistry::registerItem<ItemCookedSilkworm>("exnihilo:silkwormCooked", ItemRegistry::getMaxItemID());
+	pebbles = ItemRegistry::registerItem<ItemPebble>("exnihilo:pebble", ItemRegistry::getMaxItemID());
 
 	itemSeedSaplings = ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeed", ItemRegistry::getMaxItemID(), **VanillaBlocks::mSapling, true);
 	itemSeeds.clear();
@@ -58,13 +64,14 @@ void ENItems::initCreativeCategories() {
 	crookBone->setCategory(CreativeItemCategory::TOOLS);
 	resources->setCategory(CreativeItemCategory::ITEMS);
 	cookedSilkworm->setCategory(CreativeItemCategory::ITEMS);
+	pebbles->setCategory(CreativeItemCategory::ITEMS);
 	itemSeedSaplings->setCategory(CreativeItemCategory::ITEMS);
 	for (WeakPtr<ItemSeedBase> item : itemSeeds)
 		item->setCategory(CreativeItemCategory::ITEMS);
 }
 
 void ENItems::initCreativeItems() {
-	Item::beginCreativeGroup("itemGroup.name.hammers", hammerWood.get(), 1, nullptr);
+	Item::beginCreativeGroup("itemGroup.name.hammers", hammerWood.get(), 0, nullptr);
 	Item::addCreativeItem(hammerWood.get(), 0);
 	Item::addCreativeItem(hammerStone.get(), 0);
 	Item::addCreativeItem(hammerIron.get(), 0);
@@ -72,7 +79,7 @@ void ENItems::initCreativeItems() {
 	Item::addCreativeItem(hammerGold.get(), 0);
 	Item::endCreativeGroup();
 
-	Item::beginCreativeGroup("itemGroup.name.crooks", crookWood.get(), 1, nullptr);
+	Item::beginCreativeGroup("itemGroup.name.crooks", crookWood.get(), 0, nullptr);
 	Item::addCreativeItem(crookWood.get(), 0);
 	Item::addCreativeItem(crookBone.get(), 0);
 	Item::endCreativeGroup();
@@ -81,6 +88,11 @@ void ENItems::initCreativeItems() {
 	for (int i = 1; i < 6; i++)
 		Item::addCreativeItem(resources.get(), i);
 	Item::addCreativeItem(cookedSilkworm.get(), 0);
+	Item::endCreativeGroup();
+
+	Item::beginCreativeGroup("itemGroup.name.pebbles", pebbles.get(), 0, nullptr);
+	for (int i = 0; i < 4; i++)
+		Item::addCreativeItem(pebbles.get(), i);
 	Item::endCreativeGroup();
 
 	Item::beginCreativeGroup("itemGroup.name.seeds", itemSeedSaplings.get(), 0, nullptr);
@@ -101,6 +113,7 @@ void ENItems::initClientData() {
 	crookBone->setIcon("itemCrook", 1);
 	resources->setIcon("itemMaterial", 0);
 	cookedSilkworm->setIcon("itemCookedSilkworm", 0);
+	pebbles->setIcon("itemPebble", 0);
 	itemSeedSaplings->setIcon("itemSeed", 0);
 	itemSeeds[0]->setIcon("itemSeed", 6);
 	itemSeeds[1]->setIcon("itemSeed", 7);

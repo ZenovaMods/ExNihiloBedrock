@@ -60,6 +60,12 @@
     <ClCompile Include="source\blocks\ENBlocks.cpp">
       <Filter>blocks</Filter>
     </ClCompile>
+    <ClCompile Include="source\items\ItemPebble.cpp">
+      <Filter>items</Filter>
+    </ClCompile>
+    <ClCompile Include="source\entities\ENEntities.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\minecraft\BlockLegacy.h">
@@ -290,6 +296,76 @@
     <ClInclude Include="include\minecraft\BlockDefinitionGroup.h">
       <Filter>minecraft</Filter>
     </ClInclude>
+    <ClInclude Include="source\items\ItemPebble.h">
+      <Filter>items</Filter>
+    </ClInclude>
+    <ClInclude Include="source\main.h" />
+    <ClInclude Include="include\minecraft\Mob.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Player.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ItemHelper.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\LevelEvent.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Spawner.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ActorDefinitionIdentifier.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ActorType.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\StringHash.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ActorMapping.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\entities\ENEntities.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ProjectileFactory.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\OnHitSubcomponent.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="source\entities\DropItemSubcomponent.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ProjectileComponent.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\HitResult.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ParticleType.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\CompoundTag.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ItemSpriteRenderer.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ActorRenderDispatcher.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ActorRenderer.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\ActorFactory.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\SynchedActorData.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />
@@ -330,6 +406,9 @@
     </Filter>
     <Filter Include="blocks">
       <UniqueIdentifier>{13fc8a42-eade-4f9f-96e9-c3027f6e9296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities">
+      <UniqueIdentifier>{3e0d27e5-7616-4397-a31c-8113fcce2fc4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

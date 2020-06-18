@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <functional>
 
 #include "SharedPtr.h"
@@ -37,15 +36,11 @@ class BlockLegacy;
 #include "BlockPos.h"
 #include "TextureUVCoordinateSet.h"
 #include "Version.h"
+#include "StringHash.h"
 
 
 typedef unsigned char byte;
 typedef unsigned char FacingID;
-
-class HashedString {
-    unsigned long mStrHash;
-    std::string mStr;
-};
 
 enum class CooldownType : int {
     TypeNone = -1,

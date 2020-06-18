@@ -7,10 +7,10 @@ item.exnihilo:hammerDiamond.name=Diamond Hammer
 item.exnihilo:crookWood.name=Wooden Crook
 item.exnihilo:crookBone.name=Bone Crook
 
-item.exnihilo:itemPebble.stone.name=Stone Pebble
-item.exnihilo:itemPebble.granite.name=Granite Pebble
-item.exnihilo:itemPebble.diorite.name=Diorite Pebble
-item.exnihilo:itemPebble.andesite.name=Andesite Pebble
+item.exnihilo:pebble.stone.name=Stone Pebble
+item.exnihilo:pebble.granite.name=Granite Pebble
+item.exnihilo:pebble.diorite.name=Diorite Pebble
+item.exnihilo:pebble.andesite.name=Andesite Pebble
 
 item.exnihilo:itemMaterial.removed.name=Removed From Mod
 item.exnihilo:itemMaterial.porcelain_clay.name=Porcelain Clay
@@ -37,6 +37,7 @@ item.exnihilo:itemSeedDarkOak.name=Dark Oak Seed
 
 itemGroup.name.resources=Ex Nihilo Materials
 itemGroup.name.seeds=Ex Nihilo Seeds
+itemGroup.name.pebbles=Ex Nihilo Pebbles
 itemGroup.name.hammers=Ex Nihilo Hammers
 itemGroup.name.crooks=Ex Nihilo Crooks
 

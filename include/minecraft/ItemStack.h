@@ -4,8 +4,9 @@
 
 #include "Item.h"
 #include "Block.h"
+#include "CompoundTag.h"
 
-class CompoundTag {};
+class Tick { uint64_t tickID; };
 
 class ItemStackBase {
 protected:
@@ -22,6 +23,9 @@ protected:
 	size_t mCanPlaceOnHash;
 	std::vector<BlockLegacy const*> mCanDestroy;
 	size_t mCanDestroyHash;
+	Tick mBlockingTick;
+private:
+	std::unique_ptr<ItemInstance> mChargedItem;
 
 public:
 	virtual ~ItemStackBase();
@@ -52,7 +56,11 @@ public:
 
 class ItemStack : public ItemStackBase {
 public:
-	virtual ~ItemStack();
+	ItemStack();
+	ItemStack(const BlockLegacy&, int);
+	ItemStack(const Item&, int);
+	ItemStack(const Item& item, int count, int aux) : ItemStackBase(item, count, aux) {}
+
 	virtual void reinit(const BlockLegacy&, int);
 protected:
 	virtual void reinit(const Item&, int, int);
@@ -68,7 +76,6 @@ public:
 
 	ItemInstance clone() const { return ItemInstance(*this); }
 
-	virtual ~ItemInstance();
 	virtual void reinit(const BlockLegacy&, int);
 protected:
 	virtual void reinit(const Item&, int, int);

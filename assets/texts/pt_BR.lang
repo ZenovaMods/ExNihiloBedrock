@@ -7,10 +7,10 @@ item.exnihilo:hammerDiamond.name=Marreta de Diamante(A melhor, sem dúvidas)
 item.exnihilo:crookWood.name=Cajado de Madeira
 item.exnihilo:crookBone.name=Cajado de Osso
 
-item.exnihilo:itemPebble.stone.name=Fragmento de Pedra
-item.exnihilo:itemPebble.granite.name=Fragmento de Granito
-item.exnihilo:itemPebble.diorite.name=Fragmento de Diorite
-item.exnihilo:itemPebble.andesite.name=Fragmento de Andesite
+item.exnihilo:pebble.stone.name=Fragmento de Pedra
+item.exnihilo:pebble.granite.name=Fragmento de Granito
+item.exnihilo:pebble.diorite.name=Fragmento de Diorite
+item.exnihilo:pebble.andesite.name=Fragmento de Andesite
 
 item.exnihilo:itemMaterial.removed.name=Removido do Mod
 item.exnihilo:itemMaterial.porcelain_clay.name=Argila de Porcelana
@@ -37,6 +37,7 @@ item.exnihilo:itemSeedDarkOak.name=Semente de Carvalho Escuro
 
 itemGroup.name.resources=Ex Nihilo Materiais
 itemGroup.name.seeds=Ex Nihilo Sementes
+itemGroup.name.pebbles=Ex Nihilo Fragmentos
 itemGroup.name.hammers=Ex Nihilo Marretas
 itemGroup.name.crooks=Ex Nihilo Cajados
 

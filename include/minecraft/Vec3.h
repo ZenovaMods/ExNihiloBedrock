@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vec2.h"
+#include <sstream>
 
 class BlockPos;
 class Pos;
@@ -22,7 +23,11 @@ public:
 	float minComponent() const;
 	float maxComponent() const;
 
-	std::string toString() const;
+	std::string toString() const {
+		std::stringstream stm;
+		stm << "(" << x << ", " << y << ", " << z << ")";
+		return stm.str();
+	}
 
 	static Vec3 clamp(Vec3 const&, Vec3 const&, Vec3 const&);
 	static Vec3 clampAlongNormal(Vec3 const&, Vec3 const&, Vec3 const&, Vec3 const&, Vec3&);
@@ -43,3 +48,5 @@ public:
 	static Vec3 MIN;
 
 };
+
+inline Vec3 Vec3::ZERO{};

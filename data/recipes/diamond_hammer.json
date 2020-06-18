@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "exnihilo:diamond_hammer"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " x ",
+      " yx",
+      "y  "
+    ],
+    "key": {
+      "y": {
+        "item": "minecraft:stick"
+      },
+      "x": {
+        "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "exnihilo:hammerDiamond"
+    }
+  }
+}

@@ -1,7 +1,8 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Sun Jun 14 2020 02:46:09 UTC
+// Generated on Thu Jun 18 2020 17:35:09 UTC
 
 #include <Zenova/Hook.h>
+#include "main.h"
 #include "minecraft/VanillaBlockRegistry.h"
 #include "minecraft/VanillaBlockStates.h"
 #include "minecraft/VanillaBlockTypeRegistry.h"
@@ -10,6 +11,9 @@
 #include "minecraft/BlockTypeRegistry.h"
 #include "minecraft/WorldSystems.h"
 #include "minecraft/Item.h"
+#include "minecraft/ActorType.h"
+#include "minecraft/ProjectileFactory.h"
+#include "minecraft/ActorFactory.h"
 
 Block** VanillaBlocks::mGrass = reinterpret_cast<Block**>(Zenova::Hook::SlideAddress(0x3050A98));
 Block** VanillaBlocks::mDirt = reinterpret_cast<Block**>(Zenova::Hook::SlideAddress(0x3051770));
@@ -45,6 +49,9 @@ short* ItemRegistry::mMaxItemID = reinterpret_cast<short*>(Zenova::Hook::SlideAd
 std::unordered_map<std::string, SharedPtr<BlockLegacy>>* BlockTypeRegistry::mBlockLookupMap = reinterpret_cast<std::unordered_map<std::string, SharedPtr<BlockLegacy>>*>(Zenova::Hook::SlideAddress(0x3061390));
 bool* Item::mInCreativeGroup = reinterpret_cast<bool*>(Zenova::Hook::SlideAddress(0x30507BA));
 bool* WorldSystems::mInitialized = reinterpret_cast<bool*>(Zenova::Hook::SlideAddress(0x30507BE));
+std::unordered_map<ActorType, ActorMapping>* ENTITY_TYPE_MAP = reinterpret_cast<std::unordered_map<ActorType, ActorMapping>*>(Zenova::Hook::SlideAddress(0x305C590));
+std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>* ProjectileFactory::mSubcomponentMap = reinterpret_cast<std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>*>(Zenova::Hook::SlideAddress(0x305DD20));
+std::unordered_map<std::string, ActorFactoryData>* _factoryFunctions = reinterpret_cast<std::unordered_map<std::string, ActorFactoryData>*>(Zenova::Hook::SlideAddress(0x305C460));
 
 extern "C" {
 	void* __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr;
@@ -57,11 +64,15 @@ extern "C" {
 	void* _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 	void* _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr;
 	void* _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr;
+	void* __1ItemStackBase__UEAA_XZ_ptr;
 	void* __0ItemStackBase__IEAA_XZ_ptr;
 	void* __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr;
 	void* __0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr;
 	void* __0ItemStackBase__IEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr;
 	void* __0ItemStackBase__IEAA_AEBV0__Z_ptr;
+	void* __0ItemStack__QEAA_XZ_ptr;
+	void* __0ItemStack__QEAA_AEBVItem__H_Z_ptr;
+	void* __0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr;
 	void* __0ItemInstance__QEAA_XZ_ptr;
 	void* __0ItemInstance__QEAA_AEBVItem__HH_Z_ptr;
 	void* __0ItemInstance__QEAA_AEBVBlockLegacy__H_Z_ptr;
@@ -102,16 +113,36 @@ extern "C" {
 	void* _registerBlocks_VanillaBlockTypes__YAXXZ_ptr;
 	void* _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 	void* __1BlockLegacy__UEAA_XZ_ptr;
+	void* __1Actor__UEAA_XZ_ptr;
 	void* _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr;
+	void* _spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr;
+	void* _spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr;
+	void* _spawnItem_Spawner__QEAAPEAVItemActor__AEAVBlockSource__AEBVItemStack__PEAVActor__AEBVVec3__H_Z_ptr;
+	void* __0ActorDefinitionIdentifier__QEAA_W4ActorType___Z_ptr;
+	void* __initialize_ActorDefinitionIdentifier__AEAAXXZ_ptr;
+	void* __extractIdentifier_ActorDefinitionIdentifier__CAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEAU1__Z_ptr;
+	void* _computeHash_HashedString__SA_KPEBD_Z_ptr;
+	void* _initFactory_ProjectileFactory__SAXXZ_ptr;
+	void* _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr;
+	void* _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr;
+	void* __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr;
+	void* __1ItemSpriteRenderer__UEAA_XZ_ptr;
+	void* _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr;
+	void* _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr;
+	void* _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr;
+	void* _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr;
+	void* _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
 	void* BlockItem_vtable;
 	void* BlockLegacy_vtable;
 	void* HeavyBlock_vtable;
-	void* ItemStackBase_vtable;
 	void* ItemInstance_vtable;
 	void* ItemStack_vtable;
+	void* Actor_vtable;
+	void* Mob_vtable;
+	void* Player_vtable;
 }
 
 void InitBedrockPointers() {
@@ -125,11 +156,15 @@ void InitBedrockPointers() {
 	_getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15656C0));
 	_getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1565640));
 	_getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1565810));
+	__1ItemStackBase__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x010B600));
 	__0ItemStackBase__IEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156E290));
 	__0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156E6C0));
 	__0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156E360));
 	__0ItemStackBase__IEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156E3F0));
 	__0ItemStackBase__IEAA_AEBV0__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156E7D0));
+	__0ItemStack__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156D210));
+	__0ItemStack__QEAA_AEBVItem__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156D270));
+	__0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156D240));
 	__0ItemInstance__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1568AD0));
 	__0ItemInstance__QEAA_AEBVItem__HH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1568C00));
 	__0ItemInstance__QEAA_AEBVBlockLegacy__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1568B40));
@@ -170,16 +205,36 @@ void InitBedrockPointers() {
 	_registerBlocks_VanillaBlockTypes__YAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16E0AB0));
 	_lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16D9640));
 	__1BlockLegacy__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x164F200));
+	__1Actor__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x125CAF0));
 	_registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x169EDC0));
+	_spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x18AC210));
+	_spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x18ABF10));
+	_spawnItem_Spawner__QEAAPEAVItemActor__AEAVBlockSource__AEBVItemStack__PEAVActor__AEBVVec3__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x18AC0A0));
+	__0ActorDefinitionIdentifier__QEAA_W4ActorType___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12ECB50));
+	__initialize_ActorDefinitionIdentifier__AEAAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12ECEA0));
+	__extractIdentifier_ActorDefinitionIdentifier__CAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEAU1__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12EC620));
+	_computeHash_HashedString__SA_KPEBD_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0E42550));
+	_initFactory_ProjectileFactory__SAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x146AD60));
+	_EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1305C00));
+	_EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x13057E0));
+	__0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0983AB0));
+	__1ItemSpriteRenderer__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0983BC0));
+	_initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x093D2A0));
+	_getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09410E0));
+	_getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09410E0));
+	_registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12F8840));
+	_setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12ED4C0));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));
 	BlockItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F258));
 	BlockLegacy_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B8E7D0));
 	HeavyBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BA8488));
-	ItemStackBase_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B76AF8));
 	ItemInstance_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B769D8));
 	ItemStack_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B76AD8));
+	Actor_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B14130));
+	Mob_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B442F0));
+	Player_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B59C90));
 }
 
 #include <Windows.h>

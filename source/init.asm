@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Thu Jun 18 2020 17:35:09 UTC
+; Generated on Fri Jun 19 2020 02:56:56 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -80,6 +80,7 @@ extern _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedStri
 extern _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr
 extern _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr
 extern _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr
+extern _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
@@ -91,6 +92,7 @@ extern ItemStack_vtable
 extern Actor_vtable
 extern Mob_vtable
 extern Player_vtable
+extern Container_vtable
 
 SECTION .text
 global ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
@@ -404,6 +406,10 @@ global ?registerActorInfo@ActorInfoRegistry@@QEAAXAEBUActorInfo@@@Z
 global ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z
 ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z:
 	mov rax, [rel _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr]
+	jmp rax
+global ?broadcastLevelEvent@Level@@QEAAXW4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z
+?broadcastLevelEvent@Level@@QEAAXW4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z:
+	mov rax, [rel _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:
@@ -3873,3 +3879,127 @@ global ?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z
 ?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z:
 	mov rax, [rel Player_vtable]
 	jmp [rax+3560]
+global ??_EContainer@@UEAAPEAXI@Z
+??_EContainer@@UEAAPEAXI@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+0]
+global ?init@Container@@UEAAXXZ
+?init@Container@@UEAAXXZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+8]
+global ?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
+?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+16]
+global ?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
+?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+24]
+global ?getItem@Container@@UEBAAEBVItemStack@@H@Z
+?getItem@Container@@UEBAAEBVItemStack@@H@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+32]
+global ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
+?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+40]
+global ?addItem@Container@@UEAAXAEAVItemStack@@@Z
+?addItem@Container@@UEAAXAEAVItemStack@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+48]
+global ?addItemToFirstEmptySlot@Container@@UEAA_NAEAVItemStack@@@Z
+?addItemToFirstEmptySlot@Container@@UEAA_NAEAVItemStack@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+56]
+global ?setItem@Container@@UEAAXHAEBVItemStack@@@Z
+?setItem@Container@@UEAAXHAEBVItemStack@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+64]
+global ?removeItem@Container@@UEAAXHH@Z
+?removeItem@Container@@UEAAXHH@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+72]
+global ?removeAllItems@Container@@UEAAXXZ
+?removeAllItems@Container@@UEAAXXZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+80]
+global ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
+?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+88]
+global ?getContainerSize@Container@@UEBAHXZ
+?getContainerSize@Container@@UEBAHXZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+96]
+global ?getMaxStackSize@Container@@UEBAHXZ
+?getMaxStackSize@Container@@UEBAHXZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+104]
+global ?startOpen@Container@@UEAAXAEAVPlayer@@@Z
+?startOpen@Container@@UEAAXAEAVPlayer@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+112]
+global ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
+?stopOpen@Container@@UEAAXAEAVPlayer@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+120]
+global ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+128]
+global ?getSlots@Container@@UEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+?getSlots@Container@@UEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+136]
+global ?getItemCount@Container@@UEAAHAEBVItemStack@@@Z
+?getItemCount@Container@@UEAAHAEBVItemStack@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+144]
+global ?getItemCount@Container@@UEAAHAEBVItemDescriptor@@@Z
+?getItemCount@Container@@UEAAHAEBVItemDescriptor@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+152]
+global ?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z
+?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+160]
+global ?canPushInItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+?canPushInItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+168]
+global ?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+176]
+global ?setContainerChanged@Container@@UEAAXH@Z
+?setContainerChanged@Container@@UEAAXH@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+184]
+global ?setContainerMoved@Container@@UEAAXXZ
+?setContainerMoved@Container@@UEAAXXZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+192]
+global ?setCustomName@Container@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?setCustomName@Container@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+200]
+global ?hasCustomName@Container@@UEBA_NXZ
+?hasCustomName@Container@@UEBA_NXZ:
+	mov rax, [rel Container_vtable]
+	jmp [rax+208]
+global ?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z
+?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+216]
+global ?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z
+?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+224]
+global ?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
+?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+232]
+global ?triggerTransactionChange@Container@@UEAAXHAEBVItemStack@@0@Z
+?triggerTransactionChange@Container@@UEAAXHAEBVItemStack@@0@Z:
+	mov rax, [rel Container_vtable]
+	jmp [rax+240]

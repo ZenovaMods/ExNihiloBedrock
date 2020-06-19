@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "exnihilo:granite_from_pebble"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "xx",
+      "xx"
+    ],
+    "key": {
+      "x": {
+        "item": "exnihilo:pebble:1"
+      }
+    },
+    "result": {
+      "item": "minecraft:stone:1"
+    }
+  }
+}

@@ -7,10 +7,12 @@
 #include "minecraft/ItemHelper.h"
 #include "minecraft/ItemStack.h"
 #include "minecraft/ItemDescriptor.h"
-#include "minecraft/LevelEvent.h"
 #include "minecraft/Player.h"
 #include "minecraft/Spawner.h"
 #include "minecraft/Vec3.h"
+#include "minecraft/BlockSource.h"
+#include "minecraft/Facing.h"
+#include "minecraft/Container.h"
 
 std::vector<std::string> ItemPebble::names { "stone", "granite", "diorite", "andesite" };
 
@@ -28,18 +30,30 @@ bool ItemPebble::isValidAuxValue(int auxValue) const {
 
 ItemStack& ItemPebble::use(ItemStack& instance, Player& player) const {
 	Level& level = player.getLevel();
+	short auxValue = instance.getAuxValue();
 	player.useItem(instance, ItemUseMethod::Throw, true);
 	player.swing();
 	if (!level.isClientSide()) {
 		player.playSynchronizedSound(LevelSoundEvent::Throw, player.getAttachPos(ActorLocation::DropAttachPoint, 0.0), -1, false);
-		Actor* pebble = level.getSpawner().spawnProjectile(player.getRegion(), ActorDefinitionIdentifier("exnihilo:pebble"), &player, player.getPos(), Vec3::ZERO);
+		Actor* pebble = level.getSpawner().spawnProjectile(player.getRegion(), { "exnihilo:pebble" }, &player, player.getPos(), Vec3::ZERO);
 		if (pebble)
-			pebble->getEntityData().define(0x24, instance.getAuxValue());
+			pebble->getEntityData().define(0x24, auxValue);
 	}
 	return instance;
 }
 
-bool ItemPebble::dispense(BlockSource&, Container&, int, const Vec3&, unsigned char) const {
+bool ItemPebble::dispense(BlockSource& region, Container& container, int slot, const Vec3& pos, unsigned char face) const {
+	Vec3 direction = { (float)Facing::STEP_X[face], (float)Facing::STEP_Y[face] + 0.1F, (float)Facing::STEP_Z[face] };
+	Level& level = region.getLevel();
+	if (!level.isClientSide()) {
+		Actor* pebble = level.getSpawner().spawnProjectile(region, { "exnihilo:pebble" }, nullptr, pos, direction);
+		if (pebble) {
+			pebble->getEntityData().define(0x24, container.getItem(slot).getAuxValue());
+			container.removeItem(slot, 1);
+			level.broadcastLevelEvent(LevelEvent::SoundLaunch, pos, 0x13332, nullptr);
+			return true;
+		}
+	}
 	return false;
 }
 

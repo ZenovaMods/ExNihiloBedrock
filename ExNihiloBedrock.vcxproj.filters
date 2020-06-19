@@ -366,6 +366,12 @@
     <ClInclude Include="include\minecraft\SynchedActorData.h">
       <Filter>minecraft</Filter>
     </ClInclude>
+    <ClInclude Include="include\minecraft\Facing.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\Container.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />

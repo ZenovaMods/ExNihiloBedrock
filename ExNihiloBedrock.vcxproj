@@ -199,9 +199,11 @@
     <ClInclude Include="include\minecraft\BlockTypeRegistry.h" />
     <ClInclude Include="include\minecraft\Color.h" />
     <ClInclude Include="include\minecraft\CompoundTag.h" />
+    <ClInclude Include="include\minecraft\Container.h" />
     <ClInclude Include="include\minecraft\CreativeItemCategory.h" />
     <ClInclude Include="include\minecraft\DiggerItem.h" />
     <ClInclude Include="include\minecraft\EnchantUtils.h" />
+    <ClInclude Include="include\minecraft\Facing.h" />
     <ClInclude Include="include\minecraft\FoodItemComponent.h" />
     <ClInclude Include="include\minecraft\HeavyBlock.h" />
     <ClInclude Include="include\minecraft\HitResult.h" />

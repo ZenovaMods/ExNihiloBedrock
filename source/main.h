@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Thu Jun 18 2020 17:35:09 UTC
+// Generated on Fri Jun 19 2020 02:56:56 UTC
 #pragma once
 
 extern "C" {
@@ -81,6 +81,7 @@ extern "C" {
 	extern void* _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr;
 	extern void* _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr;
 	extern void* _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr;
+	extern void* _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;
@@ -92,4 +93,5 @@ extern "C" {
 	extern void* Actor_vtable;
 	extern void* Mob_vtable;
 	extern void* Player_vtable;
+	extern void* Container_vtable;
 }

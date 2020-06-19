@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Thu Jun 18 2020 17:35:09 UTC
+// Generated on Fri Jun 19 2020 02:56:56 UTC
 
 #include <Zenova/Hook.h>
 #include "main.h"
@@ -132,6 +132,7 @@ extern "C" {
 	void* _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr;
 	void* _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr;
 	void* _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr;
+	void* _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
@@ -143,6 +144,7 @@ extern "C" {
 	void* Actor_vtable;
 	void* Mob_vtable;
 	void* Player_vtable;
+	void* Container_vtable;
 }
 
 void InitBedrockPointers() {
@@ -224,6 +226,7 @@ void InitBedrockPointers() {
 	_getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09410E0));
 	_registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12F8840));
 	_setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12ED4C0));
+	_broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x17D4C40));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));
@@ -235,6 +238,7 @@ void InitBedrockPointers() {
 	Actor_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B14130));
 	Mob_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B442F0));
 	Player_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B59C90));
+	Container_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B64268));
 }
 
 #include <Windows.h>

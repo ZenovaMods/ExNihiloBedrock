@@ -110,16 +110,16 @@ private:
 
 		ENEntities::initEntityMap();
 
-		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, (void**)&_registerItems);
-		Zenova::Hook::Create(&VanillaItems::initCreativeCategories, &initCreativeCategories, (void**)&_initCreativeCategories);
-		Zenova::Hook::Create(&VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, (void**)&_initCreativeItemsCallback);
-		Zenova::Hook::Create(&VanillaItems::initClientData, &initClientData, (void**)&_initClientData);
-		Zenova::Hook::Create(BlockLegacy_vtable, &BlockLegacy::playerDestroy, &BlockLegacy_playerDestroy, (void**)&_BlockLegacy_playerDestroy);
-		Zenova::Hook::Create(&WorldSystems::init, &initWorldSystems, (void**)&_initWorldSystems);
-		Zenova::Hook::Create(&BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, (void**)&_registerLooseBlockGraphics);
-		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, (void**)&_registerBlocks);
-		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, (void**)&_initProjectileFactory);
-		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, (void**)&_initEntityRenderers);
+		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, &_registerItems);
+		Zenova::Hook::Create(&VanillaItems::initCreativeCategories, &initCreativeCategories, &_initCreativeCategories);
+		Zenova::Hook::Create(&VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, &_initCreativeItemsCallback);
+		Zenova::Hook::Create(&VanillaItems::initClientData, &initClientData, &_initClientData);
+		Zenova::Hook::Create(BlockLegacy_vtable, &BlockLegacy::playerDestroy, &BlockLegacy_playerDestroy, &_BlockLegacy_playerDestroy);
+		Zenova::Hook::Create(&WorldSystems::init, &initWorldSystems, &_initWorldSystems);
+		Zenova::Hook::Create(&BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, &_registerLooseBlockGraphics);
+		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, &_registerBlocks);
+		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);
+		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
 	}
 
 	virtual ~ExNihiloBedrock() {}

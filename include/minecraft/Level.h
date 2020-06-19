@@ -3,9 +3,11 @@
 #include "Random.h"
 #include "BlockSourceListener.h"
 #include "IWorldRegistriesProvider.h"
+#include "LevelEvent.h"
 
 class Spawner;
 class ActorInfoRegistry;
+class Player;
 
 class Level : public BlockSourceListener, public IWorldRegistriesProvider {
 private:
@@ -20,6 +22,7 @@ private:
 
 
 public:
+    void broadcastLevelEvent(LevelEvent, const Vec3&, int, Player*);
     ActorInfoRegistry* getActorInfoRegistry() {
         return mActorInfoRegistry.get();
     }

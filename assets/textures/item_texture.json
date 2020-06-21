@@ -38,6 +38,12 @@
           "textures/items/itemPebble"
         ]
       },
+      "itemDoll": {
+        "textures": [
+          "textures/items/dollBlaze",
+          "textures/items/dollEnder"
+        ]
+      },
       "itemSeed": {
         "textures": [
           "textures/items/seedOak",

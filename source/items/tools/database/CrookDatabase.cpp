@@ -2,8 +2,8 @@
 
 #include <algorithm>
 
-#include "minecraft/ItemStack.h"
-#include "minecraft/Item.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/item/Item.h"
 
 std::vector<Item*> CrookDatabase::crookDatabase;
 

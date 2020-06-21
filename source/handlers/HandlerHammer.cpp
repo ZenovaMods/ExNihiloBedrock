@@ -2,11 +2,11 @@
 
 #include <vector>
 
-#include "minecraft/ItemStack.h"
-#include "minecraft/Player.h"
-#include "minecraft/Level.h"
-#include "minecraft/EnchantUtils.h"
-#include "minecraft/Block.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/actor/Player.h"
+#include "minecraft/world/Level.h"
+#include "minecraft/util/EnchantUtils.h"
+#include "minecraft/block/Block.h"
 
 #include "../items/tools/HammerBase.h"
 #include "../items/tools/database/HammerDatabase.h"

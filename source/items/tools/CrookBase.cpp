@@ -2,7 +2,7 @@
 
 #include "../ENItems.h"
 
-#include "minecraft/VanillaItemTiers.h"
+#include "minecraft/item/VanillaItemTiers.h"
 
 #include "database/CrookDatabase.h"
 #include "../../registries/CrookRegistry.h"

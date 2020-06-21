@@ -7,9 +7,9 @@
 #include "../../util/BlockInfo.h"
 #include "../../items/ItemResource.h"
 
-#include "minecraft/VanillaBlockRegistry.h"
-#include "minecraft/VanillaBlockTypeRegistry.h"
-#include "minecraft/ItemStack.h"
+#include "minecraft/block/VanillaBlockRegistry.h"
+#include "minecraft/block/VanillaBlockTypeRegistry.h"
+#include "minecraft/item/ItemStack.h"
 
 ExNihiloDefaultRecipes::ExNihiloDefaultRecipes() {
 	RegistryManager::registerSieveDefaultRecipeHandler(this);

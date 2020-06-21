@@ -1,19 +1,19 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Fri Jun 19 2020 02:56:56 UTC
+// Generated on Sun Jun 21 2020 02:24:31 UTC
 
 #include <Zenova/Hook.h>
 #include "main.h"
-#include "minecraft/VanillaBlockRegistry.h"
-#include "minecraft/VanillaBlockStates.h"
-#include "minecraft/VanillaBlockTypeRegistry.h"
-#include "minecraft/VanillaItemTiers.h"
-#include "minecraft/ItemRegistry.h"
-#include "minecraft/BlockTypeRegistry.h"
-#include "minecraft/WorldSystems.h"
-#include "minecraft/Item.h"
-#include "minecraft/ActorType.h"
-#include "minecraft/ProjectileFactory.h"
-#include "minecraft/ActorFactory.h"
+#include "minecraft/block/VanillaBlockRegistry.h"
+#include "minecraft/block/VanillaBlockStates.h"
+#include "minecraft/block/VanillaBlockTypeRegistry.h"
+#include "minecraft/item/VanillaItemTiers.h"
+#include "minecraft/item/ItemRegistry.h"
+#include "minecraft/block/BlockTypeRegistry.h"
+#include "minecraft/world/WorldSystems.h"
+#include "minecraft/item/Item.h"
+#include "minecraft/actor/ActorType.h"
+#include "minecraft/actor/ProjectileFactory.h"
+#include "minecraft/actor/ActorFactory.h"
 
 Block** VanillaBlocks::mGrass = reinterpret_cast<Block**>(Zenova::Hook::SlideAddress(0x3050A98));
 Block** VanillaBlocks::mDirt = reinterpret_cast<Block**>(Zenova::Hook::SlideAddress(0x3051770));
@@ -100,6 +100,7 @@ extern "C" {
 	void* _initClientData_VanillaItems__SAXXZ_ptr;
 	void* __genRandInt32_Random_Core__AEAAIXZ_ptr;
 	void* _nextFloat_Random__QEAAMXZ_ptr;
+	void* __0Throwable__QEAA_PEAVActorDefinitionGroup__AEBUActorDefinitionIdentifier___Z_ptr;
 	void* _getSelectedItem_Player__QEBAAEBVItemStack__XZ_ptr;
 	void* _causeFoodExhaustion_Player__QEAAXM_Z_ptr;
 	void* _getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr;
@@ -133,18 +134,28 @@ extern "C" {
 	void* _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr;
 	void* _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr;
 	void* _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
+	void* _registerVanillaActorData_VanillaActors__YAXXZ_ptr;
+	void* _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr;
+	void* _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr;
+	void* _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
+	void* _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr;
+	void* _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
 	void* BlockItem_vtable;
 	void* BlockLegacy_vtable;
+	void* LiquidBlock_vtable;
+	void* LiquidBlockStatic_vtable;
 	void* HeavyBlock_vtable;
 	void* ItemInstance_vtable;
 	void* ItemStack_vtable;
 	void* Actor_vtable;
 	void* Mob_vtable;
 	void* Player_vtable;
+	void* Throwable_vtable;
 	void* Container_vtable;
+	void* Level_vtable;
 }
 
 void InitBedrockPointers() {
@@ -194,6 +205,7 @@ void InitBedrockPointers() {
 	_initClientData_VanillaItems__SAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15A01D0));
 	__genRandInt32_Random_Core__AEAAIXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x01AC370));
 	_nextFloat_Random__QEAAMXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0620D10));
+	__0Throwable__QEAA_PEAVActorDefinitionGroup__AEBUActorDefinitionIdentifier___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x146CCF0));
 	_getSelectedItem_Player__QEBAAEBVItemStack__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1459C30));
 	_causeFoodExhaustion_Player__QEAAXM_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x145BD20));
 	_getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15506F0));
@@ -227,18 +239,28 @@ void InitBedrockPointers() {
 	_registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12F8840));
 	_setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12ED4C0));
 	_broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x17D4C40));
+	_registerVanillaActorData_VanillaActors__YAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x146F630));
+	_GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12FF7C0));
+	_putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDC270));
+	_getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDCC50));
+	_onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x14E8430));
+	_createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12EF9D0));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));
 	BlockItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F258));
 	BlockLegacy_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B8E7D0));
+	LiquidBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BAE780));
+	LiquidBlockStatic_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BAF1C0));
 	HeavyBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BA8488));
 	ItemInstance_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B769D8));
 	ItemStack_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B76AD8));
 	Actor_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B14130));
 	Mob_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B442F0));
 	Player_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B59C90));
+	Throwable_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B60730));
 	Container_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B64268));
+	Level_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BCF460));
 }
 
 #include <Windows.h>

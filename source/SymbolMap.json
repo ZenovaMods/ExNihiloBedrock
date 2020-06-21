@@ -309,6 +309,35 @@
       ]
     },
     {
+      "name": "LiquidBlock",
+      "parent": "BlockLegacy",
+      "address": "0x2BAE780",
+      "functions": [
+        "?getAABB@LiquidBlock@@UEBAAEBVAABB@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z",
+        "?canContainLiquid@LiquidBlock@@UEBA_NXZ",
+        "?checkIsPathable@LiquidBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z",
+        "?onPlace@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?mayPick@LiquidBlock@@UEBA_NAEAVBlockSource@@AEBVBlock@@_N@Z",
+        "?neighborChanged@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z",
+        "?getResourceCount@LiquidBlock@@UEBAHAEAVRandom@@AEBVBlock@@H@Z",
+        "?handleEntityInside@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@AEAVVec3@@@Z",
+        "?getMapColor@LiquidBlock@@UEBA?AVColor@@AEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?getColor@LiquidBlock@@UEBAHAEBVBlock@@@Z",
+        "?getColorAtPos@LiquidBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?animateTick@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
+        "?canBeSilkTouched@LiquidBlock@@UEBA_NXZ"
+      ]
+    },
+    {
+      "name": "LiquidBlockStatic",
+      "parent": "LiquidBlock",
+      "address": "0x2BAF1C0",
+      "functions": [
+        "?tick@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
+        "?neighborChanged@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z"
+      ]
+    },
+    {
       "name": "HeavyBlock",
       "parent": "BlockLegacy",
       "address": "0x2BA8488",
@@ -401,7 +430,7 @@
         "?canExistInPeaceful@Actor@@UEBA_NXZ",
         "?setNameTagVisible@Actor@@UEAAX_N@Z",
         "?getNameTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-        "?getNameTagAsHash@Actor@@UEBAKXZ",
+        "?getNameTagAsHash@Actor@@UEBA_KXZ",
         "?getFormattedNameTag@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
         "?filterFormattedNameTag@Actor@@UEAAXAEBVUIProfanityContext@@@Z",
         "?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -453,7 +482,7 @@
         "?performRangedAttack@Actor@@UEAAXAEAV1@M@Z",
         "?adjustDamageAmount@Actor@@UEBAXAEAH@Z",
         "?getEquipmentCount@Actor@@UEBAHXZ",
-        "?setOwner@Actor@@UEAAXVActorUniqueID@@@Z",
+        "?setOwner@Actor@@UEAAXUActorUniqueID@@@Z",
         "?setSitting@Actor@@UEAAX_N@Z",
         "?onTame@Actor@@UEAAXXZ",
         "?onFailedTame@Actor@@UEAAXXZ",
@@ -504,7 +533,7 @@
         "?loadLinks@Actor@@UEAAXAEBVCompoundTag@@AEAV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@AEAVDataLoadHelper@@@Z",
         "?getEntityTypeId@Actor@@UEBA?AW4ActorType@@XZ",
         "?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ",
-        "?getSourceUniqueID@Actor@@UEBA?AVActorUniqueID@@XZ",
+        "?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ",
         "?setOnFire@Actor@@UEAAXH@Z",
         "?getHandleWaterAABB@Actor@@UEBA?AVAABB@@XZ",
         "?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z",
@@ -514,7 +543,7 @@
         "?canChangeDimensions@Actor@@UEBA_NXZ",
         "?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z",
         "?changeDimension@Actor@@UEAAXH_N@Z",
-        "?getControllingPlayer@Actor@@UEBA?AVActorUniqueID@@XZ",
+        "?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ",
         "?checkFallDamage@Actor@@UEAAXM_N@Z",
         "?causeFallDamage@Actor@@UEAAXM@Z",
         "?handleFallDistanceOnServer@Actor@@UEAAXM_N@Z",
@@ -561,7 +590,7 @@
         "?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z",
         "?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z",
         "?canDestroyBlock@Actor@@UEBA_NAEBVBlock@@@Z",
-        "?setAuxValue@Actor@@UEAAXH@Z",
+        "",
         "?setSize@Actor@@UEAAXMM@Z",
         "?getLifeSpan@Actor@@UEBAHXZ",
         "?onOrphan@Actor@@UEAAXXZ",
@@ -595,7 +624,7 @@
         "?updateInsideBlock@Actor@@UEAAXXZ",
         "?getLootTable@Actor@@UEAAPEAVLootTable@@XZ",
         "?getDefaultLootTable@Actor@@UEAAPEAVLootTable@@XZ",
-        "?_removeRider@Actor@@UEAAXAEBVActorUniqueID@@_N1@Z",
+        "?_removeRider@Actor@@UEAAXAEBUActorUniqueID@@_N1@Z",
         "?_onSizeUpdated@Actor@@UEAAXXZ",
         "?_doAutoAttackOnTouch@Actor@@UEAAXAEAV1@@Z"
       ]
@@ -660,7 +689,7 @@
         "?readAdditionalSaveData@Mob@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z",
         "?addAdditionalSaveData@Mob@@UEAAXAEAVCompoundTag@@@Z",
         "?_playStepSound@Mob@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z",
-        "?_removeRider@Mob@@UEAAXAEBVActorUniqueID@@_N1@Z",
+        "?_removeRider@Mob@@UEAAXAEBUActorUniqueID@@_N1@Z",
         "?_onSizeUpdated@Mob@@UEAAXXZ",
         "?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z",
         "?resolveDeathLoot@Mob@@UEAAXHAEBVActorDamageSource@@@Z",
@@ -708,7 +737,7 @@
         "?leaveCaravan@Mob@@UEAAXXZ",
         "?joinCaravan@Mob@@UEAAXPEAV1@@Z",
         "?hasCaravanTail@Mob@@UEBA_NXZ",
-        "?getCaravanHead@Mob@@UEBA?AVActorUniqueID@@XZ",
+        "?getCaravanHead@Mob@@UEBA?AUActorUniqueID@@XZ",
         "?getArmorValue@Mob@@UEAAHXZ",
         "?getArmorCoverPercentage@Mob@@UEBAMXZ",
         "?hurtArmor@Mob@@UEAAXH@Z",
@@ -863,7 +892,7 @@
         "?startStonecutting@Player@@UEAAXAEBVBlockPos@@@Z",
         "?startDestroying@Player@@UEAAXXZ",
         "?stopDestroying@Player@@UEAAXXZ",
-        "?openContainer@Player@@UEAAXAEBVActorUniqueID@@@Z",
+        "?openContainer@Player@@UEAAXAEBUActorUniqueID@@@Z",
         "?openContainer@Player@@UEAAXAEBVBlockPos@@@Z",
         "?openFurnace@Player@@UEAAXAEBVBlockPos@@@Z",
         "?openBlastFurnace@Player@@UEAAXAEBVBlockPos@@@Z",
@@ -872,16 +901,16 @@
         "?openAnvil@Player@@UEAAXAEBVBlockPos@@@Z",
         "?openGrindstone@Player@@UEAAXAEBVBlockPos@@@Z",
         "?openBrewingStand@Player@@UEAAXAEBVBlockPos@@@Z",
-        "?openHopper@Player@@UEAAXAEBVActorUniqueID@@@Z",
+        "?openHopper@Player@@UEAAXAEBUActorUniqueID@@@Z",
         "?openHopper@Player@@UEAAXAEBVBlockPos@@@Z",
         "?openDispenser@Player@@UEAAXAEBVBlockPos@@_N@Z",
         "?openBeacon@Player@@UEAAXAEBVBlockPos@@@Z",
         "?openPortfolio@Player@@UEAAXXZ",
         "?openBook@Player@@UEAAXH_NHPEAVBlockActor@@@Z",
         "?openCommandBlock@Player@@UEAAXAEBVBlockPos@@@Z",
-        "?openCommandBlockMinecart@Player@@UEAAXAEBVActorUniqueID@@@Z",
-        "?openHorseInventory@Player@@UEAAXAEBVActorUniqueID@@@Z",
-        "?openTrading@Player@@UEAAXAEBVActorUniqueID@@_N@Z",
+        "?openCommandBlockMinecart@Player@@UEAAXAEBUActorUniqueID@@@Z",
+        "?openHorseInventory@Player@@UEAAXAEBUActorUniqueID@@@Z",
+        "?openTrading@Player@@UEAAXAEBUActorUniqueID@@_N@Z",
         "?canOpenContainerScreen@Player@@UEAA_NXZ",
         "?openChalkboard@Player@@UEAAXAEAVChalkboardBlockActor@@_N@Z",
         "?openNpcInteractScreen@Player@@UEAAXAEAVActor@@@Z",
@@ -911,8 +940,8 @@
         "?isLoading@Player@@UEBA_NXZ",
         "?isPlayerInitialized@Player@@UEBA_NXZ",
         "?stopLoading@Player@@UEAAXXZ",
-        "?registerTrackedBoss@Player@@UEAAXVActorUniqueID@@@Z",
-        "?unRegisterTrackedBoss@Player@@UEAAXVActorUniqueID@@@Z",
+        "?registerTrackedBoss@Player@@UEAAXUActorUniqueID@@@Z",
+        "?unRegisterTrackedBoss@Player@@UEAAXUActorUniqueID@@@Z",
         "?setPlayerGameType@Player@@UEAAXW4GameType@@@Z",
         "?_crit@Player@@UEAAXAEAVActor@@@Z",
         "?getEventing@Player@@UEBAPEAVIMinecraftEventing@@XZ",
@@ -943,6 +972,28 @@
         "?getPlayMode@Player@@UEBA?AW4ClientPlayMode@@XZ",
         "?reportMovementTelemetry@Player@@UEAAXW4MovementEventType@@@Z",
         "?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z"
+      ]
+    },
+    {
+      "name": "Throwable",
+      "parent": "Actor",
+      "address": "0x2B60730",
+      "functions": [
+        "?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z",
+        "?lerpTo@Throwable@@UEAAXAEBVVec3@@AEBVVec2@@H@Z",
+        "?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z",
+        "?normalTick@Throwable@@UEAAXXZ",
+        "?getShadowHeightOffs@Throwable@@UEAAMXZ",
+        "?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ",
+        "?canMakeStepSound@Throwable@@UEBA_NXZ",
+        "?readAdditionalSaveData@Throwable@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z",
+        "?addAdditionalSaveData@Throwable@@UEAAXAEAVCompoundTag@@@Z",
+        "?getThrowPower@Throwable@@UEAAMXZ",
+        "?stopUponGroundCollision@Throwable@@UEBA_NXZ",
+        "?getThrowUpAngleOffset@Throwable@@UEAAMXZ",
+        "?getGravity@Throwable@@UEAAMXZ",
+        "?getParticleType@Throwable@@UEAA?AW4ParticleType@@XZ",
+        "?onHit@Throwable@@UEAAXAEBVHitResult@@@Z"
       ]
     },
     {
@@ -981,21 +1032,40 @@
         "?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z",
         "?triggerTransactionChange@Container@@UEAAXHAEBVItemStack@@0@Z"
       ]
+    },
+    {
+      "name": "Level",
+      "address": "0x2BCF460",
+      "functions": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@@Z"
+      ]
     }
   ],
 
   "includes": [
-    "#include \"minecraft/VanillaBlockRegistry.h\"",
-    "#include \"minecraft/VanillaBlockStates.h\"",
-    "#include \"minecraft/VanillaBlockTypeRegistry.h\"",
-    "#include \"minecraft/VanillaItemTiers.h\"",
-    "#include \"minecraft/ItemRegistry.h\"",
-    "#include \"minecraft/BlockTypeRegistry.h\"",
-    "#include \"minecraft/WorldSystems.h\"",
-    "#include \"minecraft/Item.h\"",
-    "#include \"minecraft/ActorType.h\"",
-    "#include \"minecraft/ProjectileFactory.h\"",
-    "#include \"minecraft/ActorFactory.h\""
+    "#include \"minecraft/block/VanillaBlockRegistry.h\"",
+    "#include \"minecraft/block/VanillaBlockStates.h\"",
+    "#include \"minecraft/block/VanillaBlockTypeRegistry.h\"",
+    "#include \"minecraft/item/VanillaItemTiers.h\"",
+    "#include \"minecraft/item/ItemRegistry.h\"",
+    "#include \"minecraft/block/BlockTypeRegistry.h\"",
+    "#include \"minecraft/world/WorldSystems.h\"",
+    "#include \"minecraft/item/Item.h\"",
+    "#include \"minecraft/actor/ActorType.h\"",
+    "#include \"minecraft/actor/ProjectileFactory.h\"",
+    "#include \"minecraft/actor/ActorFactory.h\""
   ],
 
   "variables": {
@@ -1224,6 +1294,10 @@
       "address": "0x0620D10"
     },
     {
+      "name": "??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@@Z",
+      "address": "0x146CCF0"
+    },
+    {
       "name": "?getSelectedItem@Player@@QEBAAEBVItemStack@@XZ",
       "address": "0x1459C30"
     },
@@ -1354,6 +1428,30 @@
     {
       "name": "?broadcastLevelEvent@Level@@QEAAXW4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z",
       "address": "0x17D4C40"
+    },
+    {
+      "name": "?registerVanillaActorData@VanillaActors@@YAXXZ",
+      "address": "0x146F630"
+    },
+    {
+      "name": "?GetActorDataRegistry@@YAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@@std@@@2@@std@@XZ",
+      "address": "0x12FF7C0"
+    },
+    {
+      "name": "?putShort@CompoundTag@@QEAAAEAFV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z",
+      "address": "0x0FDC270"
+    },
+    {
+      "name": "?getShort@CompoundTag@@QEBAFV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+      "address": "0x0FDCC50"
+    },
+    {
+      "name": "?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemInstance@@AEBVActor@@@Z",
+      "address": "0x14E8430"
+    },
+    {
+      "name": "?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z",
+      "address": "0x12EF9D0"
     }
   ]
 }

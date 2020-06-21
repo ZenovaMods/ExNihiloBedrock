@@ -1,7 +1,7 @@
 #pragma once
 
-#include "minecraft/Item.h"
-#include "minecraft/TextureAtlasItem.h"
+#include "minecraft/item/Item.h"
+#include "minecraft/client/TextureAtlasItem.h"
 
 class ItemPebble : public Item {
 private:

@@ -1,16 +1,22 @@
 #include "ENEntities.h"
 
-#include "minecraft/ActorType.h"
-#include "minecraft/ProjectileFactory.h"
-#include "minecraft/ActorRenderDispatcher.h"
-#include "minecraft/ItemSpriteRenderer.h"
+#include "minecraft/actor/ActorType.h"
+#include "minecraft/actor/ProjectileFactory.h"
+#include "minecraft/actor/ActorRegistry.h"
+#include "minecraft/client/ActorRenderDispatcher.h"
+#include "minecraft/client/ItemSpriteRenderer.h"
 
 #include "DropItemSubcomponent.h"
+#include "ProjectileStone.h"
 #include "../items/ENItems.h"
 #include "../items/ItemPebble.h"
 
 void ENEntities::initEntityMap() {
 	ENTITY_TYPE_MAP->insert({ ActorType::Pebble, {"exnihilo", "pebble", "thrown_stone"} });
+}
+
+void ENEntities::initEntityData() {
+	_registerActorData<ProjectileStone, ActorType::Pebble>("exnihilo:pebble", true, false);
 }
 
 void ENEntities::initProjectileMap() {

@@ -5,8 +5,7 @@
       "identifier": "exnihilo:pebble",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "minecraft:snowball"
+      "is_experimental": false
     },
     "components": {
       "minecraft:collision_box": {

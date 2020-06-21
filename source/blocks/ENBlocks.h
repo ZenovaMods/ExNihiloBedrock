@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "minecraft/SharedPtr.h"
+#include "minecraft/util/SharedPtr.h"
 
 class BlockDefinitionGroup;
 class BlockLegacy;

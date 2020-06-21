@@ -1,6 +1,6 @@
 #pragma once
 
-#include "minecraft/HeavyBlock.h"
+#include "minecraft/block/HeavyBlock.h"
 
 class BlockBaseFalling : public HeavyBlock {
 public:

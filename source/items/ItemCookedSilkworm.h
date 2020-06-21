@@ -1,6 +1,6 @@
 #pragma once
 
-#include "minecraft/Item.h"
+#include "minecraft/item/Item.h"
 
 class ItemCookedSilkworm : public Item {
 public:

@@ -2,10 +2,10 @@
 
 #include <sstream>
 
-#include "minecraft/ItemStack.h"
-#include "minecraft/Item.h"
-#include "minecraft/ItemRegistry.h"
-#include "minecraft/Block.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/item/Item.h"
+#include "minecraft/item/ItemRegistry.h"
+#include "minecraft/block/Block.h"
 
 #include "StringUtils.h"
 

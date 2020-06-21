@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Fri Jun 19 2020 02:56:56 UTC
+// Generated on Sun Jun 21 2020 02:24:31 UTC
 #pragma once
 
 extern "C" {
@@ -49,6 +49,7 @@ extern "C" {
 	extern void* _initClientData_VanillaItems__SAXXZ_ptr;
 	extern void* __genRandInt32_Random_Core__AEAAIXZ_ptr;
 	extern void* _nextFloat_Random__QEAAMXZ_ptr;
+	extern void* __0Throwable__QEAA_PEAVActorDefinitionGroup__AEBUActorDefinitionIdentifier___Z_ptr;
 	extern void* _getSelectedItem_Player__QEBAAEBVItemStack__XZ_ptr;
 	extern void* _causeFoodExhaustion_Player__QEAAXM_Z_ptr;
 	extern void* _getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr;
@@ -82,16 +83,26 @@ extern "C" {
 	extern void* _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr;
 	extern void* _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr;
 	extern void* _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
+	extern void* _registerVanillaActorData_VanillaActors__YAXXZ_ptr;
+	extern void* _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr;
+	extern void* _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr;
+	extern void* _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
+	extern void* _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr;
+	extern void* _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;
 	extern void* BlockItem_vtable;
 	extern void* BlockLegacy_vtable;
+	extern void* LiquidBlock_vtable;
+	extern void* LiquidBlockStatic_vtable;
 	extern void* HeavyBlock_vtable;
 	extern void* ItemInstance_vtable;
 	extern void* ItemStack_vtable;
 	extern void* Actor_vtable;
 	extern void* Mob_vtable;
 	extern void* Player_vtable;
+	extern void* Throwable_vtable;
 	extern void* Container_vtable;
+	extern void* Level_vtable;
 }

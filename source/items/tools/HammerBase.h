@@ -2,7 +2,7 @@
 
 #include "IHammer.h"
 
-#include "minecraft/DiggerItem.h"
+#include "minecraft/item/DiggerItem.h"
 
 class HammerBase : public DiggerItem, public IHammer {
 public:

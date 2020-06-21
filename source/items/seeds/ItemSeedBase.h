@@ -1,7 +1,7 @@
 #pragma once
 
-#include "minecraft/BlockPlanterItem.h"
-#include "minecraft/TextureAtlasItem.h"
+#include "minecraft/item/BlockPlanterItem.h"
+#include "minecraft/client/TextureAtlasItem.h"
 
 class ItemSeedBase : public BlockPlanterItem {
 public:

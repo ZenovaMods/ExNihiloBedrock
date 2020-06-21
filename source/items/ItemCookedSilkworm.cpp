@@ -1,6 +1,6 @@
 #include "ItemCookedSilkworm.h"
 
-#include "minecraft/FoodItemComponent.h"
+#include "minecraft/item/FoodItemComponent.h"
 
 ItemCookedSilkworm::ItemCookedSilkworm(const std::string& name, int id) : Item(name, id) {
 	setUseAnimation(UseAnimation::EAT);

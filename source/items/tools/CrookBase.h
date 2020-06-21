@@ -1,6 +1,6 @@
 #pragma once
 
-#include "minecraft/DiggerItem.h"
+#include "minecraft/item/DiggerItem.h"
 
 class CrookBase : public DiggerItem {
 public:

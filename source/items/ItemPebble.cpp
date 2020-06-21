@@ -2,17 +2,17 @@
 
 #include "ENItems.h"
 
-#include "minecraft/ActorDefinitionIdentifier.h"
-#include "minecraft/ActorType.h"
-#include "minecraft/ItemHelper.h"
-#include "minecraft/ItemStack.h"
-#include "minecraft/ItemDescriptor.h"
-#include "minecraft/Player.h"
-#include "minecraft/Spawner.h"
-#include "minecraft/Vec3.h"
-#include "minecraft/BlockSource.h"
-#include "minecraft/Facing.h"
-#include "minecraft/Container.h"
+#include "minecraft/actor/ActorDefinitionIdentifier.h"
+#include "minecraft/actor/ActorType.h"
+#include "minecraft/item/ItemHelper.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/item/ItemDescriptor.h"
+#include "minecraft/actor/Player.h"
+#include "minecraft/world/Spawner.h"
+#include "minecraft/util/Vec3.h"
+#include "minecraft/world/BlockSource.h"
+#include "minecraft/util/Facing.h"
+#include "minecraft/world/Container.h"
 
 std::vector<std::string> ItemPebble::names { "stone", "granite", "diorite", "andesite" };
 
@@ -37,7 +37,7 @@ ItemStack& ItemPebble::use(ItemStack& instance, Player& player) const {
 		player.playSynchronizedSound(LevelSoundEvent::Throw, player.getAttachPos(ActorLocation::DropAttachPoint, 0.0), -1, false);
 		Actor* pebble = level.getSpawner().spawnProjectile(player.getRegion(), { "exnihilo:pebble" }, &player, player.getPos(), Vec3::ZERO);
 		if (pebble)
-			pebble->getEntityData().define(0x24, auxValue);
+			pebble->setAuxValue(auxValue);
 	}
 	return instance;
 }
@@ -48,7 +48,7 @@ bool ItemPebble::dispense(BlockSource& region, Container& container, int slot, c
 	if (!level.isClientSide()) {
 		Actor* pebble = level.getSpawner().spawnProjectile(region, { "exnihilo:pebble" }, nullptr, pos, direction);
 		if (pebble) {
-			pebble->getEntityData().define(0x24, container.getItem(slot).getAuxValue());
+			pebble->setAuxValue(container.getItem(slot).getAuxValue());
 			container.removeItem(slot, 1);
 			level.broadcastLevelEvent(LevelEvent::SoundLaunch, pos, 0x13332, nullptr);
 			return true;

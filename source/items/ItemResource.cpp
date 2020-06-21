@@ -2,12 +2,12 @@
 
 #include "ENItems.h"
 
-#include "minecraft/Actor.h"
-#include "minecraft/BlockSource.h"
-#include "minecraft/ItemDescriptor.h"
-#include "minecraft/ItemStack.h"
-#include "minecraft/VanillaBlockRegistry.h"
-#include "minecraft/VanillaBlockTypeRegistry.h"
+#include "minecraft/actor/Actor.h"
+#include "minecraft/world/BlockSource.h"
+#include "minecraft/item/ItemDescriptor.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/block/VanillaBlockRegistry.h"
+#include "minecraft/block/VanillaBlockTypeRegistry.h"
 
 const std::string ItemResource::PORCELAIN_CLAY = "porcelain_clay";
 const std::string ItemResource::SILKWORM = "silkworm";

@@ -1,7 +1,7 @@
 #include "HammerRegistry.h"
 
-#include "minecraft/Random.h"
-#include "minecraft/ItemStack.h"
+#include "minecraft/util/Random.h"
+#include "minecraft/item/ItemStack.h"
 
 #include "../util/BlockInfo.h"
 #include "HammerReward.h"

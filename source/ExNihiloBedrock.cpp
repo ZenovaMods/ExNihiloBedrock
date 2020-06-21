@@ -1,18 +1,18 @@
 #include "Zenova.h"
-
-#include <iostream>
 #include "main.h"
 
-#include "minecraft/VanillaItems.h"
-#include "minecraft/BlockLegacy.h"
-#include "minecraft/ItemStack.h"
-#include "minecraft/WorldSystems.h"
-#include "minecraft/BlockGraphics.h"
-#include "minecraft/VanillaItems.h"
-#include "minecraft/BlockDefinitionGroup.h"
-#include "minecraft/ActorType.h"
-#include "minecraft/ProjectileFactory.h"
-#include "minecraft/ActorRenderDispatcher.h"
+#include <iostream>
+
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/item/VanillaItems.h"
+#include "minecraft/block/BlockDefinitionGroup.h"
+#include "minecraft/block/BlockLegacy.h"
+#include "minecraft/world/WorldSystems.h"
+#include "minecraft/client/BlockGraphics.h"
+#include "minecraft/client/ActorRenderDispatcher.h"
+#include "minecraft/actor/ActorType.h"
+#include "minecraft/actor/ProjectileFactory.h"
+#include "minecraft/actor/ActorRegistry.h"
 
 #include "items/ENItems.h"
 #include "blocks/ENBlocks.h"
@@ -98,6 +98,13 @@ void initEntityRenderers(ActorRenderDispatcher* self, GeometryGroup& geometry, m
 	ENEntities::initRenderers(self, textures);
 }
 
+void (*_registerVanillaActorData)();
+void registerVanillaActorData() {
+	_registerVanillaActorData();
+
+	ENEntities::initEntityData();
+}
+
 class ExNihiloBedrock : public Zenova::Mod {
 private:
 	ExNihiloDefaultRecipes* defaultRecipes;
@@ -120,6 +127,7 @@ private:
 		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, &_registerBlocks);
 		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);
 		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
+		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
 	}
 
 	virtual ~ExNihiloBedrock() {}

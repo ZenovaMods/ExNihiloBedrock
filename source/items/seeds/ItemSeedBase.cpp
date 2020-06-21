@@ -1,7 +1,7 @@
 #include "ItemSeedBase.h"
 
-#include "minecraft/ItemDescriptor.h"
-#include "minecraft/ItemStack.h"
+#include "minecraft/item/ItemDescriptor.h"
+#include "minecraft/item/ItemStack.h"
 
 const std::string ItemSeedBase::OAK = "Oak";
 const std::string ItemSeedBase::SPRUCE = "Spruce";

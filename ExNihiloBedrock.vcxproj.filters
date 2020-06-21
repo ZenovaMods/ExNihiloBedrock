@@ -66,97 +66,22 @@
     <ClCompile Include="source\entities\ENEntities.cpp">
       <Filter>entities</Filter>
     </ClCompile>
+    <ClCompile Include="source\entities\ProjectileStone.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="source\items\ItemDoll.cpp">
+      <Filter>items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\minecraft\BlockLegacy.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockSource.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockSourceListener.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\IWorldRegistriesProvider.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Level.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Random.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\SharedPtr.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\VanillaBlockRegistry.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\VanillaBlockTypeRegistry.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ItemRegistry.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\VanillaItems.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\CreativeItemCategory.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Item.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\UseAnimation.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockPos.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Vec3.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Vec2.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
     <ClInclude Include="source\items\ENItems.h">
       <Filter>items</Filter>
     </ClInclude>
     <ClInclude Include="source\items\ItemResource.h">
       <Filter>items</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\TextureAtlasItem.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\TextureUVCoordinateSet.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ItemDescriptor.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Block.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ItemStack.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Actor.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
     <ClInclude Include="source\items\ItemCookedSilkworm.h">
       <Filter>items</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\FoodItemComponent.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\VanillaBlockStates.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockPlanterItem.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\SaplingType.h">
-      <Filter>minecraft</Filter>
     </ClInclude>
     <ClInclude Include="source\items\seeds\ItemSeedBase.h">
       <Filter>items\seeds</Filter>
@@ -169,9 +94,6 @@
     </ClInclude>
     <ClInclude Include="source\util\StringUtils.h">
       <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Util.h">
-      <Filter>minecraft</Filter>
     </ClInclude>
     <ClInclude Include="source\registries\CrookRegistry.h">
       <Filter>registries</Filter>
@@ -236,56 +158,11 @@
     <ClInclude Include="source\items\tools\database\CrookDatabase.h">
       <Filter>items\tools\database</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\DiggerItem.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\VanillaItemTiers.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
     <ClInclude Include="source\handlers\HandlerHammer.h">
       <Filter>handlers</Filter>
     </ClInclude>
     <ClInclude Include="source\handlers\HandlerCrook.h">
       <Filter>handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\EnchantUtils.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\WorldSystems.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockGraphics.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockItem.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockTypeRegistry.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\HeavyBlock.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Color.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Version.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\AABB.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\BlockState.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\LootComponent.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Mutex.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Material.h">
-      <Filter>minecraft</Filter>
     </ClInclude>
     <ClInclude Include="source\blocks\BlockBaseFalling.h">
       <Filter>blocks</Filter>
@@ -293,84 +170,240 @@
     <ClInclude Include="source\blocks\ENBlocks.h">
       <Filter>blocks</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\BlockDefinitionGroup.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
     <ClInclude Include="source\items\ItemPebble.h">
       <Filter>items</Filter>
     </ClInclude>
     <ClInclude Include="source\main.h" />
-    <ClInclude Include="include\minecraft\Mob.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Player.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ItemHelper.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\LevelEvent.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\Spawner.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ActorDefinitionIdentifier.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ActorType.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\StringHash.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ActorMapping.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
     <ClInclude Include="source\entities\ENEntities.h">
       <Filter>entities</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\ProjectileFactory.h">
-      <Filter>minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="include\minecraft\OnHitSubcomponent.h">
-      <Filter>minecraft</Filter>
     </ClInclude>
     <ClInclude Include="source\entities\DropItemSubcomponent.h">
       <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\ProjectileComponent.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="source\entities\ProjectileStone.h">
+      <Filter>entities</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\HitResult.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="source\items\ItemDoll.h">
+      <Filter>items</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\ParticleType.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\BlockItem.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\CompoundTag.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\BlockPlanterItem.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\ItemSpriteRenderer.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\CreativeItemCategory.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\ActorRenderDispatcher.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\DiggerItem.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\ActorRenderer.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\FoodItemComponent.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\ActorFactory.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\Item.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\SynchedActorData.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\ItemDescriptor.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\Facing.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\ItemHelper.h">
+      <Filter>minecraft\item</Filter>
     </ClInclude>
-    <ClInclude Include="include\minecraft\Container.h">
-      <Filter>minecraft</Filter>
+    <ClInclude Include="include\minecraft\item\ItemRegistry.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\ItemStack.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\UseAnimation.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\VanillaItems.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\VanillaItemTiers.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\BlockDefinitionGroup.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\BlockLegacy.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\BlockState.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\BlockTypeRegistry.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\HeavyBlock.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\LiquidBlock.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\LiquidBlockStatic.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\Material.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\SaplingType.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\VanillaBlockRegistry.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\VanillaBlockStates.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\VanillaBlockTypeRegistry.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\Block.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\ActorRenderDispatcher.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\ActorRenderer.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\BlockGraphics.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\ItemSpriteRenderer.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\TextureAtlasItem.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\TextureUVCoordinateSet.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\Actor.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorDefinitionIdentifier.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorFactory.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorMapping.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorRegistry.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorType.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorUniqueID.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\Mob.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\MovementInterpolator.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\OnHitSubcomponent.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ParticleType.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\Player.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ProjectileComponent.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ProjectileFactory.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\SynchedActorData.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\Throwable.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\BlockSource.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\BlockSourceListener.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\Container.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\ItemEventCoordinator.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\IWorldRegistriesProvider.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\Level.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\LevelEvent.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\Spawner.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\WorldSystems.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\BlockPos.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Version.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Vec3.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Vec2.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Util.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\StringHash.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\SharedPtr.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Random.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Mutex.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\LootComponent.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Facing.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\EnchantUtils.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\CompoundTag.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\Color.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\AABB.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\HitResult.h">
+      <Filter>minecraft\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -416,5 +449,58 @@
     <Filter Include="entities">
       <UniqueIdentifier>{3e0d27e5-7616-4397-a31c-8113fcce2fc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="gsl">
+      <UniqueIdentifier>{d0d0ff72-0aa4-401f-bd46-220ad3971b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minecraft\item">
+      <UniqueIdentifier>{9b5ec4cd-cb83-4d43-ae0b-43f5018221d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minecraft\block">
+      <UniqueIdentifier>{b9e73ea9-6ab4-45ab-aef4-8e9c2033750f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minecraft\client">
+      <UniqueIdentifier>{7619a399-34b2-40d0-bb75-c265a9790530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minecraft\actor">
+      <UniqueIdentifier>{4b662dba-a609-4d38-82c2-616c91d6d688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minecraft\world">
+      <UniqueIdentifier>{24c95991-63cb-4f08-a0d1-8798855e6dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minecraft\util">
+      <UniqueIdentifier>{78fc5c6b-69ab-4f1e-bb67-a08cb51ce9f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\gsl\gsl_util">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\multi_span">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\pointers">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\span">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\span_ext">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\string_span">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\gsl">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\gsl_algorithm">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\gsl_assert">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="include\gsl\gsl_byte">
+      <Filter>gsl</Filter>
+    </None>
   </ItemGroup>
 </Project>

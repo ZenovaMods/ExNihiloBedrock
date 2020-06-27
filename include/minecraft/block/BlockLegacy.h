@@ -11,9 +11,11 @@
 #include "../util/Version.h"
 #include "../util/SharedPtr.h"
 #include "../item/CreativeItemCategory.h"
+#include "../CommonTypes.h"
 #include "BlockState.h"
 #include "Material.h"
 #include "BlockTypeRegistry.h"
+#include "BlockRenderLayer.h"
 
 class Block;
 class BlockPos;
@@ -34,15 +36,11 @@ class ItemActor;
 struct ActorBlockSyncMessage;
 
 typedef std::function<const Block& (const BlockPos&)> GetBlockFunction;
-typedef unsigned short DataID;
-typedef unsigned char FacingID;
-typedef unsigned char Brightness;
-typedef unsigned short NewBlockID;
 
 enum class FertilizerType : unsigned char;
 enum class BlockActorType : int;
-enum class BlockRenderLayer : unsigned int;
 enum class BlockSupportType : int;
+
 enum class BlockProperty : unsigned long long {
     None,
     Stair,
@@ -154,6 +152,42 @@ private:
     std::vector<long> mLegacyDataLookupTable;
 
 public:
+    bool hasState(const ItemState& stateType) const {
+        return mStates[stateType.getID()].isInitialized();
+    }
+
+    template<typename T>
+    T getState(const ItemState& stateType, DataID data) {
+        auto blockState = mStates[stateType.getID()];
+        if (blockState.isInitialized())
+            return blockState.get<T>(data);
+        else
+            return NULL;
+    }
+
+    template<typename T>
+    const Block* setState(const ItemState& stateType, T val, DataID data) {
+        auto blockState = mStates[stateType.getID()];
+        if (blockState.isInitialized())
+            return blockState.set<T>(data, val, mBlockPermutations);
+        else
+            return &getDefaultState();
+    }
+
+    template<typename T>
+    const Block* trySetState(const ItemState& stateType, T val, DataID data) {
+        auto blockState = mStates[stateType.getID()];
+        return blockState.trySet<T>(data, val, mBlockPermutations);
+    }
+
+    unsigned int getStateMask(const ItemState& stateType) const {
+        auto blockState = mStates[stateType.getID()];
+        if (blockState.isInitialized())
+            return blockState.getMask();
+        else
+            return NULL;
+    }
+
     BlockLegacy(const std::string&, int, const Material&);
     virtual ~BlockLegacy();
     virtual void tick(BlockSource&, const BlockPos&, Random&) const;
@@ -331,7 +365,7 @@ public:
     }
     void setSolid(bool solid) {
         mSolid = solid;
-        mLightBlock = solid ? 15 : 0;
+        mLightBlock = solid ? Brightness::MAX : Brightness::MIN;
         mPushesOutItems = solid;
     }
     void setRandomTickingExtraLayer(bool tick) {

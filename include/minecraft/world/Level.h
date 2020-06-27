@@ -5,7 +5,7 @@
 #include "IWorldRegistriesProvider.h"
 #include "LevelEvent.h"
 #include "ItemEventCoordinator.h"
-#include "ActorFactory.h"
+#include "../actor/ActorFactory.h"
 
 class Spawner;
 class ActorInfoRegistry;
@@ -13,6 +13,10 @@ class Player;
 class Vec3;
 class LevelSettings;
 class LevelData;
+class ProjectileFactory;
+class BehaviorFactory;
+class BehaviorTreeGroup;
+class BlockPalette;
 
 class Level : public BlockSourceListener, public IWorldRegistriesProvider {
 private:
@@ -20,7 +24,11 @@ private:
     std::shared_ptr<ActorInfoRegistry> mActorInfoRegistry;          // 0x178
     char filler1[0x598];                                            // 0x188
     std::unique_ptr<Spawner> mMobSpawner;                           // 0x720
-    char filler2[0x1D0];                                            // 0x8E8
+    std::unique_ptr<ProjectileFactory> mProjectileFactory;          // 0x728
+    std::unique_ptr<BehaviorFactory> mBehaviorFactory;              // 0x730
+    std::unique_ptr<BehaviorTreeGroup> mBehaviorTreeDefinitions;    // 0x738
+    std::unique_ptr<BlockPalette> mGlobalBlockPalette;              // 0x740
+    char filler2[0x1B0];                                            // 0x8E8
     Random mRandom;                                                 // 0x8F8
     char filler3[0xA44];                                            // 0x1D08
     bool mIsClientSide;                                             // 0x1D10
@@ -44,6 +52,9 @@ public:
     }
     ActorFactory& getActorFactory() {
         return mActorFactory;
+    }
+    const BlockPalette& getGlobalBlockPalette() const {
+        return *mGlobalBlockPalette;
     }
     Random& getRandom() {
         return mRandom;

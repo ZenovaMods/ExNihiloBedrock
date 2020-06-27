@@ -6,16 +6,7 @@
 
 class LiquidBlock : public BlockLegacy {
 public:
-    LiquidBlock(const std::string& nameId, int id, const Material& material) : BlockLegacy(nameId, id, material) {
-        setSolid(false);
-        mRenderLayer = (BlockRenderLayer)(2 - material.isType(MaterialType::Water));
-        mRenderLayerCanRenderAsOpaque = true;
-        mProperties = BlockProperty::BreakOnPush;
-        mCanInstatick = true;
-        mAnimatedTexture = true;
-        mTranslucency = std::max(0.8F, mMaterial.getTranslucency());
-        setRandomTickingExtraLayer(material.isType(MaterialType::Water));
-    }
+    LiquidBlock(const std::string&, int, const Material&);
     virtual bool canContainLiquid() const;
     virtual bool mayPick(BlockSource&, const Block&, bool) const;
     virtual const AABB& getAABB(BlockSource&, const BlockPos&, const Block&, AABB&, bool) const;
@@ -29,4 +20,6 @@ public:
     virtual void neighborChanged(BlockSource&, const BlockPos&, const BlockPos&) const;
     virtual bool checkIsPathable(Actor&, const BlockPos&, const BlockPos&) const;
     virtual bool canBeSilkTouched() const;
+
+    int getTickDelay(BlockSource&) const;
 };

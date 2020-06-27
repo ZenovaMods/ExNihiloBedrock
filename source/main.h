@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Sun Jun 21 2020 02:24:31 UTC
+// Generated on Tue Jun 23 2020 03:01:43 UTC
 #pragma once
 
 extern "C" {
@@ -30,10 +30,12 @@ extern "C" {
 	extern void* _set_ItemStackBase__QEAAXH_Z_ptr;
 	extern void* _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr;
 	extern void* _getAuxValue_ItemStackBase__QEBAFXZ_ptr;
+	extern void* _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr;
 	extern void* _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
+	extern void* _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
 	extern void* _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr;
+	extern void* _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr;
 	extern void* _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr;
-	extern void* _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr;
 	extern void* __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr;
 	extern void* _getBlockItemId_BlockLegacy__QEBAFXZ_ptr;
 	extern void* _tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr;
@@ -89,13 +91,14 @@ extern "C" {
 	extern void* _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
 	extern void* _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr;
 	extern void* _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr;
+	extern void* __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr;
+	extern void* _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;
 	extern void* BlockItem_vtable;
 	extern void* BlockLegacy_vtable;
 	extern void* LiquidBlock_vtable;
-	extern void* LiquidBlockStatic_vtable;
 	extern void* HeavyBlock_vtable;
 	extern void* ItemInstance_vtable;
 	extern void* ItemStack_vtable;

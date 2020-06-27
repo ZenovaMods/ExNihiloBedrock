@@ -1,0 +1,13 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/fluidWitchWaterStill",
+    "atlas_tile": "witchWaterStill",
+    "ticks_per_frame": 2
+  },
+  {
+    "flipbook_texture": "textures/blocks/fluidWitchWaterFlow",
+    "atlas_tile": "witchWaterFlowing",
+    "ticks_per_frame": 2,
+    "replicate": 2
+  }
+]

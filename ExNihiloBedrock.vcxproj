@@ -105,7 +105,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>ZenovaAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ZENOVA_DATA);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -126,7 +126,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>ZenovaAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ZENOVA_DATA);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -197,10 +197,13 @@
     <ClInclude Include="include\minecraft\block\Block.h" />
     <ClInclude Include="include\minecraft\block\BlockDefinitionGroup.h" />
     <ClInclude Include="include\minecraft\block\BlockLegacy.h" />
+    <ClInclude Include="include\minecraft\block\BlockPalette.h" />
+    <ClInclude Include="include\minecraft\block\BlockRenderLayer.h" />
     <ClInclude Include="include\minecraft\block\BlockState.h" />
     <ClInclude Include="include\minecraft\block\BlockTypeRegistry.h" />
     <ClInclude Include="include\minecraft\block\HeavyBlock.h" />
     <ClInclude Include="include\minecraft\block\LiquidBlock.h" />
+    <ClInclude Include="include\minecraft\block\LiquidBlockDynamic.h" />
     <ClInclude Include="include\minecraft\block\LiquidBlockStatic.h" />
     <ClInclude Include="include\minecraft\block\Material.h" />
     <ClInclude Include="include\minecraft\block\SaplingType.h" />
@@ -213,6 +216,7 @@
     <ClInclude Include="include\minecraft\client\ItemSpriteRenderer.h" />
     <ClInclude Include="include\minecraft\client\TextureAtlasItem.h" />
     <ClInclude Include="include\minecraft\client\TextureUVCoordinateSet.h" />
+    <ClInclude Include="include\minecraft\CommonTypes.h" />
     <ClInclude Include="include\minecraft\item\BlockItem.h" />
     <ClInclude Include="include\minecraft\item\BlockPlanterItem.h" />
     <ClInclude Include="include\minecraft\item\CreativeItemCategory.h" />
@@ -234,7 +238,9 @@
     <ClInclude Include="include\minecraft\util\HitResult.h" />
     <ClInclude Include="include\minecraft\util\LootComponent.h" />
     <ClInclude Include="include\minecraft\util\Mutex.h" />
+    <ClInclude Include="include\minecraft\util\NewType.h" />
     <ClInclude Include="include\minecraft\util\Random.h" />
+    <ClInclude Include="include\minecraft\util\SavedData.h" />
     <ClInclude Include="include\minecraft\util\SharedPtr.h" />
     <ClInclude Include="include\minecraft\util\StringHash.h" />
     <ClInclude Include="include\minecraft\util\Util.h" />
@@ -245,17 +251,22 @@
     <ClInclude Include="include\minecraft\world\BlockSource.h" />
     <ClInclude Include="include\minecraft\world\BlockSourceListener.h" />
     <ClInclude Include="include\minecraft\world\Container.h" />
+    <ClInclude Include="include\minecraft\world\Dimension.h" />
     <ClInclude Include="include\minecraft\world\ItemEventCoordinator.h" />
     <ClInclude Include="include\minecraft\world\IWorldRegistriesProvider.h" />
     <ClInclude Include="include\minecraft\world\Level.h" />
     <ClInclude Include="include\minecraft\world\LevelEvent.h" />
+    <ClInclude Include="include\minecraft\world\LevelListener.h" />
     <ClInclude Include="include\minecraft\world\Spawner.h" />
     <ClInclude Include="include\minecraft\world\WorldSystems.h" />
     <ClInclude Include="source\blocks\BlockBaseFalling.h" />
+    <ClInclude Include="source\blocks\BlockFluidWitchWaterFlowing.h" />
+    <ClInclude Include="source\blocks\BlockFluidWitchWaterStill.h" />
     <ClInclude Include="source\blocks\ENBlocks.h" />
     <ClInclude Include="source\entities\DropItemSubcomponent.h" />
     <ClInclude Include="source\entities\ENEntities.h" />
     <ClInclude Include="source\entities\ProjectileStone.h" />
+    <ClInclude Include="source\ExNihiloBedrock.h" />
     <ClInclude Include="source\handlers\HandlerCrook.h" />
     <ClInclude Include="source\handlers\HandlerHammer.h" />
     <ClInclude Include="source\items\ENItems.h" />
@@ -291,7 +302,12 @@
     <ClInclude Include="source\util\StringUtils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\minecraft\block\LiquidBlock.cpp" />
+    <ClCompile Include="include\minecraft\block\LiquidBlockDynamic.cpp" />
+    <ClCompile Include="include\minecraft\block\LiquidBlockStatic.cpp" />
     <ClCompile Include="source\blocks\BlockBaseFalling.cpp" />
+    <ClCompile Include="source\blocks\BlockFluidWitchWaterFlowing.cpp" />
+    <ClCompile Include="source\blocks\BlockFluidWitchWaterStill.cpp" />
     <ClCompile Include="source\blocks\ENBlocks.cpp" />
     <ClCompile Include="source\entities\ENEntities.cpp" />
     <ClCompile Include="source\entities\ProjectileStone.cpp" />

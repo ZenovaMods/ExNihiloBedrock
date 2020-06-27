@@ -72,6 +72,21 @@
     <ClCompile Include="source\items\ItemDoll.cpp">
       <Filter>items</Filter>
     </ClCompile>
+    <ClCompile Include="include\minecraft\block\LiquidBlockStatic.cpp">
+      <Filter>minecraft\block</Filter>
+    </ClCompile>
+    <ClCompile Include="source\blocks\BlockFluidWitchWaterStill.cpp">
+      <Filter>blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="include\minecraft\block\LiquidBlockDynamic.cpp">
+      <Filter>minecraft\block</Filter>
+    </ClCompile>
+    <ClCompile Include="include\minecraft\block\LiquidBlock.cpp">
+      <Filter>minecraft\block</Filter>
+    </ClCompile>
+    <ClCompile Include="source\blocks\BlockFluidWitchWaterFlowing.cpp">
+      <Filter>blocks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\items\ENItems.h">
@@ -405,6 +420,37 @@
     <ClInclude Include="include\minecraft\util\HitResult.h">
       <Filter>minecraft\util</Filter>
     </ClInclude>
+    <ClInclude Include="include\minecraft\block\LiquidBlockDynamic.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="source\blocks\BlockFluidWitchWaterStill.h">
+      <Filter>blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\Dimension.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\LevelListener.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\SavedData.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="source\blocks\BlockFluidWitchWaterFlowing.h">
+      <Filter>blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\BlockPalette.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\BlockRenderLayer.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\CommonTypes.h">
+      <Filter>minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\NewType.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ExNihiloBedrock.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />

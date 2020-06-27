@@ -6,6 +6,8 @@
 
 class CompoundTag;
 
+typedef unsigned short DataID;
+
 class ItemState {
 public:
     struct StateListNode {
@@ -83,4 +85,29 @@ public:
     uint32_t getNumBits() const { return mNumBits; }
     bool isValidData(uint32_t);
     const ItemState& getState() const { return *mState; }
+
+    template<typename T>
+    const Block* trySet(DataID data, const T& value, const std::vector<std::unique_ptr<Block>>& blockPermutations) const {
+        uint32_t unsignedVal = value;
+        if (!mInitialized || unsignedVal >= mVariationCount)
+            return nullptr;
+        uint32_t val = unsignedVal << (mStartBit - mNumBits + 1);
+        unsigned short idx = val | ~getMask() & data;
+        if (idx >= blockPermutations.size())
+            return nullptr;
+        return blockPermutations[idx].get();
+    }
+
+    template<typename T>
+    const Block* set(DataID data, const T& value, const std::vector<std::unique_ptr<Block>>& blockPermutations) const {
+        const Block* state = trySet(data, value, blockPermutations);
+        if (state)
+            return state;
+        return blockPermutations[0].get();
+    }
+
+    template<typename T>
+    T get(const DataID& data) const {
+        return (data >> (mStartBit - mNumBits + 1)) & (0xFFFF >> (mMaxBits - mNumBits));
+    }
 };

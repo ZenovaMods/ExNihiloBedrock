@@ -3,8 +3,6 @@
 #include "BlockLegacy.h"
 #include "../util/SharedPtr.h"
 
-enum class SaplingType;
-
 class Block {
 private:
     const DataID mData;
@@ -15,9 +13,21 @@ public:
 
     const BlockLegacy& getLegacyBlock() const;
 
+    const Block& getDefaultState() const {
+        return mLegacyBlock->getDefaultState();
+    }
+
     const DataID& getDataDEPRECATED() const {
         return mData;
     }
 
-    const Block* getSaplingType(const ItemState&, SaplingType) const;
+    template<typename T>
+    T getState(const ItemState& stateType) const {
+        return mLegacyBlock->getState<T>(stateType, mData);
+    }
+
+    template<typename T>
+    const Block* setState(const ItemState& stateType, T val) const {
+        return mLegacyBlock->setState<T>(stateType, val, mData);
+    }
 };

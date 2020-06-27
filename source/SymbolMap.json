@@ -165,7 +165,7 @@
         "?getLiquidClipVolume@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z",
         "?onProjectileHit@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
         "?liquidCanFlowIntoFromDirection@BlockLegacy@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z",
-        "?getLightEmission@BlockLegacy@@UEBAEAEBVBlock@@@Z",
+        "?getLightEmission@BlockLegacy@@UEBA?AUBrightness@@AEBVBlock@@@Z",
         "?shouldRandomTick@BlockLegacy@@UEBA_NXZ",
         "?hasVariableLighting@BlockLegacy@@UEBA_NXZ",
         "?isStrippable@BlockLegacy@@UEBA_NAEBVBlock@@@Z",
@@ -290,7 +290,7 @@
         "?getFaceFlip@BlockLegacy@@UEBA?AVFlip@@EAEBVBlock@@@Z",
         "?animateTick@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
         "?init@BlockLegacy@@UEAAAEAV1@XZ",
-        "?setLightBlock@BlockLegacy@@UEAAAEAV1@E@Z",
+        "?setLightBlock@BlockLegacy@@UEAAAEAV1@UBrightness@@@Z",
         "?setLightEmission@BlockLegacy@@UEAAAEAV1@M@Z",
         "?setExplodeable@BlockLegacy@@UEAAAEAV1@M@Z",
         "?setDestroyTime@BlockLegacy@@UEAAAEAV1@M@Z",
@@ -326,15 +326,6 @@
         "?getColorAtPos@LiquidBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z",
         "?animateTick@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
         "?canBeSilkTouched@LiquidBlock@@UEBA_NXZ"
-      ]
-    },
-    {
-      "name": "LiquidBlockStatic",
-      "parent": "LiquidBlock",
-      "address": "0x2BAF1C0",
-      "functions": [
-        "?tick@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
-        "?neighborChanged@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z"
       ]
     },
     {
@@ -1093,6 +1084,7 @@
     "WeakPtr<BlockLegacy>* VanillaBlockTypes::mMycelium": "0x30617F0",
     "WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves2": "0x30619E0",
     "ItemState* VanillaStates::SaplingType": "0x30633C0",
+    "ItemState* VanillaStates::LiquidDepth": "0x3062BA0",
     "Item::Tier* VanillaItemTiers::WOOD": "0x2A39988",
     "Item::Tier* VanillaItemTiers::STONE": "0x2A39A20",
     "Item::Tier* VanillaItemTiers::IRON": "0x2A39658",
@@ -1218,20 +1210,28 @@
       "address": "0x15700E0"
     },
     {
+      "name": "?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z",
+      "address": "0x1778AB0"
+    },
+    {
       "name": "?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z",
       "address": "0x1779710"
+    },
+    {
+      "name": "?getLiquidBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z",
+      "address": "0x1779E20"
     },
     {
       "name": "?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z",
       "address": "0x17797E0"
     },
     {
-      "name": "?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ",
-      "address": "0x00E9920"
+      "name": "?setExtraBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@H@Z",
+      "address": "0x1779BD0"
     },
     {
-      "name": "?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z",
-      "address": "0x15AD390"
+      "name": "?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ",
+      "address": "0x00E9920"
     },
     {
       "name": "??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z",
@@ -1452,6 +1452,14 @@
     {
       "name": "?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z",
       "address": "0x12EF9D0"
+    },
+    {
+      "name": "?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z",
+      "address": "0x16C9CD0"
+    },
+    {
+      "name": "?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z",
+      "address": "0x1776150"
     }
   ]
 }

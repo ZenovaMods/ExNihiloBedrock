@@ -1,4 +1,4 @@
-#include "Zenova.h"
+#include "ExNihiloBedrock.h"
 #include "main.h"
 
 #include <iostream>
@@ -105,14 +105,15 @@ void registerVanillaActorData() {
 	ENEntities::initEntityData();
 }
 
-class ExNihiloBedrock : public Zenova::Mod {
-private:
-	ExNihiloDefaultRecipes* defaultRecipes;
+ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
+std::string ExNihiloBedrock::versionId;
 
-	virtual void Start() {
-		Zenova::Platform::DebugPause();
-		Zenova_Info("ExNihiloBedrock Start");
+void ExNihiloBedrock::Start() {
+	Zenova::Platform::DebugPause();
+	Zenova_Info("ExNihiloBedrock Start");
+	versionId = GetManager().GetLaunchedVersion();
 
+	if (versionId == "1.14.60.5") {
 		defaultRecipes = new ExNihiloDefaultRecipes();
 
 		ENEntities::initEntityMap();
@@ -129,14 +130,7 @@ private:
 		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
 		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
 	}
-
-	virtual ~ExNihiloBedrock() {}
-	virtual void Update() {}
-	virtual void Tick() {}
-	virtual void Stop() {
-		Zenova_Info("ExNihiloBedrock Stop");
-	}
-};
+}
 
 MOD_FUNCTION Zenova::Mod* CreateMod() {
 	return new ExNihiloBedrock;

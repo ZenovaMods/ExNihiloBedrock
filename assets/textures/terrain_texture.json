@@ -12,6 +12,13 @@
     },
     "blockNetherrackCrushed": {
       "textures": "textures/blocks/blockNetherrackCrushed"
+    },
+    "witchWaterStill": {
+      "textures": "textures/blocks/fluidWitchWaterStill"
+    },
+    "witchWaterFlowing": {
+      "quad": 1,
+      "textures": "textures/blocks/fluidWitchWaterFlow"
     }
   }
 }

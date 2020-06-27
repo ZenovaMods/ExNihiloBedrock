@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Sun Jun 21 2020 02:24:31 UTC
+// Generated on Tue Jun 23 2020 03:01:43 UTC
 
 #include <Zenova/Hook.h>
 #include "main.h"
@@ -39,6 +39,7 @@ WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves = reinterpret_cast<WeakPtr<Bloc
 WeakPtr<BlockLegacy>* VanillaBlockTypes::mMycelium = reinterpret_cast<WeakPtr<BlockLegacy>*>(Zenova::Hook::SlideAddress(0x30617F0));
 WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves2 = reinterpret_cast<WeakPtr<BlockLegacy>*>(Zenova::Hook::SlideAddress(0x30619E0));
 ItemState* VanillaStates::SaplingType = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x30633C0));
+ItemState* VanillaStates::LiquidDepth = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x3062BA0));
 Item::Tier* VanillaItemTiers::WOOD = reinterpret_cast<Item::Tier*>(Zenova::Hook::SlideAddress(0x2A39988));
 Item::Tier* VanillaItemTiers::STONE = reinterpret_cast<Item::Tier*>(Zenova::Hook::SlideAddress(0x2A39A20));
 Item::Tier* VanillaItemTiers::IRON = reinterpret_cast<Item::Tier*>(Zenova::Hook::SlideAddress(0x2A39658));
@@ -81,10 +82,12 @@ extern "C" {
 	void* _set_ItemStackBase__QEAAXH_Z_ptr;
 	void* _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr;
 	void* _getAuxValue_ItemStackBase__QEBAFXZ_ptr;
+	void* _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr;
 	void* _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
+	void* _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
 	void* _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr;
+	void* _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr;
 	void* _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr;
-	void* _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr;
 	void* __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr;
 	void* _getBlockItemId_BlockLegacy__QEBAFXZ_ptr;
 	void* _tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr;
@@ -140,13 +143,14 @@ extern "C" {
 	void* _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
 	void* _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr;
 	void* _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr;
+	void* __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr;
+	void* _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
 	void* BlockItem_vtable;
 	void* BlockLegacy_vtable;
 	void* LiquidBlock_vtable;
-	void* LiquidBlockStatic_vtable;
 	void* HeavyBlock_vtable;
 	void* ItemInstance_vtable;
 	void* ItemStack_vtable;
@@ -186,10 +190,12 @@ void InitBedrockPointers() {
 	_set_ItemStackBase__QEAAXH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x156EF70));
 	_getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x01B9250));
 	_getAuxValue_ItemStackBase__QEBAFXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15700E0));
+	_addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1778AB0));
 	_getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1779710));
+	_getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1779E20));
 	_setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x17797E0));
+	_setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1779BD0));
 	_getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x00E9920));
-	_getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15AD390));
 	__0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x164EC50));
 	_getBlockItemId_BlockLegacy__QEBAFXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1651D90));
 	_tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x164F4B0));
@@ -245,13 +251,14 @@ void InitBedrockPointers() {
 	_getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDCC50));
 	_onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x14E8430));
 	_createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12EF9D0));
+	__tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16C9CD0));
+	_switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1776150));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));
 	BlockItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F258));
 	BlockLegacy_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B8E7D0));
 	LiquidBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BAE780));
-	LiquidBlockStatic_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BAF1C0));
 	HeavyBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BA8488));
 	ItemInstance_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B769D8));
 	ItemStack_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B76AD8));

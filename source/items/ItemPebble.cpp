@@ -73,5 +73,5 @@ Item& ItemPebble::setIcon(const std::string& name, int id) {
 
 ItemInstance* ItemPebble::getPebbleStack(const std::string& name) {
 	auto meta = std::distance(names.begin(), std::find(names.begin(), names.end(), name));
-	return new ItemInstance(*ENItems::pebbles, 1, meta);
+	return new ItemInstance(*ENItems::pebbles, 1, (int)meta);
 }

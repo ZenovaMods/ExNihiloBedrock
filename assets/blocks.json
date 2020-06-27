@@ -21,5 +21,19 @@
     "textures": "blockNetherrackCrushed",
     "brightness_gamma": 0.55,
     "sound": "gravel"
+  },
+  "witchwaterFlowing": {
+    "textures": {
+      "up": "witchWaterStill",
+      "down": "witchWaterStill",
+      "side": "witchWaterFlowing"
+    }
+  },
+  "witchwater": {
+    "textures": {
+      "up": "witchWaterStill",
+      "down": "witchWaterStill",
+      "side": "witchWaterFlowing"
+    }
   }
 }

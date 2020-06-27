@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Sun Jun 21 2020 02:24:31 UTC
+; Generated on Tue Jun 23 2020 03:01:43 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -29,10 +29,12 @@ extern __0ItemInstance__QEAA_AEBV0__Z_ptr
 extern _set_ItemStackBase__QEAAXH_Z_ptr
 extern _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr
 extern _getAuxValue_ItemStackBase__QEBAFXZ_ptr
+extern _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr
 extern _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr
+extern _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr
 extern _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr
+extern _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr
 extern _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr
-extern _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr
 extern __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr
 extern _getBlockItemId_BlockLegacy__QEBAFXZ_ptr
 extern _tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr
@@ -88,13 +90,14 @@ extern _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$
 extern _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr
 extern _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr
 extern _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr
+extern __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr
+extern _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
 extern BlockItem_vtable
 extern BlockLegacy_vtable
 extern LiquidBlock_vtable
-extern LiquidBlockStatic_vtable
 extern HeavyBlock_vtable
 extern ItemInstance_vtable
 extern ItemStack_vtable
@@ -214,21 +217,29 @@ global ?getAuxValue@ItemStackBase@@QEBAFXZ
 ?getAuxValue@ItemStackBase@@QEBAFXZ:
 	mov rax, [rel _getAuxValue_ItemStackBase__QEBAFXZ_ptr]
 	jmp rax
+global ?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z
+?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z:
+	mov rax, [rel _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr]
+	jmp rax
 global ?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
 ?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z:
 	mov rax, [rel _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
+	jmp rax
+global ?getLiquidBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
+?getLiquidBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z:
+	mov rax, [rel _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
 	jmp rax
 global ?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z
 ?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z:
 	mov rax, [rel _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr]
 	jmp rax
+global ?setExtraBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
+?setExtraBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@H@Z:
+	mov rax, [rel _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr]
+	jmp rax
 global ?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ
 ?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ:
 	mov rax, [rel _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr]
-	jmp rax
-global ?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z
-?getSaplingType@Block@@QEBAPEBV1@AEBVItemState@@W4SaplingType@@@Z:
-	mov rax, [rel _getSaplingType_Block__QEBAPEBV1_AEBVItemState__W4SaplingType___Z_ptr]
 	jmp rax
 global ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
 ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z:
@@ -449,6 +460,14 @@ global ?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemInstance@@AEBVActo
 global ?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z
 ?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z:
 	mov rax, [rel _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr]
+	jmp rax
+global ?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
+?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z:
+	mov rax, [rel __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr]
+	jmp rax
+global ?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z
+?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z:
+	mov rax, [rel _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:
@@ -982,8 +1001,8 @@ global ?liquidCanFlowIntoFromDirection@BlockLegacy@@UEBA_NEAEBV?$function@$$A6AA
 ?liquidCanFlowIntoFromDirection@BlockLegacy@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z:
 	mov rax, [rel BlockLegacy_vtable]
 	jmp [rax+112]
-global ?getLightEmission@BlockLegacy@@UEBAEAEBVBlock@@@Z
-?getLightEmission@BlockLegacy@@UEBAEAEBVBlock@@@Z:
+global ?getLightEmission@BlockLegacy@@UEBA?AUBrightness@@AEBVBlock@@@Z
+?getLightEmission@BlockLegacy@@UEBA?AUBrightness@@AEBVBlock@@@Z:
 	mov rax, [rel BlockLegacy_vtable]
 	jmp [rax+120]
 global ?shouldRandomTick@BlockLegacy@@UEBA_NXZ
@@ -1482,8 +1501,8 @@ global ?init@BlockLegacy@@UEAAAEAV1@XZ
 ?init@BlockLegacy@@UEAAAEAV1@XZ:
 	mov rax, [rel BlockLegacy_vtable]
 	jmp [rax+1112]
-global ?setLightBlock@BlockLegacy@@UEAAAEAV1@E@Z
-?setLightBlock@BlockLegacy@@UEAAAEAV1@E@Z:
+global ?setLightBlock@BlockLegacy@@UEAAAEAV1@UBrightness@@@Z
+?setLightBlock@BlockLegacy@@UEAAAEAV1@UBrightness@@@Z:
 	mov rax, [rel BlockLegacy_vtable]
 	jmp [rax+1120]
 global ?setLightEmission@BlockLegacy@@UEAAAEAV1@M@Z
@@ -1598,14 +1617,6 @@ global ?canBeSilkTouched@LiquidBlock@@UEBA_NXZ
 ?canBeSilkTouched@LiquidBlock@@UEBA_NXZ:
 	mov rax, [rel LiquidBlock_vtable]
 	jmp [rax+1200]
-global ?tick@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-?tick@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z:
-	mov rax, [rel LiquidBlockStatic_vtable]
-	jmp [rax+8]
-global ?neighborChanged@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-?neighborChanged@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z:
-	mov rax, [rel LiquidBlockStatic_vtable]
-	jmp [rax+672]
 global ?tick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
 ?tick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z:
 	mov rax, [rel HeavyBlock_vtable]

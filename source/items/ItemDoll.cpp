@@ -5,6 +5,7 @@
 #include "minecraft/actor/Actor.h"
 #include "minecraft/world/Spawner.h"
 #include "minecraft/world/BlockSource.h"
+#include "minecraft/world/ItemEventCoordinator.h"
 #include "minecraft/actor/ActorType.h"
 #include "minecraft/item/ItemHelper.h"
 #include "minecraft/actor/ActorFactory.h"
@@ -34,7 +35,6 @@ Item& ItemDoll::setIcon(const std::string& name, int id) {
 }
 
 bool ItemDoll::spawnMob(ItemStack& instance, Actor& entity, const BlockPos& pos) const {
-	Zenova::Platform::DebugPause();
 	Level& level = entity.getLevel();
 	ActorType spawnedType = (instance.getAuxValue() == 0) ? ActorType::Blaze : ActorType::EnderMan;
 	auto spawned = level.getActorFactory().createSpawnedEntity({ spawnedType }, &entity, { pos.x + 0.5F, pos.y + 1.0F, pos.z + 0.5F }, Vec2::ZERO);

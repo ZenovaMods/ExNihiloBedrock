@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Tue Jun 23 2020 03:01:43 UTC
+// Generated on Sat Jul 04 2020 02:15:44 UTC
 #pragma once
 
 extern "C" {
@@ -7,18 +7,22 @@ extern "C" {
 	extern void* __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr;
 	extern void* __0DiggerItem__IEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HHAEBVTier_Item__AEBV_$vector_PEBVBlock__V_$allocator_PEBVBlock___std___2__Z_ptr;
 	extern void* __0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
+	extern void* __0BucketItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
 	extern void* _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr;
 	extern void* _addCreativeItem_Item__SAXPEAV1_F_Z_ptr;
 	extern void* _addCreativeItem_Item__SAXAEBVBlock___Z_ptr;
 	extern void* _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 	extern void* _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr;
+	extern void* _getTextureUVCoordinateSet_Item__SA_AUTextureUVCoordinateSet__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
 	extern void* _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr;
+	extern void* __helpChangeInventoryItemInPlace_Item__QEBAXAEAVActor__AEAVItemStack__1W4ItemAcquisitionMethod___Z_ptr;
 	extern void* __1ItemStackBase__UEAA_XZ_ptr;
 	extern void* __0ItemStackBase__IEAA_XZ_ptr;
 	extern void* __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr;
 	extern void* __0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr;
 	extern void* __0ItemStackBase__IEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr;
 	extern void* __0ItemStackBase__IEAA_AEBV0__Z_ptr;
+	extern void* __4ItemStackBase__IEAAAEAV0_AEBV0__Z_ptr;
 	extern void* __0ItemStack__QEAA_XZ_ptr;
 	extern void* __0ItemStack__QEAA_AEBVItem__H_Z_ptr;
 	extern void* __0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr;
@@ -30,11 +34,15 @@ extern "C" {
 	extern void* _set_ItemStackBase__QEAAXH_Z_ptr;
 	extern void* _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr;
 	extern void* _getAuxValue_ItemStackBase__QEBAFXZ_ptr;
+	extern void* _matchesItem_ItemStackBase__QEBA_NAEBV1__Z_ptr;
 	extern void* _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr;
 	extern void* _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
+	extern void* _getExtraBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
 	extern void* _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
 	extern void* _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr;
 	extern void* _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr;
+	extern void* _removeBlock_BlockSource__QEAA_NAEBVBlockPos___Z_ptr;
+	extern void* _checkBlockPermissions_BlockSource__QEAA_NAEAVActor__AEBVBlockPos__EAEBVItemStack___N_Z_ptr;
 	extern void* _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr;
 	extern void* __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr;
 	extern void* _getBlockItemId_BlockLegacy__QEBAFXZ_ptr;
@@ -85,18 +93,36 @@ extern "C" {
 	extern void* _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr;
 	extern void* _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr;
 	extern void* _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
+	extern void* _broadcastSoundEvent_Level__QEAAXAEAVBlockSource__W4LevelSoundEvent__AEBVVec3__HAEBUActorDefinitionIdentifier___N4_Z_ptr;
+	extern void* _broadcastDimensionEvent_Level__QEAAXAEAVBlockSource__W4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
 	extern void* _registerVanillaActorData_VanillaActors__YAXXZ_ptr;
 	extern void* _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr;
 	extern void* _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr;
 	extern void* _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
 	extern void* _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr;
+	extern void* _sendActorAcquiredItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__IW4ItemAcquisitionMethod__PEAV2__Z_ptr;
+	extern void* _sendActorUseItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__W4ItemUseMethod___Z_ptr;
 	extern void* _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr;
+	extern void* _createTransformedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor___Z_ptr;
 	extern void* __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr;
 	extern void* _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr;
+	extern void* _isInstanceOf_ActorClassTree__SA_NAEBVActor__W4ActorType___Z_ptr;
+	extern void* _getVariant_Actor__QEBAHXZ_ptr;
+	extern void* _setVariant_Actor__QEAAXH_Z_ptr;
+	extern void* _isPersistent_Actor__QEBA_NXZ_ptr;
+	extern void* _setPersistent_Actor__QEAAXXZ_ptr;
+	extern void* _getStatusFlag_Actor__QEBA_NW4ActorFlags___Z_ptr;
+	extern void* _setStatusFlag_Actor__QEAA_NW4ActorFlags___N_Z_ptr;
+	extern void* _addEffect_Actor__QEAAXAEBVMobEffectInstance___Z_ptr;
+	extern void* __0MobEffectInstance__QEAA_IHHHHH_N00_Z_ptr;
+	extern void* _getByName_MobEffect__SAPEAV1_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
+	extern void* _get_I18n__SA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr;
+	extern void* __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;
 	extern void* BlockItem_vtable;
+	extern void* BucketItem_vtable;
 	extern void* BlockLegacy_vtable;
 	extern void* LiquidBlock_vtable;
 	extern void* HeavyBlock_vtable;

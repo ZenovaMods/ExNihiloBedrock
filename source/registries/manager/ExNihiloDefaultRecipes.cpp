@@ -31,9 +31,9 @@ void ExNihiloDefaultRecipes::registerSieveRecipeDefaults() {
 void ExNihiloDefaultRecipes::registerHammerRecipeDefaults() {
 	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mCobblestone), new ItemInstance(*VanillaBlockTypes::mGravel->get(), 1), 0, 1.0F, 0.0F);
 	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mGravel), new ItemInstance(*VanillaBlockTypes::mSand->get(), 1), 0, 1.0F, 0.0F);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mNetherrack), new ItemInstance(*ENBlocks::netherrackCrushed.get(), 1), 0, 1.0F, 0.0F);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mSand), new ItemInstance(*ENBlocks::dust.get(), 1), 0, 1.0F, 0.0F);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mEndStone), new ItemInstance(*ENBlocks::endstoneCrushed.get(), 1), 0, 1.0F, 0.0F);
+	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mNetherrack), new ItemInstance(*ENBlocks::netherrackCrushed->get(), 1), 0, 1.0F, 0.0F);
+	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mSand), new ItemInstance(*ENBlocks::dust->get(), 1), 0, 1.0F, 0.0F);
+	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mEndStone), new ItemInstance(*ENBlocks::endstoneCrushed->get(), 1), 0, 1.0F, 0.0F);
 }
 
 void ExNihiloDefaultRecipes::registerCompostRecipeDefaults() {

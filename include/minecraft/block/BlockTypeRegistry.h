@@ -6,6 +6,7 @@
 
 #include "../util/Util.h"
 #include "../util/SharedPtr.h"
+#include "BlockLegacy.h"
 
 class BlockLegacy;
 
@@ -21,3 +22,7 @@ public:
     }
     static WeakPtr<BlockLegacy> lookupByName(const std::string&);
 };
+
+namespace BedrockBlockTypes {
+	extern WeakPtr<BlockLegacy>* mAir;
+}

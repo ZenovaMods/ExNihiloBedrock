@@ -164,7 +164,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <CompileAsManaged>false</CompileAsManaged>
-      <AdditionalIncludeDirectories>../Zenova/ZenovaAPI/src;../Zenova/ZenovaAPI/inc;../Zenova/Common;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ZENOVA_DATA)\dev\inc;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
     </ClCompile>
     <Link>
@@ -174,18 +174,23 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>ZenovaAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ZENOVA_DATA);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ZENOVA_DATA)\dev\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\minecraft\actor\Actor.h" />
+    <ClInclude Include="include\minecraft\actor\ActorCategory.h" />
+    <ClInclude Include="include\minecraft\actor\ActorClassTree.h" />
     <ClInclude Include="include\minecraft\actor\ActorDefinitionIdentifier.h" />
     <ClInclude Include="include\minecraft\actor\ActorFactory.h" />
     <ClInclude Include="include\minecraft\actor\ActorMapping.h" />
     <ClInclude Include="include\minecraft\actor\ActorRegistry.h" />
     <ClInclude Include="include\minecraft\actor\ActorType.h" />
     <ClInclude Include="include\minecraft\actor\ActorUniqueID.h" />
+    <ClInclude Include="include\minecraft\actor\Attributes.h" />
     <ClInclude Include="include\minecraft\actor\Mob.h" />
+    <ClInclude Include="include\minecraft\actor\MobEffect.h" />
+    <ClInclude Include="include\minecraft\actor\MobEffectInstance.h" />
     <ClInclude Include="include\minecraft\actor\MovementInterpolator.h" />
     <ClInclude Include="include\minecraft\actor\OnHitSubcomponent.h" />
     <ClInclude Include="include\minecraft\actor\ParticleType.h" />
@@ -219,6 +224,7 @@
     <ClInclude Include="include\minecraft\CommonTypes.h" />
     <ClInclude Include="include\minecraft\item\BlockItem.h" />
     <ClInclude Include="include\minecraft\item\BlockPlanterItem.h" />
+    <ClInclude Include="include\minecraft\item\BucketItem.h" />
     <ClInclude Include="include\minecraft\item\CreativeItemCategory.h" />
     <ClInclude Include="include\minecraft\item\DiggerItem.h" />
     <ClInclude Include="include\minecraft\item\FoodItemComponent.h" />
@@ -236,6 +242,7 @@
     <ClInclude Include="include\minecraft\util\EnchantUtils.h" />
     <ClInclude Include="include\minecraft\util\Facing.h" />
     <ClInclude Include="include\minecraft\util\HitResult.h" />
+    <ClInclude Include="include\minecraft\util\I18n.h" />
     <ClInclude Include="include\minecraft\util\LootComponent.h" />
     <ClInclude Include="include\minecraft\util\Mutex.h" />
     <ClInclude Include="include\minecraft\util\NewType.h" />
@@ -247,6 +254,7 @@
     <ClInclude Include="include\minecraft\util\Vec2.h" />
     <ClInclude Include="include\minecraft\util\Vec3.h" />
     <ClInclude Include="include\minecraft\util\Version.h" />
+    <ClInclude Include="include\minecraft\world\ActorEventCoordinator.h" />
     <ClInclude Include="include\minecraft\world\BlockPos.h" />
     <ClInclude Include="include\minecraft\world\BlockSource.h" />
     <ClInclude Include="include\minecraft\world\BlockSourceListener.h" />
@@ -262,7 +270,9 @@
     <ClInclude Include="source\blocks\BlockBaseFalling.h" />
     <ClInclude Include="source\blocks\BlockFluidWitchWaterFlowing.h" />
     <ClInclude Include="source\blocks\BlockFluidWitchWaterStill.h" />
+    <ClInclude Include="source\blocks\BlockRegistry.h" />
     <ClInclude Include="source\blocks\ENBlocks.h" />
+    <ClInclude Include="source\blocks\FluidRegistry.h" />
     <ClInclude Include="source\entities\DropItemSubcomponent.h" />
     <ClInclude Include="source\entities\ENEntities.h" />
     <ClInclude Include="source\entities\ProjectileStone.h" />
@@ -280,6 +290,7 @@
     <ClInclude Include="source\items\tools\database\HammerDatabase.h" />
     <ClInclude Include="source\items\tools\HammerBase.h" />
     <ClInclude Include="source\items\tools\IHammer.h" />
+    <ClInclude Include="source\items\UniversalBucket.h" />
     <ClInclude Include="source\main.h" />
     <ClInclude Include="source\registries\CrookRegistry.h" />
     <ClInclude Include="source\registries\HammerRegistry.h" />
@@ -305,6 +316,7 @@
     <ClCompile Include="include\minecraft\block\LiquidBlock.cpp" />
     <ClCompile Include="include\minecraft\block\LiquidBlockDynamic.cpp" />
     <ClCompile Include="include\minecraft\block\LiquidBlockStatic.cpp" />
+    <ClCompile Include="include\minecraft\world\BlockPos.cpp" />
     <ClCompile Include="source\blocks\BlockBaseFalling.cpp" />
     <ClCompile Include="source\blocks\BlockFluidWitchWaterFlowing.cpp" />
     <ClCompile Include="source\blocks\BlockFluidWitchWaterStill.cpp" />
@@ -323,6 +335,7 @@
     <ClCompile Include="source\items\tools\database\CrookDatabase.cpp" />
     <ClCompile Include="source\items\tools\database\HammerDatabase.cpp" />
     <ClCompile Include="source\items\tools\HammerBase.cpp" />
+    <ClCompile Include="source\items\UniversalBucket.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\ExNihiloBedrock.cpp" />
     <ClCompile Include="source\registries\CrookRegistry.cpp" />

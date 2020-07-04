@@ -8,6 +8,7 @@ class Level;
 class ChunkSource;
 class Dimension;
 class BlockPos;
+class ItemStack;
 
 class BlockSource {
 private:
@@ -47,6 +48,9 @@ public:
     void addToTickingQueue(const BlockPos&, const Block&, int, int);
     bool setExtraBlock(const BlockPos&, const Block&, int);
     bool setBlock(const BlockPos&, const Block&, int, const ActorBlockSyncMessage*);
+    bool removeBlock(const BlockPos& pos);
     const Block& getBlock(const BlockPos&) const;
     const Block& getLiquidBlock(const BlockPos&) const;
+    const Block& getExtraBlock(const BlockPos&) const;
+    bool checkBlockPermissions(Actor&, const BlockPos&, FacingID, const ItemStack&, bool);
 };

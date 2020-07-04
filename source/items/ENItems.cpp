@@ -8,6 +8,8 @@
 #include "minecraft/item/VanillaItemTiers.h"
 #include "minecraft/item/ItemStack.h"
 
+#include "UniversalBucket.h"
+#include "../blocks/FluidRegistry.h"
 #include "ItemResource.h"
 #include "ItemPebble.h"
 #include "ItemDoll.h"
@@ -34,6 +36,8 @@ WeakPtr<ItemDoll> ENItems::dolls;
 WeakPtr<ItemSeedBase> ENItems::itemSeedSaplings;
 std::vector<WeakPtr<ItemSeedBase>> ENItems::itemSeeds;
 
+WeakPtr<UniversalBucket> ENItems::universalBucket;
+
 void ENItems::init() {
 	hammerWood = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerWood", ItemRegistry::getMaxItemID(), 64, *VanillaItemTiers::WOOD);
 	hammerStone = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerStone", ItemRegistry::getMaxItemID(), 128, *VanillaItemTiers::STONE);
@@ -57,6 +61,8 @@ void ENItems::init() {
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedSugarcane", ItemRegistry::getMaxItemID(), **VanillaBlocks::mReeds));
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCarrot", ItemRegistry::getMaxItemID(), **VanillaBlocks::mCarrotCrop));
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedPotato", ItemRegistry::getMaxItemID(), **VanillaBlocks::mPotatoCrop));
+
+	universalBucket = ItemRegistry::registerItem<UniversalBucket>("bucket", ItemRegistry::getMaxItemID());
 }
 
 void ENItems::initCreativeCategories() {
@@ -74,6 +80,8 @@ void ENItems::initCreativeCategories() {
 	itemSeedSaplings->setCategory(CreativeItemCategory::ITEMS);
 	for (WeakPtr<ItemSeedBase> item : itemSeeds)
 		item->setCategory(CreativeItemCategory::ITEMS);
+
+	universalBucket->setCategory(CreativeItemCategory::ITEMS);
 }
 
 void ENItems::initCreativeItems() {
@@ -107,11 +115,14 @@ void ENItems::initCreativeItems() {
 	Item::endCreativeGroup();
 
 	Item::beginCreativeGroup("itemGroup.name.seeds", itemSeedSaplings.get(), 0, nullptr);
-	for (int i = 0; i < 6; i++)
+	for (int i = 1; i < 6; i++)
 		Item::addCreativeItem(itemSeedSaplings.get(), i);
 	for (WeakPtr<ItemSeedBase> item : itemSeeds)
 		Item::addCreativeItem(item.get(), 0);
 	Item::endCreativeGroup();
+
+	for (int i = 0; i < FluidRegistry::mFluids.size(); i++)
+		Item::addCreativeItem(universalBucket.get(), i);
 }
 
 void ENItems::initClientData() {
@@ -131,4 +142,6 @@ void ENItems::initClientData() {
 	itemSeeds[1]->setIcon("itemSeed", 7);
 	itemSeeds[2]->setIcon("itemSeed", 8);
 	itemSeeds[3]->setIcon("itemSeed", 9);
+	
+	universalBucket->setIcon("bucket", 0);
 }

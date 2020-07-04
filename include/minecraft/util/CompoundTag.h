@@ -13,6 +13,7 @@ public:
 #else
     typedef const std::string& StringView;
 #endif
+    char filler[0x18];
 
     short& putShort(std::string, short);
     short getShort(StringView) const;

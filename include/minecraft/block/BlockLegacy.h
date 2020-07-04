@@ -353,6 +353,9 @@ public:
     WeakPtr<BlockLegacy> createWeakPtr() {
         return BlockTypeRegistry::lookupByName(getRawNameId());
     }
+    const Material& getMaterial() const {
+        return mMaterial;
+    }
     const std::string& getDescriptionId() const {
         return mDescriptionId;
     }

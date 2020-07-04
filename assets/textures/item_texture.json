@@ -57,6 +57,9 @@
           "textures/items/seedCarrot",
           "textures/items/seedPotato"
         ]
+      },
+      "bucket_witchwater": {
+        "textures": "textures/items/bucket_witchwater"
       }
     }
 }

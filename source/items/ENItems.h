@@ -10,6 +10,7 @@ class ItemResource;
 class ItemCookedSilkworm;
 class ItemSeedBase;
 class ItemDoll;
+class UniversalBucket;
 
 class ENItems {
 public:
@@ -30,6 +31,8 @@ public:
 
 	static WeakPtr<ItemSeedBase> itemSeedSaplings;
 	static std::vector<WeakPtr<ItemSeedBase>> itemSeeds;
+
+	static WeakPtr<UniversalBucket> universalBucket;
 
 
 	static void init();

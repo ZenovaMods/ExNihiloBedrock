@@ -3,6 +3,5 @@
     "name": "Ex Nihilo Bedrock",
     "description": "Bedrock port of the popular skyblock mod Ex Nihilo",
     "version": "1.0.0",
-    "minVersion": "1.14.60.5",
-    "maxVersion": "1.14.60.5"
+    "mcversion": "1.14.60.5"
 }

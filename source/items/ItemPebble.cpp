@@ -42,7 +42,7 @@ ItemStack& ItemPebble::use(ItemStack& instance, Player& player) const {
 	return instance;
 }
 
-bool ItemPebble::dispense(BlockSource& region, Container& container, int slot, const Vec3& pos, unsigned char face) const {
+bool ItemPebble::dispense(BlockSource& region, Container& container, int slot, const Vec3& pos, FacingID face) const {
 	Vec3 direction = { (float)Facing::STEP_X[face], (float)Facing::STEP_Y[face] + 0.1F, (float)Facing::STEP_Z[face] };
 	Level& level = region.getLevel();
 	if (!level.isClientSide()) {

@@ -7,7 +7,6 @@ class ExNihiloDefaultRecipes;
 class ExNihiloBedrock : public Zenova::Mod {
 private:
 	static ExNihiloDefaultRecipes* defaultRecipes;
-	static std::string versionId;
 
 	virtual void Start();
 	virtual ~ExNihiloBedrock() {}

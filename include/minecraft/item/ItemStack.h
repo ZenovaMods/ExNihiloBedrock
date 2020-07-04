@@ -37,6 +37,7 @@ protected:
 	ItemStackBase(const Block&, int, const CompoundTag*);
 	ItemStackBase(const Item&, int, int);
 	ItemStackBase(const ItemStackBase&);
+	ItemStackBase& operator=(const ItemStackBase&);
 	virtual void reinit(const Item&, int, int) = 0;
 
 public:
@@ -47,11 +48,21 @@ public:
 		set(mCount - inCount);
 	}
 	void set(const int);
+	bool hasUserData() const {
+		return mUserData != nullptr;
+	}
 	const Item* getItem() const;
 	const Block* getBlock() const {
 		return mBlock;
 	}
 	short getAuxValue() const;
+	byte getStackSize() const {
+		return mCount;
+	}
+	bool isEmptyStack() const {
+		return mCount == 0;
+	}
+	bool matchesItem(const ItemStackBase&) const;
 };
 
 class ItemStack : public ItemStackBase {

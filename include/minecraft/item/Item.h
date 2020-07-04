@@ -10,6 +10,7 @@
 #include "../util/Vec3.h"
 #include "CreativeItemCategory.h"
 #include "UseAnimation.h"
+#include "ItemHelper.h"
 
 class ItemInstance;
 class ItemStack;
@@ -46,6 +47,15 @@ enum class CooldownType : int {
     EnderPearl,
     IceBomb,
     Count
+};
+
+struct CreativeGroupInfo {
+    std::string mName;
+    short mIconId;
+    short mIconAux;
+    std::unique_ptr<CompoundTag> mIconUserData;
+
+    CreativeGroupInfo() = default;
 };
 
 class Item {
@@ -106,6 +116,9 @@ protected:
     std::vector<std::function<void()>> mOnResetBAIcallbacks;
 public:
     static bool* mInCreativeGroup;
+    static std::vector<ItemInstance>* mCreativeList;
+    static std::vector<std::vector<ItemInstance>>* mCreativeGroups;
+    static std::vector<CreativeGroupInfo>* mCreativeGroupInfo;
 
     Item(const std::string&, short);
     virtual ~Item();
@@ -161,7 +174,7 @@ public:
     virtual void readAdditionalData(ItemStackBase&, const CompoundTag&) const;
     virtual bool isTintable() const;
     virtual ItemStack& use(ItemStack&, Player&) const;
-    virtual bool dispense(BlockSource&, Container&, int, const Vec3&, unsigned char) const;
+    virtual bool dispense(BlockSource&, Container&, int, const Vec3&, FacingID) const;
     virtual ItemUseMethod useTimeDepleted(ItemInstance&, Level*, Player*) const;
     virtual ItemUseMethod useTimeDepleted(ItemStack&, Level*, Player*) const;
     virtual void releaseUsing(ItemInstance&, Player*, int) const;
@@ -214,8 +227,11 @@ public:
     }
     const std::string& getCommandName() const;
 
+    void _helpChangeInventoryItemInPlace(Actor&, ItemStack&, ItemStack&, ItemAcquisitionMethod) const;
+
     static const TextureAtlasItem& getTextureItem(const std::string&);
     static const TextureUVCoordinateSet& getIconTextureUVSet(const TextureAtlasItem&, int, int);
+    static TextureUVCoordinateSet getTextureUVCoordinateSet(const std::string&, int);
 
     static void beginCreativeGroup(const std::string&, Item*, short, const CompoundTag*);
     static void addCreativeItem(Item*, short);

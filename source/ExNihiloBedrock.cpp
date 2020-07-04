@@ -1,10 +1,12 @@
 #include "ExNihiloBedrock.h"
 #include "main.h"
+#include "Zenova/Minecraft.h"
 
 #include <iostream>
 
 #include "minecraft/item/ItemStack.h"
 #include "minecraft/item/VanillaItems.h"
+#include "minecraft/item/BucketItem.h"
 #include "minecraft/block/BlockDefinitionGroup.h"
 #include "minecraft/block/BlockLegacy.h"
 #include "minecraft/world/WorldSystems.h"
@@ -15,7 +17,9 @@
 #include "minecraft/actor/ActorRegistry.h"
 
 #include "items/ENItems.h"
+#include "items/UniversalBucket.h"
 #include "blocks/ENBlocks.h"
+#include "blocks/BlockRegistry.h"
 #include "entities/ENEntities.h"
 #include "handlers/HandlerCrook.h"
 #include "handlers/HandlerHammer.h"
@@ -66,14 +70,16 @@ void initWorldSystems(WorldSystems* self, ResourcePackManager* rpm) {
 
 void (*_registerBlocks)(BlockDefinitionGroup*);
 void registerBlocks(BlockDefinitionGroup* self) {
-	ENBlocks::init(self);
+	for (auto block : Zenova::BlockRegistry::BlockRegistryList)
+		block->initBlock(self);
 
 	_registerBlocks(self);
 }
 
 void (*_registerLooseBlockGraphics)(std::vector<Json::Value>&, const BlockPalette&);
 void registerLooseBlockGraphics(std::vector<Json::Value>& json, const BlockPalette& palette) {
-	ENBlocks::initGraphics(json);
+	for (auto block : Zenova::BlockRegistry::BlockRegistryList)
+		block->initBlockGraphics(json);
 
 	_registerLooseBlockGraphics(json, palette);
 }
@@ -105,18 +111,24 @@ void registerVanillaActorData() {
 	ENEntities::initEntityData();
 }
 
+bool (*_bucketTakeLiquid)(const BucketItem*, ItemStack&, Actor&, const BlockPos&);
+bool bucketTakeLiquid(const BucketItem* self, ItemStack& itemStack, Actor& entity, const BlockPos& pos) {
+	if (!UniversalBucket::_takeLiquid(itemStack, entity, pos))
+		return _bucketTakeLiquid(self, itemStack, entity, pos);
+	return true;
+}
+
 ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
-std::string ExNihiloBedrock::versionId;
 
 void ExNihiloBedrock::Start() {
 	Zenova::Platform::DebugPause();
 	Zenova_Info("ExNihiloBedrock Start");
-	versionId = GetManager().GetLaunchedVersion();
 
-	if (versionId == "1.14.60.5") {
+	if (Zenova::Minecraft::instance().mVersion == "1.14.60.5") {
 		defaultRecipes = new ExNihiloDefaultRecipes();
 
 		ENEntities::initEntityMap();
+		ENBlocks::init();
 
 		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, &_registerItems);
 		Zenova::Hook::Create(&VanillaItems::initCreativeCategories, &initCreativeCategories, &_initCreativeCategories);
@@ -129,6 +141,7 @@ void ExNihiloBedrock::Start() {
 		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);
 		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
 		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
+		Zenova::Hook::Create(&BucketItem::_takeLiquid, &bucketTakeLiquid, &_bucketTakeLiquid);
 	}
 }
 

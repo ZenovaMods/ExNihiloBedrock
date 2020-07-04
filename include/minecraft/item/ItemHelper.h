@@ -19,3 +19,20 @@ enum class ItemUseMethod : int {
     Traded,
     _Count
 };
+
+enum class ItemAcquisitionMethod : int {
+    Unknown = -1,
+    None,
+    PickedUp,
+    Crafted,
+    TakenFromChest,
+    TakenFromEnderchest,
+    Bought,
+    Anvil,
+    Smelted,
+    Brewed,
+    Filled,
+    Trading,
+    Fishing,
+    Container = 13
+};

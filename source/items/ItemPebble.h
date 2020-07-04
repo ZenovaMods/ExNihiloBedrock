@@ -13,7 +13,7 @@ public:
 	virtual bool isThrowable() const;
 	virtual bool isValidAuxValue(int) const;
 	virtual ItemStack& use(ItemStack&, Player&) const;
-	virtual bool dispense(BlockSource&, Container&, int, const Vec3&, unsigned char) const;
+	virtual bool dispense(BlockSource&, Container&, int, const Vec3&, FacingID) const;
 	virtual std::string buildDescriptionId(const ItemDescriptor&, const std::unique_ptr<CompoundTag>&) const;
 	virtual const TextureUVCoordinateSet& getIcon(const ItemStackBase&, int, bool) const;
 	virtual Item& setIcon(const std::string&, int);

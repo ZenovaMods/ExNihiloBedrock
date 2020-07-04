@@ -87,6 +87,12 @@
     <ClCompile Include="source\blocks\BlockFluidWitchWaterFlowing.cpp">
       <Filter>blocks</Filter>
     </ClCompile>
+    <ClCompile Include="source\items\UniversalBucket.cpp">
+      <Filter>items</Filter>
+    </ClCompile>
+    <ClCompile Include="include\minecraft\world\BlockPos.cpp">
+      <Filter>minecraft\world</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\items\ENItems.h">
@@ -451,6 +457,39 @@
       <Filter>minecraft\util</Filter>
     </ClInclude>
     <ClInclude Include="source\ExNihiloBedrock.h" />
+    <ClInclude Include="include\minecraft\actor\Attributes.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorClassTree.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\ActorCategory.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\MobEffectInstance.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\MobEffect.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="source\blocks\BlockRegistry.h">
+      <Filter>blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="source\blocks\FluidRegistry.h">
+      <Filter>blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\BucketItem.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="source\items\UniversalBucket.h">
+      <Filter>items</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\util\I18n.h">
+      <Filter>minecraft\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\world\ActorEventCoordinator.h">
+      <Filter>minecraft\world</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />

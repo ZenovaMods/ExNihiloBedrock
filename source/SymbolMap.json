@@ -147,6 +147,28 @@
       ]
     },
     {
+      "name": "BucketItem",
+      "parent": "Item",
+      "address": "0x2B701D0",
+      "functions": [
+        "?isDestructive@BucketItem@@UEBA_NH@Z",
+        "?isLiquidClipItem@BucketItem@@UEBA_NH@Z",
+        "?isValidAuxValue@BucketItem@@UEBA_NH@Z",
+        "?uniqueAuxValues@BucketItem@@UEBA_NXZ",
+        "?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z",
+        "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z",
+        "?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z",
+        "?releaseUsing@BucketItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
+        "?buildDescriptionId@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@AEBV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z",
+        "?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z",
+        "?isEmissive@BucketItem@@UEBA_NH@Z",
+        "?getIcon@BucketItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z",
+        "?setIcon@BucketItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",
+        "?getAuxValuesDescription@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?_useOn@BucketItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z"
+      ]
+    },
+    {
       "name": "BlockLegacy",
       "address": "0x2B8E7D0",
       "functions": [
@@ -1049,14 +1071,17 @@
     "#include \"minecraft/block/VanillaBlockRegistry.h\"",
     "#include \"minecraft/block/VanillaBlockStates.h\"",
     "#include \"minecraft/block/VanillaBlockTypeRegistry.h\"",
+    "#include \"minecraft/block/BlockTypeRegistry.h\"",
     "#include \"minecraft/item/VanillaItemTiers.h\"",
     "#include \"minecraft/item/ItemRegistry.h\"",
     "#include \"minecraft/block/BlockTypeRegistry.h\"",
     "#include \"minecraft/world/WorldSystems.h\"",
     "#include \"minecraft/item/Item.h\"",
+    "#include \"minecraft/item/VanillaItems.h\"",
     "#include \"minecraft/actor/ActorType.h\"",
     "#include \"minecraft/actor/ProjectileFactory.h\"",
-    "#include \"minecraft/actor/ActorFactory.h\""
+    "#include \"minecraft/actor/ActorFactory.h\"",
+    "#include \"minecraft/actor/Attributes.h\""
   ],
 
   "variables": {
@@ -1083,8 +1108,11 @@
     "WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves": "0x30614E8",
     "WeakPtr<BlockLegacy>* VanillaBlockTypes::mMycelium": "0x30617F0",
     "WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves2": "0x30619E0",
+    "WeakPtr<BlockLegacy>* VanillaBlockTypes::mTopSnow": "0x30616E0",
+    "WeakPtr<BlockLegacy>* BedrockBlockTypes::mAir": "0x30613D0",
     "ItemState* VanillaStates::SaplingType": "0x30633C0",
     "ItemState* VanillaStates::LiquidDepth": "0x3062BA0",
+    "WeakPtr<Item>* VanillaItems::mBucket": "0x3060748",
     "Item::Tier* VanillaItemTiers::WOOD": "0x2A39988",
     "Item::Tier* VanillaItemTiers::STONE": "0x2A39A20",
     "Item::Tier* VanillaItemTiers::IRON": "0x2A39658",
@@ -1094,10 +1122,14 @@
     "short* ItemRegistry::mMaxItemID": "0x30507BC",
     "std::unordered_map<std::string, SharedPtr<BlockLegacy>>* BlockTypeRegistry::mBlockLookupMap": "0x3061390",
     "bool* Item::mInCreativeGroup": "0x30507BA",
+    "std::vector<ItemInstance>* Item::mCreativeList": "0x3060068",
+    "std::vector<std::vector<ItemInstance>>* Item::mCreativeGroups": "0x30600E8",
+    "std::vector<CreativeGroupInfo>* Item::mCreativeGroupInfo": "0x3060100",
     "bool* WorldSystems::mInitialized": "0x30507BE",
     "std::unordered_map<ActorType, ActorMapping>* ENTITY_TYPE_MAP": "0x305C590",
     "std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>* ProjectileFactory::mSubcomponentMap": "0x305DD20",
-    "std::unordered_map<std::string, ActorFactoryData>* _factoryFunctions": "0x305C460"
+    "std::unordered_map<std::string, ActorFactoryData>* _factoryFunctions": "0x305C460",
+    "Attribute* SharedAttributes::HEALTH": "0x305DDA0"
   },
 
   "functions": [
@@ -1116,6 +1148,10 @@
     {
       "name": "??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",
       "address": "0x1514950"
+    },
+    {
+      "name": "??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",
+      "address": "0x15171C0"
     },
     {
       "name": "?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z",
@@ -1138,8 +1174,16 @@
       "address": "0x1565640"
     },
     {
+      "name": "?getTextureUVCoordinateSet@Item@@SA?AUTextureUVCoordinateSet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",
+      "address": "0x15654E0"
+    },
+    {
       "name": "?getCommandName@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
       "address": "0x1565810"
+    },
+    {
+      "name": "?_helpChangeInventoryItemInPlace@Item@@QEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z",
+      "address": "0x1561210"
     },
     {
       "name": "??1ItemStackBase@@UEAA@XZ",
@@ -1164,6 +1208,10 @@
     {
       "name": "??0ItemStackBase@@IEAA@AEBV0@@Z",
       "address": "0x156E7D0"
+    },
+    {
+      "name": "??4ItemStackBase@@IEAAAEAV0@AEBV0@@Z",
+      "address": "0x1571D80"
     },
     {
       "name": "??0ItemStack@@QEAA@XZ",
@@ -1210,12 +1258,20 @@
       "address": "0x15700E0"
     },
     {
+      "name": "?matchesItem@ItemStackBase@@QEBA_NAEBV1@@Z",
+      "address": "0x1571BF0"
+    },
+    {
       "name": "?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z",
       "address": "0x1778AB0"
     },
     {
       "name": "?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z",
       "address": "0x1779710"
+    },
+    {
+      "name": "?getExtraBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z",
+      "address": "0x1779E90"
     },
     {
       "name": "?getLiquidBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z",
@@ -1228,6 +1284,14 @@
     {
       "name": "?setExtraBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@H@Z",
       "address": "0x1779BD0"
+    },
+    {
+      "name": "?removeBlock@BlockSource@@QEAA_NAEBVBlockPos@@@Z",
+      "address": "0x177ADB0"
+    },
+    {
+      "name": "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStack@@_N@Z",
+      "address": "0x1778690"
     },
     {
       "name": "?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ",
@@ -1430,6 +1494,14 @@
       "address": "0x17D4C40"
     },
     {
+      "name": "?broadcastSoundEvent@Level@@QEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z",
+      "address": "0x17D5070"
+    },
+    {
+      "name": "?broadcastDimensionEvent@Level@@QEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z",
+      "address": "0x17D5320"
+    },
+    {
       "name": "?registerVanillaActorData@VanillaActors@@YAXXZ",
       "address": "0x146F630"
     },
@@ -1450,8 +1522,20 @@
       "address": "0x14E8430"
     },
     {
+      "name": "?sendActorAcquiredItem@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@IW4ItemAcquisitionMethod@@PEAV2@@Z",
+      "address": "0x14E6420"
+    },
+    {
+      "name": "?sendActorUseItem@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@W4ItemUseMethod@@@Z",
+      "address": "0x14E63C0"
+    },
+    {
       "name": "?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z",
       "address": "0x12EF9D0"
+    },
+    {
+      "name": "?createTransformedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z",
+      "address": "0x12F0110"
     },
     {
       "name": "?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z",
@@ -1460,6 +1544,54 @@
     {
       "name": "?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z",
       "address": "0x1776150"
+    },
+    {
+      "name": "?isInstanceOf@ActorClassTree@@SA_NAEBVActor@@W4ActorType@@@Z",
+      "address": "0x1292570"
+    },
+    {
+      "name": "?getVariant@Actor@@QEBAHXZ",
+      "address": "0x1260230"
+    },
+    {
+      "name": "?setVariant@Actor@@QEAAXH@Z",
+      "address": "0x1260270"
+    },
+    {
+      "name": "?isPersistent@Actor@@QEBA_NXZ",
+      "address": "0x127F050"
+    },
+    {
+      "name": "?setPersistent@Actor@@QEAAXXZ",
+      "address": "0x1261300"
+    },
+    {
+      "name": "?getStatusFlag@Actor@@QEBA_NW4ActorFlags@@@Z",
+      "address": "0x1271B50"
+    },
+    {
+      "name": "?setStatusFlag@Actor@@QEAA_NW4ActorFlags@@_N@Z",
+      "address": "0x1271BC0"
+    },
+    {
+      "name": "?addEffect@Actor@@QEAAXAEBVMobEffectInstance@@@Z",
+      "address": "0x1277630"
+    },
+    {
+      "name": "??0MobEffectInstance@@QEAA@IHHHHH_N00@Z",
+      "address": "0x14E54B0"
+    },
+    {
+      "name": "?getByName@MobEffect@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "address": "0x14E2F50"
+    },
+    {
+      "name": "?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z",
+      "address": "0x0FD6BF0"
+    },
+    {
+      "name": "?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z",
+      "address": "0x151BA00"
     }
   ]
 }

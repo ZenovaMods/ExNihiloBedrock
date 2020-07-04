@@ -6,6 +6,7 @@
 #include <set>
 
 #include "ActorType.h"
+#include "ActorClassTree.h"
 #include "ActorDefinitionIdentifier.h"
 
 class Level;
@@ -46,13 +47,6 @@ public:
 	void registerActorInfo(const ActorInfo&);
 };
 
-class ActorClassTree {
-public:
-	static ActorType getEntityTypeIdLegacy(ActorType entityId) {
-		return (ActorType)((int)entityId & (int)ActorType::TypeMask);
-	}
-};
-
 static std::set<std::string> _experimentalEntities;
 extern std::unordered_map<std::string, ActorFactoryData>* _factoryFunctions;
 static std::array<VanillaActorData, 99> _builtInEntityMappings;
@@ -63,4 +57,5 @@ class ActorFactory {
 public:
 	void setDefinitionGroup(ActorDefinitionGroup* group);
 	std::unique_ptr<Actor> createSpawnedEntity(const ActorDefinitionIdentifier&, Actor*, const Vec3&, const Vec2&);
+	std::unique_ptr<Actor> createTransformedEntity(const ActorDefinitionIdentifier&, Actor*);
 };

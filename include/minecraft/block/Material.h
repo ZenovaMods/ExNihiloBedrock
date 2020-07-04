@@ -84,5 +84,11 @@ public:
     float getTranslucency() const {
         return mTranslucency;
     }
+    bool isSolid() const {
+        return mSolid;
+    }
+    MaterialType getType() const {
+        return mType;
+    }
     static const Material& getMaterial(MaterialType);
 };

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <limits>
 #include <string>
 #include <vector>
 
@@ -7,14 +8,13 @@
 #include "SynchedActorData.h"
 #include "ActorDefinitionIdentifier.h"
 #include "ActorUniqueID.h"
+#include "Attributes.h"
 
 class AABB;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorInteraction;
 class AnimationComponent;
-class Attribute;
-class AttributeInstance;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -68,6 +68,103 @@ enum class ActorLocation : int {
     Eyes,
     BreathingPoint,
     Mouth
+};
+
+enum class ActorFlags : int {
+    Unknown = -1,
+    ONFIRE,
+    SNEAKING,
+    RIDING,
+    SPRINTING,
+    USINGITEM,
+    INVISIBLE,
+    TEMPTED,
+    INLOVE,
+    SADDLED,
+    POWERED,
+    IGNITED,
+    BABY,
+    CONVERTING,
+    CRITICAL,
+    CAN_SHOW_NAME,
+    ALWAYS_SHOW_NAME,
+    NOAI,
+    SILENT,
+    WALLCLIMBING,
+    CANCLIMB,
+    CANSWIM,
+    CANFLY,
+    CANWALK,
+    RESTING,
+    SITTING,
+    ANGRY,
+    INTERESTED,
+    CHARGED,
+    TAMED,
+    ORPHANED,
+    LEASHED,
+    SHEARED,
+    GLIDING,
+    ELDER,
+    MOVING,
+    BREATHING,
+    CHESTED,
+    STACKABLE,
+    SHOW_BOTTOM,
+    STANDING,
+    SHAKING,
+    IDLING,
+    CASTING,
+    CHARGING,
+    WASD_CONTROLLED,
+    CAN_POWER_JUMP,
+    LINGERING,
+    HAS_COLLISION,
+    HAS_GRAVITY,
+    FIRE_IMMUNE,
+    DANCING,
+    ENCHANTED,
+    RETURNTRIDENT,
+    CONTAINER_IS_PRIVATE,
+    IS_TRANSFORMING,
+    DAMAGENEARBYMOBS,
+    SWIMMING,
+    BRIBED,
+    IS_PREGNANT,
+    LAYING_EGG,
+    RIDER_CAN_PICK,
+    TRANSITION_SITTING,
+    EATING,
+    LAYING_DOWN,
+    SNEEZING,
+    TRUSTING,
+    ROLLING,
+    SCARED,
+    IN_SCAFFOLDING,
+    OVER_SCAFFOLDING,
+    FALL_THROUGH_SCAFFOLDING,
+    BLOCKING,
+    TRANSITION_BLOCKING,
+    BLOCKED_USING_SHIELD,
+    BLOCKED_USING_DAMAGED_SHIELD,
+    SLEEPING,
+    WANTS_TO_WAKE,
+    TRADE_INTEREST,
+    DOOR_BREAKER,
+    BREAKING_OBSTRUCTION,
+    DOOR_OPENER,
+    IS_ILLAGER_CAPTAIN,
+    STUNNED,
+    ROARING,
+    DELAYED_ATTACK,
+    IS_AVOIDING_MOBS,
+    FACING_TARGET_TO_RANGE_ATTACK,
+    HIDDEN_WHEN_INVISIBLE,
+    IS_IN_UI,
+    STALKING,
+    EMOTING,
+    CELEBRATING,
+    Count
 };
 
 class Actor {
@@ -348,6 +445,13 @@ public:
     virtual void _doAutoAttackOnTouch(Actor&);
 
 public:
+    int getVariant() const;
+    void setVariant(int);
+    void setPersistent();
+    bool isPersistent() const;
+    bool getStatusFlag(ActorFlags) const;
+    bool setStatusFlag(ActorFlags, bool);
+    void addEffect(const MobEffectInstance&);
     Random& getRandom() const {
         return mLevel->getRandom();
     }
@@ -374,5 +478,23 @@ public:
     }
     SynchedActorData& getEntityData() {
         return mEntityData;
+    }
+    int getHealth() const {
+        return (int)getAttribute(*SharedAttributes::HEALTH).getCurrentValue();
+    }
+    int getMaxHealth() const {
+        return (int)getAttribute(*SharedAttributes::HEALTH).getMaxValue();
+    }
+    void serializationSetHealth(int newHealth) {
+        getMutableAttribute(*SharedAttributes::HEALTH)->serializationSetValue((float)newHealth, (int)AttributeOperands::OPERAND_CURRENT, std::numeric_limits<float>::max());
+    }
+    bool isPowered() const {
+        return getStatusFlag(ActorFlags::POWERED);
+    }
+    void setPowered(bool value) {
+        setStatusFlag(ActorFlags::POWERED, value);
+    }
+    bool hasType(ActorType type) const {
+        return getEntityTypeId() == type;
     }
 };

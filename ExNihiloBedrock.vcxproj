@@ -199,6 +199,7 @@
     <ClInclude Include="include\minecraft\actor\ProjectileFactory.h" />
     <ClInclude Include="include\minecraft\actor\SynchedActorData.h" />
     <ClInclude Include="include\minecraft\actor\Throwable.h" />
+    <ClInclude Include="include\minecraft\block\ActorBlock.h" />
     <ClInclude Include="include\minecraft\block\Block.h" />
     <ClInclude Include="include\minecraft\block\BlockDefinitionGroup.h" />
     <ClInclude Include="include\minecraft\block\BlockLegacy.h" />
@@ -206,6 +207,7 @@
     <ClInclude Include="include\minecraft\block\BlockRenderLayer.h" />
     <ClInclude Include="include\minecraft\block\BlockState.h" />
     <ClInclude Include="include\minecraft\block\BlockTypeRegistry.h" />
+    <ClInclude Include="include\minecraft\block\DispenserBlock.h" />
     <ClInclude Include="include\minecraft\block\HeavyBlock.h" />
     <ClInclude Include="include\minecraft\block\LiquidBlock.h" />
     <ClInclude Include="include\minecraft\block\LiquidBlockDynamic.h" />

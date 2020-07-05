@@ -35,6 +35,8 @@ item.exnihilo:itemSeedSugarcane.name=Sugarcane Seed
 item.exnihilo:itemSeedCactus.name=Cactus Seed
 item.exnihilo:itemSeedDarkOak.name=Dark Oak Seed
 
+item.zenova:bucketFilled.name=Bucket
+
 itemGroup.name.resources=Ex Nihilo Materials
 itemGroup.name.seeds=Ex Nihilo Seeds
 itemGroup.name.pebbles=Ex Nihilo Pebbles

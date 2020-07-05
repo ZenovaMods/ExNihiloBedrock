@@ -13,7 +13,7 @@ public:
 	int x, y, z;
 
 	BlockPos(int x, int y, int z) : x(x), y(y), z(z) { }
-	BlockPos(float, float, float);
+	BlockPos(float x, float y, float z) : x(int(floorf(x))), y(int(floorf(y))), z(int(floorf(z))) {}
 	BlockPos(Vec3 const&);
 	BlockPos(ChunkPos const&, int);
 	BlockPos(BlockPos const& b) : x(b.x), y(b.y), z(b.z) { }

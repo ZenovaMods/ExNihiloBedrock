@@ -13,6 +13,8 @@ public:
 	virtual const TextureUVCoordinateSet& getIcon(const ItemStackBase&, int, bool) const;
 	virtual Item& setIcon(const std::string&, int);
 	virtual std::string getAuxValuesDescription() const;
+	virtual bool dispense(BlockSource&, Container&, int, const Vec3&, FacingID) const;
+	static bool dispenseEmpty(BlockSource&, Container&, int, const Vec3&, FacingID);
 	static bool _takeLiquid(ItemStack&, Actor&, const BlockPos&);
 
 private:

@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Sat Jul 04 2020 02:15:44 UTC
+; Generated on Sat Jul 04 2020 15:42:06 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -117,6 +117,7 @@ extern __0MobEffectInstance__QEAA_IHHHHH_N00_Z_ptr
 extern _getByName_MobEffect__SAPEAV1_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern _get_I18n__SA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr
 extern __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr
+extern _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
@@ -594,6 +595,10 @@ global ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@s
 global ?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
 ?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z:
 	mov rax, [rel __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr]
+	jmp rax
+global ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z
+?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z:
+	mov rax, [rel _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:

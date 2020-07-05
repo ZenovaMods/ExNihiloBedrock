@@ -486,7 +486,7 @@ public:
         return (int)getAttribute(*SharedAttributes::HEALTH).getMaxValue();
     }
     void serializationSetHealth(int newHealth) {
-        getMutableAttribute(*SharedAttributes::HEALTH)->serializationSetValue((float)newHealth, (int)AttributeOperands::OPERAND_CURRENT, std::numeric_limits<float>::max());
+        getMutableAttribute(*SharedAttributes::HEALTH)->serializationSetValue((float)newHealth, enum_cast(AttributeOperands::OPERAND_CURRENT), std::numeric_limits<float>::max());
     }
     bool isPowered() const {
         return getStatusFlag(ActorFlags::POWERED);

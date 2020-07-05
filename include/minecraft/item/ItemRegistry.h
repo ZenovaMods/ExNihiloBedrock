@@ -17,7 +17,6 @@ public:
 
 	template<typename T, typename... Args>
 	static WeakPtr<T> registerBlockItem(const std::string& name, const BlockLegacy& block, Args&&... args) {
-		//Zenova::Platform::DebugPause();
 		return ItemRegistry::registerItemShared<T>(name, block.getBlockItemId(), std::forward<Args>(args)...);
 	}
 

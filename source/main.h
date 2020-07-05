@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Sat Jul 04 2020 02:15:44 UTC
+// Generated on Sat Jul 04 2020 15:42:06 UTC
 #pragma once
 
 extern "C" {
@@ -118,6 +118,7 @@ extern "C" {
 	extern void* _getByName_MobEffect__SAPEAV1_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 	extern void* _get_I18n__SA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr;
 	extern void* __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr;
+	extern void* _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;

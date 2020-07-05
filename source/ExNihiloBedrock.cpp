@@ -118,13 +118,20 @@ bool bucketTakeLiquid(const BucketItem* self, ItemStack& itemStack, Actor& entit
 	return true;
 }
 
+bool (*_bucketDispense)(const BucketItem*, BlockSource&, Container&, int, const Vec3&, FacingID);
+bool bucketDispense(const BucketItem* self, BlockSource& region, Container& container, int slot, const Vec3& pos, FacingID face) {
+	if (!UniversalBucket::dispenseEmpty(region, container, slot, pos, face))
+		return _bucketDispense(self, region, container, slot, pos, face);
+	return true;
+}
+
 ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
 
 void ExNihiloBedrock::Start() {
 	Zenova::Platform::DebugPause();
 	Zenova_Info("ExNihiloBedrock Start");
 
-	if (Zenova::Minecraft::instance().mVersion == "1.14.60.5") {
+	if (Zenova::Minecraft::version() == "1.14.60.5") {
 		defaultRecipes = new ExNihiloDefaultRecipes();
 
 		ENEntities::initEntityMap();
@@ -142,6 +149,7 @@ void ExNihiloBedrock::Start() {
 		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
 		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
 		Zenova::Hook::Create(&BucketItem::_takeLiquid, &bucketTakeLiquid, &_bucketTakeLiquid);
+		Zenova::Hook::Create(BucketItem_vtable, &BucketItem::dispense, &bucketDispense, &_bucketDispense);
 	}
 }
 

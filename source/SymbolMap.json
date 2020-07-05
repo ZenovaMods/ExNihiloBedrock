@@ -1592,6 +1592,10 @@
     {
       "name": "?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z",
       "address": "0x151BA00"
+    },
+    {
+      "name": "?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z",
+      "address": "0x16A6F40"
     }
   ]
 }

@@ -490,6 +490,12 @@
     <ClInclude Include="include\minecraft\world\ActorEventCoordinator.h">
       <Filter>minecraft\world</Filter>
     </ClInclude>
+    <ClInclude Include="include\minecraft\block\DispenserBlock.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\block\ActorBlock.h">
+      <Filter>minecraft\block</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />

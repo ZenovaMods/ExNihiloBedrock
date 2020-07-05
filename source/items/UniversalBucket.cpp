@@ -2,19 +2,22 @@
 
 #include <sstream>
 
-#include "minecraft/item/ItemStack.h"
-#include "minecraft/item/ItemHelper.h"
-#include "minecraft/item/ItemDescriptor.h"
-#include "minecraft/item/VanillaItems.h"
-#include "minecraft/util/I18n.h"
-#include "minecraft/util/Facing.h"
 #include "minecraft/actor/Actor.h"
-#include "minecraft/world/BlockSource.h"
-#include "minecraft/world/Level.h"
-#include "minecraft/world/ActorEventCoordinator.h"
 #include "minecraft/block/BlockTypeRegistry.h"
-#include "minecraft/block/VanillaBlockTypeRegistry.h"
+#include "minecraft/block/DispenserBlock.h"
 #include "minecraft/block/VanillaBlockStates.h"
+#include "minecraft/block/VanillaBlockTypeRegistry.h"
+#include "minecraft/item/ItemDescriptor.h"
+#include "minecraft/item/ItemHelper.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/item/VanillaItems.h"
+#include "minecraft/util/Facing.h"
+#include "minecraft/util/I18n.h"
+#include "minecraft/world/ActorEventCoordinator.h"
+#include "minecraft/world/BlockSource.h"
+#include "minecraft/world/Container.h"
+#include "minecraft/world/Level.h"
+
 #include "../blocks/FluidRegistry.h"
 #include "ENItems.h"
 
@@ -55,8 +58,42 @@ std::string UniversalBucket::getAuxValuesDescription() const {
 	return ret.str();
 }
 
-bool UniversalBucket::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, FacingID face, float clickX, float clickY, float clickZ) const {
+bool UniversalBucket::dispense(BlockSource& region, Container& container, int slot, const Vec3& pos, FacingID face) const {
+	const ItemStack& itemStack = container.getItem(slot);
+	BlockLegacy* contentsBlock = FluidRegistry::mFluids[itemStack.getAuxValue()]->mFlowingBlock->get();
+	if (contentsBlock) {
+		if (_emptyBucket(region, contentsBlock->getDefaultState(), pos, nullptr, itemStack, face)) {
+			region.getLevel().broadcastLevelEvent(LevelEvent::SoundClick, pos, 1000, nullptr);
+			container.removeItem(slot, 1);
+			ItemStack emptyBucket(**VanillaItems::mBucket, 1, 0);
+			if (!container.addItemToFirstEmptySlot(emptyBucket))
+				DispenserBlock::ejectItem(region, pos, face, emptyBucket);
+			return true;
+		}
+	}
+	return false;
+}
+
+bool UniversalBucket::dispenseEmpty(BlockSource& region, Container& container, int slot, const Vec3& pos, FacingID face) {
 	Zenova::Platform::DebugPause();
+	const BlockLegacy& dispensedBlock = region.getLiquidBlock(pos).getLegacyBlock();
+	Fluid* fluid = FluidRegistry::getFluidFromBlock(dispensedBlock);
+	if (fluid && !container.getItem(slot).getAuxValue() && !region.getLiquidBlock(pos).getState<int>(*VanillaStates::LiquidDepth)) {
+		if (dispensedBlock != region.getBlock(pos).getLegacyBlock())
+			region.setExtraBlock(pos, BedrockBlockTypes::mAir->get()->getDefaultState(), 3);
+		else
+			region.removeBlock(pos);
+		region.getLevel().broadcastLevelEvent(LevelEvent::SoundClick, pos, 1000, nullptr);
+		container.removeItem(slot, 1);
+		ItemStack filledBucket(*ENItems::universalBucket, 1, fluid->mId);
+		if (!container.addItemToFirstEmptySlot(filledBucket))
+			DispenserBlock::ejectItem(region, pos, face, filledBucket);
+		return true;
+	}
+	return false;
+}
+
+bool UniversalBucket::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, FacingID face, float clickX, float clickY, float clickZ) const {
 	BlockSource& region = entity.getRegion();
 	BlockPos placePos = pos;
 	BlockLegacy* contentsBlock = FluidRegistry::mFluids[instance.getAuxValue()]->mFlowingBlock->get();
@@ -140,8 +177,7 @@ bool UniversalBucket::_takeLiquid(ItemStack& itemStack, Actor& entity, const Blo
 			bool isUsingExtraData = region.getExtraBlock(pos).getLegacyBlock() != **BedrockBlockTypes::mAir;
 			region.setLiquidBlock(pos, BedrockBlockTypes::mAir->get()->getDefaultState(), isUsingExtraData, 3);
 		}
-		if (!itemStack.getAuxValue())
-			entity.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketFillWater, entity.getAttachPos(ActorLocation::Feet, 0.0F), -1, {}, 0, 0);
+		entity.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketFillWater, entity.getAttachPos(ActorLocation::Feet, 0.0F), -1, {}, 0, 0);
 		ItemStack filledBucket(*ENItems::universalBucket, 1, fluid->mId);
 		entity.getLevel().getActorEventCoordinator().sendActorUseItem(entity, itemStack, ItemUseMethod::FillBucket);
 		if (!entity.isCreative() && entity.hasType(ActorType::Player))

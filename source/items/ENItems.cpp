@@ -62,7 +62,7 @@ void ENItems::init() {
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCarrot", ItemRegistry::getMaxItemID(), **VanillaBlocks::mCarrotCrop));
 	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedPotato", ItemRegistry::getMaxItemID(), **VanillaBlocks::mPotatoCrop));
 
-	universalBucket = ItemRegistry::registerItem<UniversalBucket>("bucket", ItemRegistry::getMaxItemID());
+	universalBucket = ItemRegistry::registerItem<UniversalBucket>("zenova:bucketFilled", ItemRegistry::getMaxItemID());
 }
 
 void ENItems::initCreativeCategories() {

@@ -65,25 +65,6 @@ void ENItems::init() {
 	universalBucket = ItemRegistry::registerItem<UniversalBucket>("zenova:bucketFilled", ItemRegistry::getMaxItemID());
 }
 
-void ENItems::initCreativeCategories() {
-	hammerWood->setCategory(CreativeItemCategory::TOOLS);
-	hammerStone->setCategory(CreativeItemCategory::TOOLS);
-	hammerIron->setCategory(CreativeItemCategory::TOOLS);
-	hammerDiamond->setCategory(CreativeItemCategory::TOOLS);
-	hammerGold->setCategory(CreativeItemCategory::TOOLS);
-	crookWood->setCategory(CreativeItemCategory::TOOLS);
-	crookBone->setCategory(CreativeItemCategory::TOOLS);
-	resources->setCategory(CreativeItemCategory::ITEMS);
-	cookedSilkworm->setCategory(CreativeItemCategory::ITEMS);
-	pebbles->setCategory(CreativeItemCategory::ITEMS);
-	dolls->setCategory(CreativeItemCategory::ITEMS);
-	itemSeedSaplings->setCategory(CreativeItemCategory::ITEMS);
-	for (WeakPtr<ItemSeedBase> item : itemSeeds)
-		item->setCategory(CreativeItemCategory::ITEMS);
-
-	universalBucket->setCategory(CreativeItemCategory::ITEMS);
-}
-
 void ENItems::initCreativeItems() {
 	Item::beginCreativeGroup("itemGroup.name.hammers", hammerWood.get(), 0, nullptr);
 	Item::addCreativeItem(hammerWood.get(), 0);

@@ -4,17 +4,18 @@
 
 #include <iostream>
 
-#include "minecraft/item/ItemStack.h"
-#include "minecraft/item/VanillaItems.h"
 #include "minecraft/item/BucketItem.h"
+#include "minecraft/item/ItemStack.h"
+#include "minecraft/item/Recipes.h"
+#include "minecraft/item/VanillaItems.h"
 #include "minecraft/block/BlockDefinitionGroup.h"
 #include "minecraft/block/BlockLegacy.h"
 #include "minecraft/world/WorldSystems.h"
-#include "minecraft/client/BlockGraphics.h"
 #include "minecraft/client/ActorRenderDispatcher.h"
+#include "minecraft/client/BlockGraphics.h"
+#include "minecraft/actor/ActorRegistry.h"
 #include "minecraft/actor/ActorType.h"
 #include "minecraft/actor/ProjectileFactory.h"
-#include "minecraft/actor/ActorRegistry.h"
 
 #include "items/ENItems.h"
 #include "items/UniversalBucket.h"
@@ -25,6 +26,7 @@
 #include "handlers/HandlerHammer.h"
 #include "registries/HammerRegistry.h"
 #include "registries/CrookRegistry.h"
+#include "registries/OreRegistry.h"
 #include "registries/manager/ExNihiloDefaultRecipes.h"
 
 void (*_registerItems)(bool);
@@ -35,19 +37,13 @@ void registerItems(bool b1) {
 	ENBlocks::initBlockItems();
 }
 
-void (*_initCreativeCategories)();
-void initCreativeCategories() {
-	_initCreativeCategories();
-
-	ENItems::initCreativeCategories();
-}
-
 void (*_initCreativeItemsCallback)(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool);
 void initCreativeItemsCallback(class ActorInfoRegistry* actorInfoRegistry, class BlockDefinitionGroup* blockDefinitionGroup, bool b1) {
 	_initCreativeItemsCallback(actorInfoRegistry, blockDefinitionGroup, b1);
 
 	ENItems::initCreativeItems();
 	ENBlocks::initCreativeBlocks();
+	OreRegistry::initCreativeItems();
 }
 
 void (*_initClientData)();
@@ -55,16 +51,17 @@ void initClientData() {
 	_initClientData();
 
 	ENItems::initClientData();
+	OreRegistry::initClientData();
 }
 
 void (*_initWorldSystems)(WorldSystems*, ResourcePackManager*);
 void initWorldSystems(WorldSystems* self, ResourcePackManager* rpm) {
-	static bool mInitialized = false;
+	bool mInitialized = *WorldSystems::mInitialized;
 	_initWorldSystems(self, rpm);
 	if (*WorldSystems::mInitialized && !mInitialized) {
 		HammerRegistry::loadJson("HammerRegistry.json");
 		CrookRegistry::loadJson("CrookRegistry.json");
-		mInitialized = true;
+		OreRegistry::loadJson("OreRegistry.json");
 	}
 }
 
@@ -125,6 +122,13 @@ bool bucketDispense(const BucketItem* self, BlockSource& region, Container& cont
 	return true;
 }
 
+void (*_initRecipes)(Recipes*, ResourcePackManager&);
+void initRecipes(Recipes* self, ResourcePackManager& resourcePackManager) {
+	_initRecipes(self, resourcePackManager);
+
+	OreRegistry::doRecipes(*self);
+}
+
 ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
 
 void ExNihiloBedrock::Start() {
@@ -138,7 +142,6 @@ void ExNihiloBedrock::Start() {
 		ENBlocks::init();
 
 		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, &_registerItems);
-		Zenova::Hook::Create(&VanillaItems::initCreativeCategories, &initCreativeCategories, &_initCreativeCategories);
 		Zenova::Hook::Create(&VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, &_initCreativeItemsCallback);
 		Zenova::Hook::Create(&VanillaItems::initClientData, &initClientData, &_initClientData);
 		Zenova::Hook::Create(BlockLegacy_vtable, &BlockLegacy::playerDestroy, &BlockLegacy_playerDestroy, &_BlockLegacy_playerDestroy);
@@ -150,6 +153,7 @@ void ExNihiloBedrock::Start() {
 		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
 		Zenova::Hook::Create(&BucketItem::_takeLiquid, &bucketTakeLiquid, &_bucketTakeLiquid);
 		Zenova::Hook::Create(BucketItem_vtable, &BucketItem::dispense, &bucketDispense, &_bucketDispense);
+		Zenova::Hook::Create(&Recipes::init, &initRecipes, &_initRecipes);
 	}
 }
 

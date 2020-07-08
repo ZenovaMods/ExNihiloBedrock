@@ -18,6 +18,7 @@ public:
 	static ItemInfo* getItemInfoFromStack(ItemStackBase*);
 	
 	ItemInfo(ItemStackBase*);
+	ItemInfo(Item*, int);
 	ItemInfo(BlockLegacy*, int);
 	ItemInfo(const std::string&);
 	ItemInfo(const Block*);

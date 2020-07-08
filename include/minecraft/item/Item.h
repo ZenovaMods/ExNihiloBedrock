@@ -222,9 +222,15 @@ public:
     const WeakPtr<BlockLegacy>& getLegacyBlock() const {
         return mLegacyBlock;
     }
+
     const std::string& getDescriptionId() const {
         return mDescriptionId;
     }
+
+    short getId() const {
+        return mId;
+    }
+
     const std::string& getCommandName() const;
 
     void _helpChangeInventoryItemInPlace(Actor&, ItemStack&, ItemStack&, ItemAcquisitionMethod) const;

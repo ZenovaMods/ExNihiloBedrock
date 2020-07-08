@@ -36,7 +36,6 @@ public:
 
 
 	static void init();
-	static void initCreativeCategories();
 	static void initCreativeItems();
 	static void initClientData();
 };

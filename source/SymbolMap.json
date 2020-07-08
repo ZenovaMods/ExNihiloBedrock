@@ -988,6 +988,53 @@
       ]
     },
     {
+      "name": "Monster",
+      "parent": "Mob",
+      "address": "0x2B4C488",
+      "functions": [
+        "?normalTick@Monster@@UEAAXXZ",
+        "?canExistInPeaceful@Monster@@UEBA_NXZ",
+        "?findAttackTarget@Monster@@UEAAPEAVActor@@XZ",
+        "?_hurt@Monster@@UEAA_NAEBVActorDamageSource@@H_N1@Z",
+        "?readAdditionalSaveData@Monster@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z",
+        "?addAdditionalSaveData@Monster@@UEAAXAEAVCompoundTag@@@Z",
+        "?aiStep@Monster@@UEAAXXZ",
+        "?checkSpawnRules@Monster@@UEAA_N_N@Z",
+        "?shouldDespawn@Monster@@UEBA_NXZ",
+        "?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z",
+        "?isDarkEnoughToSpawn@Monster@@UEBA_NXZ"
+      ]
+    },
+    {
+      "name": "Slime",
+      "parent": "Monster",
+      "address": "0x2B51040",
+      "functions": [
+        "?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z",
+        "?remove@Slime@@UEAAXXZ",
+        "?normalTick@Slime@@UEAAXXZ",
+        "?getShadowRadius@Slime@@UEBAMXZ",
+        "?playerTouch@Slime@@UEAAXAEAVPlayer@@@Z",
+        "?findAttackTarget@Slime@@UEAAPEAVActor@@XZ",
+        "?onSynchedDataUpdate@Slime@@UEAAXH@Z",
+        "?readAdditionalSaveData@Slime@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z",
+        "?addAdditionalSaveData@Slime@@UEAAXAEAVCompoundTag@@@Z",
+        "?aiStep@Slime@@UEAAXXZ",
+        "?checkSpawnRules@Slime@@UEAA_N_N@Z",
+        "?_getWalkTargetValue@Slime@@UEAAMAEBVBlockPos@@@Z",
+        "?useNewAi@Slime@@UEBA_NXZ",
+        "?canDealDamage@Slime@@UEAA_NXZ",
+        "?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ",
+        "?setSlimeSize@Slime@@UEAAXH@Z",
+        "?doPlayJumpSound@Slime@@UEAA_NXZ",
+        "?doPlayLandSound@Slime@@UEAA_NXZ",
+        "?playJumpSound@Slime@@UEAAXXZ",
+        "?playLandSound@Slime@@UEAAXXZ",
+        "?decreaseSquish@Slime@@UEAAXXZ",
+        "?createChild@Slime@@UEAA?AV?$unique_ptr@VSlime@@U?$default_delete@VSlime@@@std@@@std@@H@Z"
+      ]
+    },
+    {
       "name": "Throwable",
       "parent": "Actor",
       "address": "0x2B60730",
@@ -1064,6 +1111,26 @@
         "",
         "?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@@Z"
       ]
+    },
+    {
+      "name": "ItemSpriteRenderer",
+      "address": "0x2AC98E0",
+      "functions": [
+        "",
+        "?_getOverlayColor@ActorShaderManager@@UEBA?AVColor@@AEAVActor@@M@Z",
+        "?render@ItemSpriteRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
+        "?renderDebug@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
+        "?renderEffects@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
+        "?renderTrading@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@M@Z",
+        "?renderFlame@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
+        "?renderLeash@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
+        "?renderWaterHole@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
+        "?addAdditionalRenderingIfNeeded@ActorRenderer@@UEAAXAEAVTextureGroup@mce@@@Z",
+        "?getRenderBounds@ActorRenderer@@UEBA?AVAABB@@AEBVActor@@@Z",
+        "?getLeashOffset@ActorRenderer@@UEAAPEAXAEAVActor@@MMM_N1@Z",
+        "?getIcon@ItemSpriteRenderer@@UEBAAEBUTextureUVCoordinateSet@@AEAVActor@@@Z",
+        "?isGlint@ItemSpriteRenderer@@UEBA_NAEBVActor@@@Z"
+      ]
     }
   ],
 
@@ -1113,6 +1180,8 @@
     "ItemState* VanillaStates::SaplingType": "0x30633C0",
     "ItemState* VanillaStates::LiquidDepth": "0x3062BA0",
     "WeakPtr<Item>* VanillaItems::mBucket": "0x3060748",
+    "WeakPtr<Item>* VanillaItems::mGoldIngot": "0x3060548",
+    "WeakPtr<Item>* VanillaItems::mIronIngot": "0x3060540",
     "Item::Tier* VanillaItemTiers::WOOD": "0x2A39988",
     "Item::Tier* VanillaItemTiers::STONE": "0x2A39A20",
     "Item::Tier* VanillaItemTiers::IRON": "0x2A39658",
@@ -1382,6 +1451,14 @@
       "address": "0x0E52DA0"
     },
     {
+      "name": "?toUpper@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z",
+      "address": "0x0E52E40"
+    },
+    {
+      "name": "?u64FromString@Util@@YA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "address": "0x0E53800"
+    },
+    {
       "name": "?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z",
       "address": "0x099C240"
     },
@@ -1460,14 +1537,6 @@
     {
       "name": "?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z",
       "address": "0x13057E0"
-    },
-    {
-      "name": "??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z",
-      "address": "0x0983AB0"
-    },
-    {
-      "name": "??1ItemSpriteRenderer@@UEAA@XZ",
-      "address": "0x0983BC0"
     },
     {
       "name": "?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z",
@@ -1596,6 +1665,70 @@
     {
       "name": "?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z",
       "address": "0x16A6F40"
+    },
+    {
+      "name": "??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z",
+      "address": "0x0983AB0"
+    },
+    {
+      "name": "??1ItemSpriteRenderer@@UEAA@XZ",
+      "address": "0x0983BC0"
+    },
+    {
+      "name": "?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ",
+      "address": "0x0983D50"
+    },
+    {
+      "name": "?_renderQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@AEBVVec3@@MM@Z",
+      "address": "0x0984220"
+    },
+    {
+      "name": "?_buildQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@@Z",
+      "address": "0x0983EB0"
+    },
+    {
+      "name": "??1Mesh@mce@@QEAA@XZ",
+      "address": "0x0DD3F60"
+    },
+    {
+      "name": "??0Mesh@mce@@QEAA@XZ",
+      "address": "0x0DD3D80"
+    },
+    {
+      "name": "?reset@Mesh@mce@@QEAAXXZ",
+      "address": "0x0DD4500"
+    },
+    {
+      "name": "?isValid@Mesh@mce@@QEBA_NXZ",
+      "address": "0xDD47B0"
+    },
+    {
+      "name": "?init@Recipes@@QEAAXAEAVResourcePackManager@@@Z",
+      "address": "0x152D6D0"
+    },
+    {
+      "name": "?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@std@@@Z",
+      "address": "0x15392B0"
+    },
+    {
+      "name": "?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z",
+      "address": "0x153A270"
+    },
+    {
+      "name": "?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z",
+      "address": "0x153A090"
+    },
+    {
+      "name": "?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z",
+      "address": "0x1539F00"
+    },
+    {
+      "name": "?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z",
+      "address": "0x1539D90"
+    },
+    {
+      "name": "?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z",
+      "address": "0x15394D0"
     }
   ]
 }

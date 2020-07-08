@@ -206,22 +206,17 @@ public:
     virtual InputMode getInputMode() const;
     virtual ClientPlayMode getPlayMode() const;
     virtual void reportMovementTelemetry(const MovementEventType);
-protected:
     virtual void updateAi();
     virtual bool _hurt(const ActorDamageSource&, int, bool, bool);
     virtual void readAdditionalSaveData(const CompoundTag&, DataLoadHelper&);
     virtual void addAdditionalSaveData(CompoundTag&);
     virtual void onMovePlayerPacketNormal(const Vec3&, const Vec2&, float);
     virtual void onBounceStarted(const BlockPos&, const Block&);
-private:
     virtual void _onSizeUpdated();
-public:
     virtual AnimationComponent& getAnimationComponent();
     virtual const HashedString& getActorRendererId() const;
-private:
     virtual std::unique_ptr<BodyControl> initBodyControl();
 
-public:
     const ItemStack& getSelectedItem() const;
     void causeFoodExhaustion(float);
 };

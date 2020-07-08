@@ -8,6 +8,10 @@
 
 class Tick { uint64_t tickID; };
 
+struct SortItemInstanceIdAux {
+	bool operator()(const ItemInstance&, const ItemInstance&) const;
+};
+
 class ItemStackBase {
 protected:
 	WeakPtr<Item> mItem;

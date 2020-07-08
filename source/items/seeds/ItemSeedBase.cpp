@@ -14,6 +14,7 @@ std::string ItemSeedBase::names[6] = { OAK, SPRUCE, BIRCH, JUNGLE, ACACIA, DARK_
 
 ItemSeedBase::ItemSeedBase(const std::string& name, int id, const Block& block, bool subItems) : BlockPlanterItem(name, id, block, false), textureItem(), hasSubItems(subItems) {
 	setStackedByData(hasSubItems);
+	setCategory(CreativeItemCategory::ITEMS);
 }
 
 bool ItemSeedBase::isValidAuxValue(int auxValue) const {

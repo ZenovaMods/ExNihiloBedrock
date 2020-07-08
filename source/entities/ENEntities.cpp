@@ -4,10 +4,10 @@
 #include "minecraft/actor/ProjectileFactory.h"
 #include "minecraft/actor/ActorRegistry.h"
 #include "minecraft/client/ActorRenderDispatcher.h"
-#include "minecraft/client/ItemSpriteRenderer.h"
 
 #include "DropItemSubcomponent.h"
 #include "ProjectileStone.h"
+#include "PebbleRenderer.h"
 #include "../items/ENItems.h"
 #include "../items/ItemPebble.h"
 
@@ -24,5 +24,5 @@ void ENEntities::initProjectileMap() {
 }
 
 void ENEntities::initRenderers(ActorRenderDispatcher* dispatcher, mce::TextureGroup& textures) {
-	dispatcher->mRendererMap[EntityCanonicalName(ActorType::Pebble)] = std::make_unique<ItemSpriteRenderer>(textures, ENItems::pebbles.get(), false);
+	dispatcher->mRendererMap[EntityCanonicalName(ActorType::Pebble)] = std::make_unique<PebbleRenderer>(textures, ENItems::pebbles.get());
 }

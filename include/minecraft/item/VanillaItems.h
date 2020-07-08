@@ -6,6 +6,8 @@ class BlockDefinitionGroup;
 class VanillaItems {
 public:
 	static WeakPtr<Item>* mBucket;
+	static WeakPtr<Item>* mIronIngot;
+	static WeakPtr<Item>* mGoldIngot;
 
 	static void registerItems(bool);
 	static void initCreativeItemsCallback(ActorInfoRegistry*, BlockDefinitionGroup*, bool);

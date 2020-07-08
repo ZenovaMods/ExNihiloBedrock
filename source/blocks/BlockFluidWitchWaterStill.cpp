@@ -6,7 +6,7 @@
 #include "minecraft/block/VanillaBlockStates.h"
 #include "minecraft/world/BlockSource.h"
 #include "minecraft/world/Level.h"
-#include "minecraft/actor/Actor.h"
+#include "minecraft/actor/Slime.h"
 #include "minecraft/actor/ActorFactory.h"
 #include "minecraft/actor/MobEffectInstance.h"
 
@@ -104,6 +104,33 @@ void EntityInWitchWater(BlockSource& region, const BlockPos& pos, Actor& entity)
             if (addedEntity && entity.isPersistent())
                 addedEntity->setPersistent();
         }
+        return;
+    }
+
+    if (ActorClassTree::isInstanceOf(entity, ActorType::Slime)) {
+        auto slime = level.getActorFactory().createTransformedEntity({ ActorType::LavaSlime }, &entity);
+        if (slime) {
+            Actor* addedEntity = level.addEntity(entity.getRegion(), std::move(slime));
+            if (addedEntity) {
+                dynamic_cast<Slime*>(addedEntity)->setSlimeSize(dynamic_cast<Slime&>(entity).getSlimeSize());
+                if (entity.isPersistent())
+                    addedEntity->setPersistent();
+            }
+        }
+        return;
+    }
+
+    if (ActorClassTree::isInstanceOf(entity, ActorType::Cow)) {
+        auto mooshroom = level.getActorFactory().createTransformedEntity({ ActorType::MushroomCow }, &entity);
+        if (mooshroom) {
+            Actor* addedEntity = level.addEntity(entity.getRegion(), std::move(mooshroom));
+            if (addedEntity && entity.isPersistent())
+                addedEntity->setPersistent();
+        }
+        return;
+    }
+
+    if (ActorClassTree::isInstanceOf(entity, ActorType::MushroomCow)) {
         return;
     }
 

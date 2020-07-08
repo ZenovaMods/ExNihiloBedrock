@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_csv.py
-; Generated on Sat Jul 04 2020 15:42:06 UTC
+; Generated on Wed Jul 08 2020 20:35:52 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -64,6 +64,8 @@ extern _causeFoodExhaustion_Player__QEAAXM_Z_ptr
 extern _getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr
 extern _hasEnchant_EnchantUtils__SA_NW4Type_Enchant__AEBVItemStackBase___Z_ptr
 extern _toLower_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr
+extern _toUpper_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr
+extern _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr
 extern _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr
 extern _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr
@@ -84,8 +86,6 @@ extern _computeHash_HashedString__SA_KPEBD_Z_ptr
 extern _initFactory_ProjectileFactory__SAXXZ_ptr
 extern _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr
 extern _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr
-extern __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr
-extern __1ItemSpriteRenderer__UEAA_XZ_ptr
 extern _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr
 extern _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr
 extern _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr
@@ -118,6 +118,22 @@ extern _getByName_MobEffect__SAPEAV1_AEBV_$basic_string_DU_$char_traits_D_std__V
 extern _get_I18n__SA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr
 extern __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr
 extern _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr
+extern __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr
+extern __1ItemSpriteRenderer__UEAA_XZ_ptr
+extern _onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr
+extern __renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr
+extern __buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr
+extern __1Mesh_mce__QEAA_XZ_ptr
+extern __0Mesh_mce__QEAA_XZ_ptr
+extern _reset_Mesh_mce__QEAAXXZ_ptr
+extern _isValid_Mesh_mce__QEBA_NXZ_ptr
+extern _init_Recipes__QEAAXAEAVResourcePackManager___Z_ptr
+extern _addFurnaceRecipeAuxData_Recipes__QEAAXAEBVItemInstance__0AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___std___Z_ptr
+extern _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_22AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr
+extern _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_2AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr
+extern _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr
+extern _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr
+extern _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___3_AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
@@ -131,9 +147,12 @@ extern ItemStack_vtable
 extern Actor_vtable
 extern Mob_vtable
 extern Player_vtable
+extern Monster_vtable
+extern Slime_vtable
 extern Throwable_vtable
 extern Container_vtable
 extern Level_vtable
+extern ItemSpriteRenderer_vtable
 
 SECTION .text
 global ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
@@ -384,6 +403,14 @@ global ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z:
 	mov rax, [rel _toLower_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
 	jmp rax
+global ?toUpper@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+?toUpper@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z:
+	mov rax, [rel _toUpper_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
+	jmp rax
+global ?u64FromString@Util@@YA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+?u64FromString@Util@@YA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
+	mov rax, [rel _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
+	jmp rax
 global ?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z
 ?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z:
 	mov rax, [rel _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr]
@@ -463,14 +490,6 @@ global ?EntityCanonicalName@@YAAEBVHashedString@@W4ActorType@@@Z
 global ?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z
 ?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z:
 	mov rax, [rel _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr]
-	jmp rax
-global ??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z
-??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z:
-	mov rax, [rel __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr]
-	jmp rax
-global ??1ItemSpriteRenderer@@UEAA@XZ
-??1ItemSpriteRenderer@@UEAA@XZ:
-	mov rax, [rel __1ItemSpriteRenderer__UEAA_XZ_ptr]
 	jmp rax
 global ?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z
 ?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z:
@@ -599,6 +618,70 @@ global ?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
 global ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z
 ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z:
 	mov rax, [rel _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr]
+	jmp rax
+global ??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z
+??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z:
+	mov rax, [rel __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr]
+	jmp rax
+global ??1ItemSpriteRenderer@@UEAA@XZ
+??1ItemSpriteRenderer@@UEAA@XZ:
+	mov rax, [rel __1ItemSpriteRenderer__UEAA_XZ_ptr]
+	jmp rax
+global ?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ
+?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ:
+	mov rax, [rel _onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr]
+	jmp rax
+global ?_renderQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@AEBVVec3@@MM@Z
+?_renderQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@AEBVVec3@@MM@Z:
+	mov rax, [rel __renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr]
+	jmp rax
+global ?_buildQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@@Z
+?_buildQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@@Z:
+	mov rax, [rel __buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr]
+	jmp rax
+global ??1Mesh@mce@@QEAA@XZ
+??1Mesh@mce@@QEAA@XZ:
+	mov rax, [rel __1Mesh_mce__QEAA_XZ_ptr]
+	jmp rax
+global ??0Mesh@mce@@QEAA@XZ
+??0Mesh@mce@@QEAA@XZ:
+	mov rax, [rel __0Mesh_mce__QEAA_XZ_ptr]
+	jmp rax
+global ?reset@Mesh@mce@@QEAAXXZ
+?reset@Mesh@mce@@QEAAXXZ:
+	mov rax, [rel _reset_Mesh_mce__QEAAXXZ_ptr]
+	jmp rax
+global ?isValid@Mesh@mce@@QEBA_NXZ
+?isValid@Mesh@mce@@QEBA_NXZ:
+	mov rax, [rel _isValid_Mesh_mce__QEBA_NXZ_ptr]
+	jmp rax
+global ?init@Recipes@@QEAAXAEAVResourcePackManager@@@Z
+?init@Recipes@@QEAAXAEAVResourcePackManager@@@Z:
+	mov rax, [rel _init_Recipes__QEAAXAEAVResourcePackManager___Z_ptr]
+	jmp rax
+global ?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@std@@@Z
+?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@std@@@Z:
+	mov rax, [rel _addFurnaceRecipeAuxData_Recipes__QEAAXAEBVItemInstance__0AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___std___Z_ptr]
+	jmp rax
+global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
+?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
+	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_22AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
+	jmp rax
+global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
+?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
+	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_2AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
+	jmp rax
+global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
+?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
+	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
+	jmp rax
+global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
+?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
+	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
+	jmp rax
+global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
+?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
+	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___3_AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:
@@ -4176,6 +4259,138 @@ global ?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z
 ?onMovePlayerPacketNormal@Player@@UEAAXAEBVVec3@@AEBVVec2@@M@Z:
 	mov rax, [rel Player_vtable]
 	jmp [rax+3560]
+global ?normalTick@Monster@@UEAAXXZ
+?normalTick@Monster@@UEAAXXZ:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+288]
+global ?canExistInPeaceful@Monster@@UEBA_NXZ
+?canExistInPeaceful@Monster@@UEBA_NXZ:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+408]
+global ?findAttackTarget@Monster@@UEAAPEAVActor@@XZ
+?findAttackTarget@Monster@@UEAAPEAVActor@@XZ:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+800]
+global ?_hurt@Monster@@UEAA_NAEBVActorDamageSource@@H_N1@Z
+?_hurt@Monster@@UEAA_NAEBVActorDamageSource@@H_N1@Z:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+1864]
+global ?readAdditionalSaveData@Monster@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+?readAdditionalSaveData@Monster@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+1880]
+global ?addAdditionalSaveData@Monster@@UEAAXAEAVCompoundTag@@@Z
+?addAdditionalSaveData@Monster@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+1888]
+global ?aiStep@Monster@@UEAAXXZ
+?aiStep@Monster@@UEAAXXZ:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+2160]
+global ?checkSpawnRules@Monster@@UEAA_N_N@Z
+?checkSpawnRules@Monster@@UEAA_N_N@Z:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+2192]
+global ?shouldDespawn@Monster@@UEBA_NXZ
+?shouldDespawn@Monster@@UEBA_NXZ:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+2208]
+global ?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z
+?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+2552]
+global ?isDarkEnoughToSpawn@Monster@@UEBA_NXZ
+?isDarkEnoughToSpawn@Monster@@UEBA_NXZ:
+	mov rax, [rel Monster_vtable]
+	jmp [rax+2720]
+global ?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+8]
+global ?remove@Slime@@UEAAXXZ
+?remove@Slime@@UEAAXXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+72]
+global ?normalTick@Slime@@UEAAXXZ
+?normalTick@Slime@@UEAAXXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+288]
+global ?getShadowRadius@Slime@@UEBAMXZ
+?getShadowRadius@Slime@@UEBAMXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+568]
+global ?playerTouch@Slime@@UEAAXAEAVPlayer@@@Z
+?playerTouch@Slime@@UEAAXAEAVPlayer@@@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+632]
+global ?findAttackTarget@Slime@@UEAAPEAVActor@@XZ
+?findAttackTarget@Slime@@UEAAPEAVActor@@XZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+800]
+global ?onSynchedDataUpdate@Slime@@UEAAXH@Z
+?onSynchedDataUpdate@Slime@@UEAAXH@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+1384]
+global ?readAdditionalSaveData@Slime@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+?readAdditionalSaveData@Slime@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+1880]
+global ?addAdditionalSaveData@Slime@@UEAAXAEAVCompoundTag@@@Z
+?addAdditionalSaveData@Slime@@UEAAXAEAVCompoundTag@@@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+1888]
+global ?aiStep@Slime@@UEAAXXZ
+?aiStep@Slime@@UEAAXXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2160]
+global ?checkSpawnRules@Slime@@UEAA_N_N@Z
+?checkSpawnRules@Slime@@UEAA_N_N@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2192]
+global ?_getWalkTargetValue@Slime@@UEAAMAEBVBlockPos@@@Z
+?_getWalkTargetValue@Slime@@UEAAMAEBVBlockPos@@@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2552]
+global ?useNewAi@Slime@@UEBA_NXZ
+?useNewAi@Slime@@UEBA_NXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2568]
+global ?canDealDamage@Slime@@UEAA_NXZ
+?canDealDamage@Slime@@UEAA_NXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2728]
+global ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
+?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2736]
+global ?setSlimeSize@Slime@@UEAAXH@Z
+?setSlimeSize@Slime@@UEAAXH@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2744]
+global ?doPlayJumpSound@Slime@@UEAA_NXZ
+?doPlayJumpSound@Slime@@UEAA_NXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2752]
+global ?doPlayLandSound@Slime@@UEAA_NXZ
+?doPlayLandSound@Slime@@UEAA_NXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2760]
+global ?playJumpSound@Slime@@UEAAXXZ
+?playJumpSound@Slime@@UEAAXXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2768]
+global ?playLandSound@Slime@@UEAAXXZ
+?playLandSound@Slime@@UEAAXXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2776]
+global ?decreaseSquish@Slime@@UEAAXXZ
+?decreaseSquish@Slime@@UEAAXXZ:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2784]
+global ?createChild@Slime@@UEAA?AV?$unique_ptr@VSlime@@U?$default_delete@VSlime@@@std@@@std@@H@Z
+?createChild@Slime@@UEAA?AV?$unique_ptr@VSlime@@U?$default_delete@VSlime@@@std@@@std@@H@Z:
+	mov rax, [rel Slime_vtable]
+	jmp [rax+2792]
 global ?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
 ?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z:
 	mov rax, [rel Throwable_vtable]
@@ -4364,3 +4579,55 @@ global ?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$unique_ptr@VActor@@U
 ?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@@Z:
 	mov rax, [rel Level_vtable]
 	jmp [rax+96]
+global ?_getOverlayColor@ActorShaderManager@@UEBA?AVColor@@AEAVActor@@M@Z
+?_getOverlayColor@ActorShaderManager@@UEBA?AVColor@@AEAVActor@@M@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+8]
+global ?render@ItemSpriteRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z
+?render@ItemSpriteRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+16]
+global ?renderDebug@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z
+?renderDebug@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+24]
+global ?renderEffects@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z
+?renderEffects@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+32]
+global ?renderTrading@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@M@Z
+?renderTrading@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@M@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+40]
+global ?renderFlame@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z
+?renderFlame@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+48]
+global ?renderLeash@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z
+?renderLeash@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+56]
+global ?renderWaterHole@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z
+?renderWaterHole@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+64]
+global ?addAdditionalRenderingIfNeeded@ActorRenderer@@UEAAXAEAVTextureGroup@mce@@@Z
+?addAdditionalRenderingIfNeeded@ActorRenderer@@UEAAXAEAVTextureGroup@mce@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+72]
+global ?getRenderBounds@ActorRenderer@@UEBA?AVAABB@@AEBVActor@@@Z
+?getRenderBounds@ActorRenderer@@UEBA?AVAABB@@AEBVActor@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+80]
+global ?getLeashOffset@ActorRenderer@@UEAAPEAXAEAVActor@@MMM_N1@Z
+?getLeashOffset@ActorRenderer@@UEAAPEAXAEAVActor@@MMM_N1@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+88]
+global ?getIcon@ItemSpriteRenderer@@UEBAAEBUTextureUVCoordinateSet@@AEAVActor@@@Z
+?getIcon@ItemSpriteRenderer@@UEBAAEBUTextureUVCoordinateSet@@AEAVActor@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+96]
+global ?isGlint@ItemSpriteRenderer@@UEBA_NAEBVActor@@@Z
+?isGlint@ItemSpriteRenderer@@UEBA_NAEBVActor@@@Z:
+	mov rax, [rel ItemSpriteRenderer_vtable]
+	jmp [rax+104]

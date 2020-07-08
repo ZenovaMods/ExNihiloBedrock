@@ -23,6 +23,7 @@
 
 UniversalBucket::UniversalBucket(const std::string& nameId, int id) : Item(nameId, id), mBucketTextures() {
 	setMaxStackSize(1);
+	setCategory(CreativeItemCategory::ITEMS);
 }
 
 bool UniversalBucket::isValidAuxValue(int auxValue) const {
@@ -75,7 +76,6 @@ bool UniversalBucket::dispense(BlockSource& region, Container& container, int sl
 }
 
 bool UniversalBucket::dispenseEmpty(BlockSource& region, Container& container, int slot, const Vec3& pos, FacingID face) {
-	Zenova::Platform::DebugPause();
 	const BlockLegacy& dispensedBlock = region.getLiquidBlock(pos).getLegacyBlock();
 	Fluid* fluid = FluidRegistry::getFluidFromBlock(dispensedBlock);
 	if (fluid && !container.getItem(slot).getAuxValue() && !region.getLiquidBlock(pos).getState<int>(*VanillaStates::LiquidDepth)) {

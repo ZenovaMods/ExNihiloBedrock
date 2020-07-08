@@ -9,6 +9,7 @@ HammerBase::HammerBase(const std::string& name, int id, int maxUses, Item::Tier 
 	: DiggerItem(name, id, 0, material, {}) {
 
 	setMaxDamage(maxUses);
+	setCategory(CreativeItemCategory::TOOLS);
 	miningLevel = material.getLevel();
 	HammerDatabase::registerHammer(this);
 }

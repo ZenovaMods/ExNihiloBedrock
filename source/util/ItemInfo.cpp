@@ -18,6 +18,8 @@ ItemInfo::ItemInfo(ItemStackBase* stack) {
 	meta = stack == NULL ? -1 : stack->getAuxValue();
 }
 
+ItemInfo::ItemInfo(Item* item, int meta) : item(item), meta(meta) {}
+
 ItemInfo::ItemInfo(BlockLegacy* block, int blockMeta) {
 	item = ItemRegistry::getItem(*block).get();
 	meta = block == NULL ? -1 : blockMeta;

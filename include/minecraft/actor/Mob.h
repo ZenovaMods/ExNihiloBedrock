@@ -131,7 +131,6 @@ public:
     virtual void ascendLadder();
     virtual void ascendScaffolding();
     virtual void descendScaffolding();
-protected:
     virtual void updateEntitySpecificMolangVariables(RenderParams&);
     virtual void addAdditionalSaveData(CompoundTag&);
     virtual void readAdditionalSaveData(const CompoundTag&, DataLoadHelper&);

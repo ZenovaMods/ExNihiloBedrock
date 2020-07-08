@@ -22,6 +22,24 @@
     "brightness_gamma": 0.55,
     "sound": "gravel"
   },
+  "blockAndesiteCrushed": {
+    "isotropic": true,
+    "textures": "blockAndesiteCrushed",
+    "brightness_gamma": 0.55,
+    "sound": "gravel"
+  },
+  "blockDioriteCrushed": {
+    "isotropic": true,
+    "textures": "blockDioriteCrushed",
+    "brightness_gamma": 0.55,
+    "sound": "gravel"
+  },
+  "blockGraniteCrushed": {
+    "isotropic": true,
+    "textures": "blockGraniteCrushed",
+    "brightness_gamma": 0.55,
+    "sound": "gravel"
+  },
   "witchwaterFlowing": {
     "textures": {
       "up": "witchWaterStill",

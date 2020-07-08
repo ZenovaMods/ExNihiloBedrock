@@ -13,6 +13,9 @@ public:
 	static WeakPtr<BlockLegacy>* dust;
 	static WeakPtr<BlockLegacy>* netherrackCrushed;
 	static WeakPtr<BlockLegacy>* endstoneCrushed;
+	static WeakPtr<BlockLegacy>* andesiteCrushed;
+	static WeakPtr<BlockLegacy>* dioriteCrushed;
+	static WeakPtr<BlockLegacy>* graniteCrushed;
 	static WeakPtr<BlockLegacy>* blockWitchwaterStill;
 	static WeakPtr<BlockLegacy>* blockWitchwaterFlowing;
 

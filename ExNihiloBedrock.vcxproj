@@ -191,12 +191,14 @@
     <ClInclude Include="include\minecraft\actor\Mob.h" />
     <ClInclude Include="include\minecraft\actor\MobEffect.h" />
     <ClInclude Include="include\minecraft\actor\MobEffectInstance.h" />
+    <ClInclude Include="include\minecraft\actor\Monster.h" />
     <ClInclude Include="include\minecraft\actor\MovementInterpolator.h" />
     <ClInclude Include="include\minecraft\actor\OnHitSubcomponent.h" />
     <ClInclude Include="include\minecraft\actor\ParticleType.h" />
     <ClInclude Include="include\minecraft\actor\Player.h" />
     <ClInclude Include="include\minecraft\actor\ProjectileComponent.h" />
     <ClInclude Include="include\minecraft\actor\ProjectileFactory.h" />
+    <ClInclude Include="include\minecraft\actor\Slime.h" />
     <ClInclude Include="include\minecraft\actor\SynchedActorData.h" />
     <ClInclude Include="include\minecraft\actor\Throwable.h" />
     <ClInclude Include="include\minecraft\block\ActorBlock.h" />
@@ -217,10 +219,14 @@
     <ClInclude Include="include\minecraft\block\VanillaBlockRegistry.h" />
     <ClInclude Include="include\minecraft\block\VanillaBlockStates.h" />
     <ClInclude Include="include\minecraft\block\VanillaBlockTypeRegistry.h" />
+    <ClInclude Include="include\minecraft\client\ActorRenderData.h" />
     <ClInclude Include="include\minecraft\client\ActorRenderDispatcher.h" />
     <ClInclude Include="include\minecraft\client\ActorRenderer.h" />
+    <ClInclude Include="include\minecraft\client\AppPlatformListener.h" />
+    <ClInclude Include="include\minecraft\client\BaseActorRenderContext.h" />
     <ClInclude Include="include\minecraft\client\BlockGraphics.h" />
     <ClInclude Include="include\minecraft\client\ItemSpriteRenderer.h" />
+    <ClInclude Include="include\minecraft\client\Mesh.h" />
     <ClInclude Include="include\minecraft\client\TextureAtlasItem.h" />
     <ClInclude Include="include\minecraft\client\TextureUVCoordinateSet.h" />
     <ClInclude Include="include\minecraft\CommonTypes.h" />
@@ -232,9 +238,14 @@
     <ClInclude Include="include\minecraft\item\FoodItemComponent.h" />
     <ClInclude Include="include\minecraft\item\Item.h" />
     <ClInclude Include="include\minecraft\item\ItemDescriptor.h" />
+    <ClInclude Include="include\minecraft\item\ItemDescriptorCount.h" />
     <ClInclude Include="include\minecraft\item\ItemHelper.h" />
     <ClInclude Include="include\minecraft\item\ItemRegistry.h" />
     <ClInclude Include="include\minecraft\item\ItemStack.h" />
+    <ClInclude Include="include\minecraft\item\Recipe.h" />
+    <ClInclude Include="include\minecraft\item\Recipes.h" />
+    <ClInclude Include="include\minecraft\item\ShapedRecipe.h" />
+    <ClInclude Include="include\minecraft\item\ShapelessRecipe.h" />
     <ClInclude Include="include\minecraft\item\UseAnimation.h" />
     <ClInclude Include="include\minecraft\item\VanillaItems.h" />
     <ClInclude Include="include\minecraft\item\VanillaItemTiers.h" />
@@ -277,6 +288,7 @@
     <ClInclude Include="source\blocks\FluidRegistry.h" />
     <ClInclude Include="source\entities\DropItemSubcomponent.h" />
     <ClInclude Include="source\entities\ENEntities.h" />
+    <ClInclude Include="source\entities\PebbleRenderer.h" />
     <ClInclude Include="source\entities\ProjectileStone.h" />
     <ClInclude Include="source\ExNihiloBedrock.h" />
     <ClInclude Include="source\handlers\HandlerCrook.h" />
@@ -286,6 +298,8 @@
     <ClInclude Include="source\items\ItemDoll.h" />
     <ClInclude Include="source\items\ItemPebble.h" />
     <ClInclude Include="source\items\ItemResource.h" />
+    <ClInclude Include="source\items\ore\ItemOre.h" />
+    <ClInclude Include="source\items\ore\Ore.h" />
     <ClInclude Include="source\items\seeds\ItemSeedBase.h" />
     <ClInclude Include="source\items\tools\CrookBase.h" />
     <ClInclude Include="source\items\tools\database\CrookDatabase.h" />
@@ -309,6 +323,7 @@
     <ClInclude Include="source\registries\manager\IOreDefaultRegistryProvider.h" />
     <ClInclude Include="source\registries\manager\ISieveDefaultRegistryProvider.h" />
     <ClInclude Include="source\registries\manager\RegistryManager.h" />
+    <ClInclude Include="source\registries\OreRegistry.h" />
     <ClInclude Include="source\registries\types\CrookReward.h" />
     <ClInclude Include="source\util\BlockInfo.h" />
     <ClInclude Include="source\util\ItemInfo.h" />
@@ -324,6 +339,7 @@
     <ClCompile Include="source\blocks\BlockFluidWitchWaterStill.cpp" />
     <ClCompile Include="source\blocks\ENBlocks.cpp" />
     <ClCompile Include="source\entities\ENEntities.cpp" />
+    <ClCompile Include="source\entities\PebbleRenderer.cpp" />
     <ClCompile Include="source\entities\ProjectileStone.cpp" />
     <ClCompile Include="source\handlers\HandlerCrook.cpp" />
     <ClCompile Include="source\handlers\HandlerHammer.cpp" />
@@ -332,6 +348,7 @@
     <ClCompile Include="source\items\ItemDoll.cpp" />
     <ClCompile Include="source\items\ItemPebble.cpp" />
     <ClCompile Include="source\items\ItemResource.cpp" />
+    <ClCompile Include="source\items\ore\ItemOre.cpp" />
     <ClCompile Include="source\items\seeds\ItemSeedBase.cpp" />
     <ClCompile Include="source\items\tools\CrookBase.cpp" />
     <ClCompile Include="source\items\tools\database\CrookDatabase.cpp" />
@@ -344,6 +361,7 @@
     <ClCompile Include="source\registries\HammerRegistry.cpp" />
     <ClCompile Include="source\registries\manager\ExNihiloDefaultRecipes.cpp" />
     <ClCompile Include="source\registries\manager\RegistryManager.cpp" />
+    <ClCompile Include="source\registries\OreRegistry.cpp" />
     <ClCompile Include="source\util\BlockInfo.cpp" />
     <ClCompile Include="source\util\ItemInfo.cpp" />
     <ClCompile Include="source\util\StringUtils.cpp" />

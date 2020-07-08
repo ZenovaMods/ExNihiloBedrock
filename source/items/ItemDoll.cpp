@@ -14,6 +14,7 @@ std::vector<std::string> ItemDoll::names{ "blaze", "enderman" };
 
 ItemDoll::ItemDoll(const std::string& name, int id) : Item(name, id), textureItem() {
 	setStackedByData(true);
+	setCategory(CreativeItemCategory::ITEMS);
 }
 
 bool ItemDoll::isValidAuxValue(int auxValue) const {

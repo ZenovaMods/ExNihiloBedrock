@@ -33,9 +33,9 @@
       "itemPebble": {
         "textures": [
           "textures/items/itemPebble",
-          "textures/items/itemPebble",
-          "textures/items/itemPebble",
-          "textures/items/itemPebble"
+          "textures/items/itemPebbleGranite",
+          "textures/items/itemPebbleDiorite",
+          "textures/items/itemPebbleAndesite"
         ]
       },
       "itemDoll": {
@@ -60,6 +60,14 @@
       },
       "bucket_witchwater": {
         "textures": "textures/items/bucket_witchwater"
+      },
+      "itemOre": {
+        "textures": [
+          "textures/items/orePiece",
+          "textures/items/oreChunk",
+          "textures/items/dust",
+          "textures/items/ingot"
+        ]
       }
     }
 }

@@ -13,6 +13,15 @@
     "blockNetherrackCrushed": {
       "textures": "textures/blocks/blockNetherrackCrushed"
     },
+    "blockAndesiteCrushed": {
+      "textures": "textures/blocks/blockAndesiteCrushed"
+    },
+    "blockDioriteCrushed": {
+      "textures": "textures/blocks/blockDioriteCrushed"
+    },
+    "blockGraniteCrushed": {
+      "textures": "textures/blocks/blockGraniteCrushed"
+    },
     "witchWaterStill": {
       "textures": "textures/blocks/fluidWitchWaterStill"
     },

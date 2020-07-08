@@ -11,6 +11,7 @@ CrookBase::CrookBase(const std::string& name, int id, int maxUses)
 	: DiggerItem(name, id, 0, *VanillaItemTiers::WOOD, {}) {
 
 	setMaxDamage(maxUses);
+	setCategory(CreativeItemCategory::TOOLS);
 	CrookDatabase::registerCrook(this);
 }
 

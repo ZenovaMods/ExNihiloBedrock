@@ -18,6 +18,7 @@ std::vector<std::string> ItemPebble::names { "stone", "granite", "diorite", "and
 
 ItemPebble::ItemPebble(const std::string& name, int id) : Item(name, id), textureItem() {
 	setStackedByData(true);
+	setCategory(CreativeItemCategory::ITEMS);
 }
 
 bool ItemPebble::isThrowable() const {

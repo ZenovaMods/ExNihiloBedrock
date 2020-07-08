@@ -14,3 +14,9 @@ std::vector<std::string> StringUtils::split(const std::string& str, char delimit
 
 	return internal;
 }
+
+std::string StringUtils::capitalize(const std::string& str) {
+	std::string ret = str;
+	ret.front() = toupper(ret.front());
+	return ret;
+}

@@ -19,6 +19,7 @@ std::string ItemResource::names[6];
 
 ItemResource::ItemResource(const std::string& name, int id) : Item(name, id), textureItem() {
 	setStackedByData(true);
+	setCategory(CreativeItemCategory::ITEMS);
 
 	names[0] = "removed";
 	names[1] = PORCELAIN_CLAY;

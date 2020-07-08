@@ -42,10 +42,18 @@ itemGroup.name.seeds=Ex Nihilo Seeds
 itemGroup.name.pebbles=Ex Nihilo Pebbles
 itemGroup.name.hammers=Ex Nihilo Hammers
 itemGroup.name.crooks=Ex Nihilo Crooks
+itemGroup.name.dolls=Ex Nihilo Dolls
+itemGroup.name.orepieces=Ex Nihilo Ore Pieces
+itemGroup.name.orehunks=Ex Nihilo Ore Chunks
+itemGroup.name.oredusts=Ex Nihilo Ore Dusts
+itemGroup.name.oreingots=Ex Nihilo Ingots
 
 tile.exnihilo:blockDust.name=Dust
 tile.exnihilo:blockNetherrackCrushed.name=Crushed Netherrack
 tile.exnihilo:blockEndstoneCrushed.name=Crushed Endstone
+tile.exnihilo:blockDioriteCrushed.name=Crushed Diorite
+tile.exnihilo:blockAndesiteCrushed.name=Crushed Andesite
+tile.exnihilo:blockGraniteCrushed.name=Crushed Granite
 
 tile.exnihilo:blockBarrel0.name=Wooden Barrel
 tile.exnihilo:blockBarrel1.name=Stone Barrel

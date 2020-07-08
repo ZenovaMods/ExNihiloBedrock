@@ -93,6 +93,15 @@
     <ClCompile Include="include\minecraft\world\BlockPos.cpp">
       <Filter>minecraft\world</Filter>
     </ClCompile>
+    <ClCompile Include="source\items\ore\ItemOre.cpp">
+      <Filter>items\ore</Filter>
+    </ClCompile>
+    <ClCompile Include="source\registries\OreRegistry.cpp">
+      <Filter>registries</Filter>
+    </ClCompile>
+    <ClCompile Include="source\entities\PebbleRenderer.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\items\ENItems.h">
@@ -496,6 +505,51 @@
     <ClInclude Include="include\minecraft\block\ActorBlock.h">
       <Filter>minecraft\block</Filter>
     </ClInclude>
+    <ClInclude Include="source\items\ore\ItemOre.h">
+      <Filter>items\ore</Filter>
+    </ClInclude>
+    <ClInclude Include="source\items\ore\Ore.h">
+      <Filter>items\ore</Filter>
+    </ClInclude>
+    <ClInclude Include="source\registries\OreRegistry.h">
+      <Filter>registries</Filter>
+    </ClInclude>
+    <ClInclude Include="source\entities\PebbleRenderer.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\AppPlatformListener.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\Mesh.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\ActorRenderData.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\client\BaseActorRenderContext.h">
+      <Filter>minecraft\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\Recipes.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\ItemDescriptorCount.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\Recipe.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\ShapedRecipe.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\item\ShapelessRecipe.h">
+      <Filter>minecraft\item</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\Monster.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\minecraft\actor\Slime.h">
+      <Filter>minecraft\actor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="source\modinfo.json" />
@@ -560,6 +614,9 @@
     </Filter>
     <Filter Include="minecraft\util">
       <UniqueIdentifier>{78fc5c6b-69ab-4f1e-bb67-a08cb51ce9f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="items\ore">
+      <UniqueIdentifier>{ba6eb218-cd47-4b43-ab1b-0512da27aa94}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

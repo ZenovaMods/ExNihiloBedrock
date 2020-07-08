@@ -4,6 +4,8 @@
 
 class Actor;
 class Color;
+class BaseActorRenderContext;
+class ActorRenderData;
 
 namespace mce {
 	class TextureGroup;
@@ -53,6 +55,16 @@ public:
 	char filler[0x1B0];
 	
 	virtual ~ActorRenderer();
+	virtual void render(BaseActorRenderContext&, ActorRenderData&) = 0;
+	virtual void renderDebug(BaseActorRenderContext&, ActorRenderData&);
+	virtual void renderEffects(BaseActorRenderContext&, ActorRenderData&);
+	virtual void renderTrading(BaseActorRenderContext&, ActorRenderData&, float);
+	virtual void renderFlame(BaseActorRenderContext&, ActorRenderData&);
+	virtual void renderLeash(BaseActorRenderContext&, ActorRenderData&);
+	virtual void renderWaterHole(BaseActorRenderContext&, ActorRenderData&);
+	virtual void addAdditionalRenderingIfNeeded(mce::TextureGroup&);
+	virtual AABB getRenderBounds(const Actor&) const;
+	virtual void* getLeashOffset(Actor&, float, float, float, bool, bool);
 };
 
 class DataDrivenRenderer : public ActorRenderer {

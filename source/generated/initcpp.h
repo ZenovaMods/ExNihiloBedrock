@@ -1,5 +1,6 @@
-// This file was automatically generated using tools/process_csv.py
-// Generated on Tue Aug 25 2020 22:11:55 UTC
+// This file was automatically generated using tools/process_headers.py
+// Generated on Thu Sep 24 2020 20:09:09 UTC
+
 #pragma once
 
 extern "C" {

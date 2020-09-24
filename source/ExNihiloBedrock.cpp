@@ -1,5 +1,5 @@
 #include "ExNihiloBedrock.h"
-#include "main.h"
+#include "generated/initcpp.h"
 #include "Zenova/Minecraft.h"
 
 #include <iostream>

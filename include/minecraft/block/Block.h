@@ -2,7 +2,6 @@
 
 #include "BlockLegacy.h"
 #include "../world/BlockSource.h"
-#include "../util/SharedPtr.h"
 #include "../util/CompoundTag.h"
 
 typedef CompoundTag BlockSerializationId;
@@ -17,28 +16,19 @@ private:
 
 public:
     virtual ~Block();
-
-    bool isSolid() const {
-        return mLegacyBlock->mSolid;
-    }
+    virtual BlockRenderLayer getRenderLayer() const;
 
     const BlockLegacy& getLegacyBlock() const;
 
-    const Block& getDefaultState() const {
-        return mLegacyBlock->getDefaultState();
-    }
-    const Material& getMaterial() const {
-        return mLegacyBlock->getMaterial();
-    }
-    bool canContainLiquid() const {
-        return mLegacyBlock->canContainLiquid();
-    }
-    void spawnResources(BlockSource& region, const BlockPos& pos, float explosionRadius, int bonusLootLevel) const {
-        mLegacyBlock->spawnResources(region, pos, region.getBlock(pos), explosionRadius, bonusLootLevel);
-    }
-    void spawnResources(BlockSource& region, const BlockPos& pos, const Block& block, float explosionRadius, int bonusLootLevel) const {
-        mLegacyBlock->spawnResources(region, pos, block, explosionRadius, bonusLootLevel);
-    }
+    bool isSolid() const;
+    const Block& getDefaultState() const;
+    const Material& getMaterial() const;
+    bool canContainLiquid() const;
+    void spawnResources(BlockSource& region, const BlockPos& pos, float explosionRadius, int bonusLootLevel) const;
+    void spawnResources(BlockSource& region, const BlockPos& pos, const Block& block, float explosionRadius, int bonusLootLevel) const;
+    bool hasProperty(BlockProperty type) const;
+    ItemInstance asItemInstance(BlockSource& region, const BlockPos& pos) const;
+    void playerDestroy(Player& player, const BlockPos& pos) const;
 
     const BlockRuntimeId& getRuntimeId() const {
         return mRuntimeId;
@@ -46,6 +36,17 @@ public:
 
     const DataID& getDataDEPRECATED() const {
         return mData;
+    }
+
+    const Block& keepState(const ItemState& state) const {
+        if (!hasState(state))
+            return *this;
+        int oldValue = getState<int>(state);
+        return *getDefaultState().setState<int>(state, oldValue);
+    }
+
+    bool hasState(const ItemState& stateType) const {
+        return mLegacyBlock->hasState(stateType);
     }
 
     template<typename T>

@@ -6,7 +6,7 @@ public:
 	float x, y;
 
 	Vec2() { x = y = 0.0; }
-	Vec2(float x, float y, float z) : x(x), y(y) { }
+	Vec2(float x, float y) : x(x), y(y) { }
 
 	static Vec2 ZERO;
 	static Vec2 ONE;
@@ -20,3 +20,4 @@ public:
 };
 
 inline Vec2 Vec2::ZERO{};
+inline Vec2 Vec2::ONE{ 1.0F, 1.0F };

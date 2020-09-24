@@ -5,29 +5,30 @@
 #include <initializer_list>
 
 class CompoundTag;
+class Block;
 
 typedef unsigned short DataID;
 
 class ItemState {
 public:
     struct StateListNode {
-        static StateListNode* mHead;
+        static StateListNode** mHead;
         StateListNode* mNext;
         StateListNode* mPrev;
         ItemState* mState;
     public:
         StateListNode(ItemState* state) : mNext(NULL), mPrev(NULL), mState(state) {
-            if (mHead) {
-                mHead->mPrev = this;
-                mNext = mHead;
+            if (*mHead) {
+                (*mHead)->mPrev = this;
+                mNext = *mHead;
             }
-            mHead = this;
+            *mHead = this;
         }
         ~StateListNode() {
-            if (this == mHead) {
-                mHead = mHead->mNext;
-                if (mHead)
-                    mHead->mPrev = NULL;
+            if (this == *mHead) {
+                *mHead = (*mHead)->mNext;
+                if (*mHead)
+                    (*mHead)->mPrev = NULL;
             }
             else if (mNext) {
                 mPrev->mNext = mNext;
@@ -88,7 +89,7 @@ public:
 
     template<typename T>
     const Block* trySet(DataID data, const T& value, const std::vector<std::unique_ptr<Block>>& blockPermutations) const {
-        uint32_t unsignedVal = value;
+        uint32_t unsignedVal = (uint32_t)value;
         if (!mInitialized || unsignedVal >= mVariationCount)
             return nullptr;
         uint32_t val = unsignedVal << (mStartBit - mNumBits + 1);
@@ -108,6 +109,6 @@ public:
 
     template<typename T>
     T get(const DataID& data) const {
-        return (data >> (mStartBit - mNumBits + 1)) & (0xFFFF >> (mMaxBits - mNumBits));
+        return (T)((data >> (mStartBit - mNumBits + 1)) & (0xFFFF >> (mMaxBits - mNumBits)));
     }
 };

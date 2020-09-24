@@ -47,6 +47,8 @@ itemGroup.name.orepieces=Ex Nihilo Ore Pieces
 itemGroup.name.orehunks=Ex Nihilo Ore Chunks
 itemGroup.name.oredusts=Ex Nihilo Ore Dusts
 itemGroup.name.oreingots=Ex Nihilo Ingots
+itemGroup.name.crushedBlocks=Ex Nihilo Crushed Blocks
+itemGroup.name.infestedLeaves=Ex Nihilo Infested Leaves
 
 tile.exnihilo:blockDust.name=Dust
 tile.exnihilo:blockNetherrackCrushed.name=Crushed Netherrack
@@ -61,7 +63,8 @@ tile.exnihilo:blockBarrel1.name=Stone Barrel
 tile.exnihilo:blockCrucible.0.name=Unfired Crucible
 tile.exnihilo:blockCrucible.1.name=Crucible
 
-tile.exnihilo:blockInfestedLeaves.name=Infested Leaves
+tile.exnihilo:blockInfestedLeaves.name=Infested
+tile.exnihilo:blockInfestedLeaves2.name=Infested
 
 tile.exnihilo:blockSieve.name=Sieve
 item.exnihilo:itemMesh.1.name=String Mesh

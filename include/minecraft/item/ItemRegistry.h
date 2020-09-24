@@ -21,6 +21,11 @@ public:
 	}
 
 	template<typename T, typename... Args>
+	static WeakPtr<T> registerBlockItem(const std::string& name, const Block& block, Args&&... args) {
+		return ItemRegistry::registerItemShared<T>(name, block.getLegacyBlock().getBlockItemId(), std::forward<Args>(args)...);
+	}
+
+	template<typename T, typename... Args>
 	static WeakPtr<T> registerItemShared(Args&&... args) {
 		SharedPtr<T> itemReg = SharedPtr<T>::make(std::forward<Args>(args)...);
 		ItemRegistry::registerItem(itemReg);

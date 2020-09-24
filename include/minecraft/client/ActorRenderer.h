@@ -1,43 +1,10 @@
 #pragma once
 
+#include "BaseActorRenderer.h"
 #include "../util/AABB.h"
 
-class Actor;
-class Color;
 class BaseActorRenderContext;
 class ActorRenderData;
-
-namespace mce {
-	class TextureGroup;
-	class MaterialPtr {
-	public:
-		char mMaterialInfo[0x10];
-	};
-	class TexturePtr {
-	public:
-		char filler[0x48];
-	};
-}
-
-class ActorShaderManager {
-public:
-	mce::MaterialPtr mEntityMaterial;
-	mce::MaterialPtr mTransparentEntityMaterial;
-	mce::MaterialPtr mStaticMaterial;
-
-	virtual ~ActorShaderManager();
-	virtual Color _getOverlayColor(Actor&, float) const;
-	static Color getOverlayColor(Actor&, float);
-};
-
-class BaseActorRenderer : ActorShaderManager {
-public:
-	mce::MaterialPtr mNameTagMaterial;
-	mce::MaterialPtr mDepthTestedNameTagMaterial;
-	mce::MaterialPtr mDepthTestedNameTextMaterial;
-
-	virtual ~BaseActorRenderer();
-};
 
 class ActorRenderer : public BaseActorRenderer {
 public:

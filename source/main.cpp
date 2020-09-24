@@ -1,8 +1,9 @@
 // This file was automatically generated using tools/process_csv.py
-// Generated on Wed Jul 08 2020 20:35:52 UTC
+// Generated on Tue Aug 25 2020 22:11:55 UTC
 
 #include <Zenova/Hook.h>
 #include "main.h"
+#include "minecraft/block/BlockState.h"
 #include "minecraft/block/VanillaBlockRegistry.h"
 #include "minecraft/block/VanillaBlockStates.h"
 #include "minecraft/block/VanillaBlockTypeRegistry.h"
@@ -45,6 +46,10 @@ WeakPtr<BlockLegacy>* VanillaBlockTypes::mTopSnow = reinterpret_cast<WeakPtr<Blo
 WeakPtr<BlockLegacy>* BedrockBlockTypes::mAir = reinterpret_cast<WeakPtr<BlockLegacy>*>(Zenova::Hook::SlideAddress(0x30613D0));
 ItemState* VanillaStates::SaplingType = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x30633C0));
 ItemState* VanillaStates::LiquidDepth = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x3062BA0));
+ItemState* VanillaStates::OldLeafType = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x3063A50));
+ItemState* VanillaStates::NewLeafType = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x3063AA0));
+ItemState* VanillaStates::UpdateBit = reinterpret_cast<ItemState*>(Zenova::Hook::SlideAddress(0x3063140));
+ItemState::StateListNode** ItemState::StateListNode::mHead = reinterpret_cast<ItemState::StateListNode**>(Zenova::Hook::SlideAddress(0x3050980));
 WeakPtr<Item>* VanillaItems::mBucket = reinterpret_cast<WeakPtr<Item>*>(Zenova::Hook::SlideAddress(0x3060748));
 WeakPtr<Item>* VanillaItems::mGoldIngot = reinterpret_cast<WeakPtr<Item>*>(Zenova::Hook::SlideAddress(0x3060548));
 WeakPtr<Item>* VanillaItems::mIronIngot = reinterpret_cast<WeakPtr<Item>*>(Zenova::Hook::SlideAddress(0x3060540));
@@ -73,6 +78,7 @@ extern "C" {
 	void* __0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
 	void* __0BucketItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
 	void* _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr;
+	void* _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEBVBlock__PEBVCompoundTag___Z_ptr;
 	void* _addCreativeItem_Item__SAXPEAV1_F_Z_ptr;
 	void* _addCreativeItem_Item__SAXAEBVBlock___Z_ptr;
 	void* _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
@@ -99,6 +105,8 @@ extern "C" {
 	void* _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr;
 	void* _getAuxValue_ItemStackBase__QEBAFXZ_ptr;
 	void* _matchesItem_ItemStackBase__QEBA_NAEBV1__Z_ptr;
+	void* _getBlockEntity_BlockSource__QEAAPEAVBlockActor__AEBVBlockPos___Z_ptr;
+	void* _getBiome_BlockSource__QEAAAEAVBiome__AEBVBlockPos___Z_ptr;
 	void* _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr;
 	void* _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
 	void* _getExtraBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr;
@@ -107,6 +115,7 @@ extern "C" {
 	void* _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr;
 	void* _removeBlock_BlockSource__QEAA_NAEBVBlockPos___Z_ptr;
 	void* _checkBlockPermissions_BlockSource__QEAA_NAEAVActor__AEBVBlockPos__EAEBVItemStack___N_Z_ptr;
+	void* _fireBlockChanged_BlockSource__QEAAXAEBVBlockPos__IAEBVBlock__1HPEBUActorBlockSyncMessage___Z_ptr;
 	void* _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr;
 	void* __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr;
 	void* _getBlockItemId_BlockLegacy__QEBAFXZ_ptr;
@@ -151,6 +160,7 @@ extern "C" {
 	void* _initFactory_ProjectileFactory__SAXXZ_ptr;
 	void* _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr;
 	void* _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr;
+	void* _initializeBlockEntityRenderers_BlockActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup___Z_ptr;
 	void* _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr;
 	void* _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr;
 	void* _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr;
@@ -161,8 +171,15 @@ extern "C" {
 	void* _broadcastDimensionEvent_Level__QEAAXAEAVBlockSource__W4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr;
 	void* _registerVanillaActorData_VanillaActors__YAXXZ_ptr;
 	void* _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr;
+	void* __0CompoundTag__QEAA_XZ_ptr;
+	void* __1CompoundTag__UEAA_XZ_ptr;
+	void* _putFloat_CompoundTag__QEAAAEAMV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__M_Z_ptr;
+	void* _getFloat_CompoundTag__QEBAMV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
+	void* _putInt_CompoundTag__QEAAAEAHV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
+	void* _getInt_CompoundTag__QEBAHV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
 	void* _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr;
 	void* _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
+	void* _contains_CompoundTag__QEBA_NV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
 	void* _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr;
 	void* _sendActorAcquiredItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__IW4ItemAcquisitionMethod__PEAV2__Z_ptr;
 	void* _sendActorUseItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__W4ItemUseMethod___Z_ptr;
@@ -185,6 +202,8 @@ extern "C" {
 	void* _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr;
 	void* __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr;
 	void* __1ItemSpriteRenderer__UEAA_XZ_ptr;
+	void* __0BaseActorRenderer__QEAA_XZ_ptr;
+	void* __1BaseActorRenderer__UEAA_XZ_ptr;
 	void* _onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr;
 	void* __renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr;
 	void* __buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr;
@@ -192,6 +211,7 @@ extern "C" {
 	void* __0Mesh_mce__QEAA_XZ_ptr;
 	void* _reset_Mesh_mce__QEAAXXZ_ptr;
 	void* _isValid_Mesh_mce__QEBA_NXZ_ptr;
+	void* _renderMesh_Mesh_mce__QEBAXAEAVMeshContext_2_AEBVMaterialPtr_2_V_$span_PEBVClientTexture_mce__$0_0_gsl__IIPEBVIndexBufferContainer_2__Z_ptr;
 	void* _init_Recipes__QEAAXAEAVResourcePackManager___Z_ptr;
 	void* _addFurnaceRecipeAuxData_Recipes__QEAAXAEBVItemInstance__0AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___std___Z_ptr;
 	void* _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_22AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr;
@@ -199,13 +219,38 @@ extern "C" {
 	void* _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr;
 	void* _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr;
 	void* _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___3_AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr;
+	void* _createBlockEntity_BlockActorFactory__SA_AV_$shared_ptr_VBlockActor___std__W4BlockActorType__AEBVBlockPos__AEBVBlockLegacy___Z_ptr;
+	void* __0BlockActor__QEAA_W4BlockActorType__AEBVBlockPos__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
+	void* __1BlockActor__UEAA_XZ_ptr;
+	void* _setId_BlockActor__SAXW4BlockActorType__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
+	void* _initBlockEntities_BlockActor__SAXXZ_ptr;
+	void* _getTemperature_Biome__QEBAMAEBVBlockSource__AEBVBlockPos___Z_ptr;
+	void* _getFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr;
+	void* _getMapFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr;
+	void* _isDeepLeafBlock_LeafBlock__SA_NAEAVBlockSource__AEBVBlockPos___Z_ptr;
+	void* _getSeasonsColor_BlockInfestingLeaves__QEBA_AVColor__AEAVBlockSource__AEBVBlockPos__HH_Z_ptr;
+	void* _getBirchColor_FoliageColor__SAHMM_Z_ptr;
+	void* _getEvergreenColor_FoliageColor__SAHMM_Z_ptr;
+	void* _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr;
+	void* _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr;
+	void* _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr;
+	void* __1TexturePtr_mce__QEAA_XZ_ptr;
+	void* __1MaterialPtr_mce__QEAA_XZ_ptr;
+	void* __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr;
+	void* _render_MovingBlockActorRenderer__UEAAXAEAVBaseActorRenderContext__AEAVBlockActorRenderData___Z_ptr;
+	void* _setupShaderParameters_ActorShaderManager__SAXAEAVScreenContext__AEAVBlockSource__AEBVBlockPos__M_NAEAVLightTexture__AEBVVec2__AEBVVec4___Z_ptr;
+	void* _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr;
+	void* _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr;
+	void* __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr;
 	void* Item_vtable;
 	void* DiggerItem_vtable;
 	void* BlockPlanterItem_vtable;
 	void* BlockItem_vtable;
+	void* AuxDataBlockItem_vtable;
 	void* BucketItem_vtable;
 	void* BlockLegacy_vtable;
 	void* LiquidBlock_vtable;
+	void* ActorBlock_vtable;
 	void* HeavyBlock_vtable;
 	void* ItemInstance_vtable;
 	void* ItemStack_vtable;
@@ -217,7 +262,10 @@ extern "C" {
 	void* Throwable_vtable;
 	void* Container_vtable;
 	void* Level_vtable;
+	void* BaseActorRenderer_vtable;
+	void* BlockActorRenderer_vtable;
 	void* ItemSpriteRenderer_vtable;
+	void* BlockActor_vtable;
 }
 
 void InitBedrockPointers() {
@@ -227,6 +275,7 @@ void InitBedrockPointers() {
 	__0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1514950));
 	__0BucketItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15171C0));
 	_beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1560AB0));
+	_beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEBVBlock__PEBVCompoundTag___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1560A60));
 	_addCreativeItem_Item__SAXPEAV1_F_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1560C90));
 	_addCreativeItem_Item__SAXAEBVBlock___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1560BD0));
 	_getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15656C0));
@@ -253,6 +302,8 @@ void InitBedrockPointers() {
 	_getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x01B9250));
 	_getAuxValue_ItemStackBase__QEBAFXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15700E0));
 	_matchesItem_ItemStackBase__QEBA_NAEBV1__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1571BF0));
+	_getBlockEntity_BlockSource__QEAAPEAVBlockActor__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x177ADF0));
+	_getBiome_BlockSource__QEAAAEAVBiome__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1780830));
 	_addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1778AB0));
 	_getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1779710));
 	_getExtraBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1779E90));
@@ -261,6 +312,7 @@ void InitBedrockPointers() {
 	_setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1779BD0));
 	_removeBlock_BlockSource__QEAA_NAEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x177ADB0));
 	_checkBlockPermissions_BlockSource__QEAA_NAEAVActor__AEBVBlockPos__EAEBVItemStack___N_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1778690));
+	_fireBlockChanged_BlockSource__QEAAXAEBVBlockPos__IAEBVBlock__1HPEBUActorBlockSyncMessage___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1780260));
 	_getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x00E9920));
 	__0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x164EC50));
 	_getBlockItemId_BlockLegacy__QEBAFXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1651D90));
@@ -305,6 +357,7 @@ void InitBedrockPointers() {
 	_initFactory_ProjectileFactory__SAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x146AD60));
 	_EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1305C00));
 	_EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x13057E0));
+	_initializeBlockEntityRenderers_BlockActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09FE8C0));
 	_initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x093D2A0));
 	_getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09410E0));
 	_getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09410E0));
@@ -315,8 +368,15 @@ void InitBedrockPointers() {
 	_broadcastDimensionEvent_Level__QEAAXAEAVBlockSource__W4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x17D5320));
 	_registerVanillaActorData_VanillaActors__YAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x146F630));
 	_GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x12FF7C0));
+	__0CompoundTag__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDBC40));
+	__1CompoundTag__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDBD80));
+	_putFloat_CompoundTag__QEAAAEAMV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__M_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDC480));
+	_getFloat_CompoundTag__QEBAMV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDCEB0));
+	_putInt_CompoundTag__QEAAAEAHV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDC320));
+	_getInt_CompoundTag__QEBAHV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDCD10));
 	_putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDC270));
 	_getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDCC50));
+	_contains_CompoundTag__QEBA_NV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0FDCA00));
 	_onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x14E8430));
 	_sendActorAcquiredItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__IW4ItemAcquisitionMethod__PEAV2__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x14E6420));
 	_sendActorUseItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__W4ItemUseMethod___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x14E63C0));
@@ -339,6 +399,8 @@ void InitBedrockPointers() {
 	_ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16A6F40));
 	__0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0983AB0));
 	__1ItemSpriteRenderer__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0983BC0));
+	__0BaseActorRenderer__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09950E0));
+	__1BaseActorRenderer__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0995300));
 	_onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0983D50));
 	__renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0984220));
 	__buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0983EB0));
@@ -346,6 +408,7 @@ void InitBedrockPointers() {
 	__0Mesh_mce__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0DD3D80));
 	_reset_Mesh_mce__QEAAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0DD4500));
 	_isValid_Mesh_mce__QEBA_NXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0xDD47B0));
+	_renderMesh_Mesh_mce__QEBAXAEAVMeshContext_2_AEBVMaterialPtr_2_V_$span_PEBVClientTexture_mce__$0_0_gsl__IIPEBVIndexBufferContainer_2__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0DD4BF0));
 	_init_Recipes__QEAAXAEAVResourcePackManager___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x152D6D0));
 	_addFurnaceRecipeAuxData_Recipes__QEAAXAEBVItemInstance__0AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15392B0));
 	_addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_22AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x153A270));
@@ -353,13 +416,38 @@ void InitBedrockPointers() {
 	_addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1539F00));
 	_addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1539D90));
 	_addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___3_AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15394D0));
+	_createBlockEntity_BlockActorFactory__SA_AV_$shared_ptr_VBlockActor___std__W4BlockActorType__AEBVBlockPos__AEBVBlockLegacy___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x160F060));
+	__0BlockActor__QEAA_W4BlockActorType__AEBVBlockPos__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1610C40));
+	__1BlockActor__UEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x1610E00));
+	_setId_BlockActor__SAXW4BlockActorType__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x160FCA0));
+	_initBlockEntities_BlockActor__SAXXZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x160FDC0));
+	_getTemperature_Biome__QEBAMAEBVBlockSource__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15BC900));
+	_getFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15BB980));
+	_getMapFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x15BBB20));
+	_isDeepLeafBlock_LeafBlock__SA_NAEAVBlockSource__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16C33E0));
+	_getSeasonsColor_BlockInfestingLeaves__QEBA_AVColor__AEAVBlockSource__AEBVBlockPos__HH_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x16C3F90));
+	_getBirchColor_FoliageColor__SAHMM_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x17CBB90));
+	_getEvergreenColor_FoliageColor__SAHMM_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x17CBAA0));
+	_tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09ACEF0));
+	_getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09CE5D0));
+	_reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x09F7830));
+	__1TexturePtr_mce__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0DDF360));
+	__1MaterialPtr_mce__QEAA_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x00D0140));
+	__0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0A085A0));
+	_render_MovingBlockActorRenderer__UEAAXAEAVBaseActorRenderContext__AEAVBlockActorRenderData___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0A08E00));
+	_setupShaderParameters_ActorShaderManager__SAXAEAVScreenContext__AEAVBlockSource__AEBVBlockPos__M_NAEAVLightTexture__AEBVVec2__AEBVVec4___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0994260));
+	_addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0AB14D0));
+	_getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x0DDF4F0));
+	__0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x100D890));
 	Item_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F570));
 	BlockItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6F258));
+	AuxDataBlockItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B6D998));
 	BucketItem_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B701D0));
 	BlockLegacy_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B8E7D0));
 	LiquidBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BAE780));
+	ActorBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BA6BF8));
 	HeavyBlock_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BA8488));
 	ItemInstance_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B769D8));
 	ItemStack_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B76AD8));
@@ -371,7 +459,10 @@ void InitBedrockPointers() {
 	Throwable_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B60730));
 	Container_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B64268));
 	Level_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2BCF460));
+	BaseActorRenderer_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2ACA290));
+	BlockActorRenderer_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2AC9718));
 	ItemSpriteRenderer_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2AC98E0));
+	BlockActor_vtable = reinterpret_cast<void*>(Zenova::Hook::SlideAddress(0x2B85A08));
 }
 
 #include <Windows.h>

@@ -1,6 +1,7 @@
 #include "ItemResource.h"
 
 #include "ENItems.h"
+#include "../blocks/BlockInfestingLeaves.h"
 
 #include "minecraft/actor/Actor.h"
 #include "minecraft/world/BlockSource.h"
@@ -52,7 +53,7 @@ bool ItemResource::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, Faci
 	if (names[auxValue] == SILKWORM) {
 		const BlockLegacy& block = entity.getRegion().getBlock(pos).getLegacyBlock();
 		if (&block != NULL && (block == **VanillaBlockTypes::mLeaves || block == **VanillaBlockTypes::mLeaves2)) {
-			//BlockInfestedLeaves::infestLeafBlock(player.getRegion(), pos);
+			BlockInfestingLeaves::infestLeafBlock(entity.getRegion(), pos);
 			instance.remove(1);
 			return true;
 		}

@@ -91,6 +91,14 @@ enum class BlockProperty : unsigned long long {
     Slime = 35184372088832
 };
 
+inline BlockProperty operator&(const BlockProperty& lhs, const BlockProperty& b) {
+    return (BlockProperty)(enum_cast(lhs) & enum_cast(b));
+}
+
+inline BlockProperty operator|(const BlockProperty& lhs, const BlockProperty& b) {
+    return (BlockProperty)(enum_cast(lhs) | enum_cast(b));
+}
+
 class BlockLegacy {
 public:
     std::string mDescriptionId;
@@ -149,7 +157,7 @@ private:
     std::vector<std::unique_ptr<Block>> mBlockPermutations;
     const Block* mDefaultState;
     Bedrock::Threading::SharedMutex mLegacyDataLookupTableMutex;
-    std::vector<long> mLegacyDataLookupTable;
+    std::vector<int64_t> mLegacyDataLookupTable;
 
 public:
     bool hasState(const ItemState& stateType) const {
@@ -162,7 +170,7 @@ public:
         if (blockState.isInitialized())
             return blockState.get<T>(data);
         else
-            return NULL;
+            return (T)NULL;
     }
 
     template<typename T>
@@ -362,6 +370,9 @@ public:
     const std::string& getRawNameId() const {
         return mRawNameId;
     }
+    bool hasProperty(BlockProperty type) const {
+        return (mProperties & type) != BlockProperty::None;
+    }
     BlockLegacy& setCategory(CreativeItemCategory category) {
         mCreativeCategory = category;
         return *this;
@@ -377,6 +388,15 @@ public:
     void setRandomTicking(bool tick) {
         mShouldRandomTick = tick;
     }
+    void setPushesOutItems(bool pushesOutItems) {
+        mPushesOutItems = pushesOutItems;
+    }
+    void addLegacyBlockData(DataID data, const Block* block) {
+        if (mLegacyDataLookupTable.size() <= data)
+            mLegacyDataLookupTable.resize((size_t)data + 1, 1);
+        mLegacyDataLookupTable[data] = (int64_t)block;
+    }
+    void addLegacyDataFromPermutations();
     bool isVanilla() const {
         return mIsVanilla;
     }

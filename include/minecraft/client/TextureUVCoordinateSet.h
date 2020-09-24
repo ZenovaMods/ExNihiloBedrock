@@ -1,22 +1,8 @@
 #pragma once
 
-#include <cstdint>
 #include <utility>
-#include <string>
 
-class ResourceLocation;
-
-enum class ResourceFileSystem {
-    InUserPackage,
-    InAppPackage,
-    RawPath,
-    InSettingDir,
-    InExternalDir,
-    InServerPackage,
-    InDataDir,
-    InUserDir,
-    InWorldDir
-};
+#include "ResourceLocation.h"
 
 class IsotropicFaceData {
 private:
@@ -33,6 +19,6 @@ private:
     float _v1;
     uint16_t _texSizeW;
     uint16_t _texSizeH;
-    char sourceFileLocation[0x38];
+    ResourceLocation sourceFileLocation;
     IsotropicFaceData mIsotropicFaceData;
 };

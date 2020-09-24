@@ -147,6 +147,15 @@
       ]
     },
     {
+      "name": "AuxDataBlockItem",
+      "parent": "BlockItem",
+      "address": "0x2B6D998",
+      "functions": [
+        "?getLevelDataForAuxValue@AuxDataBlockItem@@UEBAHH@Z",
+        "?buildDescriptionId@AuxDataBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@AEBV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z"
+      ]
+    },
+    {
       "name": "BucketItem",
       "parent": "Item",
       "address": "0x2B701D0",
@@ -348,6 +357,19 @@
         "?getColorAtPos@LiquidBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z",
         "?animateTick@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
         "?canBeSilkTouched@LiquidBlock@@UEBA_NXZ"
+      ]
+    },
+    {
+      "name": "ActorBlock",
+      "parent": "BlockLegacy",
+      "address": "0x2BA6BF8",
+      "functions": [
+        "?playerWillDestroy@ActorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
+        "?neighborChanged@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z",
+        "?spawnResources@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@MH@Z",
+        "?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z",
+        "?canBeSilkTouched@ActorBlock@@UEBA_NXZ",
+        "?getEntityResourceItem@ActorBlock@@UEBA?AVItemInstance@@AEAVRandom@@AEBVBlockActor@@H@Z"
       ]
     },
     {
@@ -1113,11 +1135,29 @@
       ]
     },
     {
-      "name": "ItemSpriteRenderer",
-      "address": "0x2AC98E0",
+      "name": "BaseActorRenderer",
+      "address": "0x2ACA290",
       "functions": [
         "",
-        "?_getOverlayColor@ActorShaderManager@@UEBA?AVColor@@AEAVActor@@M@Z",
+        "?_getOverlayColor@ActorShaderManager@@UEBA?AVColor@@AEAVActor@@M@Z"
+      ]
+    },
+    {
+      "name": "BlockActorRenderer",
+      "address": "0x2AC9718",
+      "functions": [
+        "",
+        "",
+        "",
+        "",
+        "?extractText@BlockActorRenderer@@UEAA?AV?$vector@VNameTagRenderObject@@V?$allocator@VNameTagRenderObject@@@std@@@std@@AEAVTessellator@@AEAVBlockActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@HVVec3@@_N@Z"
+      ]
+    },
+    {
+      "name": "ItemSpriteRenderer",
+      "parent": "BaseActorRenderer",
+      "address": "0x2AC98E0",
+      "functions": [
         "?render@ItemSpriteRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
         "?renderDebug@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
         "?renderEffects@ActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVActorRenderData@@@Z",
@@ -1131,10 +1171,52 @@
         "?getIcon@ItemSpriteRenderer@@UEBAAEBUTextureUVCoordinateSet@@AEAVActor@@@Z",
         "?isGlint@ItemSpriteRenderer@@UEBA_NAEBVActor@@@Z"
       ]
+    },
+    {
+      "name": "BlockActor",
+      "address": "0x2B85A08",
+      "functions": [
+        "",
+        "?load@BlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z",
+        "?save@BlockActor@@UEBA_NAEAVCompoundTag@@@Z",
+        "?saveItemInstanceData@BlockActor@@UEAA_NAEAVCompoundTag@@@Z",
+        "?saveBlockData@BlockActor@@UEBAXAEAVCompoundTag@@AEAVBlockSource@@@Z",
+        "?loadBlockData@BlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z",
+        "?onCustomTagLoadDone@BlockActor@@UEAAXAEAVBlockSource@@@Z",
+        "?tick@BlockActor@@UEAAXAEAVBlockSource@@@Z",
+        "?isFinished@BlockActor@@UEAA_NXZ",
+        "?onChanged@BlockActor@@UEAAXAEAVBlockSource@@@Z",
+        "?isMovable@BlockActor@@UEAA_NAEAVBlockSource@@@Z",
+        "?isCustomNameSaved@BlockActor@@UEAA_NXZ",
+        "?getUpdatePacket@BlockActor@@UEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEAVBlockSource@@@Z",
+        "?onPlace@BlockActor@@UEAAXAEAVBlockSource@@@Z",
+        "?onMove@BlockActor@@UEAAXXZ",
+        "?onRemoved@BlockActor@@UEAAXAEAVBlockSource@@@Z",
+        "?triggerEvent@BlockActor@@UEAAXHH@Z",
+        "?clearCache@BlockActor@@UEAAXXZ",
+        "?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?getShadowRadius@BlockActor@@UEBAMAEAVBlockSource@@@Z",
+        "?hasAlphaLayer@BlockActor@@UEBA_NXZ",
+        "?getCrackEntity@BlockActor@@UEAAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z",
+        "?getDebugText@BlockActor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z",
+        "?getCustomName@BlockActor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?getFilteredCustomName@BlockActor@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUIProfanityContext@@@Z",
+        "?getName@BlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?getImmersiveReaderText@BlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z",
+        "?getRepairCost@BlockActor@@UEBAHXZ",
+        "?getOwningPiston@BlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z",
+        "?getContainer@BlockActor@@UEAAPEAVContainer@@XZ",
+        "?getDeletionDelayTimeSeconds@BlockActor@@UEBAMXZ",
+        "?onChunkLoaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z",
+        "?onChunkUnloaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z",
+        "?_onUpdatePacket@BlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z",
+        "?_playerCanUpdate@BlockActor@@UEBA_NAEBVPlayer@@@Z"
+      ]
     }
   ],
 
   "includes": [
+    "#include \"minecraft/block/BlockState.h\"",
     "#include \"minecraft/block/VanillaBlockRegistry.h\"",
     "#include \"minecraft/block/VanillaBlockStates.h\"",
     "#include \"minecraft/block/VanillaBlockTypeRegistry.h\"",
@@ -1179,6 +1261,10 @@
     "WeakPtr<BlockLegacy>* BedrockBlockTypes::mAir": "0x30613D0",
     "ItemState* VanillaStates::SaplingType": "0x30633C0",
     "ItemState* VanillaStates::LiquidDepth": "0x3062BA0",
+    "ItemState* VanillaStates::OldLeafType": "0x3063A50",
+    "ItemState* VanillaStates::NewLeafType": "0x3063AA0",
+    "ItemState* VanillaStates::UpdateBit": "0x3063140",
+    "ItemState::StateListNode** ItemState::StateListNode::mHead": "0x3050980",
     "WeakPtr<Item>* VanillaItems::mBucket": "0x3060748",
     "WeakPtr<Item>* VanillaItems::mGoldIngot": "0x3060548",
     "WeakPtr<Item>* VanillaItems::mIronIngot": "0x3060540",
@@ -1225,6 +1311,10 @@
     {
       "name": "?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z",
       "address": "0x1560AB0"
+    },
+    {
+      "name": "?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBlock@@PEBVCompoundTag@@@Z",
+      "address": "0x1560A60"
     },
     {
       "name": "?addCreativeItem@Item@@SAXPEAV1@F@Z",
@@ -1331,6 +1421,14 @@
       "address": "0x1571BF0"
     },
     {
+      "name": "?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@AEBVBlockPos@@@Z",
+      "address": "0x177ADF0"
+    },
+    {
+      "name": "?getBiome@BlockSource@@QEAAAEAVBiome@@AEBVBlockPos@@@Z",
+      "address": "0x1780830"
+    },
+    {
       "name": "?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z",
       "address": "0x1778AB0"
     },
@@ -1361,6 +1459,10 @@
     {
       "name": "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStack@@_N@Z",
       "address": "0x1778690"
+    },
+    {
+      "name": "?fireBlockChanged@BlockSource@@QEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@@Z",
+      "address": "0x1780260"
     },
     {
       "name": "?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ",
@@ -1539,6 +1641,10 @@
       "address": "0x13057E0"
     },
     {
+      "name": "?initializeBlockEntityRenderers@BlockActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@@Z",
+      "address": "0x09FE8C0"
+    },
+    {
       "name": "?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z",
       "address": "0x093D2A0"
     },
@@ -1579,12 +1685,40 @@
       "address": "0x12FF7C0"
     },
     {
+      "name": "??0CompoundTag@@QEAA@XZ",
+      "address": "0x0FDBC40"
+    },
+    {
+      "name": "??1CompoundTag@@UEAA@XZ",
+      "address": "0x0FDBD80"
+    },
+    {
+      "name": "?putFloat@CompoundTag@@QEAAAEAMV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z",
+      "address": "0x0FDC480"
+    },
+    {
+      "name": "?getFloat@CompoundTag@@QEBAMV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+      "address": "0x0FDCEB0"
+    },
+    {
+      "name": "?putInt@CompoundTag@@QEAAAEAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z",
+      "address": "0x0FDC320"
+    },
+    {
+      "name": "?getInt@CompoundTag@@QEBAHV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+      "address": "0x0FDCD10"
+    },
+    {
       "name": "?putShort@CompoundTag@@QEAAAEAFV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z",
       "address": "0x0FDC270"
     },
     {
       "name": "?getShort@CompoundTag@@QEBAFV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
       "address": "0x0FDCC50"
+    },
+    {
+      "name": "?contains@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+      "address": "0x0FDCA00"
     },
     {
       "name": "?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemInstance@@AEBVActor@@@Z",
@@ -1675,6 +1809,14 @@
       "address": "0x0983BC0"
     },
     {
+      "name": "??0BaseActorRenderer@@QEAA@XZ",
+      "address": "0x09950E0"
+    },
+    {
+      "name": "??1BaseActorRenderer@@UEAA@XZ",
+      "address": "0x0995300"
+    },
+    {
       "name": "?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ",
       "address": "0x0983D50"
     },
@@ -1703,6 +1845,10 @@
       "address": "0xDD47B0"
     },
     {
+      "name": "?renderMesh@Mesh@mce@@QEBAXAEAVMeshContext@2@AEBVMaterialPtr@2@V?$span@PEBVClientTexture@mce@@$0?0@gsl@@IIPEBVIndexBufferContainer@2@@Z",
+      "address": "0x0DD4BF0"
+    },
+    {
       "name": "?init@Recipes@@QEAAXAEAVResourcePackManager@@@Z",
       "address": "0x152D6D0"
     },
@@ -1729,6 +1875,98 @@
     {
       "name": "?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z",
       "address": "0x15394D0"
+    },
+    {
+      "name": "?createBlockEntity@BlockActorFactory@@SA?AV?$shared_ptr@VBlockActor@@@std@@W4BlockActorType@@AEBVBlockPos@@AEBVBlockLegacy@@@Z",
+      "address": "0x160F060"
+    },
+    {
+      "name": "??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "address": "0x1610C40"
+    },
+    {
+      "name": "??1BlockActor@@UEAA@XZ",
+      "address": "0x1610E00"
+    },
+    {
+      "name": "?setId@BlockActor@@SAXW4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "address": "0x160FCA0"
+    },
+    {
+      "name": "?initBlockEntities@BlockActor@@SAXXZ",
+      "address": "0x160FDC0"
+    },
+    {
+      "name": "?getTemperature@Biome@@QEBAMAEBVBlockSource@@AEBVBlockPos@@@Z",
+      "address": "0x15BC900"
+    },
+    {
+      "name": "?getFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z",
+      "address": "0x15BB980"
+    },
+    {
+      "name": "?getMapFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z",
+      "address": "0x15BBB20"
+    },
+    {
+      "name": "?isDeepLeafBlock@LeafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
+      "address": "0x16C33E0"
+    },
+    {
+      "name": "?getSeasonsColor@BlockInfestingLeaves@@QEBA?AVColor@@AEAVBlockSource@@AEBVBlockPos@@HH@Z",
+      "address": "0x16C3F90"
+    },
+    {
+      "name": "?getBirchColor@FoliageColor@@SAHMM@Z",
+      "address": "0x17CBB90"
+    },
+    {
+      "name": "?getEvergreenColor@FoliageColor@@SAHMM@Z",
+      "address": "0x17CBAA0"
+    },
+    {
+      "name": "?tessellateInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@PEAX@Z",
+      "address": "0x09ACEF0"
+    },
+    {
+      "name": "?getMeshForBlockInWorld@BlockTessellator@@QEAAAEAVMesh@mce@@AEAVTessellator@@AEBVBlock@@AEAVBlockPos@@W4BlockRenderLayer@@PEBX_N@Z",
+      "address": "0x09CE5D0"
+    },
+    {
+      "name": "?reset@BlockTessellatorCache@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+      "address": "0x09F7830"
+    },
+    {
+      "name": "??1TexturePtr@mce@@QEAA@XZ",
+      "address": "0x0DDF360"
+    },
+    {
+      "name": "??1MaterialPtr@mce@@QEAA@XZ",
+      "address": "0x00D0140"
+    },
+    {
+      "name": "??0MovingBlockActorRenderer@@QEAA@AEAVTextureGroup@mce@@AEAVBlockTessellator@@@Z",
+      "address": "0x0A085A0"
+    },
+    {
+      "name": "?render@MovingBlockActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVBlockActorRenderData@@@Z",
+      "address": "0x0A08E00"
+    },
+    {
+      "name": "?setupShaderParameters@ActorShaderManager@@SAXAEAVScreenContext@@AEAVBlockSource@@AEBVBlockPos@@M_NAEAVLightTexture@@AEBVVec2@@AEBVVec4@@@Z",
+      "address": "0x0994260"
+    },
+    {
+      "name": "?addPostTransformOffset@Tessellator@@QEAAXMMM@Z",
+      "address": "0x0AB14D0"
+    },
+    {
+      "name": "?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ",
+      "address": "0x0DDF4F0"
+    },
+    {
+      "name": "??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z",
+      "address": "0x100D890"
     }
   ]
 }

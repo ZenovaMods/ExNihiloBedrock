@@ -9,7 +9,7 @@ public:
 	Actor& mActor;
 	Vec3 mPos;
 	float mFloat1;
-	float mFloat2;
+	float mEntityYaw;
 
 	Actor& getActor() { return mActor; }
 	Vec3& getPos() { return mPos; }

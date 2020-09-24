@@ -9,9 +9,9 @@
 class ItemDescriptor {
 private:
     WeakPtr<Item> mItem;
-    const Block* mBlock;
-    short mAuxValue;
-    bool mValid;
+    const Block* mBlock = nullptr;
+    short mAuxValue = 0;
+    bool mValid = false;
 
 public:
     ItemDescriptor() = default;

@@ -239,6 +239,7 @@ public:
     static const TextureUVCoordinateSet& getIconTextureUVSet(const TextureAtlasItem&, int, int);
     static TextureUVCoordinateSet getTextureUVCoordinateSet(const std::string&, int);
 
+    static void beginCreativeGroup(const std::string&, const Block*, const CompoundTag*);
     static void beginCreativeGroup(const std::string&, Item*, short, const CompoundTag*);
     static void addCreativeItem(Item*, short);
     static void addCreativeItem(const Block&);

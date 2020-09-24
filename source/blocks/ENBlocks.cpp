@@ -1,15 +1,21 @@
 #include "ENBlocks.h"
 
 #include "minecraft/item/BlockItem.h"
+#include "minecraft/item/AuxDataBlockItem.h"
 #include "minecraft/item/ItemRegistry.h"
-#include "minecraft/client/BlockGraphics.h"
 #include "minecraft/item/Item.h"
+#include "minecraft/block/LeafType.h"
+#include "minecraft/block/VanillaBlockStates.h"
+#include "minecraft/client/BlockGraphics.h"
 
 #include "FluidRegistry.h"
 #include "BlockRegistry.h"
 #include "BlockBaseFalling.h"
+#include "BlockInfestedLeaves.h"
+#include "BlockInfestingLeaves.h"
 #include "BlockFluidWitchWaterStill.h"
 #include "BlockFluidWitchWaterFlowing.h"
+#include "../blockactors/BlockActorRegistry.h"
 
 WeakPtr<BlockLegacy>* ENBlocks::dust;
 WeakPtr<BlockLegacy>* ENBlocks::netherrackCrushed;
@@ -17,6 +23,9 @@ WeakPtr<BlockLegacy>* ENBlocks::endstoneCrushed;
 WeakPtr<BlockLegacy>* ENBlocks::andesiteCrushed;
 WeakPtr<BlockLegacy>* ENBlocks::dioriteCrushed;
 WeakPtr<BlockLegacy>* ENBlocks::graniteCrushed;
+WeakPtr<BlockLegacy>* ENBlocks::infestingLeaves;
+WeakPtr<BlockLegacy>* ENBlocks::infestedLeaves;
+WeakPtr<BlockLegacy>* ENBlocks::infestedLeaves2;
 WeakPtr<BlockLegacy>* ENBlocks::blockWitchwaterStill;
 WeakPtr<BlockLegacy>* ENBlocks::blockWitchwaterFlowing;
 
@@ -27,10 +36,15 @@ void ENBlocks::init() {
 	andesiteCrushed = Zenova::BlockRegistry::registerBlock<BlockBaseFalling>("blockAndesiteCrushed", BlockShape::BLOCK);
 	dioriteCrushed = Zenova::BlockRegistry::registerBlock<BlockBaseFalling>("blockDioriteCrushed", BlockShape::BLOCK);
 	graniteCrushed = Zenova::BlockRegistry::registerBlock<BlockBaseFalling>("blockGraniteCrushed", BlockShape::BLOCK);
+	infestingLeaves = Zenova::BlockRegistry::registerBlock<BlockInfestingLeaves>("blockInfestingLeaves", BlockShape::INVISIBLE);
+	infestedLeaves = Zenova::BlockRegistry::registerBlock<BlockInfestedLeavesOld>("blockInfestedLeaves", BlockShape::BLOCK);
+	infestedLeaves2 = Zenova::BlockRegistry::registerBlock<BlockInfestedLeavesNew>("blockInfestedLeaves2", BlockShape::BLOCK);
 	blockWitchwaterStill = Zenova::BlockRegistry::registerBlock<BlockFluidWitchWaterStill>("witchwater", BlockShape::WATER);
 	blockWitchwaterFlowing = Zenova::BlockRegistry::registerBlock<BlockFluidWitchWaterFlowing>("witchwaterFlowing", BlockShape::WATER);
 
 	FluidRegistry::registerFluid("witchwater", "bucket_witchwater", 0, blockWitchwaterStill, blockWitchwaterFlowing);
+	Zenova::BlockActorRegistry::registerBlockActor("InfestingLeaves", BlockActorType::InfestingLeaves, infestingLeaves);
+	Zenova::BlockActorRegistry::registerBlockActor("InfestedLeaves", BlockActorType::InfestedLeaves, infestedLeaves);
 }
 
 void ENBlocks::initBlockItems() {
@@ -40,13 +54,26 @@ void ENBlocks::initBlockItems() {
 	ItemRegistry::registerBlockItem<BlockItem>(andesiteCrushed->get()->getDescriptionId(), *andesiteCrushed->get());
 	ItemRegistry::registerBlockItem<BlockItem>(dioriteCrushed->get()->getDescriptionId(), *dioriteCrushed->get());
 	ItemRegistry::registerBlockItem<BlockItem>(graniteCrushed->get()->getDescriptionId(), *graniteCrushed->get());
+	ItemRegistry::registerBlockItem<AuxDataBlockItem>(infestedLeaves->get()->getDescriptionId(), *infestedLeaves->get(), &infestedLeaves->get()->getDefaultState());
+	ItemRegistry::registerBlockItem<AuxDataBlockItem>(infestedLeaves2->get()->getDescriptionId(), *infestedLeaves2->get(), &infestedLeaves2->get()->getDefaultState());
 }
 
 void ENBlocks::initCreativeBlocks() {
+	Item::beginCreativeGroup("itemGroup.name.crushedBlocks", &dust->get()->getDefaultState(), nullptr);
 	Item::addCreativeItem(dust->get()->getDefaultState());
 	Item::addCreativeItem(netherrackCrushed->get()->getDefaultState());
 	Item::addCreativeItem(endstoneCrushed->get()->getDefaultState());
 	Item::addCreativeItem(andesiteCrushed->get()->getDefaultState());
 	Item::addCreativeItem(dioriteCrushed->get()->getDefaultState());
 	Item::addCreativeItem(graniteCrushed->get()->getDefaultState());
+	Item::endCreativeGroup();
+
+	Item::beginCreativeGroup("itemGroup.name.infestedLeaves", &infestedLeaves->get()->getDefaultState(), nullptr);
+	Block& leaves = infestedLeaves->get()->getDefaultState();
+	for (int variant = 0; variant < enum_cast(OldLeafType::_count); variant++)
+		Item::addCreativeItem(*leaves.setState<int>(*VanillaStates::OldLeafType, variant));
+	Block& leaves2 = infestedLeaves2->get()->getDefaultState();
+	for (int variant = 0; variant < enum_cast(NewLeafType::_count); variant++)
+		Item::addCreativeItem(*leaves2.setState<int>(*VanillaStates::NewLeafType, variant));
+	Item::endCreativeGroup();
 }

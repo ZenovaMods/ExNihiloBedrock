@@ -22,7 +22,7 @@ void PebbleRenderer::render(BaseActorRenderContext& renderContext, ActorRenderDa
 		mce::Mesh* rendered = &mTextureMeshes[auxValue];
 		if (!rendered->isValid())
 			_buildQuad(renderContext, actor, *rendered);
-		_renderQuad(renderContext, actor, *rendered, renderData.getPos(), renderData.mFloat2, renderContext.mFloat1);
+		_renderQuad(renderContext, actor, *rendered, renderData.getPos(), renderData.mEntityYaw, renderContext.mPartialTicks);
 	}
 }
 

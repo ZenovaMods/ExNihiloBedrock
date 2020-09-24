@@ -10,9 +10,12 @@
 #include "minecraft/item/VanillaItems.h"
 #include "minecraft/block/BlockDefinitionGroup.h"
 #include "minecraft/block/BlockLegacy.h"
+#include "minecraft/blockactor/BlockActorFactory.h"
 #include "minecraft/world/WorldSystems.h"
 #include "minecraft/client/ActorRenderDispatcher.h"
+#include "minecraft/client/BlockActorRenderDispatcher.h"
 #include "minecraft/client/BlockGraphics.h"
+#include "minecraft/client/BlockTessellator.h"
 #include "minecraft/actor/ActorRegistry.h"
 #include "minecraft/actor/ActorType.h"
 #include "minecraft/actor/ProjectileFactory.h"
@@ -21,6 +24,8 @@
 #include "items/UniversalBucket.h"
 #include "blocks/ENBlocks.h"
 #include "blocks/BlockRegistry.h"
+#include "blockactors/BlockActorRegistry.h"
+#include "blockactors/InfestingLeavesREnderer.h"
 #include "entities/ENEntities.h"
 #include "handlers/HandlerCrook.h"
 #include "handlers/HandlerHammer.h"
@@ -87,6 +92,35 @@ void BlockLegacy_playerDestroy(BlockLegacy* self, Player& player, const BlockPos
 		_BlockLegacy_playerDestroy(self, player, pos, block);
 }
 
+void (*_initBlockEntityRenderers)(BlockActorRenderDispatcher*, GeometryGroup&, mce::TextureGroup&, BlockTessellator&, const ActorResourceDefinitionGroup&);
+void initBlockEntityRenderers(BlockActorRenderDispatcher* self, GeometryGroup& geometry, mce::TextureGroup& textures, BlockTessellator& blockTessellator, const ActorResourceDefinitionGroup& definitions) {
+	_initBlockEntityRenderers(self, geometry, textures, blockTessellator, definitions);
+
+	self->mRendererMap[BlockActorRendererId::TR_INFESTINGLEAVES_RENDERER] = std::make_unique<InfestingLeavesRenderer>(textures, blockTessellator);
+}
+
+bool (*_tessellateInWorld)(BlockTessellator*, Tessellator&, const Block&, const BlockPos&, void*);
+bool tessellateInWorld(BlockTessellator* self, Tessellator& tessellator, const Block& block, const BlockPos& pos, void* idk) {
+	//Zenova::Platform::DebugPause();
+	//Zenova_Info("{}", self->mBlockInWorldCache.size());
+	return _tessellateInWorld(self, tessellator, block, pos, idk);
+}
+
+std::shared_ptr<BlockActor>(*_createBlockEntity)(BlockActorType, const BlockPos&, const BlockLegacy&);
+std::shared_ptr<BlockActor> createBlockEntity(BlockActorType type, const BlockPos& pos, const BlockLegacy& block) {
+	std::shared_ptr<BlockActor> blockActor = _createBlockEntity(type, pos, block);
+	if (!blockActor)
+		return Zenova::BlockActorRegistry::createBlockEntity(type, pos);
+	return blockActor;
+}
+
+void (*_initBlockEntities)();
+void initBlockEntities() {
+	_initBlockEntities();
+
+	Zenova::BlockActorRegistry::initBlockEntities();
+}
+
 void (*_initProjectileFactory)();
 void initProjectileFactory() {
 	_initProjectileFactory();
@@ -135,7 +169,7 @@ void ExNihiloBedrock::Start() {
 	Zenova::Platform::DebugPause();
 	Zenova_Info("ExNihiloBedrock Start");
 
-	if (Zenova::Minecraft::version() == "1.14.60.5") {
+	if (Zenova::Minecraft::version() == Zenova::Minecraft::v1_14_60_5) {
 		defaultRecipes = new ExNihiloDefaultRecipes();
 
 		ENEntities::initEntityMap();
@@ -148,6 +182,10 @@ void ExNihiloBedrock::Start() {
 		Zenova::Hook::Create(&WorldSystems::init, &initWorldSystems, &_initWorldSystems);
 		Zenova::Hook::Create(&BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, &_registerLooseBlockGraphics);
 		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, &_registerBlocks);
+		Zenova::Hook::Create(&BlockActorRenderDispatcher::initializeBlockEntityRenderers, &initBlockEntityRenderers, &_initBlockEntityRenderers);
+		Zenova::Hook::Create(&BlockTessellator::tessellateInWorld, &tessellateInWorld, &_tessellateInWorld);
+		Zenova::Hook::Create(&BlockActorFactory::createBlockEntity, &createBlockEntity, &_createBlockEntity);
+		Zenova::Hook::Create(&BlockActor::initBlockEntities, &initBlockEntities, &_initBlockEntities);
 		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);
 		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
 		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);

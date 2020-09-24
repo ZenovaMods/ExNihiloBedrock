@@ -12,6 +12,8 @@ public:
 
 	int x, y, z;
 
+	BlockPos(int a) : x(a), y(a), z(a) {}
+	BlockPos() : BlockPos(0) {}
 	BlockPos(int x, int y, int z) : x(x), y(y), z(z) { }
 	BlockPos(float x, float y, float z) : x(int(floorf(x))), y(int(floorf(y))), z(int(floorf(z))) {}
 	BlockPos(Vec3 const&);

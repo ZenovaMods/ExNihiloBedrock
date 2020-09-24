@@ -13,7 +13,7 @@ public:
     virtual bool isEmissive(int) const;
     virtual bool isDestructive(int) const;
     virtual bool isExperimental(const ItemDescriptor*) const;
-protected:
+private:
     virtual bool _useOn(ItemStack&, Actor&, BlockPos, FacingID, float, float, float) const;
     virtual bool _calculatePlacePos(ItemStack&, Actor&, FacingID&, BlockPos&) const;
 };

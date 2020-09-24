@@ -15,6 +15,13 @@ public:
 #endif
     char filler[0x18];
 
+    CompoundTag();
+    virtual ~CompoundTag();
+    float& putFloat(std::string, float);
+    float getFloat(StringView) const;
+    int& putInt(std::string, int);
+    int getInt(StringView) const;
     short& putShort(std::string, short);
     short getShort(StringView) const;
+    bool contains(StringView) const;
 };

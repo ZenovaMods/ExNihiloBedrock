@@ -40,6 +40,33 @@
     "brightness_gamma": 0.55,
     "sound": "gravel"
   },
+  "blockInfestedLeaves": {
+    "isotropic": {
+      "up": true,
+      "down": true
+    },
+    "textures": "leaves",
+    "brightness_gamma": 0.80,
+    "sound": "grass"
+  },
+  "blockInfestingLeaves": {
+    "isotropic": {
+      "up": true,
+      "down": true
+    },
+    "textures": "leaves",
+    "brightness_gamma": 0.80,
+    "sound": "grass"
+  },
+  "blockInfestedLeaves2": {
+    "isotropic": {
+      "up": true,
+      "down": true
+    },
+    "textures": "leaves2",
+    "brightness_gamma": 0.80,
+    "sound": "grass"
+  },
   "witchwaterFlowing": {
     "textures": {
       "up": "witchWaterStill",

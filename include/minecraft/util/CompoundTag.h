@@ -1,21 +1,30 @@
 #pragma once
 
 #include "gsl/string_span"
+#include <functional>
+#include <map>
+#include <memory>
+#include <variant>
+
+#include "Tag.h"
+
+class CompoundTagVariant;
 
 typedef gsl::basic_string_span<const char> string_span;
-
-class Tag {};
+typedef std::map<std::string, CompoundTagVariant, std::less<>> TagMap;
 
 class CompoundTag : public Tag {
-public:
 #ifdef _WIN32
     typedef string_span StringView;
 #else
     typedef const std::string& StringView;
 #endif
-    char filler[0x18];
 
+    TagMap mTags;
+
+public:
     CompoundTag();
+    CompoundTag(CompoundTag&&) noexcept;
     virtual ~CompoundTag();
     float& putFloat(std::string, float);
     float getFloat(StringView) const;
@@ -24,4 +33,13 @@ public:
     short& putShort(std::string, short);
     short getShort(StringView) const;
     bool contains(StringView) const;
+};
+
+class CompoundTagVariant {
+    typedef std::variant<CompoundTag> Variant;
+
+public:
+    Variant mTagStorage;
+
+    CompoundTagVariant() {}
 };

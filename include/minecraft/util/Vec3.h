@@ -11,6 +11,12 @@ public:
 
 	float x, y, z;
 
+	Vec3(float s) {
+		x = s;
+		y = s;
+		z = s;
+	}
+
 	Vec3() { x = y = z = 0.0; }
 	Vec3(float x, float y, float z) : x(x), y(y), z(z) { }
 	Vec3(BlockPos const& pos) : x(float(pos.x)), y(float(pos.y)), z(float(pos.z)) {}

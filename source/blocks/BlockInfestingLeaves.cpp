@@ -108,13 +108,6 @@ int BlockInfestingLeaves::getColor(BlockSource& region, const BlockPos& pos, con
 		}
 		return (totalBlue / 8) | ((totalGreen / 8) << 8) | ((totalRed / 8) << 16);
 	}
-	/*Color leafColor = Color::fromARGB(getLeafColor(region, pos, block));
-	Color infestColor = Color::fromARGB(0xFFFFFF);
-	float progress = 1.0F;
-	BlockActor* tile = region.getBlockEntity(pos);
-	if (tile != nullptr && tile->isType(BlockActorType::InfestedLeaves))
-		progress = dynamic_cast<BlockActorInfestedLeaves*>(tile)->getProgress();
-	return Color::average(leafColor, infestColor, progress).toARGB();*/
 }
 
 BlockRenderLayer BlockInfestingLeaves::getRenderLayer(const Block& block, BlockSource& region, const BlockPos& pos) const {
@@ -169,7 +162,7 @@ std::shared_ptr<BlockActor> BlockInfestingLeaves::newBlockEntity(const BlockPos&
 
 void BlockInfestingLeaves::infestLeafBlock(BlockSource& region, const BlockPos& pos) {
 	//if (!region.getLevel().isClientSide()) {
-	Zenova::Platform::DebugPause();
+	//Zenova::Platform::DebugPause();
 	const Block& block = region.getBlock(pos);
 	const Block* infestedLeaf = nullptr;
 

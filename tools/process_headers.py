@@ -173,10 +173,10 @@ def generate_init_cpp():
     #output_cxx("extern \"C\" {")
     for a in symbol_list:
         if a["name"]:
-            output_cxx("\tvoid* " + a["name"] + "_ptr;")
+            output_cxx("void* " + a["name"] + "_ptr;")
     for a in vtable_list:
         if a["name"]:
-            output_cxx("\tvoid* " + a["name"] + "_vtable;")
+            output_cxx("void* " + a["name"] + "_vtable;")
     #output_cxx("}")
     output_cxx("")
 

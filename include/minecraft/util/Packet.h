@@ -22,4 +22,5 @@ public:
     CompoundTag mData;
 
     BlockActorDataPacket(const BlockPos&, CompoundTag);
+    virtual ~BlockActorDataPacket();
 };

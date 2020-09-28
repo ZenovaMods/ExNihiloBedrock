@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BlockActorInfestedLeaves.h"
+#include "minecraft/util/Color.h"
 
 class BlockActorInfestingLeaves : public BlockActorInfestedLeaves {
 protected:
@@ -16,6 +17,7 @@ public:
 	virtual void onChanged(BlockSource&);
 	virtual void _onUpdatePacket(const CompoundTag&, BlockSource&);
 
+	Color getLeafColor(BlockSource&) const;
 	float getProgress() const { return progress; }
 	const Block* getLeafBlock() const { return leafBlock; }
 	void setLeafBlock(const Block* block) { leafBlock = block; setChanged(); }

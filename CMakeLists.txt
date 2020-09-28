@@ -77,28 +77,17 @@ target_link_libraries(${ModName}
     $ENV{ZENOVA_DATA}/dev/lib/ZenovaAPI.lib
 )
 
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/resources/modinfo.json" "$ENV{ZENOVA_DATA}/mods/${ModName}/modinfo.json" COPYONLY)
-
-#[[ symbol links currently don't work in the zenova api resources hooks
-foreach(resource assets;data)
-    FILE(TO_CMAKE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/resources/${resource}" src)
-    FILE(TO_CMAKE_PATH "$ENV{ZENOVA_DATA}/mods/${ModName}/${resource}" dest)
-
-    if(NOT EXISTS ${dest})
-        add_custom_command(TARGET ${ModName}
-            POST_BUILD
-            COMMAND py -3 ${CMAKE_CURRENT_SOURCE_DIR}/tools/add_security.py ${src}
-            COMMAND ${CMAKE_COMMAND} -E create_symlink ${src} ${dest}
-            DEPENDS ${src}
-        )
-    endif()
-endforeach(resource)
-]]
-
 add_custom_command(TARGET ${ModName}
     PRE_BUILD
     COMMAND py -3 ${CMAKE_CURRENT_SOURCE_DIR}/tools/process_headers.py -a x64 -p windows -d ${CMAKE_CURRENT_SOURCE_DIR}/${SourceDir}/generated ${CMAKE_CURRENT_SOURCE_DIR}/maps/*.json
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tools/process_headers.py
+)
+
+add_custom_command(TARGET ${ModName}
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/resources
+    $ENV{ZENOVA_DATA}/mods/${ModName}
 )
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/${IncludeDir} PREFIX "Header Files//" FILES ${INCLUDE_LIST})

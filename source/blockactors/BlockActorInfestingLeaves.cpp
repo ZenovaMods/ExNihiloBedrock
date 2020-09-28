@@ -61,21 +61,24 @@ void BlockActorInfestingLeaves::tick(BlockSource& region) {
 }
 
 std::unique_ptr<Packet> BlockActorInfestingLeaves::getUpdatePacket(BlockSource& region) {
-	Zenova::Platform::DebugPause();
 	CompoundTag saveData;
 	save(saveData);
 	return std::make_unique<BlockActorDataPacket>(mPosition, std::move(saveData));
 }
 
 void BlockActorInfestingLeaves::onChanged(BlockSource& region) {
-	Zenova::Platform::DebugPause();
 	const BlockPos& pos = getPosition();
 	const Block& block = region.getBlock(pos);
 	region.fireBlockChanged(pos, 0, block, *block.setState<int>(*VanillaStates::UpdateBit, 1), 3, nullptr);
 }
 
 void BlockActorInfestingLeaves::_onUpdatePacket(const CompoundTag& data, BlockSource& region) {
-	Zenova::Platform::DebugPause();
 	DefaultDataLoadHelper loadHelper;
 	load(region.getLevel(), data, loadHelper);
+}
+
+Color BlockActorInfestingLeaves::getLeafColor(BlockSource& region) const {
+	Color leafColor = Color::fromARGB(region.getBlock(mPosition).getColorAtPos(region, mPosition));
+	Color infestColor = Color::fromARGB(leafBlock->getColorAtPos(region, mPosition));
+	return Color::average(leafColor, infestColor, progress);
 }

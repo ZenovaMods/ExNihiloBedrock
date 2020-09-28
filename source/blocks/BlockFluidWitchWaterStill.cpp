@@ -112,7 +112,7 @@ void EntityInWitchWater(BlockSource& region, const BlockPos& pos, Actor& entity)
         if (slime) {
             Actor* addedEntity = level.addEntity(entity.getRegion(), std::move(slime));
             if (addedEntity) {
-                dynamic_cast<Slime*>(addedEntity)->setSlimeSize(dynamic_cast<Slime&>(entity).getSlimeSize());
+                dynamic_cast<Slime*>(addedEntity)->setSlimeSize(dynamic_cast<Slime&>(entity).getSlimeSize()); // todo check casting
                 if (entity.isPersistent())
                     addedEntity->setPersistent();
             }

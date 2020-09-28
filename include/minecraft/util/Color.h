@@ -11,12 +11,14 @@
 class Color {
 public:
 	static const Color NIL;
+	static const Color WHITE;
 
 	float r;
 	float g;
 	float b;
 	float a;
 
+	Color() : r(0.0F), g(0.0F), b(0.0F), a(0.0F) {}
 	Color(float _r, float _g, float _b, float _a) : r(_r), g(_g), b(_b), a(_a) {}
 
 	static Color fromABGR(int col) {
@@ -61,4 +63,5 @@ public:
 
 };
 
-inline const Color Color::NIL{ 0.0, 0.0, 0.0, 0.0 };
+inline const Color Color::NIL{ 0.0F, 0.0F, 0.0F, 0.0F };
+inline const Color Color::WHITE{ 1.0F, 1.0F, 1.0F, 1.0F };

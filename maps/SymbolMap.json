@@ -1689,6 +1689,10 @@
       "address": "0x0FDBC40"
     },
     {
+      "name": "??0CompoundTag@@QEAA@$$QEAV0@@Z",
+      "address": "0x0FDBD10"
+    },
+    {
       "name": "??1CompoundTag@@UEAA@XZ",
       "address": "0x0FDBD80"
     },
@@ -1961,12 +1965,28 @@
       "address": "0x0AB14D0"
     },
     {
+      "name": "?beginOverride@Tessellator@@QEAAXXZ",
+      "address": "0x0AB0B60"
+    },
+    {
+      "name": "?color@Tessellator@@QEAAXAEBVColor@@@Z",
+      "address": "0x0AB0BE0"
+    },
+    {
+      "name": "?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+      "address": "0x0AB1710"
+    },
+    {
       "name": "?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ",
       "address": "0x0DDF4F0"
     },
     {
       "name": "??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z",
       "address": "0x100D890"
+    },
+    {
+      "name": "??1BlockActorDataPacket@@QEAA@XZ",
+      "address": "0x0EAB380"
     }
   ]
 }

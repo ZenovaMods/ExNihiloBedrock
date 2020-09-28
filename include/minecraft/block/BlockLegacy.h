@@ -101,6 +101,13 @@ inline BlockProperty operator|(const BlockProperty& lhs, const BlockProperty& b)
 
 class BlockLegacy {
 public:
+    inline static const int UPDATE_NEIGHBORS = 1;
+    inline static const int UPDATE_CLIENTS = 2;
+    inline static const int UPDATE_INVISIBLE = 4;
+    inline static const int UPDATE_ITEM_DATA = 16;
+    inline static const int UPDATE_NONE = UPDATE_INVISIBLE;
+    inline static const int UPDATE_ALL = UPDATE_CLIENTS | UPDATE_NEIGHBORS;
+
     std::string mDescriptionId;
     std::string mRawNameId;
     std::string mNamespace;

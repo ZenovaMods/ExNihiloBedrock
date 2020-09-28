@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_headers.py
-; Generated on Thu Sep 24 2020 20:09:09 UTC
+; Generated on Mon Sep 28 2020 03:31:10 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -102,6 +102,7 @@ extern _broadcastDimensionEvent_Level__QEAAXAEAVBlockSource__W4LevelEvent__AEBVV
 extern _registerVanillaActorData_VanillaActors__YAXXZ_ptr
 extern _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr
 extern __0CompoundTag__QEAA_XZ_ptr
+extern __0CompoundTag__QEAA_$$QEAV0__Z_ptr
 extern __1CompoundTag__UEAA_XZ_ptr
 extern _putFloat_CompoundTag__QEAAAEAMV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__M_Z_ptr
 extern _getFloat_CompoundTag__QEBAMV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr
@@ -170,8 +171,12 @@ extern __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessella
 extern _render_MovingBlockActorRenderer__UEAAXAEAVBaseActorRenderContext__AEAVBlockActorRenderData___Z_ptr
 extern _setupShaderParameters_ActorShaderManager__SAXAEAVScreenContext__AEAVBlockSource__AEBVBlockPos__M_NAEAVLightTexture__AEBVVec2__AEBVVec4___Z_ptr
 extern _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr
+extern _beginOverride_Tessellator__QEAAXXZ_ptr
+extern _color_Tessellator__QEAAXAEBVColor___Z_ptr
+extern _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr
 extern _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr
 extern __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr
+extern __1BlockActorDataPacket__QEAA_XZ_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
@@ -598,6 +603,10 @@ global ??0CompoundTag@@QEAA@XZ
 ??0CompoundTag@@QEAA@XZ:
 	mov rax, [rel __0CompoundTag__QEAA_XZ_ptr]
 	jmp rax
+global ??0CompoundTag@@QEAA@$$QEAV0@@Z
+??0CompoundTag@@QEAA@$$QEAV0@@Z:
+	mov rax, [rel __0CompoundTag__QEAA_$$QEAV0__Z_ptr]
+	jmp rax
 global ??1CompoundTag@@UEAA@XZ
 ??1CompoundTag@@UEAA@XZ:
 	mov rax, [rel __1CompoundTag__UEAA_XZ_ptr]
@@ -870,6 +879,18 @@ global ?addPostTransformOffset@Tessellator@@QEAAXMMM@Z
 ?addPostTransformOffset@Tessellator@@QEAAXMMM@Z:
 	mov rax, [rel _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr]
 	jmp rax
+global ?beginOverride@Tessellator@@QEAAXXZ
+?beginOverride@Tessellator@@QEAAXXZ:
+	mov rax, [rel _beginOverride_Tessellator__QEAAXXZ_ptr]
+	jmp rax
+global ?color@Tessellator@@QEAAXAEBVColor@@@Z
+?color@Tessellator@@QEAAXAEBVColor@@@Z:
+	mov rax, [rel _color_Tessellator__QEAAXAEBVColor___Z_ptr]
+	jmp rax
+global ?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z:
+	mov rax, [rel _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
+	jmp rax
 global ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ
 ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ:
 	mov rax, [rel _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr]
@@ -877,6 +898,10 @@ global ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ
 global ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z
 ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z:
 	mov rax, [rel __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr]
+	jmp rax
+global ??1BlockActorDataPacket@@QEAA@XZ
+??1BlockActorDataPacket@@QEAA@XZ:
+	mov rax, [rel __1BlockActorDataPacket__QEAA_XZ_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:

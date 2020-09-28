@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Thu Sep 24 2020 20:09:09 UTC
+// Generated on Mon Sep 28 2020 03:31:10 UTC
 
 #pragma once
 
@@ -104,6 +104,7 @@ extern "C" {
 	extern void* _registerVanillaActorData_VanillaActors__YAXXZ_ptr;
 	extern void* _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr;
 	extern void* __0CompoundTag__QEAA_XZ_ptr;
+	extern void* __0CompoundTag__QEAA_$$QEAV0__Z_ptr;
 	extern void* __1CompoundTag__UEAA_XZ_ptr;
 	extern void* _putFloat_CompoundTag__QEAAAEAMV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__M_Z_ptr;
 	extern void* _getFloat_CompoundTag__QEBAMV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
@@ -172,8 +173,12 @@ extern "C" {
 	extern void* _render_MovingBlockActorRenderer__UEAAXAEAVBaseActorRenderContext__AEAVBlockActorRenderData___Z_ptr;
 	extern void* _setupShaderParameters_ActorShaderManager__SAXAEAVScreenContext__AEAVBlockSource__AEBVBlockPos__M_NAEAVLightTexture__AEBVVec2__AEBVVec4___Z_ptr;
 	extern void* _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr;
+	extern void* _beginOverride_Tessellator__QEAAXXZ_ptr;
+	extern void* _color_Tessellator__QEAAXAEBVColor___Z_ptr;
+	extern void* _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
 	extern void* _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr;
 	extern void* __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr;
+	extern void* __1BlockActorDataPacket__QEAA_XZ_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;

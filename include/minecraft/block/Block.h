@@ -29,6 +29,8 @@ public:
     bool hasProperty(BlockProperty type) const;
     ItemInstance asItemInstance(BlockSource& region, const BlockPos& pos) const;
     void playerDestroy(Player& player, const BlockPos& pos) const;
+    const AABB& getVisualShape(AABB&, bool) const;
+    int getColorAtPos(BlockSource&, const BlockPos&) const;
 
     const BlockRuntimeId& getRuntimeId() const {
         return mRuntimeId;

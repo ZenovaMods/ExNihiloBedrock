@@ -8,4 +8,7 @@ public:
     Vec3 max;
 private:
     bool empty;
+
+public:
+    AABB() : min(0.0F), max(1.0F), empty(false) {};
 };

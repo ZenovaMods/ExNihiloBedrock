@@ -32,3 +32,11 @@ ItemInstance Block::asItemInstance(BlockSource& region, const BlockPos& pos) con
 void Block::playerDestroy(Player& player, const BlockPos& pos) const {
     return mLegacyBlock->playerDestroy(player, pos, *this);
 }
+
+const AABB& Block::getVisualShape(AABB& aabb, bool isClipping) const {
+    return mLegacyBlock->getVisualShape(*this, aabb, isClipping);
+}
+
+int Block::getColorAtPos(BlockSource& region, const BlockPos& pos) const {
+    return mLegacyBlock->getColorAtPos(region, pos);
+}

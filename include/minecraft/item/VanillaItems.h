@@ -8,6 +8,7 @@ public:
 	static WeakPtr<Item>* mBucket;
 	static WeakPtr<Item>* mIronIngot;
 	static WeakPtr<Item>* mGoldIngot;
+	static WeakPtr<Item>* mShears;
 
 	static void registerItems(bool);
 	static void initCreativeItemsCallback(ActorInfoRegistry*, BlockDefinitionGroup*, bool);

@@ -15,30 +15,8 @@
 #include "ENBlocks.h"
 #include "../blockactors/BlockActorInfestingLeaves.h"
 
-BlockInfestingLeaves::BlockInfestingLeaves(const std::string& nameId, int id) : ActorBlock(nameId, id, Material::getMaterial(MaterialType::Leaves)) {
-	setSolid(false);
-	setPushesOutItems(true);
-	mRenderLayer = BlockRenderLayer::RENDERLAYER_SEASONS_OPTIONAL_ALPHATEST;
-	mBrightnessGamma = 0.8F;
+BlockInfestingLeaves::BlockInfestingLeaves(const std::string& nameId, int id) : BlockInfestedLeaves(nameId, id) {
 	mBlockEntityType = BlockActorType::InfestingLeaves;
-	addProperty(BlockProperty::Leaf);
-	addProperty(BlockProperty::BreakOnPush);
-	addState(*VanillaStates::UpdateBit);
-	setDestroyTime(0.2F);
-	setLightBlock(1);
-	setCategory(CreativeItemCategory::DECORATIONS);
-}
-
-bool BlockInfestingLeaves::canProvideSupport(const Block&, FacingID, BlockSupportType) const {
-	return false;
-}
-
-bool BlockInfestingLeaves::canContainLiquid() const {
-	return true;
-}
-
-bool BlockInfestingLeaves::breaksFallingBlocks(const Block&) const {
-	return false;
 }
 
 Color BlockInfestingLeaves::getMapColor(BlockSource& region, const BlockPos& pos) const {
@@ -71,18 +49,19 @@ Color BlockInfestingLeaves::getMapColor(BlockSource& region, const BlockPos& pos
 	float progress = 1.0F;
 	BlockActor* tile = region.getBlockEntity(pos);
 	if (tile != nullptr && tile->isType(BlockActorType::InfestingLeaves))
-		progress = dynamic_cast<BlockActorInfestingLeaves*>(tile)->getProgress();
+		progress = static_cast<BlockActorInfestingLeaves*>(tile)->getProgress();
 	return result * Color::average(c, infestColor, progress);
 }
 
 int BlockInfestingLeaves::getColor(BlockSource& region, const BlockPos& pos, const Block& block) const {
 	OldLeafType type = block.hasState(*VanillaStates::OldLeafType) ? block.getState<OldLeafType>(*VanillaStates::OldLeafType) : OldLeafType::Oak;
+	int leafColor;
 	if (isSeasonTinted(block, region, pos)) {
 		if (type == OldLeafType::Spruce)
-			return getSeasonsColor(region, pos, 1, 1).toARGB();
+			leafColor = getSeasonsColor(region, pos, 1, 1).toARGB();
 		else if (type == OldLeafType::Birch)
-			return getSeasonsColor(region, pos, 2, 4).toARGB();
-		return getSeasonsColor(region, pos, 5, 7).toARGB();
+			leafColor = getSeasonsColor(region, pos, 2, 4).toARGB();
+		leafColor = getSeasonsColor(region, pos, 5, 7).toARGB();
 	}
 	else {
 		int totalRed = 0;
@@ -106,22 +85,12 @@ int BlockInfestingLeaves::getColor(BlockSource& region, const BlockPos& pos, con
 				}
 			}
 		}
-		return (totalBlue / 8) | ((totalGreen / 8) << 8) | ((totalRed / 8) << 16);
+		leafColor = (totalBlue / 8) | ((totalGreen / 8) << 8) | ((totalRed / 8) << 16);
 	}
-}
-
-BlockRenderLayer BlockInfestingLeaves::getRenderLayer(const Block& block, BlockSource& region, const BlockPos& pos) const {
-	bool canHaveSnowfall = region.getBiome(pos).canHaveSnowfall(region, pos);
-	if (LeafBlock::isDeepLeafBlock(region, pos))
-		return (canHaveSnowfall && mHasTransparentLeaves) ? BlockRenderLayer::RENDERLAYER_SEASONS_OPAQUE : BlockRenderLayer::RENDERLAYER_OPAQUE;
-	else if (canHaveSnowfall)
-		return mHasTransparentLeaves ? BlockRenderLayer::RENDERLAYER_SEASONS_OPTIONAL_ALPHATEST : BlockRenderLayer::RENDERLAYER_OPAQUE;
-	else
-		return mHasTransparentLeaves ? BlockRenderLayer::RENDERLAYER_OPTIONAL_ALPHATEST : BlockRenderLayer::RENDERLAYER_OPAQUE;
-}
-
-bool BlockInfestingLeaves::isAuxValueRelevantForPicking() const {
-	return true;
+	BlockActor* tile = region.getBlockEntity(pos);
+	if (tile != nullptr && tile->isType(BlockActorType::InfestingLeaves))
+		return static_cast<BlockActorInfestingLeaves*>(tile)->getLeafColor(Color::fromARGB(leafColor), region).toARGB();
+	return leafColor;
 }
 
 bool BlockInfestingLeaves::isSeasonTinted(const Block& block, BlockSource& region, const BlockPos& pos) const {
@@ -129,31 +98,12 @@ bool BlockInfestingLeaves::isSeasonTinted(const Block& block, BlockSource& regio
 	return mHasTransparentLeaves && (layer == BlockRenderLayer::RENDERLAYER_SEASONS_OPAQUE || layer == BlockRenderLayer::RENDERLAYER_SEASONS_OPTIONAL_ALPHATEST);
 }
 
-void BlockInfestingLeaves::onGraphicsModeChanged(bool fancy, bool transparentLeaves, bool fancyBubbles) {
-	mHasTransparentLeaves = transparentLeaves;
-	mRenderLayer = (BlockRenderLayer)(4 * mHasTransparentLeaves + 2);
-	setLightBlock(1);
-	BlockLegacy::onGraphicsModeChanged(fancy, transparentLeaves, fancyBubbles);
-}
-
-int BlockInfestingLeaves::getResourceCount(Random&, const Block&, int) const {
-	return 0;
-}
-
 void BlockInfestingLeaves::playerDestroy(Player& player, const BlockPos& pos, const Block& block) const {
-	const Block* leafBlock = &ENBlocks::infestedLeaves->get()->getDefaultState();
-	BlockActor* tile = player.getRegion().getBlockEntity(pos);
-	if (tile != nullptr && tile->isType(BlockActorType::InfestingLeaves))
-		leafBlock = dynamic_cast<BlockActorInfestingLeaves*>(tile)->getLeafBlock();
-	leafBlock->playerDestroy(player, pos);
+	getBlockForLeaf(block).playerDestroy(player, pos);
 }
 
 ItemInstance BlockInfestingLeaves::asItemInstance(BlockSource& region, const BlockPos& pos, const Block& block) const {
-	const Block* leafBlock = &ENBlocks::infestedLeaves->get()->getDefaultState();
-	BlockActor* tile = region.getBlockEntity(pos);
-	if (tile != nullptr && tile->isType(BlockActorType::InfestingLeaves))
-		leafBlock = dynamic_cast<BlockActorInfestingLeaves*>(tile)->getLeafBlock();
-	return leafBlock->asItemInstance(region, pos);
+	return getBlockForLeaf(block).asItemInstance(region, pos);
 }
 
 std::shared_ptr<BlockActor> BlockInfestingLeaves::newBlockEntity(const BlockPos& pos) const {
@@ -161,25 +111,48 @@ std::shared_ptr<BlockActor> BlockInfestingLeaves::newBlockEntity(const BlockPos&
 }
 
 void BlockInfestingLeaves::infestLeafBlock(BlockSource& region, const BlockPos& pos) {
-	//if (!region.getLevel().isClientSide()) {
-	//Zenova::Platform::DebugPause();
 	const Block& block = region.getBlock(pos);
-	const Block* infestedLeaf = nullptr;
 
-	if (block.getLegacyBlock() == **VanillaBlockTypes::mLeaves) {
-		Block& infestedLeafBlock = ENBlocks::infestedLeaves->get()->getDefaultState();
-		OldLeafType leafType = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
-		infestedLeaf = infestedLeafBlock.setState<OldLeafType>(*VanillaStates::OldLeafType, leafType);
-	}
-	else if (block.getLegacyBlock() == **VanillaBlockTypes::mLeaves2) {
-		Block& infestedLeafBlock = ENBlocks::infestedLeaves2->get()->getDefaultState();
-		NewLeafType leafType = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
-		infestedLeaf = infestedLeafBlock.setState<NewLeafType>(*VanillaStates::NewLeafType, leafType);
-	}
+	if (block.getLegacyBlock() == **VanillaBlockTypes::mLeaves || block.getLegacyBlock() == **VanillaBlockTypes::mLeaves2)
+		region.setBlock(pos, getBlockForLeaf(block, true), UPDATE_CLIENTS, nullptr);
+}
 
-	region.setBlock(pos, ENBlocks::infestingLeaves->get()->getDefaultState(), 2, nullptr);
-	BlockActor* tile = region.getBlockEntity(pos);
-	if (infestedLeaf != nullptr && tile != nullptr && tile->isType(BlockActorType::InfestingLeaves))
-		dynamic_cast<BlockActorInfestingLeaves*>(tile)->setLeafBlock(infestedLeaf);
-	//}
+const Block& BlockInfestingLeaves::getBlockForLeaf(const Block& leafBlock, bool infesting) {
+	const Block& oldLeafBlock = infesting ? ENBlocks::infestingLeaves->get()->getDefaultState() : ENBlocks::infestedLeaves->get()->getDefaultState();
+	const Block& newLeafBlock = infesting ? ENBlocks::infestingLeaves2->get()->getDefaultState() : ENBlocks::infestedLeaves2->get()->getDefaultState();
+	if (leafBlock.hasState(*VanillaStates::OldLeafType))
+		return *oldLeafBlock.setState(*VanillaStates::OldLeafType, leafBlock.getState<OldLeafType>(*VanillaStates::OldLeafType));
+	else if (leafBlock.hasState(*VanillaStates::NewLeafType))
+		return *newLeafBlock.setState(*VanillaStates::NewLeafType, leafBlock.getState<NewLeafType>(*VanillaStates::NewLeafType));
+	return oldLeafBlock;
+}
+
+BlockInfestingLeavesOld::BlockInfestingLeavesOld(const std::string& nameId, int id) : BlockInfestingLeaves(nameId, id) {
+	addState(*VanillaStates::OldLeafType);
+	addState(*VanillaStates::UpdateBit);
+}
+
+int BlockInfestingLeavesOld::getVariant(const Block& block) const {
+	OldLeafType leafType = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
+	return enum_cast(leafType);
+}
+
+BlockLegacy& BlockInfestingLeavesOld::init() {
+	addLegacyDataFromPermutations();
+	return BlockLegacy::init();
+}
+
+BlockInfestingLeavesNew::BlockInfestingLeavesNew(const std::string& nameId, int id) : BlockInfestingLeaves(nameId, id) {
+	addState(*VanillaStates::NewLeafType);
+	addState(*VanillaStates::UpdateBit);
+}
+
+int BlockInfestingLeavesNew::getVariant(const Block& block) const {
+	NewLeafType leafType = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
+	return enum_cast(leafType);
+}
+
+BlockLegacy& BlockInfestingLeavesNew::init() {
+	addLegacyDataFromPermutations();
+	return BlockLegacy::init();
 }

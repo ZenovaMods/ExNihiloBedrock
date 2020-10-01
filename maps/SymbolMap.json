@@ -1268,6 +1268,7 @@
     "WeakPtr<Item>* VanillaItems::mBucket": "0x3060748",
     "WeakPtr<Item>* VanillaItems::mGoldIngot": "0x3060548",
     "WeakPtr<Item>* VanillaItems::mIronIngot": "0x3060540",
+    "WeakPtr<Item>* VanillaItems::mShears": "0x3060990",
     "Item::Tier* VanillaItemTiers::WOOD": "0x2A39988",
     "Item::Tier* VanillaItemTiers::STONE": "0x2A39A20",
     "Item::Tier* VanillaItemTiers::IRON": "0x2A39658",

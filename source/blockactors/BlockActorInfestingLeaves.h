@@ -17,8 +17,7 @@ public:
 	virtual void onChanged(BlockSource&);
 	virtual void _onUpdatePacket(const CompoundTag&, BlockSource&);
 
-	Color getLeafColor(BlockSource&) const;
+	Color getLeafColor(Color&, BlockSource&) const;
 	float getProgress() const { return progress; }
-	const Block* getLeafBlock() const { return leafBlock; }
-	void setLeafBlock(const Block* block) { leafBlock = block; setChanged(); }
+	const Block* getLeafBlock(const Block&) const;
 };

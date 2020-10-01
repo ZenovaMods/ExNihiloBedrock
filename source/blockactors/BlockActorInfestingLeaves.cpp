@@ -9,10 +9,10 @@
 #include "minecraft/world/BlockSource.h"
 
 #include "../blocks/ENBlocks.h"
+#include "../blocks/BlockInfestingLeaves.h"
 
-BlockActorInfestingLeaves::BlockActorInfestingLeaves(const BlockPos& pos) : BlockActorInfestedLeaves(BlockActorType::InfestingLeaves, pos, "InfestingLeaves"), progress(0.0F) {
+BlockActorInfestingLeaves::BlockActorInfestingLeaves(const BlockPos& pos) : BlockActorInfestedLeaves(BlockActorType::InfestingLeaves, pos, "InfestingLeaves"), progress(0.0F), leafBlock(nullptr) {
 	mRendererId = BlockActorRendererId::TR_INFESTINGLEAVES_RENDERER;
-	leafBlock = &ENBlocks::infestedLeaves->get()->getDefaultState();
 }
 
 void BlockActorInfestingLeaves::load(Level& level, const CompoundTag& tag, DataLoadHelper& dataLoadHelper) {
@@ -53,7 +53,7 @@ void BlockActorInfestingLeaves::tick(BlockSource& region) {
 		if (progress > 1.0F) {
 			progress = 1.0F;
 
-			region.setBlock(mPosition, *leafBlock, 3, nullptr);
+			region.setBlock(mPosition, *getLeafBlock(region.getBlock(mPosition)), 3, nullptr);
 		}
 	}
 		
@@ -77,8 +77,10 @@ void BlockActorInfestingLeaves::_onUpdatePacket(const CompoundTag& data, BlockSo
 	load(region.getLevel(), data, loadHelper);
 }
 
-Color BlockActorInfestingLeaves::getLeafColor(BlockSource& region) const {
-	Color leafColor = Color::fromARGB(region.getBlock(mPosition).getColorAtPos(region, mPosition));
-	Color infestColor = Color::fromARGB(leafBlock->getColorAtPos(region, mPosition));
-	return Color::average(leafColor, infestColor, progress);
+Color BlockActorInfestingLeaves::getLeafColor(Color& leafColor, BlockSource& region) const {
+	return Color::average(leafColor, Color::WHITE, progress);
+}
+
+const Block* BlockActorInfestingLeaves::getLeafBlock(const Block& infestingLeaf) const {
+	return leafBlock != nullptr ? leafBlock : &BlockInfestingLeaves::getBlockForLeaf(infestingLeaf);
 }

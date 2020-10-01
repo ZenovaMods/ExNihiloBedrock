@@ -37,6 +37,14 @@ const AABB& Block::getVisualShape(AABB& aabb, bool isClipping) const {
     return mLegacyBlock->getVisualShape(*this, aabb, isClipping);
 }
 
+int Block::getColor(BlockSource& region, const BlockPos& pos) const {
+	return mLegacyBlock->getColor(region, pos, *this);
+}
+
 int Block::getColorAtPos(BlockSource& region, const BlockPos& pos) const {
     return mLegacyBlock->getColorAtPos(region, pos);
+}
+
+BlockRenderLayer Block::getRenderLayer(BlockSource& region, const BlockPos& pos) const {
+    return mLegacyBlock->getRenderLayer(*this, region, pos);
 }

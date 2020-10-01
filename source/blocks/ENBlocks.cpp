@@ -24,6 +24,7 @@ WeakPtr<BlockLegacy>* ENBlocks::andesiteCrushed;
 WeakPtr<BlockLegacy>* ENBlocks::dioriteCrushed;
 WeakPtr<BlockLegacy>* ENBlocks::graniteCrushed;
 WeakPtr<BlockLegacy>* ENBlocks::infestingLeaves;
+WeakPtr<BlockLegacy>* ENBlocks::infestingLeaves2;
 WeakPtr<BlockLegacy>* ENBlocks::infestedLeaves;
 WeakPtr<BlockLegacy>* ENBlocks::infestedLeaves2;
 WeakPtr<BlockLegacy>* ENBlocks::blockWitchwaterStill;
@@ -36,7 +37,8 @@ void ENBlocks::init() {
 	andesiteCrushed = Zenova::BlockRegistry::registerBlock<BlockBaseFalling>("blockAndesiteCrushed", BlockShape::BLOCK);
 	dioriteCrushed = Zenova::BlockRegistry::registerBlock<BlockBaseFalling>("blockDioriteCrushed", BlockShape::BLOCK);
 	graniteCrushed = Zenova::BlockRegistry::registerBlock<BlockBaseFalling>("blockGraniteCrushed", BlockShape::BLOCK);
-	infestingLeaves = Zenova::BlockRegistry::registerBlock<BlockInfestingLeaves>("blockInfestingLeaves", BlockShape::INVISIBLE);
+	infestingLeaves = Zenova::BlockRegistry::registerBlock<BlockInfestingLeavesOld>("blockInfestingLeaves", BlockShape::INVISIBLE);
+	infestingLeaves2 = Zenova::BlockRegistry::registerBlock<BlockInfestingLeavesNew>("blockInfestingLeaves2", BlockShape::INVISIBLE);
 	infestedLeaves = Zenova::BlockRegistry::registerBlock<BlockInfestedLeavesOld>("blockInfestedLeaves", BlockShape::BLOCK);
 	infestedLeaves2 = Zenova::BlockRegistry::registerBlock<BlockInfestedLeavesNew>("blockInfestedLeaves2", BlockShape::BLOCK);
 	blockWitchwaterStill = Zenova::BlockRegistry::registerBlock<BlockFluidWitchWaterStill>("witchwater", BlockShape::WATER);

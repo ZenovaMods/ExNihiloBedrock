@@ -17,6 +17,7 @@ public:
 	static WeakPtr<BlockLegacy>* dioriteCrushed;
 	static WeakPtr<BlockLegacy>* graniteCrushed;
 	static WeakPtr<BlockLegacy>* infestingLeaves;
+	static WeakPtr<BlockLegacy>* infestingLeaves2;
 	static WeakPtr<BlockLegacy>* infestedLeaves;
 	static WeakPtr<BlockLegacy>* infestedLeaves2;
 	static WeakPtr<BlockLegacy>* blockWitchwaterStill;

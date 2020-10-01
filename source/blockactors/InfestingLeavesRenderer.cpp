@@ -19,8 +19,8 @@ void InfestingLeavesRenderer::render(BaseActorRenderContext& context, BlockActor
 	BlockSource& region = data.mRegion;
 	const BlockActorInfestingLeaves& infestingLeaves = (BlockActorInfestingLeaves&)data.mBlockActor;
 	Vec3 renderPos = data.mPos;
-	const Block& block = *infestingLeaves.getLeafBlock();
 	BlockPos blockPos = infestingLeaves.getPosition();
+	const Block& block = *infestingLeaves.getLeafBlock(region.getBlock(blockPos));
 	MatrixStack::MatrixStackRef worldMatrix = context.getWorldMatrix().push();
 	worldMatrix->translate(renderPos.x - blockPos.x, renderPos.y - blockPos.y, renderPos.z - blockPos.z);
 	setupShaderParameters(screenContext, region, infestingLeaves.getPosition(), context.mPartialTicks, context.isIgnoringLightning(), *context.getLightTexture(), Vec2::ONE, {});
@@ -28,33 +28,26 @@ void InfestingLeavesRenderer::render(BaseActorRenderContext& context, BlockActor
 	tessellator.addPostTransformOffset((float)-blockPos.x, (float)-blockPos.y, (float)-blockPos.z);
 	worldMatrix->translate((float)blockPos.x, (float)blockPos.y, (float)blockPos.z);
 	std::array<const mce::ClientTexture*, 2> textures = { mTerrainTexture.getClientTexture(), context.getLightTexture()->getClientTexture() };
-	BlockRenderLayer renderLayer = block.getLegacyBlock().getRenderLayer(block, region, blockPos);
+	BlockRenderLayer renderLayer = block.getRenderLayer(region, blockPos);
 	mce::Mesh mesh = getBlockMesh(mBlockTessellator, tessellator, block, blockPos, renderLayer, infestingLeaves);
 	mesh.renderMesh(screenContext.mMeshContext, mRenderLayerMaterials[enum_cast(renderLayer)], textures, 0, 0, nullptr);
 	tessellator.addPostTransformOffset((float)blockPos.x, (float)blockPos.y, (float)blockPos.z);
 }
 
-mce::Mesh InfestingLeavesRenderer::getBlockMesh(BlockTessellator& blockTessellator, Tessellator& tessellator, const Block& block, BlockPos& pos, BlockRenderLayer renderLayer, const BlockActorInfestingLeaves& blockActor) {
+mce::Mesh InfestingLeavesRenderer::getBlockMesh(BlockTessellator& blockTessellator, Tessellator& tessellator, const Block& block, BlockPos& pos, BlockRenderLayer renderLayer, const BlockActorInfestingLeaves& leafActor) {
 	blockTessellator.mBool2 = false;
 	blockTessellator.mBool4 = false;
 	blockTessellator.mBool5 = false;
 	blockTessellator.mHasBounds = true;
 	blockTessellator.mBounds = block.getVisualShape(AABB(), false);
-	Color blockColor;
-	if (&blockTessellator.mRegion != nullptr) {
+	if (&blockTessellator.mRegion != nullptr)
 		blockTessellator.mCache.reset(blockTessellator.mRegion, pos);
-		blockColor = blockActor.getLeafColor(blockTessellator.mRegion);
-	}
-	else {
-		blockColor = Color::WHITE;
-	}
 	blockTessellator.mRenderLayer = renderLayer;
 
 	tessellator.beginOverride();
-	tessellator.color(blockColor);
 	blockTessellator.tessellateInWorld(tessellator, block, pos, nullptr);
-	blockTessellator.mBool4 = true;
-	blockTessellator.mBool5 = false;
+	blockTessellator.mBool4 = false;
+	blockTessellator.mBool5 = true;
 	blockTessellator.mBool2 = false;
 	return tessellator.endOverride("Untagged Tessellator Mesh Override");
 }

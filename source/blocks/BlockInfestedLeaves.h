@@ -19,6 +19,7 @@ public:
 	virtual void onGraphicsModeChanged(bool, bool, bool);
 	virtual int getResourceCount(Random&, const Block&, int) const;
 	virtual void playerDestroy(Player&, const BlockPos&, const Block&) const;
+	virtual void spawnResources(BlockSource&, const BlockPos&, const Block&, float, int) const;
 	virtual std::shared_ptr<BlockActor> newBlockEntity(const BlockPos&) const;
 };
 

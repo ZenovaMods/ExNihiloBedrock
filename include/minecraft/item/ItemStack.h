@@ -66,6 +66,9 @@ public:
 	bool isEmptyStack() const {
 		return mCount == 0;
 	}
+	bool isInstance(const Item& i) const {
+		return &i == mItem.get();
+	}
 	bool matchesItem(const ItemStackBase&) const;
 };
 

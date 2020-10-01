@@ -8,6 +8,7 @@
 #include "minecraft/block/VanillaBlockTypeRegistry.h"
 #include "minecraft/blockactor/BlockActorType.h"
 #include "minecraft/item/ItemStack.h"
+#include "minecraft/item/VanillaItems.h"
 #include "minecraft/util/I18n.h"
 #include "minecraft/world/BlockSource.h"
 #include "minecraft/world/Biome.h"
@@ -59,6 +60,9 @@ bool BlockInfestedLeaves::isAuxValueRelevantForPicking() const {
 }
 
 int BlockInfestedLeaves::getColor(BlockSource& region, const BlockPos& pos, const Block& block) const {
+	const Block& leafBlock = region.getBlock(pos);
+	if (&leafBlock != &block)
+		return leafBlock.getLegacyBlock().getColor(region, pos, block);
 	return 0xFFFFFF;
 }
 
@@ -74,7 +78,20 @@ int BlockInfestedLeaves::getResourceCount(Random&, const Block&, int) const {
 }
 
 void BlockInfestedLeaves::playerDestroy(Player& player, const BlockPos& pos, const Block& block) const {
+	BlockSource& region = player.getRegion();
+	if (!region.getLevel().isClientSide()) {
+		const ItemStack& item = player.getSelectedItem();
+		if (&item != nullptr && item.isInstance(**VanillaItems::mShears)) {
+			popResource(region, pos, asItemInstance(region, pos, block));
+			return;
+		}
+	}
+
 	BlockLegacy::playerDestroy(player, pos, block);
+}
+
+void BlockInfestedLeaves::spawnResources(BlockSource& region, const BlockPos& pos, const Block& block, float explosionRadius, int bonusLootLevel) const {
+
 }
 
 std::shared_ptr<BlockActor> BlockInfestedLeaves::newBlockEntity(const BlockPos& pos) const {
@@ -148,4 +165,3 @@ BlockLegacy& BlockInfestedLeavesNew::init() {
 	addLegacyDataFromPermutations();
 	return BlockLegacy::init();
 }
-

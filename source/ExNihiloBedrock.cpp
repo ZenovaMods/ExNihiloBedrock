@@ -101,8 +101,6 @@ void initBlockEntityRenderers(BlockActorRenderDispatcher* self, GeometryGroup& g
 
 bool (*_tessellateInWorld)(BlockTessellator*, Tessellator&, const Block&, const BlockPos&, void*);
 bool tessellateInWorld(BlockTessellator* self, Tessellator& tessellator, const Block& block, const BlockPos& pos, void* idk) {
-	//Zenova::Platform::DebugPause();
-	//Zenova_Info("{}", self->mBlockInWorldCache.size());
 	return _tessellateInWorld(self, tessellator, block, pos, idk);
 }
 
@@ -166,8 +164,7 @@ void initRecipes(Recipes* self, ResourcePackManager& resourcePackManager) {
 ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
 
 void ExNihiloBedrock::Start() {
-	Zenova::Platform::DebugPause();
-	Zenova_Info("ExNihiloBedrock Start");
+	Zenova_Info("Intializing Ex Nihilo and checking version");
 
 	if (Zenova::Minecraft::version() == Zenova::Minecraft::v1_14_60_5) {
 		defaultRecipes = new ExNihiloDefaultRecipes();

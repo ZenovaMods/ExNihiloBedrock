@@ -13,7 +13,6 @@ void PebbleRenderer::onAppSuspended() {
 }
 
 void PebbleRenderer::render(BaseActorRenderContext& renderContext, ActorRenderData& renderData) {
-	Zenova::Platform::DebugPause();
 	Actor& actor = renderData.getActor();
 	if (&actor) {
 		short auxValue = 0;
@@ -27,7 +26,6 @@ void PebbleRenderer::render(BaseActorRenderContext& renderContext, ActorRenderDa
 }
 
 const TextureUVCoordinateSet& PebbleRenderer::getIcon(Actor& actor) const {
-	Zenova::Platform::DebugPause();
 	short auxValue = 0;
 	if (actor.hasType(ActorType::Pebble))
 		auxValue = dynamic_cast<ProjectileStone&>(actor).getStoneType();

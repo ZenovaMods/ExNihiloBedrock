@@ -19,8 +19,11 @@ public:
 	virtual void onGraphicsModeChanged(bool, bool, bool);
 	virtual int getResourceCount(Random&, const Block&, int) const;
 	virtual void playerDestroy(Player&, const BlockPos&, const Block&) const;
+	virtual bool playerWillDestroy(Player&, const BlockPos&, const Block&) const;
 	virtual void spawnResources(BlockSource&, const BlockPos&, const Block&, float, int) const;
+	virtual bool canBeSilkTouched() const;
 	virtual std::shared_ptr<BlockActor> newBlockEntity(const BlockPos&) const;
+	virtual float getStringDropChance(BlockActor*) const;
 };
 
 class BlockInfestedLeavesOld : public BlockInfestedLeaves {

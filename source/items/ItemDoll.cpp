@@ -38,7 +38,7 @@ Item& ItemDoll::setIcon(const std::string& name, int id) {
 bool ItemDoll::spawnMob(ItemStack& instance, Actor& entity, const BlockPos& pos) const {
 	Level& level = entity.getLevel();
 	ActorType spawnedType = (instance.getAuxValue() == 0) ? ActorType::Blaze : ActorType::EnderMan;
-	auto spawned = level.getActorFactory().createSpawnedEntity({ spawnedType }, &entity, { pos.x + 0.5F, pos.y + 1.0F, pos.z + 0.5F }, Vec2::ZERO);
+	auto spawned = level.getActorFactory().createSpawnedEntity({ spawnedType }, &entity, { pos.x + 0.5f, pos.y + 1.0f, pos.z + 0.5f }, Vec2::ZERO);
 	if (spawned) {
 		Actor* addedEntity = level.addEntity(entity.getRegion(), std::move(spawned));
 		if (addedEntity)

@@ -17,7 +17,7 @@ std::unique_ptr<Actor> _actorFromClass(ActorDefinitionGroup* definitions, const 
 }
 
 template<typename T, ActorType Type>
-void _registerActorData(const std::string& fullName, bool allowSummon, bool experimental, float walkAnimSpeed = 0.0F) {
+void _registerActorData(const std::string& fullName, bool allowSummon, bool experimental, float walkAnimSpeed = 0.0f) {
     ActorFactoryData afd;
     afd.mIdentifier = ActorDefinitionIdentifier(fullName);
     afd.mBaseIdentifier = ActorDefinitionIdentifier();

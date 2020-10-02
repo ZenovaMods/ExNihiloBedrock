@@ -35,7 +35,7 @@ bool HandlerCrook::crook(const Block& block, const BlockPos& pos, Player& harves
 	const BlockLegacy& legacyBlock = block.getLegacyBlock();
 	if (legacyBlock == **VanillaBlockTypes::mLeaves || legacyBlock == **VanillaBlockTypes::mLeaves2) { //Simulate vanilla drops
 		for (int i = 0 ; i < 4; i++) { // todo config
-			legacyBlock.spawnResources(harvester.getRegion(), pos, block, 1.0F, fortune);
+			legacyBlock.spawnResources(harvester.getRegion(), pos, block, 1.0f, fortune);
 		}
 	}
 	else {

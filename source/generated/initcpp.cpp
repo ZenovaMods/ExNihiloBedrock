@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Thu Oct 01 2020 18:58:46 UTC
+// Generated on Fri Oct 02 2020 03:36:18 UTC
 
 #include <Zenova/Hook.h>
 #include <Zenova/Minecraft.h>
@@ -58,6 +58,7 @@ WeakPtr<Item>* VanillaItems::mBucket = reinterpret_cast<WeakPtr<Item>*>(SlideAdd
 WeakPtr<Item>* VanillaItems::mGoldIngot = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060548));
 WeakPtr<Item>* VanillaItems::mIronIngot = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060540));
 WeakPtr<Item>* VanillaItems::mShears = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060990));
+WeakPtr<Item>* VanillaItems::mString = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x30605F0));
 Item::Tier* VanillaItemTiers::WOOD = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39988));
 Item::Tier* VanillaItemTiers::STONE = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39A20));
 Item::Tier* VanillaItemTiers::IRON = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39658));

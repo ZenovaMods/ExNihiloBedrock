@@ -29,6 +29,9 @@ bool Block::hasProperty(BlockProperty type) const {
 ItemInstance Block::asItemInstance(BlockSource& region, const BlockPos& pos) const {
     return mLegacyBlock->asItemInstance(region, pos, *this);
 }
+ItemInstance Block::getSilkTouchItemInstance() const {
+    return mLegacyBlock->getSilkTouchItemInstance(*this);
+}
 void Block::playerDestroy(Player& player, const BlockPos& pos) const {
     return mLegacyBlock->playerDestroy(player, pos, *this);
 }

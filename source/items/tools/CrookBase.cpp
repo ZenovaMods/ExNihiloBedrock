@@ -16,5 +16,5 @@ CrookBase::CrookBase(const std::string& name, int id, int maxUses)
 }
 
 float CrookBase::getDestroySpeed(const ItemInstance& item, const Block& block) const {
-	return CrookRegistry::registered(&block) ? mSpeed : 1.0F;
+	return CrookRegistry::registered(&block) ? mSpeed : 1.0f;
 }

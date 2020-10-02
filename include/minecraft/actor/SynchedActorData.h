@@ -161,7 +161,7 @@ public:
         DataItem2<TypeFloat>* dataItem = dynamic_cast<DataItem2<TypeFloat>*>(_find(id));
         if (dataItem && dataItem->getType() == DataItemType::Float)
             return dataItem->mData;
-        return 0.0F;
+        return 0.0f;
     }
     const std::string& getString(ID id) const {
         DataItem2<std::string>* dataItem = dynamic_cast<DataItem2<std::string>*>(_find(id));

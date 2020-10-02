@@ -28,6 +28,7 @@ public:
     void spawnResources(BlockSource& region, const BlockPos& pos, const Block& block, float explosionRadius, int bonusLootLevel) const;
     bool hasProperty(BlockProperty type) const;
     ItemInstance asItemInstance(BlockSource& region, const BlockPos& pos) const;
+    ItemInstance getSilkTouchItemInstance() const;
     void playerDestroy(Player& player, const BlockPos& pos) const;
     const AABB& getVisualShape(AABB&, bool) const;
     int getColor(BlockSource&, const BlockPos&) const;

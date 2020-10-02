@@ -109,7 +109,7 @@ bool UniversalBucket::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, F
 		}
 		if (_emptyBucket(region, contentsBlock->getDefaultState(), placePos, &entity, instance, face)) {
 			ItemStack emptyBucket(**VanillaItems::mBucket, 1, 0);
-			region.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketEmptyWater, entity.getAttachPos(ActorLocation::Feet, 0.0F), -1, {}, false, false);
+			region.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketEmptyWater, entity.getAttachPos(ActorLocation::Feet, 0.0f), -1, {}, false, false);
 			entity.useItem(instance, ItemUseMethod::PourBucket, true);
 			if (entity.hasType(ActorType::Player) && (!entity.isCreative() || instance.hasUserData())) {
 				entity.getLevel().getActorEventCoordinator().sendActorAcquiredItem(entity, emptyBucket, emptyBucket.getStackSize(), ItemAcquisitionMethod::Filled, nullptr);
@@ -135,7 +135,7 @@ bool UniversalBucket::_emptyBucket(BlockSource& region, const Block& contents, c
 			}
 			else {
 				if (oldBlock.getLegacyBlock().waterSpreadCausesSpawn())
-					oldBlock.spawnResources(region, pos, 1.0F, 0);
+					oldBlock.spawnResources(region, pos, 1.0f, 0);
 				if (oldBlock.getLegacyBlock() == **BedrockBlockTypes::mAir || !oldBlock.getMaterial().isSolid())
 					region.setBlock(pos, contents, 3, nullptr);
 			}
@@ -177,7 +177,7 @@ bool UniversalBucket::_takeLiquid(ItemStack& itemStack, Actor& entity, const Blo
 			bool isUsingExtraData = region.getExtraBlock(pos).getLegacyBlock() != **BedrockBlockTypes::mAir;
 			region.setLiquidBlock(pos, BedrockBlockTypes::mAir->get()->getDefaultState(), isUsingExtraData, 3);
 		}
-		entity.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketFillWater, entity.getAttachPos(ActorLocation::Feet, 0.0F), -1, {}, 0, 0);
+		entity.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketFillWater, entity.getAttachPos(ActorLocation::Feet, 0.0f), -1, {}, 0, 0);
 		ItemStack filledBucket(*ENItems::universalBucket, 1, fluid->mId);
 		entity.getLevel().getActorEventCoordinator().sendActorUseItem(entity, itemStack, ItemUseMethod::FillBucket);
 		if (!entity.isCreative() && entity.hasType(ActorType::Player))

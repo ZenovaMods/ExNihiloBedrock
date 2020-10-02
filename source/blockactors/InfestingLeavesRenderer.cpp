@@ -13,6 +13,7 @@
 #include "minecraft/util/AABB.h"
 
 #include "BlockActorInfestingLeaves.h"
+#include "../blocks/BlockInfestingLeaves.h"
 
 void InfestingLeavesRenderer::render(BaseActorRenderContext& context, BlockActorRenderData& data) {
 	ScreenContext& screenContext = context.getScreenContext();
@@ -20,7 +21,7 @@ void InfestingLeavesRenderer::render(BaseActorRenderContext& context, BlockActor
 	const BlockActorInfestingLeaves& infestingLeaves = (BlockActorInfestingLeaves&)data.mBlockActor;
 	Vec3 renderPos = data.mPos;
 	BlockPos blockPos = infestingLeaves.getPosition();
-	const Block& block = *infestingLeaves.getLeafBlock(region.getBlock(blockPos));
+	const Block& block = BlockInfestingLeaves::getBlockForLeaf(region.getBlock(blockPos));
 	MatrixStack::MatrixStackRef worldMatrix = context.getWorldMatrix().push();
 	worldMatrix->translate(renderPos.x - blockPos.x, renderPos.y - blockPos.y, renderPos.z - blockPos.z);
 	setupShaderParameters(screenContext, region, infestingLeaves.getPosition(), context.mPartialTicks, context.isIgnoringLightning(), *context.getLightTexture(), Vec2::ONE, {});

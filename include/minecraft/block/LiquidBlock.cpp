@@ -10,7 +10,7 @@ LiquidBlock::LiquidBlock(const std::string& nameId, int id, const Material& mate
     mProperties = BlockProperty::BreakOnPush;
     mCanInstatick = true;
     mAnimatedTexture = true;
-    mTranslucency = 0.0F;
+    mTranslucency = 0.0f;
     setRandomTickingExtraLayer(material.isType(MaterialType::Water));
 }
 

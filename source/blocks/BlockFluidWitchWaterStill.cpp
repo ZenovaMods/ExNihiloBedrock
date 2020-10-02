@@ -11,7 +11,7 @@
 #include "minecraft/actor/MobEffectInstance.h"
 
 BlockFluidWitchWaterStill::BlockFluidWitchWaterStill(const std::string& nameId, int id) : LiquidBlockStatic(nameId, id, Material::getMaterial(MaterialType::Water)) {
-    setDestroyTime(100.0F);
+    setDestroyTime(100.0f);
     setLightBlock(2);
     setCategory(CreativeItemCategory::DECORATIONS);
     addState(*VanillaStates::LiquidDepth);
@@ -21,7 +21,7 @@ BlockFluidWitchWaterStill::BlockFluidWitchWaterStill(const std::string& nameId, 
 }
 
 Color BlockFluidWitchWaterStill::getMapColor(BlockSource&, const BlockPos&) const {
-    return { 0.125F, 0.0F, 0.322F, 1.0F };
+    return { 0.125F, 0.0f, 0.322F, 1.0f };
 }
 
 void BlockFluidWitchWaterStill::entityInside(BlockSource& region, const BlockPos& pos, Actor& entity) const {

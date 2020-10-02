@@ -15,6 +15,8 @@
 
 #include "ENBlocks.h"
 #include "../blockactors/BlockActorInfestedLeaves.h"
+#include "../blockactors/BlockActorInfestingLeaves.h"
+#include "../items/tools/database/CrookDatabase.h"
 
 BlockInfestedLeaves::BlockInfestedLeaves(const std::string& nameId, int id) : ActorBlock(nameId, id, Material::getMaterial(MaterialType::Leaves)) {
 	setSolid(false);
@@ -60,9 +62,11 @@ bool BlockInfestedLeaves::isAuxValueRelevantForPicking() const {
 }
 
 int BlockInfestedLeaves::getColor(BlockSource& region, const BlockPos& pos, const Block& block) const {
-	const Block& leafBlock = region.getBlock(pos);
-	if (&leafBlock != &block)
-		return leafBlock.getLegacyBlock().getColor(region, pos, block);
+	BlockActor* tile = region.getBlockEntity(pos);
+	if (tile != nullptr && tile->isType(BlockActorType::InfestingLeaves)) {
+		int leafColor = region.getBlock(pos).getLegacyBlock().getColor(region, pos, block);
+		return static_cast<BlockActorInfestingLeaves*>(tile)->getLeafColor(leafColor);
+	}
 	return 0xFFFFFF;
 }
 
@@ -90,12 +94,37 @@ void BlockInfestedLeaves::playerDestroy(Player& player, const BlockPos& pos, con
 	BlockLegacy::playerDestroy(player, pos, block);
 }
 
+bool BlockInfestedLeaves::playerWillDestroy(Player& player, const BlockPos& pos, const Block& block) const {
+	BlockSource& region = player.getRegion();
+	if (!region.getLevel().isClientSide()) {
+		Random& rand = region.getLevel().getRandom();
+		const ItemStack& item = player.getSelectedItem();
+		if (&item != nullptr && CrookDatabase::isCrook(item)) {
+			if (rand.nextFloat() < getStringDropChance(region.getBlockEntity(pos))) { // todo config
+				popResource(region, pos, { **VanillaItems::mString, rand.nextInt(2) + 1, 0 }); // todo config
+			}
+		}
+		else if (rand.nextFloat() < getStringDropChance(region.getBlockEntity(pos)) / 4.0f) { // todo config
+			popResource(region, pos, { **VanillaItems::mString, 1, 0 });
+		}
+	}
+	return ActorBlock::playerWillDestroy(player, pos, block);
+}
+
 void BlockInfestedLeaves::spawnResources(BlockSource& region, const BlockPos& pos, const Block& block, float explosionRadius, int bonusLootLevel) const {
 
 }
 
+bool BlockInfestedLeaves::canBeSilkTouched() const {
+	return true;
+}
+
 std::shared_ptr<BlockActor> BlockInfestedLeaves::newBlockEntity(const BlockPos& pos) const {
 	return std::make_shared<BlockActorInfestedLeaves>(pos);
+}
+
+float BlockInfestedLeaves::getStringDropChance(BlockActor* leaf) const {
+	return 1.0f;
 }
 
 BlockInfestedLeavesOld::BlockInfestedLeavesOld(const std::string& nameId, int id) : BlockInfestedLeaves(nameId, id) {

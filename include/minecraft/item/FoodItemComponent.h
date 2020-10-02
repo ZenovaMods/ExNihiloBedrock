@@ -13,10 +13,10 @@ class FoodItemComponent {
 
 	const Item& mOwner;
 	int mNutrition = 0;
-	float mSaturationModifier = 1.0F;
+	float mSaturationModifier = 1.0f;
 	std::string mUsingConvertsTo;
 	OnUseAction mOnUseAction = OnUseAction::NONE;
-	Vec3 mOnUseRange{ 8.0F, 8.0F, 8.0F };
+	Vec3 mOnUseRange{ 8.0f, 8.0f, 8.0f };
 	CooldownType mCoolDownType = CooldownType::TypeNone;
 	int mCooldownTime = 0;
 	bool mCanAlwaysEat = false;

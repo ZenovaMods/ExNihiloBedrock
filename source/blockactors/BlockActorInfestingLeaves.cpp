@@ -11,7 +11,7 @@
 #include "../blocks/ENBlocks.h"
 #include "../blocks/BlockInfestingLeaves.h"
 
-BlockActorInfestingLeaves::BlockActorInfestingLeaves(const BlockPos& pos) : BlockActorInfestedLeaves(BlockActorType::InfestingLeaves, pos, "InfestingLeaves"), progress(0.0F), leafBlock(nullptr) {
+BlockActorInfestingLeaves::BlockActorInfestingLeaves(const BlockPos& pos) : BlockActorInfestedLeaves(BlockActorType::InfestingLeaves, pos, "InfestingLeaves"), progress(0.0f) {
 	mRendererId = BlockActorRendererId::TR_INFESTINGLEAVES_RENDERER;
 }
 
@@ -20,25 +20,10 @@ void BlockActorInfestingLeaves::load(Level& level, const CompoundTag& tag, DataL
 	if (tag.contains("progress")) {
 		progress = tag.getFloat("progress");
 	}
-	if (tag.contains("leafType")) {
-		int leafType = tag.getInt("leafType");
-		if (leafType < enum_cast(OldLeafType::_count))
-			leafBlock = ENBlocks::infestedLeaves->get()->getDefaultState().setState<int>(*VanillaStates::OldLeafType, leafType);
-		else
-			leafBlock = ENBlocks::infestedLeaves2->get()->getDefaultState().setState<int>(*VanillaStates::NewLeafType, leafType - enum_cast(OldLeafType::_count));
-	}
 }
 
 bool BlockActorInfestingLeaves::save(CompoundTag& tag) const {
 	if (BlockActor::save(tag)) {
-		if (leafBlock != nullptr) {
-			int leafType = 0;
-			if (leafBlock->hasState(*VanillaStates::OldLeafType))
-				leafType = leafBlock->getState<int>(*VanillaStates::OldLeafType);
-			else if (leafBlock->hasState(*VanillaStates::NewLeafType))
-				leafType = leafBlock->getState<int>(*VanillaStates::NewLeafType) + enum_cast(OldLeafType::_count);
-			tag.putInt("leafType", leafType);
-		}
 		tag.putFloat("progress", progress);
 		return true;
 	}
@@ -46,14 +31,14 @@ bool BlockActorInfestingLeaves::save(CompoundTag& tag) const {
 }
 
 void BlockActorInfestingLeaves::tick(BlockSource& region) {
-	if (progress < 1.0F) {
-		progress += 1.0F / 600; // todo config
+	if (progress < 1.0f) {
+		progress += 1.0f / 600; // todo config
 		setChanged();
 
-		if (progress > 1.0F) {
-			progress = 1.0F;
+		if (progress > 1.0f) {
+			progress = 1.0f;
 
-			region.setBlock(mPosition, *getLeafBlock(region.getBlock(mPosition)), 3, nullptr);
+			region.setBlock(mPosition, BlockInfestingLeaves::getBlockForLeaf(region.getBlock(mPosition)), 3, nullptr);
 		}
 	}
 		
@@ -77,10 +62,6 @@ void BlockActorInfestingLeaves::_onUpdatePacket(const CompoundTag& data, BlockSo
 	load(region.getLevel(), data, loadHelper);
 }
 
-Color BlockActorInfestingLeaves::getLeafColor(Color& leafColor, BlockSource& region) const {
-	return Color::average(leafColor, Color::WHITE, progress);
-}
-
-const Block* BlockActorInfestingLeaves::getLeafBlock(const Block& infestingLeaf) const {
-	return leafBlock != nullptr ? leafBlock : &BlockInfestingLeaves::getBlockForLeaf(infestingLeaf);
+int BlockActorInfestingLeaves::getLeafColor(int leafColor) const {
+	return Color::average(Color::fromARGB(leafColor), Color::WHITE, progress).toARGB();
 }

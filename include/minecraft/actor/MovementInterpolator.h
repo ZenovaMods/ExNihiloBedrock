@@ -8,7 +8,7 @@ class Actor;
 class MovementInterpolator {
     Vec3 mPos = Vec3::ZERO;
     Vec2 mRot = Vec2::ZERO;
-    float mHeadYaw = 0.0F;
+    float mHeadYaw = 0.0f;
     int mPositionSteps = 0;
     int mRotationSteps = 0;
     int mHeadYawSteps = 0;

@@ -19,7 +19,7 @@ int HammerBase::getMiningLevel(const ItemStackBase& item) {
 }
 
 float HammerBase::getDestroySpeed(const ItemInstance& item, const Block& block) const {
-	return HammerRegistry::registered(&block) ? mSpeed : 1.0F;
+	return HammerRegistry::registered(&block) ? mSpeed : 1.0f;
 }
 
 bool HammerBase::canDestroySpecial(Block const& block) const {

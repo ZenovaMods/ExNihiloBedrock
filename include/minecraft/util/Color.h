@@ -18,7 +18,7 @@ public:
 	float b;
 	float a;
 
-	Color() : r(0.0F), g(0.0F), b(0.0F), a(0.0F) {}
+	Color() : r(0.0f), g(0.0f), b(0.0f), a(0.0f) {}
 	Color(float _r, float _g, float _b, float _a) : r(_r), g(_g), b(_b), a(_a) {}
 
 	static Color fromABGR(int col) {
@@ -58,10 +58,10 @@ public:
 
 	template<typename T>
 	static Color from255Range(T r, T g, T b, T a) {
-		return { r / 255.0F, g / 255.0F, b / 255.0F, a / 255.0F };
+		return { r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f };
 	}
 
 };
 
-inline const Color Color::NIL{ 0.0F, 0.0F, 0.0F, 0.0F };
-inline const Color Color::WHITE{ 1.0F, 1.0F, 1.0F, 1.0F };
+inline const Color Color::NIL{ 0.0f, 0.0f, 0.0f, 0.0f };
+inline const Color Color::WHITE{ 1.0f, 1.0f, 1.0f, 1.0f };

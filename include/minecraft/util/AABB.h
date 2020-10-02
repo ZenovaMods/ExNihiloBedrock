@@ -10,5 +10,5 @@ private:
     bool empty;
 
 public:
-    AABB() : min(0.0F), max(1.0F), empty(false) {};
+    AABB() : min(0.0f), max(1.0f), empty(false) {};
 };

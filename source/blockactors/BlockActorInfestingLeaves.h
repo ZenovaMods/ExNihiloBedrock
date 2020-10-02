@@ -6,7 +6,6 @@
 class BlockActorInfestingLeaves : public BlockActorInfestedLeaves {
 protected:
 	float progress;
-	const Block* leafBlock;
 
 public:
 	BlockActorInfestingLeaves(const BlockPos&);
@@ -17,7 +16,6 @@ public:
 	virtual void onChanged(BlockSource&);
 	virtual void _onUpdatePacket(const CompoundTag&, BlockSource&);
 
-	Color getLeafColor(Color&, BlockSource&) const;
+	int getLeafColor(int) const;
 	float getProgress() const { return progress; }
-	const Block* getLeafBlock(const Block&) const;
 };

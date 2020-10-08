@@ -4,7 +4,7 @@
 
 BlockBaseFalling::BlockBaseFalling(const std::string& name, int id) : HeavyBlock(name, id, Material::getMaterial(MaterialType::Sand)) {
 	setCategory(CreativeItemCategory::DECORATIONS);
-	setDestroyTime(0.7F);
+	setDestroyTime(0.7f);
 }
 
 Color BlockBaseFalling::getDustColor(const Block& block) const {

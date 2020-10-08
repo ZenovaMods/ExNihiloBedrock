@@ -34,6 +34,9 @@ public:
     int getColor(BlockSource&, const BlockPos&) const;
     int getColorAtPos(BlockSource&, const BlockPos&) const;
     BlockRenderLayer getRenderLayer(BlockSource&, const BlockPos&) const;
+    bool isSeasonTinted(BlockSource&, const BlockPos&) const;
+    bool canHaveExtraData() const;
+    int getVariant() const;
 
     const BlockRuntimeId& getRuntimeId() const {
         return mRuntimeId;

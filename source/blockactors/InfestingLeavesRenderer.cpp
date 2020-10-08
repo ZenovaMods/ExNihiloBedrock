@@ -36,11 +36,10 @@ void InfestingLeavesRenderer::render(BaseActorRenderContext& context, BlockActor
 }
 
 mce::Mesh InfestingLeavesRenderer::getBlockMesh(BlockTessellator& blockTessellator, Tessellator& tessellator, const Block& block, BlockPos& pos, BlockRenderLayer renderLayer, const BlockActorInfestingLeaves& leafActor) {
-	blockTessellator.mBool2 = false;
+	blockTessellator.mUseNormals = false;
 	blockTessellator.mBool4 = false;
 	blockTessellator.mBool5 = false;
-	blockTessellator.mHasBounds = true;
-	blockTessellator.mBounds = block.getVisualShape(AABB(), false);
+	blockTessellator.setCurrentShape(block.getVisualShape(AABB(), false));
 	if (&blockTessellator.mRegion != nullptr)
 		blockTessellator.mCache.reset(blockTessellator.mRegion, pos);
 	blockTessellator.mRenderLayer = renderLayer;
@@ -49,6 +48,6 @@ mce::Mesh InfestingLeavesRenderer::getBlockMesh(BlockTessellator& blockTessellat
 	blockTessellator.tessellateInWorld(tessellator, block, pos, nullptr);
 	blockTessellator.mBool4 = false;
 	blockTessellator.mBool5 = true;
-	blockTessellator.mBool2 = false;
+	blockTessellator.mUseNormals = false;
 	return tessellator.endOverride("Untagged Tessellator Mesh Override");
 }

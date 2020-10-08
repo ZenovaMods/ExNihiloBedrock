@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_headers.py
-; Generated on Fri Oct 02 2020 03:36:18 UTC
+; Generated on Thu Oct 08 2020 03:05:56 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -72,6 +72,7 @@ extern _toUpper_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_
 extern _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr
 extern _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr
 extern _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr
+extern _getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr
 extern _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr
 extern _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr
 extern _shutdown_VanillaWorldSystems__YAXXZ_ptr
@@ -163,8 +164,21 @@ extern _getSeasonsColor_BlockInfestingLeaves__QEBA_AVColor__AEAVBlockSource__AEB
 extern _getBirchColor_FoliageColor__SAHMM_Z_ptr
 extern _getEvergreenColor_FoliageColor__SAHMM_Z_ptr
 extern _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr
+extern _tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr
+extern _tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr
+extern _tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr
+extern _tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr
+extern _tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr
+extern _tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr
+extern _tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr
+extern _tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr
+extern _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr
 extern _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr
+extern _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr
+extern _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr
+extern _reset_BlockTessellator__QEAAXXZ_ptr
 extern _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr
+extern _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr
 extern __1TexturePtr_mce__QEAA_XZ_ptr
 extern __1MaterialPtr_mce__QEAA_XZ_ptr
 extern __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr
@@ -174,9 +188,14 @@ extern _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr
 extern _beginOverride_Tessellator__QEAAXXZ_ptr
 extern _color_Tessellator__QEAAXAEBVColor___Z_ptr
 extern _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr
+extern __tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr
 extern _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr
 extern __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr
 extern __1BlockActorDataPacket__QEAA_XZ_ptr
+extern _brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr
+extern __0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr
+extern _calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr
+extern __0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr
 extern Item_vtable
 extern DiggerItem_vtable
 extern BlockPlanterItem_vtable
@@ -482,6 +501,10 @@ global ?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V
 global ?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z
 ?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z:
 	mov rax, [rel _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr]
+	jmp rax
+global ?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z
+?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z:
+	mov rax, [rel _getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr]
 	jmp rax
 global ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
 ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z:
@@ -847,13 +870,65 @@ global ?tessellateInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AE
 ?tessellateInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@PEAX@Z:
 	mov rax, [rel _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr]
 	jmp rax
+global ?tessellateExtraDataInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z
+?tessellateExtraDataInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z:
+	mov rax, [rel _tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr]
+	jmp rax
+global ?tessellateBlockInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z
+?tessellateBlockInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z:
+	mov rax, [rel _tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr]
+	jmp rax
+global ?tessellateBlockInWorldWithAmbienceOcclusion@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@VBlockPos@@AEBVColor@@PEAVBlockOccluder@@H@Z
+?tessellateBlockInWorldWithAmbienceOcclusion@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@VBlockPos@@AEBVColor@@PEAVBlockOccluder@@H@Z:
+	mov rax, [rel _tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr]
+	jmp rax
+global ?tessellateFaceUp@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
+?tessellateFaceUp@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
+	mov rax, [rel _tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
+	jmp rax
+global ?tessellateFaceDown@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
+?tessellateFaceDown@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
+	mov rax, [rel _tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
+	jmp rax
+global ?tessellateNorth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
+?tessellateNorth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
+	mov rax, [rel _tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
+	jmp rax
+global ?tessellateSouth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
+?tessellateSouth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
+	mov rax, [rel _tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
+	jmp rax
+global ?tessellateEast@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
+?tessellateEast@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
+	mov rax, [rel _tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
+	jmp rax
+global ?tessellateWest@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
+?tessellateWest@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
+	mov rax, [rel _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
+	jmp rax
 global ?getMeshForBlockInWorld@BlockTessellator@@QEAAAEAVMesh@mce@@AEAVTessellator@@AEBVBlock@@AEAVBlockPos@@W4BlockRenderLayer@@PEBX_N@Z
 ?getMeshForBlockInWorld@BlockTessellator@@QEAAAEAVMesh@mce@@AEAVTessellator@@AEBVBlock@@AEAVBlockPos@@W4BlockRenderLayer@@PEBX_N@Z:
 	mov rax, [rel _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr]
 	jmp rax
+global ?getLightColor@BlockTessellator@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z
+?getLightColor@BlockTessellator@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z:
+	mov rax, [rel _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr]
+	jmp rax
+global ?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ
+?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ:
+	mov rax, [rel _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr]
+	jmp rax
+global ?reset@BlockTessellator@@QEAAXXZ
+?reset@BlockTessellator@@QEAAXXZ:
+	mov rax, [rel _reset_BlockTessellator__QEAAXXZ_ptr]
+	jmp rax
 global ?reset@BlockTessellatorCache@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
 ?reset@BlockTessellatorCache@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z:
 	mov rax, [rel _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr]
+	jmp rax
+global ?getLightColor@BlockTessellatorCache@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z
+?getLightColor@BlockTessellatorCache@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z:
+	mov rax, [rel _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr]
 	jmp rax
 global ??1TexturePtr@mce@@QEAA@XZ
 ??1TexturePtr@mce@@QEAA@XZ:
@@ -891,6 +966,10 @@ global ?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$
 ?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z:
 	mov rax, [rel _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
 	jmp rax
+global ?_tex@Tessellator@@QEAA_NAEBVVec2@@H@Z
+?_tex@Tessellator@@QEAA_NAEBVVec2@@H@Z:
+	mov rax, [rel __tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr]
+	jmp rax
 global ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ
 ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ:
 	mov rax, [rel _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr]
@@ -902,6 +981,22 @@ global ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z
 global ??1BlockActorDataPacket@@QEAA@XZ
 ??1BlockActorDataPacket@@QEAA@XZ:
 	mov rax, [rel __1BlockActorDataPacket__QEAA_XZ_ptr]
+	jmp rax
+global ?brightnessToUV@LightTexture@@SA?AVVec2@@UBrightnessPair@@@Z
+?brightnessToUV@LightTexture@@SA?AVVec2@@UBrightnessPair@@@Z:
+	mov rax, [rel _brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr]
+	jmp rax
+global ??0AmbientOcclusionCalculator@@QEAA@AEBVBlockPos@@AEBVBlock@@AEAVBlockTessellatorCache@@@Z
+??0AmbientOcclusionCalculator@@QEAA@AEBVBlockPos@@AEBVBlock@@AEAVBlockTessellatorCache@@@Z:
+	mov rax, [rel __0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr]
+	jmp rax
+global ?calculate@AmbientOcclusionCalculator@@QEAAXE@Z
+?calculate@AmbientOcclusionCalculator@@QEAAXE@Z:
+	mov rax, [rel _calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr]
+	jmp rax
+global ??0BlockOccluder@@QEAA@AEAVBlockTessellatorCache@@AEBVBlock@@AEBVBlockPos@@AEBVAABB@@AEBV?$vector@EV?$allocator@E@std@@@std@@_N@Z
+??0BlockOccluder@@QEAA@AEAVBlockTessellatorCache@@AEBVBlock@@AEBVBlockPos@@AEBVAABB@@AEBV?$vector@EV?$allocator@E@std@@@std@@_N@Z:
+	mov rax, [rel __0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr]
 	jmp rax
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:

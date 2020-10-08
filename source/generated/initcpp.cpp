@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Fri Oct 02 2020 03:36:18 UTC
+// Generated on Thu Oct 08 2020 03:05:56 UTC
 
 #include <Zenova/Hook.h>
 #include <Zenova/Minecraft.h>
@@ -147,6 +147,7 @@ void* _toUpper_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2
 void* _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 void* _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr;
 void* _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr;
+void* _getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr;
 void* _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr;
 void* _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr;
 void* _shutdown_VanillaWorldSystems__YAXXZ_ptr;
@@ -238,8 +239,21 @@ void* _getSeasonsColor_BlockInfestingLeaves__QEBA_AVColor__AEAVBlockSource__AEBV
 void* _getBirchColor_FoliageColor__SAHMM_Z_ptr;
 void* _getEvergreenColor_FoliageColor__SAHMM_Z_ptr;
 void* _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr;
+void* _tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr;
+void* _tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr;
+void* _tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr;
+void* _tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+void* _tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+void* _tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+void* _tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+void* _tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+void* _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
 void* _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr;
+void* _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
+void* _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr;
+void* _reset_BlockTessellator__QEAAXXZ_ptr;
 void* _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr;
+void* _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
 void* __1TexturePtr_mce__QEAA_XZ_ptr;
 void* __1MaterialPtr_mce__QEAA_XZ_ptr;
 void* __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr;
@@ -249,9 +263,14 @@ void* _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr;
 void* _beginOverride_Tessellator__QEAAXXZ_ptr;
 void* _color_Tessellator__QEAAXAEBVColor___Z_ptr;
 void* _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
+void* __tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr;
 void* _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr;
 void* __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr;
 void* __1BlockActorDataPacket__QEAA_XZ_ptr;
+void* _brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr;
+void* __0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr;
+void* _calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr;
+void* __0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr;
 void* Item_vtable;
 void* DiggerItem_vtable;
 void* BlockPlanterItem_vtable;
@@ -348,6 +367,7 @@ void InitBedrockPointers() {
 	_u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0E53800));
 	_registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x099C240));
 	_registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x099CA10));
+	_getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0999410));
 	_getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x1892CB0));
 	_init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x19151A0));
 	_shutdown_VanillaWorldSystems__YAXXZ_ptr = reinterpret_cast<void*>(SlideAddress(0x1B53370));
@@ -439,8 +459,21 @@ void InitBedrockPointers() {
 	_getBirchColor_FoliageColor__SAHMM_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x17CBB90));
 	_getEvergreenColor_FoliageColor__SAHMM_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x17CBAA0));
 	_tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09ACEF0));
+	_tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09AE700));
+	_tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09ABEF0));
+	_tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09C06C0));
+	_tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09C7440));
+	_tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09C6570));
+	_tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09C8310));
+	_tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09C91E0));
+	_tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09CAF90));
+	_tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09CA0C0));
 	_getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09CE5D0));
+	_getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09E70F0));
+	_getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr = reinterpret_cast<void*>(SlideAddress(0x09ABBE0));
+	_reset_BlockTessellator__QEAAXXZ_ptr = reinterpret_cast<void*>(SlideAddress(0x09AD9E0));
 	_reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09F7830));
+	_getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09F7AD0));
 	__1TexturePtr_mce__QEAA_XZ_ptr = reinterpret_cast<void*>(SlideAddress(0x0DDF360));
 	__1MaterialPtr_mce__QEAA_XZ_ptr = reinterpret_cast<void*>(SlideAddress(0x00D0140));
 	__0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0A085A0));
@@ -450,9 +483,14 @@ void InitBedrockPointers() {
 	_beginOverride_Tessellator__QEAAXXZ_ptr = reinterpret_cast<void*>(SlideAddress(0x0AB0B60));
 	_color_Tessellator__QEAAXAEBVColor___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0AB0BE0));
 	_end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0AB1710));
+	__tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0AB0AA0));
 	_getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr = reinterpret_cast<void*>(SlideAddress(0x0DDF4F0));
 	__0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x100D890));
 	__1BlockActorDataPacket__QEAA_XZ_ptr = reinterpret_cast<void*>(SlideAddress(0x0EAB380));
+	_brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0A97B60));
+	__0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0995EB0));
+	_calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x0995FA0));
+	__0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09A97E0));
 	Item_vtable = reinterpret_cast<void*>(SlideAddress(0x2B766C0));
 	DiggerItem_vtable = reinterpret_cast<void*>(SlideAddress(0x2B72240));
 	BlockPlanterItem_vtable = reinterpret_cast<void*>(SlideAddress(0x2B6F570));

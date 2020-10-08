@@ -40,16 +40,15 @@
     "brightness_gamma": 0.55,
     "sound": "gravel"
   },
-  "blockInfestedLeaves": {
-    "isotropic": {
-      "up": true,
-      "down": true
-    },
-    "textures": "leaves",
-    "brightness_gamma": 0.80,
-    "sound": "grass"
+  "blockBarrel0": {
+    "textures": "planks",
+    "sound": "wood"
   },
-  "blockInfestingLeaves": {
+  "blockBarrel1": {
+    "textures": "stone",
+    "sound": "stone"
+  },
+  "blockInfestedLeaves": {
     "isotropic": {
       "up": true,
       "down": true
@@ -64,6 +63,24 @@
       "down": true
     },
     "textures": "leaves2",
+    "brightness_gamma": 0.80,
+    "sound": "grass"
+  },
+  "blockInfestingLeaves": {
+    "isotropic": {
+      "up": true,
+      "down": true
+    },
+    "textures": "leaves",
+    "brightness_gamma": 0.80,
+    "sound": "grass"
+  },
+  "blockInfestingLeaves2": {
+    "isotropic": {
+      "up": true,
+      "down": true
+    },
+    "textures": "leaves",
     "brightness_gamma": 0.80,
     "sound": "grass"
   },

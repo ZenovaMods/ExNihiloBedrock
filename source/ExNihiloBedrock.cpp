@@ -16,6 +16,7 @@
 #include "minecraft/client/BlockActorRenderDispatcher.h"
 #include "minecraft/client/BlockGraphics.h"
 #include "minecraft/client/BlockTessellator.h"
+#include "minecraft/client/Tessellator.h"
 #include "minecraft/actor/ActorRegistry.h"
 #include "minecraft/actor/ActorType.h"
 #include "minecraft/actor/ProjectileFactory.h"
@@ -24,6 +25,7 @@
 #include "items/UniversalBucket.h"
 #include "blocks/ENBlocks.h"
 #include "blocks/BlockRegistry.h"
+#include "blocks/BlockTessellatorRegistry.h"
 #include "blockactors/BlockActorRegistry.h"
 #include "blockactors/InfestingLeavesREnderer.h"
 #include "entities/ENEntities.h"
@@ -101,7 +103,9 @@ void initBlockEntityRenderers(BlockActorRenderDispatcher* self, GeometryGroup& g
 
 bool (*_tessellateInWorld)(BlockTessellator*, Tessellator&, const Block&, const BlockPos&, void*);
 bool tessellateInWorld(BlockTessellator* self, Tessellator& tessellator, const Block& block, const BlockPos& pos, void* idk) {
-	return _tessellateInWorld(self, tessellator, block, pos, idk);
+	if (!Zenova::BlockTessellatorRegistry::tessellateInWorld(self, tessellator, block, pos))
+		return _tessellateInWorld(self, tessellator, block, pos, idk);
+	return true;
 }
 
 std::shared_ptr<BlockActor>(*_createBlockEntity)(BlockActorType, const BlockPos&, const BlockLegacy&);

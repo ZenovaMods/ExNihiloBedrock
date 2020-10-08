@@ -1571,6 +1571,10 @@
       "address": "0x099CA10"
     },
     {
+      "name": "?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z",
+      "address": "0x0999410"
+    },
+    {
       "name": "?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z",
       "address": "0x1892CB0"
     },
@@ -1935,12 +1939,64 @@
       "address": "0x09ACEF0"
     },
     {
+      "name": "?tessellateExtraDataInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z",
+      "address": "0x09AE700"
+    },
+    {
+      "name": "?tessellateBlockInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z",
+      "address": "0x09ABEF0"
+    },
+    {
+      "name": "?tessellateBlockInWorldWithAmbienceOcclusion@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@VBlockPos@@AEBVColor@@PEAVBlockOccluder@@H@Z",
+      "address": "0x09C06C0"
+    },
+    {
+      "name": "?tessellateFaceUp@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z",
+      "address": "0x09C7440"
+    },
+    {
+      "name": "?tessellateFaceDown@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z",
+      "address": "0x09C6570"
+    },
+    {
+      "name": "?tessellateNorth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z",
+      "address": "0x09C8310"
+    },
+    {
+      "name": "?tessellateSouth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z",
+      "address": "0x09C91E0"
+    },
+    {
+      "name": "?tessellateEast@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z",
+      "address": "0x09CAF90"
+    },
+    {
+      "name": "?tessellateWest@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z",
+      "address": "0x09CA0C0"
+    },
+    {
       "name": "?getMeshForBlockInWorld@BlockTessellator@@QEAAAEAVMesh@mce@@AEAVTessellator@@AEBVBlock@@AEAVBlockPos@@W4BlockRenderLayer@@PEBX_N@Z",
       "address": "0x09CE5D0"
     },
     {
+      "name": "?getLightColor@BlockTessellator@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z",
+      "address": "0x09E70F0"
+    },
+    {
+      "name": "?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ",
+      "address": "0x09ABBE0"
+    },
+    {
+      "name": "?reset@BlockTessellator@@QEAAXXZ",
+      "address": "0x09AD9E0"
+    },
+    {
       "name": "?reset@BlockTessellatorCache@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z",
       "address": "0x09F7830"
+    },
+    {
+      "name": "?getLightColor@BlockTessellatorCache@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z",
+      "address": "0x09F7AD0"
     },
     {
       "name": "??1TexturePtr@mce@@QEAA@XZ",
@@ -1979,6 +2035,10 @@
       "address": "0x0AB1710"
     },
     {
+      "name": "?_tex@Tessellator@@QEAA_NAEBVVec2@@H@Z",
+      "address": "0x0AB0AA0"
+    },
+    {
       "name": "?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ",
       "address": "0x0DDF4F0"
     },
@@ -1989,6 +2049,22 @@
     {
       "name": "??1BlockActorDataPacket@@QEAA@XZ",
       "address": "0x0EAB380"
+    },
+    {
+      "name": "?brightnessToUV@LightTexture@@SA?AVVec2@@UBrightnessPair@@@Z",
+      "address": "0x0A97B60"
+    },
+    {
+      "name": "??0AmbientOcclusionCalculator@@QEAA@AEBVBlockPos@@AEBVBlock@@AEAVBlockTessellatorCache@@@Z",
+      "address": "0x0995EB0"
+    },
+    {
+      "name": "?calculate@AmbientOcclusionCalculator@@QEAAXE@Z",
+      "address": "0x0995FA0"
+    },
+    {
+      "name": "??0BlockOccluder@@QEAA@AEAVBlockTessellatorCache@@AEBVBlock@@AEBVBlockPos@@AEBVAABB@@AEBV?$vector@EV?$allocator@E@std@@@std@@_N@Z",
+      "address": "0x09A97E0"
     }
   ]
 }

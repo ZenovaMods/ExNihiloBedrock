@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Fri Oct 02 2020 03:36:18 UTC
+// Generated on Thu Oct 08 2020 03:05:56 UTC
 
 #pragma once
 
@@ -74,6 +74,7 @@ extern "C" {
 	extern void* _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
 	extern void* _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr;
 	extern void* _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr;
+	extern void* _getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr;
 	extern void* _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr;
 	extern void* _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr;
 	extern void* _shutdown_VanillaWorldSystems__YAXXZ_ptr;
@@ -165,8 +166,21 @@ extern "C" {
 	extern void* _getBirchColor_FoliageColor__SAHMM_Z_ptr;
 	extern void* _getEvergreenColor_FoliageColor__SAHMM_Z_ptr;
 	extern void* _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr;
+	extern void* _tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr;
+	extern void* _tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr;
+	extern void* _tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr;
+	extern void* _tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+	extern void* _tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+	extern void* _tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+	extern void* _tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+	extern void* _tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
+	extern void* _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr;
 	extern void* _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr;
+	extern void* _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
+	extern void* _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr;
+	extern void* _reset_BlockTessellator__QEAAXXZ_ptr;
 	extern void* _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr;
+	extern void* _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
 	extern void* __1TexturePtr_mce__QEAA_XZ_ptr;
 	extern void* __1MaterialPtr_mce__QEAA_XZ_ptr;
 	extern void* __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr;
@@ -176,9 +190,14 @@ extern "C" {
 	extern void* _beginOverride_Tessellator__QEAAXXZ_ptr;
 	extern void* _color_Tessellator__QEAAXAEBVColor___Z_ptr;
 	extern void* _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr;
+	extern void* __tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr;
 	extern void* _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr;
 	extern void* __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr;
 	extern void* __1BlockActorDataPacket__QEAA_XZ_ptr;
+	extern void* _brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr;
+	extern void* __0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr;
+	extern void* _calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr;
+	extern void* __0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr;
 	extern void* Item_vtable;
 	extern void* DiggerItem_vtable;
 	extern void* BlockPlanterItem_vtable;

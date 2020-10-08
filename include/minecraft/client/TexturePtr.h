@@ -3,6 +3,8 @@
 #include <memory>
 
 #include "ResourceLocation.h"
+#include "../util/Vec2.h"
+#include "../CommonTypes.h"
 
 class BedrockTextureData {
 	char filler[0x68];
@@ -34,4 +36,6 @@ public:
 	mce::ClientTexture* mClientTexture;
 
 	mce::ClientTexture* getClientTexture() const { return mClientTexture; }
+
+	static Vec2 brightnessToUV(BrightnessPair);
 };

@@ -35,19 +35,24 @@ ItemInstance Block::getSilkTouchItemInstance() const {
 void Block::playerDestroy(Player& player, const BlockPos& pos) const {
     return mLegacyBlock->playerDestroy(player, pos, *this);
 }
-
 const AABB& Block::getVisualShape(AABB& aabb, bool isClipping) const {
     return mLegacyBlock->getVisualShape(*this, aabb, isClipping);
 }
-
 int Block::getColor(BlockSource& region, const BlockPos& pos) const {
 	return mLegacyBlock->getColor(region, pos, *this);
 }
-
 int Block::getColorAtPos(BlockSource& region, const BlockPos& pos) const {
     return mLegacyBlock->getColorAtPos(region, pos);
 }
-
 BlockRenderLayer Block::getRenderLayer(BlockSource& region, const BlockPos& pos) const {
     return mLegacyBlock->getRenderLayer(*this, region, pos);
+}
+bool Block::isSeasonTinted(BlockSource& region, const BlockPos& pos) const {
+    return mLegacyBlock->isSeasonTinted(*this, region, pos);
+}
+bool Block::canHaveExtraData() const {
+    return mLegacyBlock->canHaveExtraData();
+}
+int Block::getVariant() const {
+    return mLegacyBlock->getVariant(*this);
 }

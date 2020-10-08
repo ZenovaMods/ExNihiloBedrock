@@ -59,8 +59,8 @@ void ExNihiloDefaultRecipes::registerCompostRecipeDefaults() {
 }
 
 void ExNihiloDefaultRecipes::registerCrookRecipeDefaults() {
-	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves->get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1F, 0.0f);
-	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves2->get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1F, 0.0f);
+	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves->get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1f, 0.0f);
+	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves2->get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1f, 0.0f);
 }
 
 void ExNihiloDefaultRecipes::registerCrucibleRecipeDefaults() {

@@ -6,14 +6,21 @@
 
 class Facing {
 public:
+	static const FacingID DOWN = 0;
+	static const FacingID UP = 1;
+	static const FacingID NORTH = 2;
+	static const FacingID SOUTH = 3;
+	static const FacingID WEST = 4;
+	static const FacingID EAST = 5;
+
 	static const BlockPos DIRECTION[6];
-	static const std::array<std::vector<unsigned char>, 6> ALL_EXCEPT;
+	static const std::array<std::vector<FacingID>, 6> ALL_EXCEPT;
 	static const int STEP_X[6];
 	static const int STEP_Y[6];
 	static const int STEP_Z[6];
 };
 
-inline const std::array<std::vector<unsigned char>, 6> Facing::ALL_EXCEPT = { {
+inline const std::array<std::vector<FacingID>, 6> Facing::ALL_EXCEPT = { {
 	{ 1, 2, 3, 4, 5 },
 	{ 0, 2, 3, 4, 5 },
 	{ 1, 0, 3, 4, 5 },

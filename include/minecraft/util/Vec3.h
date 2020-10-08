@@ -35,6 +35,14 @@ public:
 		return stm.str();
 	}
 
+	bool operator==(const Vec3& rhs) const {
+		return x == rhs.x && y == rhs.y && z == rhs.z;
+	}
+
+	bool operator!=(const Vec3& rhs) const {
+		return !(*this == rhs);
+	}
+
 	static Vec3 clamp(Vec3 const&, Vec3 const&, Vec3 const&);
 	static Vec3 clampAlongNormal(Vec3 const&, Vec3 const&, Vec3 const&, Vec3 const&, Vec3&);
 

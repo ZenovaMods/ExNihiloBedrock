@@ -389,6 +389,9 @@ public:
         mLightBlock = solid ? Brightness::MAX : Brightness::MIN;
         mPushesOutItems = solid;
     }
+    void setIsInteraction(bool canUse) {
+        mIsInteraction = canUse;
+    }
     void setRandomTickingExtraLayer(bool tick) {
         mShouldRandomTickExtraLayer = tick;
     }

@@ -4,100 +4,106 @@
 #include <string>
 #include <memory>
 
+#include "BlockGeometry.h"
+#include "TextureAtlasItem.h"
+#include "BlockShape.h"
+#include "../util/Color.h"
+#include "../block/Block.h"
+
+class Block;
 class BlockPalette;
 namespace Json { class Value; }
 
-enum class BlockShape : int {
-    INVISIBLE = -1,
-    BLOCK,
-    CROSS_TEXTURE,
-    TORCH,
-    FIRE,
-    WATER,
-    RED_DUST,
-    ROWS,
-    DOOR,
-    LADDER,
-    RAIL,
-    STAIRS,
-    FENCE,
-    LEVER,
-    CACTUS,
-    BED,
-    DIODE,
-    IRON_FENCE = 18,
-    STEM,
-    VINE,
-    FENCE_GATE,
-    CHEST,
-    LILYPAD,
-    BREWING_STAND = 25,
-    PORTAL_FRAME,
-    COCOA = 28,
-    TREE = 31,
-    WALL,
-    DOUBLE_PLANT = 40,
-    FLOWER_POT = 42,
-    ANVIL,
-    DRAGON_EGG,
-    STRUCTURE_VOID = 48,
-    BLOCK_HALF = 67,
-    TOP_SNOW,
-    TRIPWIRE,
-    TRIPWIRE_HOOK,
-    CAULDRON,
-    REPEATER,
-    COMPARATOR,
-    HOPPER,
-    SLIME_BLOCK,
-    PISTON,
-    BEACON,
-    CHORUS_PLANT,
-    CHORUS_FLOWER,
-    END_PORTAL,
-    END_ROD,
-    END_GATEWAY,
-    SKULL,
-    FACING_BLOCK,
-    COMMAND_BLOCK,
-    TERRACOTTA,
-    DOUBLE_SIDE_FENCE,
-    ITEM_FRAME,
-    SHULKER_BOX,
-    DOUBLESIDED_CROSS_TEXTURE,
-    DOUBLESIDED_DOUBLE_PLANT,
-    DOUBLESIDED_ROWS,
-    ELEMENT_BLOCK,
-    CHEMISTRY_TABLE,
-    CORAL_FAN = 96,
-    SEAGRASS,
-    KELP,
-    TRAPDOOR,
-    SEA_PICKLE,
-    CONDUIT,
-    TURTLE_EGG,
-    BUBBLE_COLUMN = 105,
-    BARRIER,
-    SIGN,
-    BAMBOO,
-    BAMBOO_SAPLING,
-    SCAFFOLDING,
-    GRINDSTONE,
-    BELL,
-    LANTERN,
-    CAMPFIRE,
-    LECTERN,
-    SWEET_BERRY_BUSH,
-    CARTOGRAPHY_TABLE,
-    COMPOSTER,
-    STONE_CUTTER,
-    HONEY_BLOCK
+enum class BlockSoundType : int {
+    Normal,
+    Gravel,
+    Wood,
+    Grass,
+    Metal,
+    Stone,
+    Cloth,
+    Glass,
+    Sand,
+    Snow,
+    Ladder,
+    Anvil,
+    Slime,
+    Silent,
+    ItemFrame,
+    TurtleEgg,
+    Bamboo,
+    BambooSapling,
+    Lantern,
+    Scaffolding,
+    SweetBerryBush,
+    Default,
+    Undefined
+};
+
+struct TextureItem {
+    std::string defaultName;
+    std::string carriedName;
+    TextureAtlasItem defaultItem;
+    TextureAtlasItem carriedItem;
 };
 
 class BlockGraphics {
 public:
-    static std::vector<std::unique_ptr<BlockGraphics>>* mOwnedBlocks;
+    struct ModelItem {
+        std::string name;
+        const BlockGeometry::TessellatedModel* model;
+        std::vector<unsigned long> textureIndices;
+    };
+    struct ConstructorToken {};
 
+    static std::vector<std::unique_ptr<BlockGraphics>>* mOwnedBlocks;
+    IsotropicFaceData mIsotropicFaceData;
+protected:
+    const Block* mBlock;
+    BlockRenderLayer mRenderLayer;
+    BlockShape mBlockShape;
+    bool mAnimatedTexture;
+    float mBrightnessGamma;
+    Color mMapColor;
+    bool mFancy;
+    bool mAllowSame;
+private:
+    BlockSoundType mSoundType;
+    AABB mVisualShape;
+    std::vector<TextureItem> mTextureItems;
+    size_t mIconTextureIndex;
+    std::vector<std::vector<BlockGeometry::Model const*>> mBlockModelVariants;
+    std::vector<std::vector<ModelItem>> mTessellatedModelParts;
+
+public:
     static BlockGraphics& registerBlockGraphics(std::vector<Json::Value>&, const std::string&, BlockShape);
     static void registerLooseBlockGraphics(std::vector<Json::Value>&, const BlockPalette&);
+    static const BlockGraphics* getForBlock(const Block&);
+
+    virtual ~BlockGraphics();
+
+    const TextureUVCoordinateSet& getTexture(size_t textureSlot, int blockVariant) const {
+        return getTextureDefaultVariations(textureSlot, blockVariant).front();
+    }
+
+    const TextureUVCoordinateSet& getTexture(size_t textureSlot, const Block& block) const {
+        return getTexture(textureSlot, block.getVariant());
+    }
+
+    const TextureUVCoordinateSet& getTexture(const BlockPos& pos, size_t textureSlot, int blockVariant) const;
+
+    const TextureUVCoordinateSet& getTexture(const BlockPos& pos, size_t textureSlot, const Block& block) const {
+        return getTexture(pos, textureSlot, block.getVariant());
+    }
+
+    const std::vector<TextureUVCoordinateSet>& getTextureDefaultVariations(size_t textureSlot, int blockVariant) const {
+        textureSlot = std::min<size_t>(textureSlot, mTextureItems.size() - 1);
+        if (blockVariant < 0 || blockVariant >= mTextureItems[textureSlot].defaultItem.uvCount())
+            blockVariant = 0;
+        return mTextureItems[textureSlot].defaultItem[blockVariant];
+    }
+
+    BlockShape getBlockShape() const {
+        return mBlockShape;
+    }
 };

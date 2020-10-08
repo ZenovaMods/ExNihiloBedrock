@@ -22,11 +22,11 @@ BlockInfestedLeaves::BlockInfestedLeaves(const std::string& nameId, int id) : Ac
 	setSolid(false);
 	setPushesOutItems(true);
 	mRenderLayer = BlockRenderLayer::RENDERLAYER_SEASONS_OPTIONAL_ALPHATEST;
-	mBrightnessGamma = 0.8F;
+	mBrightnessGamma = 0.8f;
 	mBlockEntityType = BlockActorType::InfestedLeaves;
 	addProperty(BlockProperty::Leaf);
 	addProperty(BlockProperty::BreakOnPush);
-	setDestroyTime(0.2F);
+	setDestroyTime(0.2f);
 	setLightBlock(1);
 	setCategory(CreativeItemCategory::DECORATIONS);
 }

@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Sat Oct 10 2020 06:16:05 UTC
+// Generated on Sat Oct 10 2020 16:52:19 UTC
 
 #pragma once
 
@@ -174,6 +174,7 @@ extern "C" {
 	extern void* _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr;
 	extern void* _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
 	extern void* _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr;
+	extern void* _canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr;
 	extern void* _reset_BlockTessellator__QEAAXXZ_ptr;
 	extern void* _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr;
 	extern void* _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;

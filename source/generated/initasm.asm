@@ -1,5 +1,5 @@
 ; This file was automatically generated using tools/process_headers.py
-; Generated on Sat Oct 10 2020 06:16:05 UTC
+; Generated on Sat Oct 10 2020 16:52:19 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -172,6 +172,7 @@ extern _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVe
 extern _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr
 extern _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr
 extern _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr
+extern _canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr
 extern _reset_BlockTessellator__QEAAXXZ_ptr
 extern _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr
 extern _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr
@@ -907,6 +908,10 @@ global ?getLightColor@BlockTessellator@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z
 global ?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ
 ?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ:
 	mov rax, [rel _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr]
+	jmp rax
+global ?canRender@BlockTessellator@@QEAA_NW4BlockShape@@@Z
+?canRender@BlockTessellator@@QEAA_NW4BlockShape@@@Z:
+	mov rax, [rel _canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr]
 	jmp rax
 global ?reset@BlockTessellator@@QEAAXXZ
 ?reset@BlockTessellator@@QEAAXXZ:

@@ -1980,6 +1980,10 @@
       "address": "0x09ABBE0"
     },
     {
+      "name": "?canRender@BlockTessellator@@QEAA_NW4BlockShape@@@Z",
+      "address": "0x09CEA80"
+    },
+    {
       "name": "?reset@BlockTessellator@@QEAAXXZ",
       "address": "0x09AD9E0"
     },

@@ -1,6 +1,7 @@
 #include "BlockBarrelRenderer.h"
 
 bool BlockBarrelRenderer::renderInWorld(BlockTessellator* blockTessellator, Tessellator& tessellator, const Block& block, const BlockPos& pos) {
+	bool help = blockTessellator->canRender(BlockShape::BARREL);
 	BlockOccluder* bo;
 
 	blockTessellator->setCurrentShape({ 0.0625f, 0.0625f, 0.0625f, 0.9375f, 1.0f, 0.125f });

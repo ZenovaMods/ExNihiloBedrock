@@ -8,9 +8,14 @@
 
 namespace Zenova {
 	class BlockRenderer {
+	private:
+		bool renderInGui;
 	public:
-		BlockRenderer() = default;
+		BlockRenderer(bool canRender = false) : renderInGui(canRender) {}
 		virtual bool renderInWorld(BlockTessellator*, Tessellator&, const Block&, const BlockPos&) = 0;
+
+		bool canRender() { return renderInGui; }
+		void setCanRender(bool canRender) { renderInGui = canRender; }
 	};
 
 	class BlockTessellatorRegistry {
@@ -32,6 +37,13 @@ namespace Zenova {
 			blockTessellator->unsetCurrentShape();
 			blockTessellator->reset();
 			return true;
+		}
+
+		static bool canRender(BlockShape blockShape) {
+			auto renderer = rendererMap.find(blockShape);
+			if (renderer == rendererMap.end())
+				return false;
+			return renderer->second->canRender();
 		}
 
 		static void setupTessellator(BlockTessellator* blockTessellator, Tessellator& tessellator, const Block& block, const BlockPos& pos) {

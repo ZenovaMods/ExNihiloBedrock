@@ -3,6 +3,7 @@
 #include "TextureUVCoordinateSet.h"
 #include "MaterialPtr.h"
 #include "Mesh.h"
+#include "BlockShape.h"
 #include "../block/Block.h"
 
 struct BlockTessellatorBlockInWorld {
@@ -73,6 +74,7 @@ public:
 
     mce::Mesh& getMeshForBlockInWorld(Tessellator&, const Block&, BlockPos&, BlockRenderLayer, const void*, bool);
     BrightnessPair getLightColor(const BlockPos&);
+    bool canRender(BlockShape);
     void reset();
 
     const AABB& getCurrentShape();

@@ -108,6 +108,13 @@ bool tessellateInWorld(BlockTessellator* self, Tessellator& tessellator, const B
 	return true;
 }
 
+bool (*_canRenderBlockInGui)(BlockShape);
+bool canRenderBlockInGui(BlockShape shape) {
+	if (!Zenova::BlockTessellatorRegistry::canRender(shape))
+		return _canRenderBlockInGui(shape);
+	return true;
+}
+
 std::shared_ptr<BlockActor>(*_createBlockEntity)(BlockActorType, const BlockPos&, const BlockLegacy&);
 std::shared_ptr<BlockActor> createBlockEntity(BlockActorType type, const BlockPos& pos, const BlockLegacy& block) {
 	std::shared_ptr<BlockActor> blockActor = _createBlockEntity(type, pos, block);
@@ -185,6 +192,7 @@ void ExNihiloBedrock::Start() {
 		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, &_registerBlocks);
 		Zenova::Hook::Create(&BlockActorRenderDispatcher::initializeBlockEntityRenderers, &initBlockEntityRenderers, &_initBlockEntityRenderers);
 		Zenova::Hook::Create(&BlockTessellator::tessellateInWorld, &tessellateInWorld, &_tessellateInWorld);
+		Zenova::Hook::Create(&BlockTessellator::canRender, &canRenderBlockInGui, &_canRenderBlockInGui);
 		Zenova::Hook::Create(&BlockActorFactory::createBlockEntity, &createBlockEntity, &_createBlockEntity);
 		Zenova::Hook::Create(&BlockActor::initBlockEntities, &initBlockEntities, &_initBlockEntities);
 		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);

@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Sat Oct 10 2020 06:16:05 UTC
+// Generated on Sat Oct 10 2020 16:52:19 UTC
 
 #include <Zenova/Hook.h>
 #include <Zenova/Minecraft.h>
@@ -247,6 +247,7 @@ void* _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec
 void* _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr;
 void* _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
 void* _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr;
+void* _canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr;
 void* _reset_BlockTessellator__QEAAXXZ_ptr;
 void* _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr;
 void* _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr;
@@ -473,6 +474,7 @@ void InitBedrockPointers() {
 	_getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09CE5D0));
 	_getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09E70F0));
 	_getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr = reinterpret_cast<void*>(SlideAddress(0x09ABBE0));
+	_canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09CEA80));
 	_reset_BlockTessellator__QEAAXXZ_ptr = reinterpret_cast<void*>(SlideAddress(0x09AD9E0));
 	_reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09F7830));
 	_getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr = reinterpret_cast<void*>(SlideAddress(0x09F7AD0));
@@ -519,23 +521,14 @@ void InitBedrockPointers() {
 	ItemSpriteRenderer_vtable = reinterpret_cast<void*>(SlideAddress(0x2AC98E0));
 	BlockActor_vtable = reinterpret_cast<void*>(SlideAddress(0x2B85A08));
 	__1Item__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B766C0)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1Item__UEAA_XZ_ptr));
 	__1DiggerItem__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B72240)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1DiggerItem__UEAA_XZ_ptr));
 	__1BlockPlanterItem__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B6F570)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1BlockPlanterItem__UEAA_XZ_ptr));
 	__1BlockItem__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B6F258)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1BlockItem__UEAA_XZ_ptr));
 	__1BlockLegacy__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B8E7D0)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1BlockLegacy__UEAA_XZ_ptr));
 	__1ItemStackBase__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B76AF8)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1ItemStackBase__UEAA_XZ_ptr));
 	__1Actor__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B14158)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1Actor__UEAA_XZ_ptr));
 	__1Container__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2B64268)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1Container__UEAA_XZ_ptr));
 	__1BaseActorRenderer__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2ACA290)));
-	Zenova_Info("{:X}", reinterpret_cast<uintptr_t>(__1BaseActorRenderer__UEAA_XZ_ptr));
 }
 
 void InitVersionPointers() {

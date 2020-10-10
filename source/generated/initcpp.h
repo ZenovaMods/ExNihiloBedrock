@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_headers.py
-// Generated on Thu Oct 08 2020 03:05:56 UTC
+// Generated on Sat Oct 10 2020 06:16:05 UTC
 
 #pragma once
 
@@ -18,7 +18,6 @@ extern "C" {
 	extern void* _getTextureUVCoordinateSet_Item__SA_AUTextureUVCoordinateSet__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr;
 	extern void* _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr;
 	extern void* __helpChangeInventoryItemInPlace_Item__QEBAXAEAVActor__AEAVItemStack__1W4ItemAcquisitionMethod___Z_ptr;
-	extern void* __1ItemStackBase__UEAA_XZ_ptr;
 	extern void* __0ItemStackBase__IEAA_XZ_ptr;
 	extern void* __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr;
 	extern void* __0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr;
@@ -80,8 +79,6 @@ extern "C" {
 	extern void* _shutdown_VanillaWorldSystems__YAXXZ_ptr;
 	extern void* _registerBlocks_VanillaBlockTypes__YAXXZ_ptr;
 	extern void* _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr;
-	extern void* __1BlockLegacy__UEAA_XZ_ptr;
-	extern void* __1Actor__UEAA_XZ_ptr;
 	extern void* _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr;
 	extern void* _spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr;
 	extern void* _spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr;
@@ -137,7 +134,6 @@ extern "C" {
 	extern void* __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr;
 	extern void* __1ItemSpriteRenderer__UEAA_XZ_ptr;
 	extern void* __0BaseActorRenderer__QEAA_XZ_ptr;
-	extern void* __1BaseActorRenderer__UEAA_XZ_ptr;
 	extern void* _onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr;
 	extern void* __renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr;
 	extern void* __buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr;
@@ -210,6 +206,7 @@ extern "C" {
 	extern void* HeavyBlock_vtable;
 	extern void* ItemInstance_vtable;
 	extern void* ItemStack_vtable;
+	extern void* ItemStackBase_vtable;
 	extern void* Actor_vtable;
 	extern void* Mob_vtable;
 	extern void* Player_vtable;
@@ -222,4 +219,13 @@ extern "C" {
 	extern void* BlockActorRenderer_vtable;
 	extern void* ItemSpriteRenderer_vtable;
 	extern void* BlockActor_vtable;
+	extern void* __1Item__UEAA_XZ_ptr;
+	extern void* __1DiggerItem__UEAA_XZ_ptr;
+	extern void* __1BlockPlanterItem__UEAA_XZ_ptr;
+	extern void* __1BlockItem__UEAA_XZ_ptr;
+	extern void* __1BlockLegacy__UEAA_XZ_ptr;
+	extern void* __1ItemStackBase__UEAA_XZ_ptr;
+	extern void* __1Actor__UEAA_XZ_ptr;
+	extern void* __1Container__UEAA_XZ_ptr;
+	extern void* __1BaseActorRenderer__UEAA_XZ_ptr;
 }

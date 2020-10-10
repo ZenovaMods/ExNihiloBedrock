@@ -181,7 +181,7 @@
       "name": "BlockLegacy",
       "address": "0x2B8E7D0",
       "functions": [
-        "",
+        "??1BlockLegacy@@UEAA@XZ",
         "?tick@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
         "?getStateFromLegacyData@BlockLegacy@@UEBAAEBVBlock@@G@Z",
         "?getNextBlockPermutation@BlockLegacy@@UEBAPEBVBlock@@AEBV2@@Z",
@@ -408,6 +408,15 @@
       ]
     },
     {
+      "name": "ItemStackBase",
+      "address": "0x2B76AF8",
+      "functions": [
+        "??1ItemStackBase@@UEAA@XZ",
+        "?reinit@ItemStackBase@@UEAAXAEBVBlockLegacy@@H@Z",
+        "?reinit@ItemStackBase@@MEAAXAEBVItem@@HH@Z"
+      ]
+    },
+    {
       "name": "Actor",
       "address": "0x2B14130",
       "functions": [
@@ -416,7 +425,7 @@
         "?reloadHardcodedClient@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z",
         "?initializeComponents@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z",
         "?reloadComponents@Actor@@UEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z",
-        "",
+        "??1Actor@@UEAA@XZ",
         "?reset@Actor@@UEAAXXZ",
         "?getOnDeathExperience@Actor@@UEAAHXZ",
         "?getOwnerEntityType@Actor@@UEAA?AW4ActorType@@XZ",
@@ -1082,7 +1091,7 @@
       "name": "Container",
       "address": "0x2B64268",
       "functions": [
-        "??_EContainer@@UEAAPEAXI@Z",
+        "??1Container@@UEAA@XZ",
         "?init@Container@@UEAAXXZ",
         "?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z",
         "?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z",
@@ -1138,7 +1147,7 @@
       "name": "BaseActorRenderer",
       "address": "0x2ACA290",
       "functions": [
-        "",
+        "??1BaseActorRenderer@@UEAA@XZ",
         "?_getOverlayColor@ActorShaderManager@@UEBA?AVColor@@AEAVActor@@M@Z"
       ]
     },
@@ -1345,10 +1354,6 @@
     {
       "name": "?_helpChangeInventoryItemInPlace@Item@@QEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z",
       "address": "0x1561210"
-    },
-    {
-      "name": "??1ItemStackBase@@UEAA@XZ",
-      "address": "0x010B600"
     },
     {
       "name": "??0ItemStackBase@@IEAA@XZ",
@@ -1595,14 +1600,6 @@
       "address": "0x16D9640"
     },
     {
-      "name": "??1BlockLegacy@@UEAA@XZ",
-      "address": "0x164F200"
-    },
-    {
-      "name": "??1Actor@@UEAA@XZ",
-      "address": "0x125CAF0"
-    },
-    {
       "name": "?registerBlocks@BlockDefinitionGroup@@QEAAXXZ",
       "address": "0x169EDC0"
     },
@@ -1821,10 +1818,6 @@
     {
       "name": "??0BaseActorRenderer@@QEAA@XZ",
       "address": "0x09950E0"
-    },
-    {
-      "name": "??1BaseActorRenderer@@UEAA@XZ",
-      "address": "0x0995300"
     },
     {
       "name": "?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ",

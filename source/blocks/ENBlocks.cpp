@@ -87,10 +87,10 @@ void ENBlocks::initCreativeBlocks() {
 
 	Item::beginCreativeGroup("itemGroup.name.infestedLeaves", &infestedLeaves->get()->getDefaultState(), nullptr);
 	Block& leaves = infestedLeaves->get()->getDefaultState();
-	for (int variant = 0; variant < enum_cast(OldLeafType::_count); variant++)
+	for (int variant = 0; variant < Zenova::enum_cast(OldLeafType::_count); variant++)
 		Item::addCreativeItem(*leaves.setState<int>(*VanillaStates::OldLeafType, variant));
 	Block& leaves2 = infestedLeaves2->get()->getDefaultState();
-	for (int variant = 0; variant < enum_cast(NewLeafType::_count); variant++)
+	for (int variant = 0; variant < Zenova::enum_cast(NewLeafType::_count); variant++)
 		Item::addCreativeItem(*leaves2.setState<int>(*VanillaStates::NewLeafType, variant));
 	Item::endCreativeGroup();
 }

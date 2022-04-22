@@ -140,7 +140,7 @@ BlockInfestingLeavesOld::BlockInfestingLeavesOld(const std::string& nameId, int 
 
 int BlockInfestingLeavesOld::getVariant(const Block& block) const {
 	OldLeafType leafType = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
-	return enum_cast(leafType);
+	return Zenova::enum_cast(leafType);
 }
 
 BlockLegacy& BlockInfestingLeavesOld::init() {
@@ -155,7 +155,7 @@ BlockInfestingLeavesNew::BlockInfestingLeavesNew(const std::string& nameId, int 
 
 int BlockInfestingLeavesNew::getVariant(const Block& block) const {
 	NewLeafType leafType = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
-	return enum_cast(leafType);
+	return Zenova::enum_cast(leafType);
 }
 
 BlockLegacy& BlockInfestingLeavesNew::init() {

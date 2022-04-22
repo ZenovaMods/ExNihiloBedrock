@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Zenova/Common.h"
+
 #include "VertexField.h"
 
 namespace mce {
@@ -10,11 +11,11 @@ namespace mce {
 
     public:
         void enableField(VertexField field) {
-            _fieldOffset[enum_cast(field)] = 1;
+            _fieldOffset[Zenova::enum_cast(field)] = 1;
         }
 
         bool hasField(VertexField field) const {
-            return _fieldOffset[enum_cast(field)] == 1;
+            return _fieldOffset[Zenova::enum_cast(field)] == 1;
         }
     };
 }

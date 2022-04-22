@@ -134,7 +134,7 @@ BlockInfestedLeavesOld::BlockInfestedLeavesOld(const std::string& nameId, int id
 
 int BlockInfestedLeavesOld::getVariant(const Block& block) const {
 	OldLeafType leafType = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
-	return enum_cast(leafType);
+	return Zenova::enum_cast(leafType);
 }
 
 ItemInstance BlockInfestedLeavesOld::asItemInstance(BlockSource& region, const BlockPos& pos, const Block& block) const {
@@ -152,7 +152,7 @@ std::string BlockInfestedLeavesOld::buildDescriptionId(const Block& block) const
 		type = OldLeafType::Oak;
 	std::string descriptionId = "tile.leaves";
 	std::string infestedName = I18n::get(BlockLegacy::buildDescriptionId(block));
-	std::string leafName = I18n::get(descriptionId + "." + LEAF_NAMES[enum_cast(type)] + ".name");
+	std::string leafName = I18n::get(descriptionId + "." + LEAF_NAMES[Zenova::enum_cast(type)] + ".name");
 	return infestedName + " " + leafName;
 }
 
@@ -168,7 +168,7 @@ BlockInfestedLeavesNew::BlockInfestedLeavesNew(const std::string& nameId, int id
 
 int BlockInfestedLeavesNew::getVariant(const Block& block) const {
 	NewLeafType leafType = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
-	return enum_cast(leafType);
+	return Zenova::enum_cast(leafType);
 }
 
 ItemInstance BlockInfestedLeavesNew::asItemInstance(BlockSource& region, const BlockPos& pos, const Block& block) const {
@@ -186,7 +186,7 @@ std::string BlockInfestedLeavesNew::buildDescriptionId(const Block& block) const
 		type = NewLeafType::Acacia;
 	std::string descriptionId = "tile.leaves2";
 	std::string infestedName = I18n::get(BlockLegacy::buildDescriptionId(block));
-	std::string leafName = I18n::get(descriptionId + "." + LEAF_NAMES[enum_cast(type)] + ".name");
+	std::string leafName = I18n::get(descriptionId + "." + LEAF_NAMES[Zenova::enum_cast(type)] + ".name");
 	return infestedName + " " + leafName;
 }
 

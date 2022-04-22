@@ -5,6 +5,8 @@
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
 
+#include "Zenova/Common.h"
+
 #include "VertexFormat.h"
 
 namespace mce {
@@ -32,7 +34,7 @@ namespace mce {
 
 		bool enableField(mce::VertexField field) {
 			mFields.enableField(field);
-			return enum_cast(field);
+			return Zenova::enum_cast(field);
 		}
 	};
 }

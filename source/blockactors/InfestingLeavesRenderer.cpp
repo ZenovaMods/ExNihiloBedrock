@@ -31,7 +31,7 @@ void InfestingLeavesRenderer::render(BaseActorRenderContext& context, BlockActor
 	std::array<const mce::ClientTexture*, 2> textures = { mTerrainTexture.getClientTexture(), context.getLightTexture()->getClientTexture() };
 	BlockRenderLayer renderLayer = block.getRenderLayer(region, blockPos);
 	mce::Mesh mesh = getBlockMesh(mBlockTessellator, tessellator, block, blockPos, renderLayer, infestingLeaves);
-	mesh.renderMesh(screenContext.mMeshContext, mRenderLayerMaterials[enum_cast(renderLayer)], textures, 0, 0, nullptr);
+	mesh.renderMesh(screenContext.mMeshContext, mRenderLayerMaterials[Zenova::enum_cast(renderLayer)], textures, 0, 0, nullptr);
 	tessellator.addPostTransformOffset((float)blockPos.x, (float)blockPos.y, (float)blockPos.z);
 }
 

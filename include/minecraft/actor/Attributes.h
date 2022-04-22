@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Zenova/Common.h"
+
 #include "../util/StringHash.h"
 
 enum class RedefinitionMode : signed char {
@@ -86,7 +88,7 @@ public:
 		return mCurrentValue;
 	}
 	void serializationSetValue(float currentValue, int operand, float maxValue) {
-		if (operand >= 0 && operand < enum_cast(AttributeOperands::TOTAL_OPERANDS)) {
+		if (operand >= 0 && operand < Zenova::enum_cast(AttributeOperands::TOTAL_OPERANDS)) {
 			mCurrentValues[operand] = (currentValue <= maxValue) ? currentValue : maxValue;
 		}
 	}

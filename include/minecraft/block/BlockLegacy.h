@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "Zenova/Common.h"
+
 #include "../util/AABB.h"
 #include "../util/Color.h"
 #include "../util/LootComponent.h"
@@ -92,11 +94,11 @@ enum class BlockProperty : unsigned long long {
 };
 
 inline BlockProperty operator&(const BlockProperty& lhs, const BlockProperty& b) {
-    return (BlockProperty)(enum_cast(lhs) & enum_cast(b));
+    return (BlockProperty)(Zenova::enum_cast(lhs) & Zenova::enum_cast(b));
 }
 
 inline BlockProperty operator|(const BlockProperty& lhs, const BlockProperty& b) {
-    return (BlockProperty)(enum_cast(lhs) | enum_cast(b));
+    return (BlockProperty)(Zenova::enum_cast(lhs) | Zenova::enum_cast(b));
 }
 
 class BlockLegacy {

@@ -1,6 +1,6 @@
 #include "InfestingLeavesRenderer.h"
 
-#include <Zenova.h>
+#include <Zenova/Common.h>
 
 #include "minecraft/block/Block.h"
 #include "minecraft/client/BaseActorRenderContext.h"

@@ -1,7 +1,5 @@
 #include "ENItems.h"
 
-#include <Zenova.h>
-
 #include "minecraft/item/ItemRegistry.h"
 #include "minecraft/item/BlockPlanterItem.h"
 #include "minecraft/block/VanillaBlockRegistry.h"

@@ -2,7 +2,6 @@
 
 #include <string>
 #include <unordered_map>
-#include "Zenova.h"
 
 #include "../util/Util.h"
 #include "../util/SharedPtr.h"

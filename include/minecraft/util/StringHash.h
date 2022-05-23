@@ -1,7 +1,5 @@
 #pragma once
 
-#include <Zenova.h>
-
 #include <string>
 
 typedef uint64_t HashType64;

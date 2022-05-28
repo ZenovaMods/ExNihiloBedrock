@@ -1,31 +1,17 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.12)
 
 set(ModName ExNihiloBedrock)
 set(SourceDir source)
 set(IncludeDir include)
+set(generated_directory "${CMAKE_CURRENT_SOURCE_DIR}/${SourceDir}/generated")
+set(maps_directory "${CMAKE_CURRENT_SOURCE_DIR}/maps")
 
 # maybe figure out a way to move this all to another cmake file?
 set(CMAKE_ASM_NASM_OBJECT_FORMAT win64)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-if(NOT DEFINED CMAKE_ASM_NASM_COMPILER)
-    if(DEFINED ENV{ASM_NASM})
-        set(CMAKE_ASM_NASM_COMPILER $ENV{ASM_NASM})
-    elseif(DEFINED ENV{NASMPATH}) # https://github.com/ShiftMediaProject/VSNASM
-        set(CMAKE_ASM_NASM_COMPILER $ENV{NASMPATH})
-    elseif(EXISTS "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/nasm.exe")
-        set(CMAKE_ASM_NASM_COMPILER "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/nasm.exe")
-    # add more cases in the future (like the other visual studios)
-    endif()
-
-    if(DEFINED CMAKE_ASM_NASM_COMPILER)
-        string(REPLACE "\\" "/" CMAKE_ASM_NASM_COMPILER ${CMAKE_ASM_NASM_COMPILER})
-    endif()
-endif()
-
 project(${ModName} CXX ASM_NASM)
-enable_language(ASM_NASM)
 
 if(MSVC)
     set(CMAKE_CONFIGURATION_TYPES "Release;RelWithDebInfo" CACHE STRING "" FORCE)
@@ -36,6 +22,13 @@ if(MSVC)
         set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} "$ENV{ZENOVA_DATA}/mods/${ModName}")
         set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUTCONFIG} "$ENV{ZENOVA_DATA}/mods/${ModName}")
     endforeach(OUTPUTCONFIG)
+endif()
+
+if(NOT EXISTS ${generated_directory})
+    file(MAKE_DIRECTORY ${generated_directory})
+    file(TOUCH "${generated_directory}/initasm.asm")
+    file(TOUCH "${generated_directory}/initcpp.cpp")
+    file(TOUCH "${generated_directory}/initcpp.h")
 endif()
 
 include_directories("$ENV{ZENOVA_DATA}/dev/inc"
@@ -77,9 +70,10 @@ target_link_libraries(${ModName}
     $ENV{ZENOVA_DATA}/dev/lib/ZenovaAPI.lib
 )
 
-add_custom_command(TARGET ${ModName}
-    PRE_BUILD
-    COMMAND py -3 $ENV{ZENOVA_DATA}/dev/tools/process_symbol_map.py -e -a x64 -p windows -d ${CMAKE_CURRENT_SOURCE_DIR}/${SourceDir}/generated ${CMAKE_CURRENT_SOURCE_DIR}/maps/*.json
+add_custom_command(
+    OUTPUT "${generated_directory}/initcpp.cpp" "${generated_directory}/initasm.asm" "${generated_directory}/initcpp.h"
+    COMMAND py -3 $ENV{ZENOVA_DATA}/dev/tools/process_symbol_map.py -e -a x64 -p windows -d ${generated_directory} ${maps_directory}/*.json
+    DEPENDS $ENV{ZENOVA_DATA}/dev/tools/process_symbol_map.py ${maps_directory}/*.json
 )
 
 add_custom_command(TARGET ${ModName}

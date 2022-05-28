@@ -1225,21 +1225,21 @@
   ],
 
   "includes": [
-    "#include \"minecraft/block/BlockState.h\"",
-    "#include \"minecraft/block/VanillaBlockRegistry.h\"",
-    "#include \"minecraft/block/VanillaBlockStates.h\"",
-    "#include \"minecraft/block/VanillaBlockTypeRegistry.h\"",
-    "#include \"minecraft/block/BlockTypeRegistry.h\"",
-    "#include \"minecraft/item/VanillaItemTiers.h\"",
-    "#include \"minecraft/item/ItemRegistry.h\"",
-    "#include \"minecraft/block/BlockTypeRegistry.h\"",
-    "#include \"minecraft/world/WorldSystems.h\"",
-    "#include \"minecraft/item/Item.h\"",
-    "#include \"minecraft/item/VanillaItems.h\"",
-    "#include \"minecraft/actor/ActorType.h\"",
-    "#include \"minecraft/actor/ProjectileFactory.h\"",
-    "#include \"minecraft/actor/ActorFactory.h\"",
-    "#include \"minecraft/actor/Attributes.h\""
+    "minecraft/block/BlockState.h",
+    "minecraft/block/VanillaBlockRegistry.h",
+    "minecraft/block/VanillaBlockStates.h",
+    "minecraft/block/VanillaBlockTypeRegistry.h",
+    "minecraft/block/BlockTypeRegistry.h",
+    "minecraft/item/VanillaItemTiers.h",
+    "minecraft/item/ItemRegistry.h",
+    "minecraft/block/BlockTypeRegistry.h",
+    "minecraft/world/WorldSystems.h",
+    "minecraft/item/Item.h",
+    "minecraft/item/VanillaItems.h",
+    "minecraft/actor/ActorType.h",
+    "minecraft/actor/ProjectileFactory.h",
+    "minecraft/actor/ActorFactory.h",
+    "minecraft/actor/Attributes.h"
   ],
 
   "variables": {

@@ -79,8 +79,7 @@ target_link_libraries(${ModName}
 
 add_custom_command(TARGET ${ModName}
     PRE_BUILD
-    COMMAND py -3 ${CMAKE_CURRENT_SOURCE_DIR}/tools/process_headers.py -a x64 -p windows -d ${CMAKE_CURRENT_SOURCE_DIR}/${SourceDir}/generated ${CMAKE_CURRENT_SOURCE_DIR}/maps/*.json
-    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tools/process_headers.py
+    COMMAND py -3 $ENV{ZENOVA_DATA}/dev/tools/process_symbol_map.py -e -a x64 -p windows -d ${CMAKE_CURRENT_SOURCE_DIR}/${SourceDir}/generated ${CMAKE_CURRENT_SOURCE_DIR}/maps/*.json
 )
 
 add_custom_command(TARGET ${ModName}

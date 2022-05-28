@@ -1,5 +1,5 @@
-; This file was automatically generated using tools/process_headers.py
-; Generated on Fri Apr 22 2022 00:47:10 UTC
+; This file was automatically generated using tools/process_symbol_map.py
+; Fri May 27 2022 17:27:17 UTC
 bits 64
 SECTION .data
 extern __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr
@@ -231,804 +231,604 @@ extern BlockActor_vtable
 SECTION .text
 global ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
 ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z:
-	mov rax, [rel __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr]
-	jmp rax
+	jmp qword [rel __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr]
 global ??0BlockPlanterItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlock@@_N@Z
 ??0BlockPlanterItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlock@@_N@Z:
-	mov rax, [rel __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr]
-	jmp rax
+	jmp qword [rel __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr]
 global ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
 ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z:
-	mov rax, [rel __0DiggerItem__IEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HHAEBVTier_Item__AEBV_$vector_PEBVBlock__V_$allocator_PEBVBlock___std___2__Z_ptr]
-	jmp rax
+	jmp qword [rel __0DiggerItem__IEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HHAEBVTier_Item__AEBV_$vector_PEBVBlock__V_$allocator_PEBVBlock___std___2__Z_ptr]
 global ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
 ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z:
-	mov rax, [rel __0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __0BlockItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
 global ??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
 ??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z:
-	mov rax, [rel __0BucketItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __0BucketItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
 global ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z
 ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z:
-	mov rax, [rel _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr]
-	jmp rax
+	jmp qword [rel _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEAV1_FPEBVCompoundTag___Z_ptr]
 global ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBlock@@PEBVCompoundTag@@@Z
 ?beginCreativeGroup@Item@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBlock@@PEBVCompoundTag@@@Z:
-	mov rax, [rel _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEBVBlock__PEBVCompoundTag___Z_ptr]
-	jmp rax
+	jmp qword [rel _beginCreativeGroup_Item__SAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__PEBVBlock__PEBVCompoundTag___Z_ptr]
 global ?addCreativeItem@Item@@SAXPEAV1@F@Z
 ?addCreativeItem@Item@@SAXPEAV1@F@Z:
-	mov rax, [rel _addCreativeItem_Item__SAXPEAV1_F_Z_ptr]
-	jmp rax
+	jmp qword [rel _addCreativeItem_Item__SAXPEAV1_F_Z_ptr]
 global ?addCreativeItem@Item@@SAXAEBVBlock@@@Z
 ?addCreativeItem@Item@@SAXAEBVBlock@@@Z:
-	mov rax, [rel _addCreativeItem_Item__SAXAEBVBlock___Z_ptr]
-	jmp rax
+	jmp qword [rel _addCreativeItem_Item__SAXAEBVBlock___Z_ptr]
 global ?getTextureItem@Item@@SAAEBVTextureAtlasItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?getTextureItem@Item@@SAAEBVTextureAtlasItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _getTextureItem_Item__SAAEBVTextureAtlasItem__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?getIconTextureUVSet@Item@@SAAEBUTextureUVCoordinateSet@@AEBVTextureAtlasItem@@HH@Z
 ?getIconTextureUVSet@Item@@SAAEBUTextureUVCoordinateSet@@AEBVTextureAtlasItem@@HH@Z:
-	mov rax, [rel _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr]
-	jmp rax
+	jmp qword [rel _getIconTextureUVSet_Item__SAAEBUTextureUVCoordinateSet__AEBVTextureAtlasItem__HH_Z_ptr]
 global ?getTextureUVCoordinateSet@Item@@SA?AUTextureUVCoordinateSet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
 ?getTextureUVCoordinateSet@Item@@SA?AUTextureUVCoordinateSet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z:
-	mov rax, [rel _getTextureUVCoordinateSet_Item__SA_AUTextureUVCoordinateSet__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
-	jmp rax
+	jmp qword [rel _getTextureUVCoordinateSet_Item__SA_AUTextureUVCoordinateSet__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
 global ?getCommandName@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
 ?getCommandName@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:
-	mov rax, [rel _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr]
-	jmp rax
+	jmp qword [rel _getCommandName_Item__QEBAAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__XZ_ptr]
 global ?_helpChangeInventoryItemInPlace@Item@@QEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z
 ?_helpChangeInventoryItemInPlace@Item@@QEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z:
-	mov rax, [rel __helpChangeInventoryItemInPlace_Item__QEBAXAEAVActor__AEAVItemStack__1W4ItemAcquisitionMethod___Z_ptr]
-	jmp rax
+	jmp qword [rel __helpChangeInventoryItemInPlace_Item__QEBAXAEAVActor__AEAVItemStack__1W4ItemAcquisitionMethod___Z_ptr]
 global ??0ItemStackBase@@IEAA@XZ
 ??0ItemStackBase@@IEAA@XZ:
-	mov rax, [rel __0ItemStackBase__IEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStackBase__IEAA_XZ_ptr]
 global ??0ItemStackBase@@IEAA@AEBVItem@@HH@Z
 ??0ItemStackBase@@IEAA@AEBVItem@@HH@Z:
-	mov rax, [rel __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStackBase__IEAA_AEBVItem__HH_Z_ptr]
 global ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z
 ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z:
-	mov rax, [rel __0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStackBase__IEAA_AEBVBlockLegacy__H_Z_ptr]
 global ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
 ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z:
-	mov rax, [rel __0ItemStackBase__IEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStackBase__IEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr]
 global ??0ItemStackBase@@IEAA@AEBV0@@Z
 ??0ItemStackBase@@IEAA@AEBV0@@Z:
-	mov rax, [rel __0ItemStackBase__IEAA_AEBV0__Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStackBase__IEAA_AEBV0__Z_ptr]
 global ??4ItemStackBase@@IEAAAEAV0@AEBV0@@Z
 ??4ItemStackBase@@IEAAAEAV0@AEBV0@@Z:
-	mov rax, [rel __4ItemStackBase__IEAAAEAV0_AEBV0__Z_ptr]
-	jmp rax
+	jmp qword [rel __4ItemStackBase__IEAAAEAV0_AEBV0__Z_ptr]
 global ??0ItemStack@@QEAA@XZ
 ??0ItemStack@@QEAA@XZ:
-	mov rax, [rel __0ItemStack__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStack__QEAA_XZ_ptr]
 global ??0ItemStack@@QEAA@AEBVItem@@H@Z
 ??0ItemStack@@QEAA@AEBVItem@@H@Z:
-	mov rax, [rel __0ItemStack__QEAA_AEBVItem__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStack__QEAA_AEBVItem__H_Z_ptr]
 global ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z
 ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z:
-	mov rax, [rel __0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemStack__QEAA_AEBVBlockLegacy__H_Z_ptr]
 global ??0ItemInstance@@QEAA@XZ
 ??0ItemInstance@@QEAA@XZ:
-	mov rax, [rel __0ItemInstance__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __0ItemInstance__QEAA_XZ_ptr]
 global ??0ItemInstance@@QEAA@AEBVItem@@HH@Z
 ??0ItemInstance@@QEAA@AEBVItem@@HH@Z:
-	mov rax, [rel __0ItemInstance__QEAA_AEBVItem__HH_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemInstance__QEAA_AEBVItem__HH_Z_ptr]
 global ??0ItemInstance@@QEAA@AEBVBlockLegacy@@H@Z
 ??0ItemInstance@@QEAA@AEBVBlockLegacy@@H@Z:
-	mov rax, [rel __0ItemInstance__QEAA_AEBVBlockLegacy__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemInstance__QEAA_AEBVBlockLegacy__H_Z_ptr]
 global ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
 ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z:
-	mov rax, [rel __0ItemInstance__QEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemInstance__QEAA_AEBVBlock__HPEBVCompoundTag___Z_ptr]
 global ??0ItemInstance@@QEAA@AEBV0@@Z
 ??0ItemInstance@@QEAA@AEBV0@@Z:
-	mov rax, [rel __0ItemInstance__QEAA_AEBV0__Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemInstance__QEAA_AEBV0__Z_ptr]
 global ?set@ItemStackBase@@QEAAXH@Z
 ?set@ItemStackBase@@QEAAXH@Z:
-	mov rax, [rel _set_ItemStackBase__QEAAXH_Z_ptr]
-	jmp rax
+	jmp qword [rel _set_ItemStackBase__QEAAXH_Z_ptr]
 global ?getItem@ItemStackBase@@QEBAPEBVItem@@XZ
 ?getItem@ItemStackBase@@QEBAPEBVItem@@XZ:
-	mov rax, [rel _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr]
-	jmp rax
+	jmp qword [rel _getItem_ItemStackBase__QEBAPEBVItem__XZ_ptr]
 global ?getAuxValue@ItemStackBase@@QEBAFXZ
 ?getAuxValue@ItemStackBase@@QEBAFXZ:
-	mov rax, [rel _getAuxValue_ItemStackBase__QEBAFXZ_ptr]
-	jmp rax
+	jmp qword [rel _getAuxValue_ItemStackBase__QEBAFXZ_ptr]
 global ?matchesItem@ItemStackBase@@QEBA_NAEBV1@@Z
 ?matchesItem@ItemStackBase@@QEBA_NAEBV1@@Z:
-	mov rax, [rel _matchesItem_ItemStackBase__QEBA_NAEBV1__Z_ptr]
-	jmp rax
+	jmp qword [rel _matchesItem_ItemStackBase__QEBA_NAEBV1__Z_ptr]
 global ?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@AEBVBlockPos@@@Z
 ?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getBlockEntity_BlockSource__QEAAPEAVBlockActor__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getBlockEntity_BlockSource__QEAAPEAVBlockActor__AEBVBlockPos___Z_ptr]
 global ?getBiome@BlockSource@@QEAAAEAVBiome@@AEBVBlockPos@@@Z
 ?getBiome@BlockSource@@QEAAAEAVBiome@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getBiome_BlockSource__QEAAAEAVBiome__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getBiome_BlockSource__QEAAAEAVBiome__AEBVBlockPos___Z_ptr]
 global ?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z
 ?addToTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH@Z:
-	mov rax, [rel _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr]
-	jmp rax
+	jmp qword [rel _addToTickingQueue_BlockSource__QEAAXAEBVBlockPos__AEBVBlock__HH_Z_ptr]
 global ?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
 ?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
 global ?getExtraBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
 ?getExtraBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getExtraBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getExtraBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
 global ?getLiquidBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
 ?getLiquidBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getLiquidBlock_BlockSource__QEBAAEBVBlock__AEBVBlockPos___Z_ptr]
 global ?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z
 ?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z:
-	mov rax, [rel _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr]
-	jmp rax
+	jmp qword [rel _setBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__HPEBUActorBlockSyncMessage___Z_ptr]
 global ?setExtraBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
 ?setExtraBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@H@Z:
-	mov rax, [rel _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr]
-	jmp rax
+	jmp qword [rel _setExtraBlock_BlockSource__QEAA_NAEBVBlockPos__AEBVBlock__H_Z_ptr]
 global ?removeBlock@BlockSource@@QEAA_NAEBVBlockPos@@@Z
 ?removeBlock@BlockSource@@QEAA_NAEBVBlockPos@@@Z:
-	mov rax, [rel _removeBlock_BlockSource__QEAA_NAEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _removeBlock_BlockSource__QEAA_NAEBVBlockPos___Z_ptr]
 global ?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStack@@_N@Z
 ?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStack@@_N@Z:
-	mov rax, [rel _checkBlockPermissions_BlockSource__QEAA_NAEAVActor__AEBVBlockPos__EAEBVItemStack___N_Z_ptr]
-	jmp rax
+	jmp qword [rel _checkBlockPermissions_BlockSource__QEAA_NAEAVActor__AEBVBlockPos__EAEBVItemStack___N_Z_ptr]
 global ?fireBlockChanged@BlockSource@@QEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@@Z
 ?fireBlockChanged@BlockSource@@QEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@@Z:
-	mov rax, [rel _fireBlockChanged_BlockSource__QEAAXAEBVBlockPos__IAEBVBlock__1HPEBUActorBlockSyncMessage___Z_ptr]
-	jmp rax
+	jmp qword [rel _fireBlockChanged_BlockSource__QEAAXAEBVBlockPos__IAEBVBlock__1HPEBUActorBlockSyncMessage___Z_ptr]
 global ?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ
 ?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ:
-	mov rax, [rel _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr]
-	jmp rax
+	jmp qword [rel _getLegacyBlock_Block__QEBAAEBVBlockLegacy__XZ_ptr]
 global ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
 ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z:
-	mov rax, [rel __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr]
-	jmp rax
+	jmp qword [rel __0BlockLegacy__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVMaterial___Z_ptr]
 global ?getBlockItemId@BlockLegacy@@QEBAFXZ
 ?getBlockItemId@BlockLegacy@@QEBAFXZ:
-	mov rax, [rel _getBlockItemId_BlockLegacy__QEBAFXZ_ptr]
-	jmp rax
+	jmp qword [rel _getBlockItemId_BlockLegacy__QEBAFXZ_ptr]
 global ?tryGetStateFromLegacyData@BlockLegacy@@QEBAPEBVBlock@@G@Z
 ?tryGetStateFromLegacyData@BlockLegacy@@QEBAPEBVBlock@@G@Z:
-	mov rax, [rel _tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr]
-	jmp rax
+	jmp qword [rel _tryGetStateFromLegacyData_BlockLegacy__QEBAPEBVBlock__G_Z_ptr]
 global ?popResource@BlockLegacy@@QEBAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemInstance@@@Z
 ?popResource@BlockLegacy@@QEBAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemInstance@@@Z:
-	mov rax, [rel _popResource_BlockLegacy__QEBAPEAVItemActor__AEAVBlockSource__AEBVBlockPos__AEBVItemInstance___Z_ptr]
-	jmp rax
+	jmp qword [rel _popResource_BlockLegacy__QEBAPEAVItemActor__AEAVBlockSource__AEBVBlockPos__AEBVItemInstance___Z_ptr]
 global ?getDefaultState@BlockLegacy@@QEBAAEAVBlock@@XZ
 ?getDefaultState@BlockLegacy@@QEBAAEAVBlock@@XZ:
-	mov rax, [rel _getDefaultState_BlockLegacy__QEBAAEAVBlock__XZ_ptr]
-	jmp rax
+	jmp qword [rel _getDefaultState_BlockLegacy__QEBAAEAVBlock__XZ_ptr]
 global ?registerItem@ItemRegistry@@SAXV?$SharedPtr@VItem@@@@@Z
 ?registerItem@ItemRegistry@@SAXV?$SharedPtr@VItem@@@@@Z:
-	mov rax, [rel _registerItem_ItemRegistry__SAXV_$SharedPtr_VItem_____Z_ptr]
-	jmp rax
+	jmp qword [rel _registerItem_ItemRegistry__SAXV_$SharedPtr_VItem_____Z_ptr]
 global ?getItem@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@F@Z
 ?getItem@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@F@Z:
-	mov rax, [rel _getItem_ItemRegistry__SA_AV_$WeakPtr_VItem____F_Z_ptr]
-	jmp rax
+	jmp qword [rel _getItem_ItemRegistry__SA_AV_$WeakPtr_VItem____F_Z_ptr]
 global ?lookupByName@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@AEAH0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?lookupByName@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@AEAH0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _lookupByName_ItemRegistry__SA_AV_$WeakPtr_VItem____AEAH0AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _lookupByName_ItemRegistry__SA_AV_$WeakPtr_VItem____AEAH0AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?lookupByName@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@AEAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?lookupByName@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@AEAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _lookupByName_ItemRegistry__SA_AV_$WeakPtr_VItem____AEAHAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _lookupByName_ItemRegistry__SA_AV_$WeakPtr_VItem____AEAHAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?registerItems@VanillaItems@@SAX_N@Z
 ?registerItems@VanillaItems@@SAX_N@Z:
-	mov rax, [rel _registerItems_VanillaItems__SAX_N_Z_ptr]
-	jmp rax
+	jmp qword [rel _registerItems_VanillaItems__SAX_N_Z_ptr]
 global ?initCreativeCategories@VanillaItems@@SAXXZ
 ?initCreativeCategories@VanillaItems@@SAXXZ:
-	mov rax, [rel _initCreativeCategories_VanillaItems__SAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _initCreativeCategories_VanillaItems__SAXXZ_ptr]
 global ?initCreativeItemsCallback@VanillaItems@@SAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_N@Z
 ?initCreativeItemsCallback@VanillaItems@@SAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_N@Z:
-	mov rax, [rel _initCreativeItemsCallback_VanillaItems__SAXPEAVActorInfoRegistry__PEAVBlockDefinitionGroup___N_Z_ptr]
-	jmp rax
+	jmp qword [rel _initCreativeItemsCallback_VanillaItems__SAXPEAVActorInfoRegistry__PEAVBlockDefinitionGroup___N_Z_ptr]
 global ?initClientData@VanillaItems@@SAXXZ
 ?initClientData@VanillaItems@@SAXXZ:
-	mov rax, [rel _initClientData_VanillaItems__SAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _initClientData_VanillaItems__SAXXZ_ptr]
 global ?_genRandInt32@Random@Core@@AEAAIXZ
 ?_genRandInt32@Random@Core@@AEAAIXZ:
-	mov rax, [rel __genRandInt32_Random_Core__AEAAIXZ_ptr]
-	jmp rax
+	jmp qword [rel __genRandInt32_Random_Core__AEAAIXZ_ptr]
 global ?nextFloat@Random@@QEAAMXZ
 ?nextFloat@Random@@QEAAMXZ:
-	mov rax, [rel _nextFloat_Random__QEAAMXZ_ptr]
-	jmp rax
+	jmp qword [rel _nextFloat_Random__QEAAMXZ_ptr]
 global ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@@Z
 ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@@Z:
-	mov rax, [rel __0Throwable__QEAA_PEAVActorDefinitionGroup__AEBUActorDefinitionIdentifier___Z_ptr]
-	jmp rax
+	jmp qword [rel __0Throwable__QEAA_PEAVActorDefinitionGroup__AEBUActorDefinitionIdentifier___Z_ptr]
 global ?getSelectedItem@Player@@QEBAAEBVItemStack@@XZ
 ?getSelectedItem@Player@@QEBAAEBVItemStack@@XZ:
-	mov rax, [rel _getSelectedItem_Player__QEBAAEBVItemStack__XZ_ptr]
-	jmp rax
+	jmp qword [rel _getSelectedItem_Player__QEBAAEBVItemStack__XZ_ptr]
 global ?causeFoodExhaustion@Player@@QEAAXM@Z
 ?causeFoodExhaustion@Player@@QEAAXM@Z:
-	mov rax, [rel _causeFoodExhaustion_Player__QEAAXM_Z_ptr]
-	jmp rax
+	jmp qword [rel _causeFoodExhaustion_Player__QEAAXM_Z_ptr]
 global ?getEnchantLevel@EnchantUtils@@SAHW4Type@Enchant@@AEBVItemStackBase@@@Z
 ?getEnchantLevel@EnchantUtils@@SAHW4Type@Enchant@@AEBVItemStackBase@@@Z:
-	mov rax, [rel _getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr]
-	jmp rax
+	jmp qword [rel _getEnchantLevel_EnchantUtils__SAHW4Type_Enchant__AEBVItemStackBase___Z_ptr]
 global ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z
 ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z:
-	mov rax, [rel _hasEnchant_EnchantUtils__SA_NW4Type_Enchant__AEBVItemStackBase___Z_ptr]
-	jmp rax
+	jmp qword [rel _hasEnchant_EnchantUtils__SA_NW4Type_Enchant__AEBVItemStackBase___Z_ptr]
 global ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z:
-	mov rax, [rel _toLower_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
-	jmp rax
+	jmp qword [rel _toLower_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
 global ?toUpper@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 ?toUpper@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z:
-	mov rax, [rel _toUpper_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
-	jmp rax
+	jmp qword [rel _toUpper_Util__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
 global ?u64FromString@Util@@YA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?u64FromString@Util@@YA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _u64FromString_Util__YA_KAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z
 ?registerBlockGraphics@BlockGraphics@@SAAEAV1@AEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4BlockShape@@@Z:
-	mov rax, [rel _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr]
-	jmp rax
+	jmp qword [rel _registerBlockGraphics_BlockGraphics__SAAEAV1_AEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__3_W4BlockShape___Z_ptr]
 global ?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z
 ?registerLooseBlockGraphics@BlockGraphics@@SAXAEAV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@AEBVBlockPalette@@@Z:
-	mov rax, [rel _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr]
-	jmp rax
+	jmp qword [rel _registerLooseBlockGraphics_BlockGraphics__SAXAEAV_$vector_VValue_Json__V_$allocator_VValue_Json___std___std__AEBVBlockPalette___Z_ptr]
 global ?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z
 ?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z:
-	mov rax, [rel _getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr]
-	jmp rax
+	jmp qword [rel _getForBlock_BlockGraphics__SAPEBV1_AEBVBlock___Z_ptr]
 global ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
 ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z:
-	mov rax, [rel _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr]
-	jmp rax
+	jmp qword [rel _getMaterial_Material__SAAEBV1_W4MaterialType___Z_ptr]
 global ?init@WorldSystems@@SAXPEAVResourcePackManager@@@Z
 ?init@WorldSystems@@SAXPEAVResourcePackManager@@@Z:
-	mov rax, [rel _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr]
-	jmp rax
+	jmp qword [rel _init_WorldSystems__SAXPEAVResourcePackManager___Z_ptr]
 global ?shutdown@VanillaWorldSystems@@YAXXZ
 ?shutdown@VanillaWorldSystems@@YAXXZ:
-	mov rax, [rel _shutdown_VanillaWorldSystems__YAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _shutdown_VanillaWorldSystems__YAXXZ_ptr]
 global ?registerBlocks@VanillaBlockTypes@@YAXXZ
 ?registerBlocks@VanillaBlockTypes@@YAXXZ:
-	mov rax, [rel _registerBlocks_VanillaBlockTypes__YAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _registerBlocks_VanillaBlockTypes__YAXXZ_ptr]
 global ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _lookupByName_BlockTypeRegistry__SA_AV_$WeakPtr_VBlockLegacy____AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ
 ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ:
-	mov rax, [rel _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _registerBlocks_BlockDefinitionGroup__QEAAXXZ_ptr]
 global ?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z
 ?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z:
-	mov rax, [rel _spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr]
-	jmp rax
+	jmp qword [rel _spawnProjectile_Spawner__QEAAPEAVActor__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAV2_AEBVVec3__3_Z_ptr]
 global ?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z
 ?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z:
-	mov rax, [rel _spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr]
-	jmp rax
+	jmp qword [rel _spawnMob_Spawner__QEAAPEAVMob__AEAVBlockSource__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3___N44_Z_ptr]
 global ?spawnItem@Spawner@@QEAAPEAVItemActor@@AEAVBlockSource@@AEBVItemStack@@PEAVActor@@AEBVVec3@@H@Z
 ?spawnItem@Spawner@@QEAAPEAVItemActor@@AEAVBlockSource@@AEBVItemStack@@PEAVActor@@AEBVVec3@@H@Z:
-	mov rax, [rel _spawnItem_Spawner__QEAAPEAVItemActor__AEAVBlockSource__AEBVItemStack__PEAVActor__AEBVVec3__H_Z_ptr]
-	jmp rax
+	jmp qword [rel _spawnItem_Spawner__QEAAPEAVItemActor__AEAVBlockSource__AEBVItemStack__PEAVActor__AEBVVec3__H_Z_ptr]
 global ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
 ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z:
-	mov rax, [rel __0ActorDefinitionIdentifier__QEAA_W4ActorType___Z_ptr]
-	jmp rax
+	jmp qword [rel __0ActorDefinitionIdentifier__QEAA_W4ActorType___Z_ptr]
 global ?_initialize@ActorDefinitionIdentifier@@AEAAXXZ
 ?_initialize@ActorDefinitionIdentifier@@AEAAXXZ:
-	mov rax, [rel __initialize_ActorDefinitionIdentifier__AEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel __initialize_ActorDefinitionIdentifier__AEAAXXZ_ptr]
 global ?_extractIdentifier@ActorDefinitionIdentifier@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAU1@@Z
 ?_extractIdentifier@ActorDefinitionIdentifier@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAU1@@Z:
-	mov rax, [rel __extractIdentifier_ActorDefinitionIdentifier__CAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEAU1__Z_ptr]
-	jmp rax
+	jmp qword [rel __extractIdentifier_ActorDefinitionIdentifier__CAXAEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEAU1__Z_ptr]
 global ?computeHash@HashedString@@SA_KPEBD@Z
 ?computeHash@HashedString@@SA_KPEBD@Z:
-	mov rax, [rel _computeHash_HashedString__SA_KPEBD_Z_ptr]
-	jmp rax
+	jmp qword [rel _computeHash_HashedString__SA_KPEBD_Z_ptr]
 global ?initFactory@ProjectileFactory@@SAXXZ
 ?initFactory@ProjectileFactory@@SAXXZ:
-	mov rax, [rel _initFactory_ProjectileFactory__SAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _initFactory_ProjectileFactory__SAXXZ_ptr]
 global ?EntityCanonicalName@@YAAEBVHashedString@@W4ActorType@@@Z
 ?EntityCanonicalName@@YAAEBVHashedString@@W4ActorType@@@Z:
-	mov rax, [rel _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr]
-	jmp rax
+	jmp qword [rel _EntityCanonicalName__YAAEBVHashedString__W4ActorType___Z_ptr]
 global ?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z
 ?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z:
-	mov rax, [rel _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr]
-	jmp rax
+	jmp qword [rel _EntityTypeToString__YA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__W4ActorType__W4ActorTypeNamespaceRules___Z_ptr]
 global ?initializeBlockEntityRenderers@BlockActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@@Z
 ?initializeBlockEntityRenderers@BlockActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@@Z:
-	mov rax, [rel _initializeBlockEntityRenderers_BlockActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup___Z_ptr]
-	jmp rax
+	jmp qword [rel _initializeBlockEntityRenderers_BlockActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup___Z_ptr]
 global ?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z
 ?initializeEntityRenderers@ActorRenderDispatcher@@QEAAXAEAVGeometryGroup@@AEAVTextureGroup@mce@@AEAVBlockTessellator@@AEBVActorResourceDefinitionGroup@@AEBVSemVersion@@@Z:
-	mov rax, [rel _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr]
-	jmp rax
+	jmp qword [rel _initializeEntityRenderers_ActorRenderDispatcher__QEAAXAEAVGeometryGroup__AEAVTextureGroup_mce__AEAVBlockTessellator__AEBVActorResourceDefinitionGroup__AEBVSemVersion___Z_ptr]
 global ?getRenderer@ActorRenderDispatcher@@QEBAPEAVActorRenderer@@AEBVHashedString@@@Z
 ?getRenderer@ActorRenderDispatcher@@QEBAPEAVActorRenderer@@AEBVHashedString@@@Z:
-	mov rax, [rel _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr]
-	jmp rax
+	jmp qword [rel _getRenderer_ActorRenderDispatcher__QEBAPEAVActorRenderer__AEBVHashedString___Z_ptr]
 global ?getDataDrivenRenderer@ActorRenderDispatcher@@QEBAPEAVDataDrivenRenderer@@AEBVHashedString@@@Z
 ?getDataDrivenRenderer@ActorRenderDispatcher@@QEBAPEAVDataDrivenRenderer@@AEBVHashedString@@@Z:
-	mov rax, [rel _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr]
-	jmp rax
+	jmp qword [rel _getDataDrivenRenderer_ActorRenderDispatcher__QEBAPEAVDataDrivenRenderer__AEBVHashedString___Z_ptr]
 global ?registerActorInfo@ActorInfoRegistry@@QEAAXAEBUActorInfo@@@Z
 ?registerActorInfo@ActorInfoRegistry@@QEAAXAEBUActorInfo@@@Z:
-	mov rax, [rel _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr]
-	jmp rax
+	jmp qword [rel _registerActorInfo_ActorInfoRegistry__QEAAXAEBUActorInfo___Z_ptr]
 global ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z
 ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z:
-	mov rax, [rel _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr]
-	jmp rax
+	jmp qword [rel _setDefinitionGroup_ActorFactory__QEAAXPEAVActorDefinitionGroup___Z_ptr]
 global ?broadcastLevelEvent@Level@@QEAAXW4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z
 ?broadcastLevelEvent@Level@@QEAAXW4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z:
-	mov rax, [rel _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr]
-	jmp rax
+	jmp qword [rel _broadcastLevelEvent_Level__QEAAXW4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr]
 global ?broadcastSoundEvent@Level@@QEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
 ?broadcastSoundEvent@Level@@QEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z:
-	mov rax, [rel _broadcastSoundEvent_Level__QEAAXAEAVBlockSource__W4LevelSoundEvent__AEBVVec3__HAEBUActorDefinitionIdentifier___N4_Z_ptr]
-	jmp rax
+	jmp qword [rel _broadcastSoundEvent_Level__QEAAXAEAVBlockSource__W4LevelSoundEvent__AEBVVec3__HAEBUActorDefinitionIdentifier___N4_Z_ptr]
 global ?broadcastDimensionEvent@Level@@QEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z
 ?broadcastDimensionEvent@Level@@QEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@HPEAVPlayer@@@Z:
-	mov rax, [rel _broadcastDimensionEvent_Level__QEAAXAEAVBlockSource__W4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr]
-	jmp rax
+	jmp qword [rel _broadcastDimensionEvent_Level__QEAAXAEAVBlockSource__W4LevelEvent__AEBVVec3__HPEAVPlayer___Z_ptr]
 global ?registerVanillaActorData@VanillaActors@@YAXXZ
 ?registerVanillaActorData@VanillaActors@@YAXXZ:
-	mov rax, [rel _registerVanillaActorData_VanillaActors__YAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _registerVanillaActorData_VanillaActors__YAXXZ_ptr]
 global ?GetActorDataRegistry@@YAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@@std@@@2@@std@@XZ
 ?GetActorDataRegistry@@YAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@@std@@@2@@std@@XZ:
-	mov rax, [rel _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr]
-	jmp rax
+	jmp qword [rel _GetActorDataRegistry__YAAEAV_$unordered_map_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData__U_$hash_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_U_$equal_to_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2_V_$allocator_U_$pair_$$CBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__UActorFactoryData___std___2__std__XZ_ptr]
 global ??0CompoundTag@@QEAA@XZ
 ??0CompoundTag@@QEAA@XZ:
-	mov rax, [rel __0CompoundTag__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __0CompoundTag__QEAA_XZ_ptr]
 global ??0CompoundTag@@QEAA@$$QEAV0@@Z
 ??0CompoundTag@@QEAA@$$QEAV0@@Z:
-	mov rax, [rel __0CompoundTag__QEAA_$$QEAV0__Z_ptr]
-	jmp rax
+	jmp qword [rel __0CompoundTag__QEAA_$$QEAV0__Z_ptr]
 global ??1CompoundTag@@UEAA@XZ
 ??1CompoundTag@@UEAA@XZ:
-	mov rax, [rel __1CompoundTag__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1CompoundTag__UEAA_XZ_ptr]
 global ?putFloat@CompoundTag@@QEAAAEAMV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
 ?putFloat@CompoundTag@@QEAAAEAMV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z:
-	mov rax, [rel _putFloat_CompoundTag__QEAAAEAMV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__M_Z_ptr]
-	jmp rax
+	jmp qword [rel _putFloat_CompoundTag__QEAAAEAMV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__M_Z_ptr]
 global ?getFloat@CompoundTag@@QEBAMV?$basic_string_span@$$CBD$0?0@gsl@@@Z
 ?getFloat@CompoundTag@@QEBAMV?$basic_string_span@$$CBD$0?0@gsl@@@Z:
-	mov rax, [rel _getFloat_CompoundTag__QEBAMV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
-	jmp rax
+	jmp qword [rel _getFloat_CompoundTag__QEBAMV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
 global ?putInt@CompoundTag@@QEAAAEAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
 ?putInt@CompoundTag@@QEAAAEAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z:
-	mov rax, [rel _putInt_CompoundTag__QEAAAEAHV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
-	jmp rax
+	jmp qword [rel _putInt_CompoundTag__QEAAAEAHV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__H_Z_ptr]
 global ?getInt@CompoundTag@@QEBAHV?$basic_string_span@$$CBD$0?0@gsl@@@Z
 ?getInt@CompoundTag@@QEBAHV?$basic_string_span@$$CBD$0?0@gsl@@@Z:
-	mov rax, [rel _getInt_CompoundTag__QEBAHV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
-	jmp rax
+	jmp qword [rel _getInt_CompoundTag__QEBAHV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
 global ?putShort@CompoundTag@@QEAAAEAFV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
 ?putShort@CompoundTag@@QEAAAEAFV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z:
-	mov rax, [rel _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr]
-	jmp rax
+	jmp qword [rel _putShort_CompoundTag__QEAAAEAFV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr]
 global ?getShort@CompoundTag@@QEBAFV?$basic_string_span@$$CBD$0?0@gsl@@@Z
 ?getShort@CompoundTag@@QEBAFV?$basic_string_span@$$CBD$0?0@gsl@@@Z:
-	mov rax, [rel _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
-	jmp rax
+	jmp qword [rel _getShort_CompoundTag__QEBAFV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
 global ?contains@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
 ?contains@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z:
-	mov rax, [rel _contains_CompoundTag__QEBA_NV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
-	jmp rax
+	jmp qword [rel _contains_CompoundTag__QEBA_NV_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
 global ?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemInstance@@AEBVActor@@@Z
 ?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemInstance@@AEBVActor@@@Z:
-	mov rax, [rel _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr]
-	jmp rax
+	jmp qword [rel _onItemSpawnedActor_ItemEventCoordinator__QEAAXAEBVItemInstance__AEBVActor___Z_ptr]
 global ?sendActorAcquiredItem@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@IW4ItemAcquisitionMethod@@PEAV2@@Z
 ?sendActorAcquiredItem@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@IW4ItemAcquisitionMethod@@PEAV2@@Z:
-	mov rax, [rel _sendActorAcquiredItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__IW4ItemAcquisitionMethod__PEAV2__Z_ptr]
-	jmp rax
+	jmp qword [rel _sendActorAcquiredItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__IW4ItemAcquisitionMethod__PEAV2__Z_ptr]
 global ?sendActorUseItem@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@W4ItemUseMethod@@@Z
 ?sendActorUseItem@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@W4ItemUseMethod@@@Z:
-	mov rax, [rel _sendActorUseItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__W4ItemUseMethod___Z_ptr]
-	jmp rax
+	jmp qword [rel _sendActorUseItem_ActorEventCoordinator__QEAAXAEAVActor__AEBVItemInstance__W4ItemUseMethod___Z_ptr]
 global ?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z
 ?createSpawnedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z:
-	mov rax, [rel _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr]
-	jmp rax
+	jmp qword [rel _createSpawnedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor__AEBVVec3__AEBVVec2___Z_ptr]
 global ?createTransformedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z
 ?createTransformedEntity@ActorFactory@@QEAA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z:
-	mov rax, [rel _createTransformedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor___Z_ptr]
-	jmp rax
+	jmp qword [rel _createTransformedEntity_ActorFactory__QEAA_AV_$unique_ptr_VActor__U_$default_delete_VActor___std___std__AEBUActorDefinitionIdentifier__PEAVActor___Z_ptr]
 global ?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
 ?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z:
-	mov rax, [rel __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr]
-	jmp rax
+	jmp qword [rel __tick_LiquidBlockDynamic__AEBA_NAEAVBlockSource__AEBVBlockPos__AEAVRandom___N_Z_ptr]
 global ?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z
 ?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z:
-	mov rax, [rel _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr]
-	jmp rax
+	jmp qword [rel _switchBlock_BlockPalette__QEBAAEBVBlock__AEBV2_AEBVBlockLegacy___Z_ptr]
 global ?isInstanceOf@ActorClassTree@@SA_NAEBVActor@@W4ActorType@@@Z
 ?isInstanceOf@ActorClassTree@@SA_NAEBVActor@@W4ActorType@@@Z:
-	mov rax, [rel _isInstanceOf_ActorClassTree__SA_NAEBVActor__W4ActorType___Z_ptr]
-	jmp rax
+	jmp qword [rel _isInstanceOf_ActorClassTree__SA_NAEBVActor__W4ActorType___Z_ptr]
 global ?getVariant@Actor@@QEBAHXZ
 ?getVariant@Actor@@QEBAHXZ:
-	mov rax, [rel _getVariant_Actor__QEBAHXZ_ptr]
-	jmp rax
+	jmp qword [rel _getVariant_Actor__QEBAHXZ_ptr]
 global ?setVariant@Actor@@QEAAXH@Z
 ?setVariant@Actor@@QEAAXH@Z:
-	mov rax, [rel _setVariant_Actor__QEAAXH_Z_ptr]
-	jmp rax
+	jmp qword [rel _setVariant_Actor__QEAAXH_Z_ptr]
 global ?isPersistent@Actor@@QEBA_NXZ
 ?isPersistent@Actor@@QEBA_NXZ:
-	mov rax, [rel _isPersistent_Actor__QEBA_NXZ_ptr]
-	jmp rax
+	jmp qword [rel _isPersistent_Actor__QEBA_NXZ_ptr]
 global ?setPersistent@Actor@@QEAAXXZ
 ?setPersistent@Actor@@QEAAXXZ:
-	mov rax, [rel _setPersistent_Actor__QEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _setPersistent_Actor__QEAAXXZ_ptr]
 global ?getStatusFlag@Actor@@QEBA_NW4ActorFlags@@@Z
 ?getStatusFlag@Actor@@QEBA_NW4ActorFlags@@@Z:
-	mov rax, [rel _getStatusFlag_Actor__QEBA_NW4ActorFlags___Z_ptr]
-	jmp rax
+	jmp qword [rel _getStatusFlag_Actor__QEBA_NW4ActorFlags___Z_ptr]
 global ?setStatusFlag@Actor@@QEAA_NW4ActorFlags@@_N@Z
 ?setStatusFlag@Actor@@QEAA_NW4ActorFlags@@_N@Z:
-	mov rax, [rel _setStatusFlag_Actor__QEAA_NW4ActorFlags___N_Z_ptr]
-	jmp rax
+	jmp qword [rel _setStatusFlag_Actor__QEAA_NW4ActorFlags___N_Z_ptr]
 global ?addEffect@Actor@@QEAAXAEBVMobEffectInstance@@@Z
 ?addEffect@Actor@@QEAAXAEBVMobEffectInstance@@@Z:
-	mov rax, [rel _addEffect_Actor__QEAAXAEBVMobEffectInstance___Z_ptr]
-	jmp rax
+	jmp qword [rel _addEffect_Actor__QEAAXAEBVMobEffectInstance___Z_ptr]
 global ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
 ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z:
-	mov rax, [rel __0MobEffectInstance__QEAA_IHHHHH_N00_Z_ptr]
-	jmp rax
+	jmp qword [rel __0MobEffectInstance__QEAA_IHHHHH_N00_Z_ptr]
 global ?getByName@MobEffect@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?getByName@MobEffect@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _getByName_MobEffect__SAPEAV1_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _getByName_MobEffect__SAPEAV1_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z:
-	mov rax, [rel _get_I18n__SA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
-	jmp rax
+	jmp qword [rel _get_I18n__SA_AV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV23__Z_ptr]
 global ?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
 ?_takeLiquid@BucketItem@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z:
-	mov rax, [rel __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel __takeLiquid_BucketItem__QEBA_NAEAVItemStack__AEAVActor__AEBVBlockPos___Z_ptr]
 global ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z
 ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z:
-	mov rax, [rel _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr]
-	jmp rax
+	jmp qword [rel _ejectItem_DispenserBlock__SAXAEAVBlockSource__AEBVVec3__EAEBVItemStack___Z_ptr]
 global ??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z
 ??0ItemSpriteRenderer@@QEAA@AEAVTextureGroup@mce@@PEAVItem@@_N@Z:
-	mov rax, [rel __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr]
-	jmp rax
+	jmp qword [rel __0ItemSpriteRenderer__QEAA_AEAVTextureGroup_mce__PEAVItem___N_Z_ptr]
 global ??1ItemSpriteRenderer@@UEAA@XZ
 ??1ItemSpriteRenderer@@UEAA@XZ:
-	mov rax, [rel __1ItemSpriteRenderer__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1ItemSpriteRenderer__UEAA_XZ_ptr]
 global ??0BaseActorRenderer@@QEAA@XZ
 ??0BaseActorRenderer@@QEAA@XZ:
-	mov rax, [rel __0BaseActorRenderer__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __0BaseActorRenderer__QEAA_XZ_ptr]
 global ?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ
 ?onAppSuspended@ItemSpriteRenderer@@UEAAXXZ:
-	mov rax, [rel _onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _onAppSuspended_ItemSpriteRenderer__UEAAXXZ_ptr]
 global ?_renderQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@AEBVVec3@@MM@Z
 ?_renderQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@AEBVVec3@@MM@Z:
-	mov rax, [rel __renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr]
-	jmp rax
+	jmp qword [rel __renderQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce__AEBVVec3__MM_Z_ptr]
 global ?_buildQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@@Z
 ?_buildQuad@ItemSpriteRenderer@@QEAAXAEAVBaseActorRenderContext@@AEAVActor@@AEAVMesh@mce@@@Z:
-	mov rax, [rel __buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr]
-	jmp rax
+	jmp qword [rel __buildQuad_ItemSpriteRenderer__QEAAXAEAVBaseActorRenderContext__AEAVActor__AEAVMesh_mce___Z_ptr]
 global ??1Mesh@mce@@QEAA@XZ
 ??1Mesh@mce@@QEAA@XZ:
-	mov rax, [rel __1Mesh_mce__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1Mesh_mce__QEAA_XZ_ptr]
 global ??0Mesh@mce@@QEAA@XZ
 ??0Mesh@mce@@QEAA@XZ:
-	mov rax, [rel __0Mesh_mce__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __0Mesh_mce__QEAA_XZ_ptr]
 global ?reset@Mesh@mce@@QEAAXXZ
 ?reset@Mesh@mce@@QEAAXXZ:
-	mov rax, [rel _reset_Mesh_mce__QEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _reset_Mesh_mce__QEAAXXZ_ptr]
 global ?isValid@Mesh@mce@@QEBA_NXZ
 ?isValid@Mesh@mce@@QEBA_NXZ:
-	mov rax, [rel _isValid_Mesh_mce__QEBA_NXZ_ptr]
-	jmp rax
+	jmp qword [rel _isValid_Mesh_mce__QEBA_NXZ_ptr]
 global ?renderMesh@Mesh@mce@@QEBAXAEAVMeshContext@2@AEBVMaterialPtr@2@V?$span@PEBVClientTexture@mce@@$0?0@gsl@@IIPEBVIndexBufferContainer@2@@Z
 ?renderMesh@Mesh@mce@@QEBAXAEAVMeshContext@2@AEBVMaterialPtr@2@V?$span@PEBVClientTexture@mce@@$0?0@gsl@@IIPEBVIndexBufferContainer@2@@Z:
-	mov rax, [rel _renderMesh_Mesh_mce__QEBAXAEAVMeshContext_2_AEBVMaterialPtr_2_V_$span_PEBVClientTexture_mce__$0_0_gsl__IIPEBVIndexBufferContainer_2__Z_ptr]
-	jmp rax
+	jmp qword [rel _renderMesh_Mesh_mce__QEBAXAEAVMeshContext_2_AEBVMaterialPtr_2_V_$span_PEBVClientTexture_mce__$0_0_gsl__IIPEBVIndexBufferContainer_2__Z_ptr]
 global ?init@Recipes@@QEAAXAEAVResourcePackManager@@@Z
 ?init@Recipes@@QEAAXAEAVResourcePackManager@@@Z:
-	mov rax, [rel _init_Recipes__QEAAXAEAVResourcePackManager___Z_ptr]
-	jmp rax
+	jmp qword [rel _init_Recipes__QEAAXAEAVResourcePackManager___Z_ptr]
 global ?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@std@@@Z
 ?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@std@@@Z:
-	mov rax, [rel _addFurnaceRecipeAuxData_Recipes__QEAAXAEBVItemInstance__0AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___std___Z_ptr]
-	jmp rax
+	jmp qword [rel _addFurnaceRecipeAuxData_Recipes__QEAAXAEBVItemInstance__0AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___std___Z_ptr]
 global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
 ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
-	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_22AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
-	jmp rax
+	jmp qword [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_22AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
 global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
 ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
-	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_2AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
-	jmp rax
+	jmp qword [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_2AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
 global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
 ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
-	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
-	jmp rax
+	jmp qword [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV23_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
 global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
 ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
-	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
-	jmp rax
+	jmp qword [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBVItemInstance__AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
 global ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z
 ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashString@Util@@V?$allocator@VHashString@Util@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashString@Util@@@Z@3@@Z:
-	mov rax, [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___3_AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
-	jmp rax
+	jmp qword [rel _addShapedRecipe_Recipes__QEAAXV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___3_AEBV_$vector_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__V_$allocator_V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___2__3_AEBV_$vector_VType_Recipes__V_$allocator_VType_Recipes___std___3_AEBV_$vector_VHashString_Util__V_$allocator_VHashString_Util___std___3_HV_$function_$$A6A_AV_$unique_ptr_VShapedRecipe__U_$default_delete_VShapedRecipe___std___std__V_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__2_HHAEBV_$vector_VRecipeIngredient__V_$allocator_VRecipeIngredient___std___2_AEBV_$vector_VItemInstance__V_$allocator_VItemInstance___std___2_VHashString_Util___Z_3__Z_ptr]
 global ?createBlockEntity@BlockActorFactory@@SA?AV?$shared_ptr@VBlockActor@@@std@@W4BlockActorType@@AEBVBlockPos@@AEBVBlockLegacy@@@Z
 ?createBlockEntity@BlockActorFactory@@SA?AV?$shared_ptr@VBlockActor@@@std@@W4BlockActorType@@AEBVBlockPos@@AEBVBlockLegacy@@@Z:
-	mov rax, [rel _createBlockEntity_BlockActorFactory__SA_AV_$shared_ptr_VBlockActor___std__W4BlockActorType__AEBVBlockPos__AEBVBlockLegacy___Z_ptr]
-	jmp rax
+	jmp qword [rel _createBlockEntity_BlockActorFactory__SA_AV_$shared_ptr_VBlockActor___std__W4BlockActorType__AEBVBlockPos__AEBVBlockLegacy___Z_ptr]
 global ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel __0BlockActor__QEAA_W4BlockActorType__AEBVBlockPos__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel __0BlockActor__QEAA_W4BlockActorType__AEBVBlockPos__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ??1BlockActor@@UEAA@XZ
 ??1BlockActor@@UEAA@XZ:
-	mov rax, [rel __1BlockActor__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1BlockActor__UEAA_XZ_ptr]
 global ?setId@BlockActor@@SAXW4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 ?setId@BlockActor@@SAXW4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
-	mov rax, [rel _setId_BlockActor__SAXW4BlockActorType__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
-	jmp rax
+	jmp qword [rel _setId_BlockActor__SAXW4BlockActorType__AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std___Z_ptr]
 global ?initBlockEntities@BlockActor@@SAXXZ
 ?initBlockEntities@BlockActor@@SAXXZ:
-	mov rax, [rel _initBlockEntities_BlockActor__SAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _initBlockEntities_BlockActor__SAXXZ_ptr]
 global ?getTemperature@Biome@@QEBAMAEBVBlockSource@@AEBVBlockPos@@@Z
 ?getTemperature@Biome@@QEBAMAEBVBlockSource@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getTemperature_Biome__QEBAMAEBVBlockSource__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getTemperature_Biome__QEBAMAEBVBlockSource__AEBVBlockPos___Z_ptr]
 global ?getFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
 ?getFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z:
-	mov rax, [rel _getFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr]
 global ?getMapFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
 ?getMapFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z:
-	mov rax, [rel _getMapFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getMapFoliageColor_Biome__QEBAHAEBVBlockPos___Z_ptr]
 global ?isDeepLeafBlock@LeafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
 ?isDeepLeafBlock@LeafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z:
-	mov rax, [rel _isDeepLeafBlock_LeafBlock__SA_NAEAVBlockSource__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _isDeepLeafBlock_LeafBlock__SA_NAEAVBlockSource__AEBVBlockPos___Z_ptr]
 global ?getSeasonsColor@BlockInfestingLeaves@@QEBA?AVColor@@AEAVBlockSource@@AEBVBlockPos@@HH@Z
 ?getSeasonsColor@BlockInfestingLeaves@@QEBA?AVColor@@AEAVBlockSource@@AEBVBlockPos@@HH@Z:
-	mov rax, [rel _getSeasonsColor_BlockInfestingLeaves__QEBA_AVColor__AEAVBlockSource__AEBVBlockPos__HH_Z_ptr]
-	jmp rax
+	jmp qword [rel _getSeasonsColor_BlockInfestingLeaves__QEBA_AVColor__AEAVBlockSource__AEBVBlockPos__HH_Z_ptr]
 global ?getBirchColor@FoliageColor@@SAHMM@Z
 ?getBirchColor@FoliageColor@@SAHMM@Z:
-	mov rax, [rel _getBirchColor_FoliageColor__SAHMM_Z_ptr]
-	jmp rax
+	jmp qword [rel _getBirchColor_FoliageColor__SAHMM_Z_ptr]
 global ?getEvergreenColor@FoliageColor@@SAHMM@Z
 ?getEvergreenColor@FoliageColor@@SAHMM@Z:
-	mov rax, [rel _getEvergreenColor_FoliageColor__SAHMM_Z_ptr]
-	jmp rax
+	jmp qword [rel _getEvergreenColor_FoliageColor__SAHMM_Z_ptr]
 global ?tessellateInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@PEAX@Z
 ?tessellateInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@PEAX@Z:
-	mov rax, [rel _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos__PEAX_Z_ptr]
 global ?tessellateExtraDataInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z
 ?tessellateExtraDataInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z:
-	mov rax, [rel _tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateExtraDataInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr]
 global ?tessellateBlockInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z
 ?tessellateBlockInWorld@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@AEBVBlockPos@@@Z:
-	mov rax, [rel _tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateBlockInWorld_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__AEBVBlockPos___Z_ptr]
 global ?tessellateBlockInWorldWithAmbienceOcclusion@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@VBlockPos@@AEBVColor@@PEAVBlockOccluder@@H@Z
 ?tessellateBlockInWorldWithAmbienceOcclusion@BlockTessellator@@QEAA_NAEAVTessellator@@AEBVBlock@@VBlockPos@@AEBVColor@@PEAVBlockOccluder@@H@Z:
-	mov rax, [rel _tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateBlockInWorldWithAmbienceOcclusion_BlockTessellator__QEAA_NAEAVTessellator__AEBVBlock__VBlockPos__AEBVColor__PEAVBlockOccluder__H_Z_ptr]
 global ?tessellateFaceUp@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
 ?tessellateFaceUp@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
-	mov rax, [rel _tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateFaceUp_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
 global ?tessellateFaceDown@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
 ?tessellateFaceDown@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
-	mov rax, [rel _tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateFaceDown_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
 global ?tessellateNorth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
 ?tessellateNorth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
-	mov rax, [rel _tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateNorth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
 global ?tessellateSouth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
 ?tessellateSouth@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
-	mov rax, [rel _tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateSouth_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
 global ?tessellateEast@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
 ?tessellateEast@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
-	mov rax, [rel _tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateEast_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
 global ?tessellateWest@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z
 ?tessellateWest@BlockTessellator@@QEAAXAEAVTessellator@@AEBVBlock@@AEBVVec3@@AEBUTextureUVCoordinateSet@@@Z:
-	mov rax, [rel _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
-	jmp rax
+	jmp qword [rel _tessellateWest_BlockTessellator__QEAAXAEAVTessellator__AEBVBlock__AEBVVec3__AEBUTextureUVCoordinateSet___Z_ptr]
 global ?getMeshForBlockInWorld@BlockTessellator@@QEAAAEAVMesh@mce@@AEAVTessellator@@AEBVBlock@@AEAVBlockPos@@W4BlockRenderLayer@@PEBX_N@Z
 ?getMeshForBlockInWorld@BlockTessellator@@QEAAAEAVMesh@mce@@AEAVTessellator@@AEBVBlock@@AEAVBlockPos@@W4BlockRenderLayer@@PEBX_N@Z:
-	mov rax, [rel _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr]
-	jmp rax
+	jmp qword [rel _getMeshForBlockInWorld_BlockTessellator__QEAAAEAVMesh_mce__AEAVTessellator__AEBVBlock__AEAVBlockPos__W4BlockRenderLayer__PEBX_N_Z_ptr]
 global ?getLightColor@BlockTessellator@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z
 ?getLightColor@BlockTessellator@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getLightColor_BlockTessellator__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr]
 global ?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ
 ?getCurrentShape@BlockTessellator@@QEAAAEBVAABB@@XZ:
-	mov rax, [rel _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr]
-	jmp rax
+	jmp qword [rel _getCurrentShape_BlockTessellator__QEAAAEBVAABB__XZ_ptr]
 global ?canRender@BlockTessellator@@QEAA_NW4BlockShape@@@Z
 ?canRender@BlockTessellator@@QEAA_NW4BlockShape@@@Z:
-	mov rax, [rel _canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr]
-	jmp rax
+	jmp qword [rel _canRender_BlockTessellator__QEAA_NW4BlockShape___Z_ptr]
 global ?reset@BlockTessellator@@QEAAXXZ
 ?reset@BlockTessellator@@QEAAXXZ:
-	mov rax, [rel _reset_BlockTessellator__QEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _reset_BlockTessellator__QEAAXXZ_ptr]
 global ?reset@BlockTessellatorCache@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
 ?reset@BlockTessellatorCache@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z:
-	mov rax, [rel _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _reset_BlockTessellatorCache__QEAAXAEAVBlockSource__AEBVBlockPos___Z_ptr]
 global ?getLightColor@BlockTessellatorCache@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z
 ?getLightColor@BlockTessellatorCache@@QEAA?AUBrightnessPair@@AEBVBlockPos@@@Z:
-	mov rax, [rel _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr]
-	jmp rax
+	jmp qword [rel _getLightColor_BlockTessellatorCache__QEAA_AUBrightnessPair__AEBVBlockPos___Z_ptr]
 global ??1TexturePtr@mce@@QEAA@XZ
 ??1TexturePtr@mce@@QEAA@XZ:
-	mov rax, [rel __1TexturePtr_mce__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1TexturePtr_mce__QEAA_XZ_ptr]
 global ??1MaterialPtr@mce@@QEAA@XZ
 ??1MaterialPtr@mce@@QEAA@XZ:
-	mov rax, [rel __1MaterialPtr_mce__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1MaterialPtr_mce__QEAA_XZ_ptr]
 global ??0MovingBlockActorRenderer@@QEAA@AEAVTextureGroup@mce@@AEAVBlockTessellator@@@Z
 ??0MovingBlockActorRenderer@@QEAA@AEAVTextureGroup@mce@@AEAVBlockTessellator@@@Z:
-	mov rax, [rel __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr]
-	jmp rax
+	jmp qword [rel __0MovingBlockActorRenderer__QEAA_AEAVTextureGroup_mce__AEAVBlockTessellator___Z_ptr]
 global ?render@MovingBlockActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVBlockActorRenderData@@@Z
 ?render@MovingBlockActorRenderer@@UEAAXAEAVBaseActorRenderContext@@AEAVBlockActorRenderData@@@Z:
-	mov rax, [rel _render_MovingBlockActorRenderer__UEAAXAEAVBaseActorRenderContext__AEAVBlockActorRenderData___Z_ptr]
-	jmp rax
+	jmp qword [rel _render_MovingBlockActorRenderer__UEAAXAEAVBaseActorRenderContext__AEAVBlockActorRenderData___Z_ptr]
 global ?setupShaderParameters@ActorShaderManager@@SAXAEAVScreenContext@@AEAVBlockSource@@AEBVBlockPos@@M_NAEAVLightTexture@@AEBVVec2@@AEBVVec4@@@Z
 ?setupShaderParameters@ActorShaderManager@@SAXAEAVScreenContext@@AEAVBlockSource@@AEBVBlockPos@@M_NAEAVLightTexture@@AEBVVec2@@AEBVVec4@@@Z:
-	mov rax, [rel _setupShaderParameters_ActorShaderManager__SAXAEAVScreenContext__AEAVBlockSource__AEBVBlockPos__M_NAEAVLightTexture__AEBVVec2__AEBVVec4___Z_ptr]
-	jmp rax
+	jmp qword [rel _setupShaderParameters_ActorShaderManager__SAXAEAVScreenContext__AEAVBlockSource__AEBVBlockPos__M_NAEAVLightTexture__AEBVVec2__AEBVVec4___Z_ptr]
 global ?addPostTransformOffset@Tessellator@@QEAAXMMM@Z
 ?addPostTransformOffset@Tessellator@@QEAAXMMM@Z:
-	mov rax, [rel _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr]
-	jmp rax
+	jmp qword [rel _addPostTransformOffset_Tessellator__QEAAXMMM_Z_ptr]
 global ?beginOverride@Tessellator@@QEAAXXZ
 ?beginOverride@Tessellator@@QEAAXXZ:
-	mov rax, [rel _beginOverride_Tessellator__QEAAXXZ_ptr]
-	jmp rax
+	jmp qword [rel _beginOverride_Tessellator__QEAAXXZ_ptr]
 global ?color@Tessellator@@QEAAXAEBVColor@@@Z
 ?color@Tessellator@@QEAAXAEBVColor@@@Z:
-	mov rax, [rel _color_Tessellator__QEAAXAEBVColor___Z_ptr]
-	jmp rax
+	jmp qword [rel _color_Tessellator__QEAAXAEBVColor___Z_ptr]
 global ?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
 ?end@Tessellator@@QEAA?AVMesh@mce@@W4UploadMode@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z:
-	mov rax, [rel _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
-	jmp rax
+	jmp qword [rel _end_Tessellator__QEAA_AVMesh_mce__W4UploadMode_1_V_$basic_string_span_$$CBD$0_0_gsl___Z_ptr]
 global ?_tex@Tessellator@@QEAA_NAEBVVec2@@H@Z
 ?_tex@Tessellator@@QEAA_NAEBVVec2@@H@Z:
-	mov rax, [rel __tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr]
-	jmp rax
+	jmp qword [rel __tex_Tessellator__QEAA_NAEBVVec2__H_Z_ptr]
 global ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ
 ?getClientTexture@TexturePtr@mce@@QEBAPEAVClientTexture@2@XZ:
-	mov rax, [rel _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr]
-	jmp rax
+	jmp qword [rel _getClientTexture_TexturePtr_mce__QEBAPEAVClientTexture_2_XZ_ptr]
 global ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z
 ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z:
-	mov rax, [rel __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr]
-	jmp rax
+	jmp qword [rel __0BlockActorDataPacket__QEAA_AEBVBlockPos__VCompoundTag___Z_ptr]
 global ??1BlockActorDataPacket@@QEAA@XZ
 ??1BlockActorDataPacket@@QEAA@XZ:
-	mov rax, [rel __1BlockActorDataPacket__QEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1BlockActorDataPacket__QEAA_XZ_ptr]
 global ?brightnessToUV@LightTexture@@SA?AVVec2@@UBrightnessPair@@@Z
 ?brightnessToUV@LightTexture@@SA?AVVec2@@UBrightnessPair@@@Z:
-	mov rax, [rel _brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr]
-	jmp rax
+	jmp qword [rel _brightnessToUV_LightTexture__SA_AVVec2__UBrightnessPair___Z_ptr]
 global ??0AmbientOcclusionCalculator@@QEAA@AEBVBlockPos@@AEBVBlock@@AEAVBlockTessellatorCache@@@Z
 ??0AmbientOcclusionCalculator@@QEAA@AEBVBlockPos@@AEBVBlock@@AEAVBlockTessellatorCache@@@Z:
-	mov rax, [rel __0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr]
-	jmp rax
+	jmp qword [rel __0AmbientOcclusionCalculator__QEAA_AEBVBlockPos__AEBVBlock__AEAVBlockTessellatorCache___Z_ptr]
 global ?calculate@AmbientOcclusionCalculator@@QEAAXE@Z
 ?calculate@AmbientOcclusionCalculator@@QEAAXE@Z:
-	mov rax, [rel _calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr]
-	jmp rax
+	jmp qword [rel _calculate_AmbientOcclusionCalculator__QEAAXE_Z_ptr]
 global ??0BlockOccluder@@QEAA@AEAVBlockTessellatorCache@@AEBVBlock@@AEBVBlockPos@@AEBVAABB@@AEBV?$vector@EV?$allocator@E@std@@@std@@_N@Z
 ??0BlockOccluder@@QEAA@AEAVBlockTessellatorCache@@AEBVBlock@@AEBVBlockPos@@AEBVAABB@@AEBV?$vector@EV?$allocator@E@std@@@std@@_N@Z:
-	mov rax, [rel __0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr]
-	jmp rax
+	jmp qword [rel __0BlockOccluder__QEAA_AEAVBlockTessellatorCache__AEBVBlock__AEBVBlockPos__AEBVAABB__AEBV_$vector_EV_$allocator_E_std___std___N_Z_ptr]
 global ??1Item@@UEAA@XZ
 ??1Item@@UEAA@XZ:
-	mov rax, [rel __1Item__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1Item__UEAA_XZ_ptr]
 global ??1DiggerItem@@UEAA@XZ
 ??1DiggerItem@@UEAA@XZ:
-	mov rax, [rel __1DiggerItem__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1DiggerItem__UEAA_XZ_ptr]
 global ??1BlockPlanterItem@@UEAA@XZ
 ??1BlockPlanterItem@@UEAA@XZ:
-	mov rax, [rel __1BlockPlanterItem__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1BlockPlanterItem__UEAA_XZ_ptr]
 global ??1BlockItem@@UEAA@XZ
 ??1BlockItem@@UEAA@XZ:
-	mov rax, [rel __1BlockItem__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1BlockItem__UEAA_XZ_ptr]
 global ??1BlockLegacy@@UEAA@XZ
 ??1BlockLegacy@@UEAA@XZ:
-	mov rax, [rel __1BlockLegacy__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1BlockLegacy__UEAA_XZ_ptr]
 global ??1ItemStackBase@@UEAA@XZ
 ??1ItemStackBase@@UEAA@XZ:
-	mov rax, [rel __1ItemStackBase__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1ItemStackBase__UEAA_XZ_ptr]
 global ??1Actor@@UEAA@XZ
 ??1Actor@@UEAA@XZ:
-	mov rax, [rel __1Actor__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1Actor__UEAA_XZ_ptr]
 global ??1Container@@UEAA@XZ
 ??1Container@@UEAA@XZ:
-	mov rax, [rel __1Container__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1Container__UEAA_XZ_ptr]
 global ??1BaseActorRenderer@@UEAA@XZ
 ??1BaseActorRenderer@@UEAA@XZ:
-	mov rax, [rel __1BaseActorRenderer__UEAA_XZ_ptr]
-	jmp rax
+	jmp qword [rel __1BaseActorRenderer__UEAA_XZ_ptr]
 global ?tearDown@Item@@UEAAXXZ
 ?tearDown@Item@@UEAAXXZ:
 	mov rax, [rel Item_vtable]

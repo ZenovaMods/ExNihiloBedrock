@@ -174,8 +174,10 @@ void initRecipes(Recipes* self, ResourcePackManager& resourcePackManager) {
 
 ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
 
+
 void ExNihiloBedrock::Start() {
 	Zenova_Info("Intializing Ex Nihilo and checking version");
+	Zenova::Platform::DebugPause();
 
 	if (Zenova::Minecraft::version() == Zenova::Minecraft::v1_14_60_5) {
 		defaultRecipes = new ExNihiloDefaultRecipes();
@@ -183,24 +185,24 @@ void ExNihiloBedrock::Start() {
 		ENEntities::initEntityMap();
 		ENBlocks::init();
 
-		Zenova::Hook::Create(&VanillaItems::registerItems, &registerItems, &_registerItems);
-		Zenova::Hook::Create(&VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, &_initCreativeItemsCallback);
-		Zenova::Hook::Create(&VanillaItems::initClientData, &initClientData, &_initClientData);
-		Zenova::Hook::Create(BlockLegacy_vtable, &BlockLegacy::playerDestroy, &BlockLegacy_playerDestroy, &_BlockLegacy_playerDestroy);
-		Zenova::Hook::Create(&WorldSystems::init, &initWorldSystems, &_initWorldSystems);
-		Zenova::Hook::Create(&BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, &_registerLooseBlockGraphics);
-		Zenova::Hook::Create(&BlockDefinitionGroup::registerBlocks, &registerBlocks, &_registerBlocks);
-		Zenova::Hook::Create(&BlockActorRenderDispatcher::initializeBlockEntityRenderers, &initBlockEntityRenderers, &_initBlockEntityRenderers);
-		Zenova::Hook::Create(&BlockTessellator::tessellateInWorld, &tessellateInWorld, &_tessellateInWorld);
-		Zenova::Hook::Create(&BlockTessellator::canRender, &canRenderBlockInGui, &_canRenderBlockInGui);
-		Zenova::Hook::Create(&BlockActorFactory::createBlockEntity, &createBlockEntity, &_createBlockEntity);
-		Zenova::Hook::Create(&BlockActor::initBlockEntities, &initBlockEntities, &_initBlockEntities);
-		Zenova::Hook::Create(&ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);
-		Zenova::Hook::Create(&ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
-		Zenova::Hook::Create(&VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
-		Zenova::Hook::Create(&BucketItem::_takeLiquid, &bucketTakeLiquid, &_bucketTakeLiquid);
-		Zenova::Hook::Create(BucketItem_vtable, &BucketItem::dispense, &bucketDispense, &_bucketDispense);
-		Zenova::Hook::Create(&Recipes::init, &initRecipes, &_initRecipes);
+		Zenova_Hook(VanillaItems::registerItems, &registerItems, &_registerItems);
+		Zenova_Hook(VanillaItems::initCreativeItemsCallback, &initCreativeItemsCallback, &_initCreativeItemsCallback);
+		Zenova_Hook(VanillaItems::initClientData, &initClientData, &_initClientData);
+		Zenova_VHook(BlockLegacy, playerDestroy, &BlockLegacy_playerDestroy, &_BlockLegacy_playerDestroy);
+		Zenova_Hook(WorldSystems::init, &initWorldSystems, &_initWorldSystems);
+		Zenova_Hook(BlockGraphics::registerLooseBlockGraphics, &registerLooseBlockGraphics, &_registerLooseBlockGraphics);
+		Zenova_Hook(BlockDefinitionGroup::registerBlocks, &registerBlocks, &_registerBlocks);
+		Zenova_Hook(BlockActorRenderDispatcher::initializeBlockEntityRenderers, &initBlockEntityRenderers, &_initBlockEntityRenderers);
+		Zenova_Hook(BlockTessellator::tessellateInWorld, &tessellateInWorld, &_tessellateInWorld);
+		Zenova_Hook(BlockTessellator::canRender, &canRenderBlockInGui, &_canRenderBlockInGui);
+		Zenova_Hook(BlockActorFactory::createBlockEntity, &createBlockEntity, &_createBlockEntity);
+		Zenova_Hook(BlockActor::initBlockEntities, &initBlockEntities, &_initBlockEntities);
+		Zenova_Hook(ProjectileFactory::initFactory, &initProjectileFactory, &_initProjectileFactory);
+		Zenova_Hook(ActorRenderDispatcher::initializeEntityRenderers, &initEntityRenderers, &_initEntityRenderers);
+		Zenova_Hook(VanillaActors::registerVanillaActorData, &registerVanillaActorData, &_registerVanillaActorData);
+		Zenova_Hook(BucketItem::_takeLiquid, &bucketTakeLiquid, &_bucketTakeLiquid);
+		Zenova_VHook(BucketItem, dispense, &bucketDispense, &_bucketDispense);
+		Zenova_Hook(Recipes::init, &initRecipes, &_initRecipes);
 	}
 }
 

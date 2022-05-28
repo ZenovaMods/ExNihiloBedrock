@@ -1,5 +1,5 @@
-// This file was automatically generated using tools/process_headers.py
-// Generated on Fri Apr 22 2022 00:47:10 UTC
+// This file was automatically generated using tools/process_symbol_map.py
+// Fri May 27 2022 17:27:17 UTC
 
 #pragma once
 
@@ -230,3 +230,6 @@ extern "C" {
 	extern void* __1Container__UEAA_XZ_ptr;
 	extern void* __1BaseActorRenderer__UEAA_XZ_ptr;
 }
+
+void InitBedrockPointers();
+void InitVersionPointers();

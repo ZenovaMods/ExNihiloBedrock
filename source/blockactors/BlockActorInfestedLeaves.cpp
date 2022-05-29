@@ -27,7 +27,7 @@ void BlockActorInfestedLeaves::tick(BlockSource& region) {
 					BlockPos newPos = mPosition + BlockPos(x, y, z);
 					const Block& state = region.getBlock(newPos);
 
-					if (&state != nullptr && (state.getLegacyBlock() == **VanillaBlockTypes::mLeaves || state.getLegacyBlock() == **VanillaBlockTypes::mLeaves2)) {
+					if (&state != nullptr && (state.getLegacyBlock() == *VanillaBlockTypes::mLeaves || state.getLegacyBlock() == *VanillaBlockTypes::mLeaves2)) {
 						hasNearbyLeaves = true;
 
 						if (region.getLevel().getRandom().nextFloat() < 0.0015F) { // todo config

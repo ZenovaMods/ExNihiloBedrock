@@ -12,7 +12,7 @@
 #include "../items/ItemPebble.h"
 
 void ENEntities::initEntityMap() {
-	ENTITY_TYPE_MAP->insert({ ActorType::Pebble, {"exnihilo", "pebble", "thrown_stone"} });
+	ENTITY_TYPE_MAP.insert({ ActorType::Pebble, {"exnihilo", "pebble", "thrown_stone"} });
 }
 
 void ENEntities::initEntityData() {
@@ -20,7 +20,7 @@ void ENEntities::initEntityData() {
 }
 
 void ENEntities::initProjectileMap() {
-	ProjectileFactory::mSubcomponentMap->insert({ DropItemSubcomponent::getSubcomponentName(), std::make_unique<DropItemSubcomponent>});
+	ProjectileFactory::mSubcomponentMap.insert({ DropItemSubcomponent::getSubcomponentName(), std::make_unique<DropItemSubcomponent>});
 }
 
 void ENEntities::initRenderers(ActorRenderDispatcher* dispatcher, mce::TextureGroup& textures) {

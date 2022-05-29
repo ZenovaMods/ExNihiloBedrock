@@ -85,7 +85,7 @@ void BlockInfestedLeaves::playerDestroy(Player& player, const BlockPos& pos, con
 	BlockSource& region = player.getRegion();
 	if (!region.getLevel().isClientSide()) {
 		const ItemStack& item = player.getSelectedItem();
-		if (&item != nullptr && item.isInstance(**VanillaItems::mShears)) {
+		if (&item != nullptr && item.isInstance(*VanillaItems::mShears)) {
 			popResource(region, pos, asItemInstance(region, pos, block));
 			return;
 		}
@@ -101,11 +101,11 @@ bool BlockInfestedLeaves::playerWillDestroy(Player& player, const BlockPos& pos,
 		const ItemStack& item = player.getSelectedItem();
 		if (&item != nullptr && CrookDatabase::isCrook(item)) {
 			if (rand.nextFloat() < getStringDropChance(region.getBlockEntity(pos))) { // todo config
-				popResource(region, pos, { **VanillaItems::mString, rand.nextInt(2) + 1, 0 }); // todo config
+				popResource(region, pos, { *VanillaItems::mString, rand.nextInt(2) + 1, 0 }); // todo config
 			}
 		}
 		else if (rand.nextFloat() < getStringDropChance(region.getBlockEntity(pos)) / 4.0f) { // todo config
-			popResource(region, pos, { **VanillaItems::mString, 1, 0 });
+			popResource(region, pos, { *VanillaItems::mString, 1, 0 });
 		}
 	}
 	return ActorBlock::playerWillDestroy(player, pos, block);
@@ -128,26 +128,26 @@ float BlockInfestedLeaves::getStringDropChance(BlockActor* leaf) const {
 }
 
 BlockInfestedLeavesOld::BlockInfestedLeavesOld(const std::string& nameId, int id) : BlockInfestedLeaves(nameId, id) {
-	addState(*VanillaStates::OldLeafType);
-	addState(*VanillaStates::UpdateBit);
+	addState(VanillaStates::OldLeafType);
+	addState(VanillaStates::UpdateBit);
 }
 
 int BlockInfestedLeavesOld::getVariant(const Block& block) const {
-	OldLeafType leafType = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
+	OldLeafType leafType = block.getState<OldLeafType>(VanillaStates::OldLeafType);
 	return Zenova::enum_cast(leafType);
 }
 
 ItemInstance BlockInfestedLeavesOld::asItemInstance(BlockSource& region, const BlockPos& pos, const Block& block) const {
-	return ItemInstance(block.keepState(*VanillaStates::OldLeafType), 1, nullptr);
+	return ItemInstance(block.keepState(VanillaStates::OldLeafType), 1, nullptr);
 }
 
 ItemInstance BlockInfestedLeavesOld::getSilkTouchItemInstance(const Block& block) const {
-	return ItemInstance(block.keepState(*VanillaStates::OldLeafType), 1, nullptr);
+	return ItemInstance(block.keepState(VanillaStates::OldLeafType), 1, nullptr);
 }
 
 std::string BlockInfestedLeavesOld::buildDescriptionId(const Block& block) const {
 	static const std::string LEAF_NAMES[4] = { "oak", "spruce", "birch", "jungle" };
-	OldLeafType type = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
+	OldLeafType type = block.getState<OldLeafType>(VanillaStates::OldLeafType);
 	if (type < OldLeafType::Oak || type >= OldLeafType::_count)
 		type = OldLeafType::Oak;
 	std::string descriptionId = "tile.leaves";
@@ -162,26 +162,26 @@ BlockLegacy& BlockInfestedLeavesOld::init() {
 }
 
 BlockInfestedLeavesNew::BlockInfestedLeavesNew(const std::string& nameId, int id) : BlockInfestedLeaves(nameId, id) {
-	addState(*VanillaStates::NewLeafType);
-	addState(*VanillaStates::UpdateBit);
+	addState(VanillaStates::NewLeafType);
+	addState(VanillaStates::UpdateBit);
 }
 
 int BlockInfestedLeavesNew::getVariant(const Block& block) const {
-	NewLeafType leafType = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
+	NewLeafType leafType = block.getState<NewLeafType>(VanillaStates::NewLeafType);
 	return Zenova::enum_cast(leafType);
 }
 
 ItemInstance BlockInfestedLeavesNew::asItemInstance(BlockSource& region, const BlockPos& pos, const Block& block) const {
-	return ItemInstance(block.keepState(*VanillaStates::NewLeafType), 1, nullptr);
+	return ItemInstance(block.keepState(VanillaStates::NewLeafType), 1, nullptr);
 }
 
 ItemInstance BlockInfestedLeavesNew::getSilkTouchItemInstance(const Block& block) const {
-	return ItemInstance(block.keepState(*VanillaStates::NewLeafType), 1, nullptr);
+	return ItemInstance(block.keepState(VanillaStates::NewLeafType), 1, nullptr);
 }
 
 std::string BlockInfestedLeavesNew::buildDescriptionId(const Block& block) const {
 	static const std::string LEAF_NAMES[2] = { "acacia", "big_oak" };
-	NewLeafType type = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
+	NewLeafType type = block.getState<NewLeafType>(VanillaStates::NewLeafType);
 	if (type < NewLeafType::Acacia || type >= NewLeafType::_count)
 		type = NewLeafType::Acacia;
 	std::string descriptionId = "tile.leaves2";

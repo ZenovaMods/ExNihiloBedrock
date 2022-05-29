@@ -37,11 +37,11 @@ std::vector<WeakPtr<ItemSeedBase>> ENItems::itemSeeds;
 WeakPtr<UniversalBucket> ENItems::universalBucket;
 
 void ENItems::init() {
-	hammerWood = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerWood", ItemRegistry::getMaxItemID(), 64, *VanillaItemTiers::WOOD);
-	hammerStone = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerStone", ItemRegistry::getMaxItemID(), 128, *VanillaItemTiers::STONE);
-	hammerIron = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerIron", ItemRegistry::getMaxItemID(), 512, *VanillaItemTiers::IRON);
-	hammerDiamond = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerDiamond", ItemRegistry::getMaxItemID(), ItemRegistry::getMaxItemID(), *VanillaItemTiers::DIAMOND);
-	hammerGold = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerGold", ItemRegistry::getMaxItemID(), 64, *VanillaItemTiers::GOLD);
+	hammerWood = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerWood", ItemRegistry::getMaxItemID(), 64, VanillaItemTiers::WOOD);
+	hammerStone = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerStone", ItemRegistry::getMaxItemID(), 128, VanillaItemTiers::STONE);
+	hammerIron = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerIron", ItemRegistry::getMaxItemID(), 512, VanillaItemTiers::IRON);
+	hammerDiamond = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerDiamond", ItemRegistry::getMaxItemID(), ItemRegistry::getMaxItemID(), VanillaItemTiers::DIAMOND);
+	hammerGold = ItemRegistry::registerItem<HammerBase>("exnihilo:hammerGold", ItemRegistry::getMaxItemID(), 64, VanillaItemTiers::GOLD);
 
 	crookWood = ItemRegistry::registerItem<CrookBase>("exnihilo:crookWood", ItemRegistry::getMaxItemID(), 64);
 	crookBone = ItemRegistry::registerItem<CrookBase>("exnihilo:crookBone", ItemRegistry::getMaxItemID(), 256);
@@ -53,12 +53,12 @@ void ENItems::init() {
 
 	dolls = ItemRegistry::registerItem<ItemDoll>("exnihilo:itemDoll", ItemRegistry::getMaxItemID());
 
-	itemSeedSaplings = ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeed", ItemRegistry::getMaxItemID(), **VanillaBlocks::mSapling, true);
+	itemSeedSaplings = ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeed", ItemRegistry::getMaxItemID(), *VanillaBlocks::mSapling, true);
 	itemSeeds.clear();
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCactus", ItemRegistry::getMaxItemID(), **VanillaBlocks::mCactus));
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedSugarcane", ItemRegistry::getMaxItemID(), **VanillaBlocks::mReeds));
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCarrot", ItemRegistry::getMaxItemID(), **VanillaBlocks::mCarrotCrop));
-	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedPotato", ItemRegistry::getMaxItemID(), **VanillaBlocks::mPotatoCrop));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCactus", ItemRegistry::getMaxItemID(), *VanillaBlocks::mCactus));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedSugarcane", ItemRegistry::getMaxItemID(), *VanillaBlocks::mReeds));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedCarrot", ItemRegistry::getMaxItemID(), *VanillaBlocks::mCarrotCrop));
+	itemSeeds.push_back(ItemRegistry::registerItem<ItemSeedBase>("exnihilo:itemSeedPotato", ItemRegistry::getMaxItemID(), *VanillaBlocks::mPotatoCrop));
 
 	universalBucket = ItemRegistry::registerItem<UniversalBucket>("zenova:bucketFilled", ItemRegistry::getMaxItemID());
 }

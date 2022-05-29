@@ -482,13 +482,13 @@ public:
         return mEntityData;
     }
     int getHealth() const {
-        return (int)getAttribute(*SharedAttributes::HEALTH).getCurrentValue();
+        return (int)getAttribute(SharedAttributes::HEALTH).getCurrentValue();
     }
     int getMaxHealth() const {
-        return (int)getAttribute(*SharedAttributes::HEALTH).getMaxValue();
+        return (int)getAttribute(SharedAttributes::HEALTH).getMaxValue();
     }
     void serializationSetHealth(int newHealth) {
-        getMutableAttribute(*SharedAttributes::HEALTH)->serializationSetValue((float)newHealth, Zenova::enum_cast(AttributeOperands::OPERAND_CURRENT), std::numeric_limits<float>::max());
+        getMutableAttribute(SharedAttributes::HEALTH)->serializationSetValue((float)newHealth, Zenova::enum_cast(AttributeOperands::OPERAND_CURRENT), std::numeric_limits<float>::max());
     }
     bool isPowered() const {
         return getStatusFlag(ActorFlags::POWERED);

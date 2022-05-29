@@ -15,7 +15,7 @@ BlockFluidWitchWaterFlowing::BlockFluidWitchWaterFlowing(const std::string& name
 	setDestroyTime(100.0f);
 	setLightBlock(2);
 	setCategory(CreativeItemCategory::DECORATIONS);
-	addState(*VanillaStates::LiquidDepth);
+	addState(VanillaStates::LiquidDepth);
 	setAllowsRunes(true);
 	addProperty(BlockProperty::Liquid);
 	addProperty(BlockProperty::CanBeBuiltOver);

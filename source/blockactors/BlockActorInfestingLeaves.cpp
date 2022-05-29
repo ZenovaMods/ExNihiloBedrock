@@ -54,7 +54,7 @@ std::unique_ptr<Packet> BlockActorInfestingLeaves::getUpdatePacket(BlockSource& 
 void BlockActorInfestingLeaves::onChanged(BlockSource& region) {
 	const BlockPos& pos = getPosition();
 	const Block& block = region.getBlock(pos);
-	region.fireBlockChanged(pos, 0, block, *block.setState<int>(*VanillaStates::UpdateBit, 1), 3, nullptr);
+	region.fireBlockChanged(pos, 0, block, *block.setState<int>(VanillaStates::UpdateBit, 1), 3, nullptr);
 }
 
 void BlockActorInfestingLeaves::_onUpdatePacket(const CompoundTag& data, BlockSource& region) {

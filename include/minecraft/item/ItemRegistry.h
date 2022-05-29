@@ -50,9 +50,9 @@ public:
 		return getItem(blockLegacy.getBlockItemId());
 	}
 	static short getMaxItemID() {
-		return *mMaxItemID;
+		return mMaxItemID;
 	}
 
-	static short* mMaxItemID;
-	static std::vector<SharedPtr<Item>>* mItemRegistry;
+	static short& mMaxItemID;
+	static std::vector<SharedPtr<Item>>& mItemRegistry;
 };

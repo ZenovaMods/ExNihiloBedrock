@@ -48,7 +48,7 @@ public:
 };
 
 static std::set<std::string> _experimentalEntities;
-extern std::unordered_map<std::string, ActorFactoryData>* _factoryFunctions;
+extern std::unordered_map<std::string, ActorFactoryData>& _factoryFunctions;
 static std::array<VanillaActorData, 99> _builtInEntityMappings;
 
 class ActorFactory {

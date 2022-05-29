@@ -63,9 +63,9 @@ void initClientData() {
 
 void (*_initWorldSystems)(WorldSystems*, ResourcePackManager*);
 void initWorldSystems(WorldSystems* self, ResourcePackManager* rpm) {
-	bool mInitialized = *WorldSystems::mInitialized;
+	bool mInitialized = WorldSystems::mInitialized;
 	_initWorldSystems(self, rpm);
-	if (*WorldSystems::mInitialized && !mInitialized) {
+	if (WorldSystems::mInitialized && !mInitialized) {
 		HammerRegistry::loadJson("HammerRegistry.json");
 		CrookRegistry::loadJson("CrookRegistry.json");
 		OreRegistry::loadJson("OreRegistry.json");

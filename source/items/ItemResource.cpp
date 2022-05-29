@@ -52,7 +52,7 @@ bool ItemResource::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, Faci
 	short auxValue = instance.getAuxValue();
 	if (names[auxValue] == SILKWORM) {
 		const BlockLegacy& block = entity.getRegion().getBlock(pos).getLegacyBlock();
-		if (&block != NULL && (block == **VanillaBlockTypes::mLeaves || block == **VanillaBlockTypes::mLeaves2)) {
+		if (&block != NULL && (block == *VanillaBlockTypes::mLeaves || block == *VanillaBlockTypes::mLeaves2)) {
 			BlockInfestingLeaves::infestLeafBlock(entity.getRegion(), pos);
 			instance.remove(1);
 			return true;
@@ -60,8 +60,8 @@ bool ItemResource::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, Faci
 	}
 	if (names[auxValue] == ANCIENT_SPORES || names[auxValue] == GRASS_SEEDS) {
 		const BlockLegacy& block = entity.getRegion().getBlock(pos).getLegacyBlock();
-		if (&block != NULL && block == **VanillaBlockTypes::mDirt) {
-			Block* transformTo = names[auxValue] == ANCIENT_SPORES ? *VanillaBlocks::mMycelium : *VanillaBlocks::mGrass;
+		if (&block != NULL && block == *VanillaBlockTypes::mDirt) {
+			Block* transformTo = names[auxValue] == ANCIENT_SPORES ? VanillaBlocks::mMycelium : VanillaBlocks::mGrass;
 			entity.getRegion().setBlock(pos, *transformTo, 3, nullptr);
 			instance.remove(1);
 			return true;

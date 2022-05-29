@@ -1,6 +1,7 @@
 // This file was automatically generated using tools/process_symbol_map.py
-// Fri May 27 2022 17:27:17 UTC
+// Sat May 28 2022 22:47:36 UTC
 
+#include <array>
 #include <Zenova/Hook.h>
 #include <Zenova/Minecraft.h>
 
@@ -23,59 +24,122 @@
 
 using namespace Zenova::Hook;
 
-Block** VanillaBlocks::mGrass = reinterpret_cast<Block**>(SlideAddress(0x3050A98));
-Block** VanillaBlocks::mDirt = reinterpret_cast<Block**>(SlideAddress(0x3051770));
-Block** VanillaBlocks::mCobblestone = reinterpret_cast<Block**>(SlideAddress(0x3051570));
-Block** VanillaBlocks::mSapling = reinterpret_cast<Block**>(SlideAddress(0x30514D8));
-Block** VanillaBlocks::mSand = reinterpret_cast<Block**>(SlideAddress(0x3050B58));
-Block** VanillaBlocks::mGravel = reinterpret_cast<Block**>(SlideAddress(0x3050B60));
-Block** VanillaBlocks::mLeaves = reinterpret_cast<Block**>(SlideAddress(0x30515D0));
-Block** VanillaBlocks::mCactus = reinterpret_cast<Block**>(SlideAddress(0x3050B30));
-Block** VanillaBlocks::mReeds = reinterpret_cast<Block**>(SlideAddress(0x3050AA0));
-Block** VanillaBlocks::mNetherrack = reinterpret_cast<Block**>(SlideAddress(0x3051478));
-Block** VanillaBlocks::mMycelium = reinterpret_cast<Block**>(SlideAddress(0x3050B50));
-Block** VanillaBlocks::mEndStone = reinterpret_cast<Block**>(SlideAddress(0x3051470));
-Block** VanillaBlocks::mCarrotCrop = reinterpret_cast<Block**>(SlideAddress(0x30516A8));
-Block** VanillaBlocks::mPotatoCrop = reinterpret_cast<Block**>(SlideAddress(0x30516B0));
-Block** VanillaBlocks::mLeaves2 = reinterpret_cast<Block**>(SlideAddress(0x30510F0));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mGrass = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x3061468));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mDirt = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x3061470));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mCobblestone = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x3061478));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mSand = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30614B8));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mGravel = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30614C0));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30614E8));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mMycelium = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30617F0));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mLeaves2 = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30619E0));
-WeakPtr<BlockLegacy>* VanillaBlockTypes::mTopSnow = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30616E0));
-WeakPtr<BlockLegacy>* BedrockBlockTypes::mAir = reinterpret_cast<WeakPtr<BlockLegacy>*>(SlideAddress(0x30613D0));
-ItemState* VanillaStates::SaplingType = reinterpret_cast<ItemState*>(SlideAddress(0x30633C0));
-ItemState* VanillaStates::LiquidDepth = reinterpret_cast<ItemState*>(SlideAddress(0x3062BA0));
-ItemState* VanillaStates::OldLeafType = reinterpret_cast<ItemState*>(SlideAddress(0x3063A50));
-ItemState* VanillaStates::NewLeafType = reinterpret_cast<ItemState*>(SlideAddress(0x3063AA0));
-ItemState* VanillaStates::UpdateBit = reinterpret_cast<ItemState*>(SlideAddress(0x3063140));
-ItemState::StateListNode** ItemState::StateListNode::mHead = reinterpret_cast<ItemState::StateListNode**>(SlideAddress(0x3050980));
-WeakPtr<Item>* VanillaItems::mBucket = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060748));
-WeakPtr<Item>* VanillaItems::mGoldIngot = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060548));
-WeakPtr<Item>* VanillaItems::mIronIngot = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060540));
-WeakPtr<Item>* VanillaItems::mShears = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x3060990));
-WeakPtr<Item>* VanillaItems::mString = reinterpret_cast<WeakPtr<Item>*>(SlideAddress(0x30605F0));
-Item::Tier* VanillaItemTiers::WOOD = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39988));
-Item::Tier* VanillaItemTiers::STONE = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39A20));
-Item::Tier* VanillaItemTiers::IRON = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39658));
-Item::Tier* VanillaItemTiers::DIAMOND = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39A38));
-Item::Tier* VanillaItemTiers::GOLD = reinterpret_cast<Item::Tier*>(SlideAddress(0x2A39A50));
-std::vector<SharedPtr<Item>>* ItemRegistry::mItemRegistry = reinterpret_cast<std::vector<SharedPtr<Item>>*>(SlideAddress(0x3060118));
-short* ItemRegistry::mMaxItemID = reinterpret_cast<short*>(SlideAddress(0x30507BC));
-std::unordered_map<std::string, SharedPtr<BlockLegacy>>* BlockTypeRegistry::mBlockLookupMap = reinterpret_cast<std::unordered_map<std::string, SharedPtr<BlockLegacy>>*>(SlideAddress(0x3061390));
-bool* Item::mInCreativeGroup = reinterpret_cast<bool*>(SlideAddress(0x30507BA));
-std::vector<ItemInstance>* Item::mCreativeList = reinterpret_cast<std::vector<ItemInstance>*>(SlideAddress(0x3060068));
-std::vector<std::vector<ItemInstance>>* Item::mCreativeGroups = reinterpret_cast<std::vector<std::vector<ItemInstance>>*>(SlideAddress(0x30600E8));
-std::vector<CreativeGroupInfo>* Item::mCreativeGroupInfo = reinterpret_cast<std::vector<CreativeGroupInfo>*>(SlideAddress(0x3060100));
-bool* WorldSystems::mInitialized = reinterpret_cast<bool*>(SlideAddress(0x30507BE));
-std::unordered_map<ActorType, ActorMapping>* ENTITY_TYPE_MAP = reinterpret_cast<std::unordered_map<ActorType, ActorMapping>*>(SlideAddress(0x305C590));
-std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>* ProjectileFactory::mSubcomponentMap = reinterpret_cast<std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>*>(SlideAddress(0x305DD20));
-std::unordered_map<std::string, ActorFactoryData>* _factoryFunctions = reinterpret_cast<std::unordered_map<std::string, ActorFactoryData>*>(SlideAddress(0x305C460));
-Attribute* SharedAttributes::HEALTH = reinterpret_cast<Attribute*>(SlideAddress(0x305DDA0));
+namespace {
+static std::array<uintptr_t, 53> var_addrs = []() -> std::array<uintptr_t, 53> {
+	const Zenova::Version& versionId = Zenova::Minecraft::version();
+	std::array<uintptr_t, 53> vars{};
+
+	vars[0] = SlideAddress(0x3050A98);
+	vars[1] = SlideAddress(0x3051770);
+	vars[2] = SlideAddress(0x3051570);
+	vars[3] = SlideAddress(0x30514D8);
+	vars[4] = SlideAddress(0x3050B58);
+	vars[5] = SlideAddress(0x3050B60);
+	vars[6] = SlideAddress(0x30515D0);
+	vars[7] = SlideAddress(0x3050B30);
+	vars[8] = SlideAddress(0x3050AA0);
+	vars[9] = SlideAddress(0x3051478);
+	vars[10] = SlideAddress(0x3050B50);
+	vars[11] = SlideAddress(0x3051470);
+	vars[12] = SlideAddress(0x30516A8);
+	vars[13] = SlideAddress(0x30516B0);
+	vars[14] = SlideAddress(0x30510F0);
+	vars[15] = SlideAddress(0x3061468);
+	vars[16] = SlideAddress(0x3061470);
+	vars[17] = SlideAddress(0x3061478);
+	vars[18] = SlideAddress(0x30614B8);
+	vars[19] = SlideAddress(0x30614C0);
+	vars[20] = SlideAddress(0x30614E8);
+	vars[21] = SlideAddress(0x30617F0);
+	vars[22] = SlideAddress(0x30619E0);
+	vars[23] = SlideAddress(0x30616E0);
+	vars[24] = SlideAddress(0x30613D0);
+	vars[25] = SlideAddress(0x30633C0);
+	vars[26] = SlideAddress(0x3062BA0);
+	vars[27] = SlideAddress(0x3063A50);
+	vars[28] = SlideAddress(0x3063AA0);
+	vars[29] = SlideAddress(0x3063140);
+	vars[30] = SlideAddress(0x3050980);
+	vars[31] = SlideAddress(0x3060748);
+	vars[32] = SlideAddress(0x3060548);
+	vars[33] = SlideAddress(0x3060540);
+	vars[34] = SlideAddress(0x3060990);
+	vars[35] = SlideAddress(0x30605F0);
+	vars[36] = SlideAddress(0x2A39988);
+	vars[37] = SlideAddress(0x2A39A20);
+	vars[38] = SlideAddress(0x2A39658);
+	vars[39] = SlideAddress(0x2A39A38);
+	vars[40] = SlideAddress(0x2A39A50);
+	vars[41] = SlideAddress(0x3060118);
+	vars[42] = SlideAddress(0x30507BC);
+	vars[43] = SlideAddress(0x3061390);
+	vars[44] = SlideAddress(0x30507BA);
+	vars[45] = SlideAddress(0x3060068);
+	vars[46] = SlideAddress(0x30600E8);
+	vars[47] = SlideAddress(0x3060100);
+	vars[48] = SlideAddress(0x30507BE);
+	vars[49] = SlideAddress(0x305C590);
+	vars[50] = SlideAddress(0x305DD20);
+	vars[51] = SlideAddress(0x305C460);
+	vars[52] = SlideAddress(0x305DDA0);
+
+	return vars;
+}();
+}
+
+Block*& VanillaBlocks::mGrass = *reinterpret_cast<Block**>(var_addrs[0]);
+Block*& VanillaBlocks::mDirt = *reinterpret_cast<Block**>(var_addrs[1]);
+Block*& VanillaBlocks::mCobblestone = *reinterpret_cast<Block**>(var_addrs[2]);
+Block*& VanillaBlocks::mSapling = *reinterpret_cast<Block**>(var_addrs[3]);
+Block*& VanillaBlocks::mSand = *reinterpret_cast<Block**>(var_addrs[4]);
+Block*& VanillaBlocks::mGravel = *reinterpret_cast<Block**>(var_addrs[5]);
+Block*& VanillaBlocks::mLeaves = *reinterpret_cast<Block**>(var_addrs[6]);
+Block*& VanillaBlocks::mCactus = *reinterpret_cast<Block**>(var_addrs[7]);
+Block*& VanillaBlocks::mReeds = *reinterpret_cast<Block**>(var_addrs[8]);
+Block*& VanillaBlocks::mNetherrack = *reinterpret_cast<Block**>(var_addrs[9]);
+Block*& VanillaBlocks::mMycelium = *reinterpret_cast<Block**>(var_addrs[10]);
+Block*& VanillaBlocks::mEndStone = *reinterpret_cast<Block**>(var_addrs[11]);
+Block*& VanillaBlocks::mCarrotCrop = *reinterpret_cast<Block**>(var_addrs[12]);
+Block*& VanillaBlocks::mPotatoCrop = *reinterpret_cast<Block**>(var_addrs[13]);
+Block*& VanillaBlocks::mLeaves2 = *reinterpret_cast<Block**>(var_addrs[14]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mGrass = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[15]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mDirt = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[16]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mCobblestone = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[17]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mSand = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[18]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mGravel = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[19]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mLeaves = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[20]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mMycelium = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[21]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mLeaves2 = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[22]);
+WeakPtr<BlockLegacy>& VanillaBlockTypes::mTopSnow = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[23]);
+WeakPtr<BlockLegacy>& BedrockBlockTypes::mAir = *reinterpret_cast<WeakPtr<BlockLegacy>*>(var_addrs[24]);
+ItemState& VanillaStates::SaplingType = *reinterpret_cast<ItemState*>(var_addrs[25]);
+ItemState& VanillaStates::LiquidDepth = *reinterpret_cast<ItemState*>(var_addrs[26]);
+ItemState& VanillaStates::OldLeafType = *reinterpret_cast<ItemState*>(var_addrs[27]);
+ItemState& VanillaStates::NewLeafType = *reinterpret_cast<ItemState*>(var_addrs[28]);
+ItemState& VanillaStates::UpdateBit = *reinterpret_cast<ItemState*>(var_addrs[29]);
+ItemState::StateListNode*& ItemState::StateListNode::mHead = *reinterpret_cast<ItemState::StateListNode**>(var_addrs[30]);
+WeakPtr<Item>& VanillaItems::mBucket = *reinterpret_cast<WeakPtr<Item>*>(var_addrs[31]);
+WeakPtr<Item>& VanillaItems::mGoldIngot = *reinterpret_cast<WeakPtr<Item>*>(var_addrs[32]);
+WeakPtr<Item>& VanillaItems::mIronIngot = *reinterpret_cast<WeakPtr<Item>*>(var_addrs[33]);
+WeakPtr<Item>& VanillaItems::mShears = *reinterpret_cast<WeakPtr<Item>*>(var_addrs[34]);
+WeakPtr<Item>& VanillaItems::mString = *reinterpret_cast<WeakPtr<Item>*>(var_addrs[35]);
+Item::Tier& VanillaItemTiers::WOOD = *reinterpret_cast<Item::Tier*>(var_addrs[36]);
+Item::Tier& VanillaItemTiers::STONE = *reinterpret_cast<Item::Tier*>(var_addrs[37]);
+Item::Tier& VanillaItemTiers::IRON = *reinterpret_cast<Item::Tier*>(var_addrs[38]);
+Item::Tier& VanillaItemTiers::DIAMOND = *reinterpret_cast<Item::Tier*>(var_addrs[39]);
+Item::Tier& VanillaItemTiers::GOLD = *reinterpret_cast<Item::Tier*>(var_addrs[40]);
+std::vector<SharedPtr<Item>>& ItemRegistry::mItemRegistry = *reinterpret_cast<std::vector<SharedPtr<Item>>*>(var_addrs[41]);
+short& ItemRegistry::mMaxItemID = *reinterpret_cast<short*>(var_addrs[42]);
+std::unordered_map<std::string, SharedPtr<BlockLegacy>>& BlockTypeRegistry::mBlockLookupMap = *reinterpret_cast<std::unordered_map<std::string, SharedPtr<BlockLegacy>>*>(var_addrs[43]);
+bool& Item::mInCreativeGroup = *reinterpret_cast<bool*>(var_addrs[44]);
+std::vector<ItemInstance>& Item::mCreativeList = *reinterpret_cast<std::vector<ItemInstance>*>(var_addrs[45]);
+std::vector<std::vector<ItemInstance>>& Item::mCreativeGroups = *reinterpret_cast<std::vector<std::vector<ItemInstance>>*>(var_addrs[46]);
+std::vector<CreativeGroupInfo>& Item::mCreativeGroupInfo = *reinterpret_cast<std::vector<CreativeGroupInfo>*>(var_addrs[47]);
+bool& WorldSystems::mInitialized = *reinterpret_cast<bool*>(var_addrs[48]);
+std::unordered_map<ActorType, ActorMapping>& ENTITY_TYPE_MAP = *reinterpret_cast<std::unordered_map<ActorType, ActorMapping>*>(var_addrs[49]);
+std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>& ProjectileFactory::mSubcomponentMap = *reinterpret_cast<std::unordered_map<std::string, std::function<std::unique_ptr<OnHitSubcomponent>()>>*>(var_addrs[50]);
+std::unordered_map<std::string, ActorFactoryData>& _factoryFunctions = *reinterpret_cast<std::unordered_map<std::string, ActorFactoryData>*>(var_addrs[51]);
+Attribute& SharedAttributes::HEALTH = *reinterpret_cast<Attribute*>(var_addrs[52]);
 
 void* __0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr;
 void* __0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr;

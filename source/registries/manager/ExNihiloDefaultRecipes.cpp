@@ -32,11 +32,11 @@ void ExNihiloDefaultRecipes::registerSieveRecipeDefaults() {
 }
 
 void ExNihiloDefaultRecipes::registerHammerRecipeDefaults() {
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mCobblestone), new ItemInstance(*VanillaBlockTypes::mGravel->get(), 1), 0, 1.0f, 0.0f);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mGravel), new ItemInstance(*VanillaBlockTypes::mSand->get(), 1), 0, 1.0f, 0.0f);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mNetherrack), new ItemInstance(*ENBlocks::netherrackCrushed->get(), 1), 0, 1.0f, 0.0f);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mSand), new ItemInstance(*ENBlocks::dust->get(), 1), 0, 1.0f, 0.0f);
-	HammerRegistry::registerRecipe(new BlockInfo(*VanillaBlocks::mEndStone), new ItemInstance(*ENBlocks::endstoneCrushed->get(), 1), 0, 1.0f, 0.0f);
+	HammerRegistry::registerRecipe(new BlockInfo(VanillaBlocks::mCobblestone), new ItemInstance(*VanillaBlockTypes::mGravel, 1), 0, 1.0f, 0.0f);
+	HammerRegistry::registerRecipe(new BlockInfo(VanillaBlocks::mGravel), new ItemInstance(*VanillaBlockTypes::mSand, 1), 0, 1.0f, 0.0f);
+	HammerRegistry::registerRecipe(new BlockInfo(VanillaBlocks::mNetherrack), new ItemInstance(*ENBlocks::netherrackCrushed->get(), 1), 0, 1.0f, 0.0f);
+	HammerRegistry::registerRecipe(new BlockInfo(VanillaBlocks::mSand), new ItemInstance(*ENBlocks::dust->get(), 1), 0, 1.0f, 0.0f);
+	HammerRegistry::registerRecipe(new BlockInfo(VanillaBlocks::mEndStone), new ItemInstance(*ENBlocks::endstoneCrushed->get(), 1), 0, 1.0f, 0.0f);
 	HammerRegistry::registerRecipe(new BlockInfo("minecraft:stone:1"), new ItemInstance(*ENBlocks::graniteCrushed->get(), 1), 0, 1.0f, 0.0f);
 	HammerRegistry::registerRecipe(new BlockInfo("minecraft:stone:3"), new ItemInstance(*ENBlocks::dioriteCrushed->get(), 1), 0, 1.0f, 0.0f);
 	HammerRegistry::registerRecipe(new BlockInfo("minecraft:stone:5"), new ItemInstance(*ENBlocks::andesiteCrushed->get(), 1), 0, 1.0f, 0.0f);
@@ -59,8 +59,8 @@ void ExNihiloDefaultRecipes::registerCompostRecipeDefaults() {
 }
 
 void ExNihiloDefaultRecipes::registerCrookRecipeDefaults() {
-	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves->get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1f, 0.0f);
-	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves2->get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1f, 0.0f);
+	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves.get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1f, 0.0f);
+	CrookRegistry::registerRecipe(new BlockInfo(VanillaBlockTypes::mLeaves2.get(), -1), ItemResource::getResourceStack(ItemResource::SILKWORM), 0.1f, 0.0f);
 }
 
 void ExNihiloDefaultRecipes::registerCrucibleRecipeDefaults() {
@@ -84,6 +84,6 @@ void ExNihiloDefaultRecipes::registerHeatRecipeDefaults() {
 }
 
 void ExNihiloDefaultRecipes::registerOreRecipeDefaults() {
-	OreRegistry::registerOre("gold", Color::fromRGB(0xFFFF00), new ItemInfo(VanillaItems::mGoldIngot->get(), 0));
-	OreRegistry::registerOre("iron", Color::fromRGB(0xBF8040), new ItemInfo(VanillaItems::mIronIngot->get(), 0));
+	OreRegistry::registerOre("gold", Color::fromRGB(0xFFFF00), new ItemInfo(VanillaItems::mGoldIngot.get(), 0));
+	OreRegistry::registerOre("iron", Color::fromRGB(0xBF8040), new ItemInfo(VanillaItems::mIronIngot.get(), 0));
 }

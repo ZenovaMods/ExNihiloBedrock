@@ -12,23 +12,23 @@ typedef unsigned short DataID;
 class ItemState {
 public:
     struct StateListNode {
-        static StateListNode** mHead;
+        static StateListNode*& mHead;
         StateListNode* mNext;
         StateListNode* mPrev;
         ItemState* mState;
     public:
         StateListNode(ItemState* state) : mNext(NULL), mPrev(NULL), mState(state) {
-            if (*mHead) {
-                (*mHead)->mPrev = this;
-                mNext = *mHead;
+            if (mHead) {
+                mHead->mPrev = this;
+                mNext = mHead;
             }
-            *mHead = this;
+            mHead = this;
         }
         ~StateListNode() {
-            if (this == *mHead) {
-                *mHead = (*mHead)->mNext;
-                if (*mHead)
-                    (*mHead)->mPrev = NULL;
+            if (this == mHead) {
+                mHead = mHead->mNext;
+                if (mHead)
+                    mHead->mPrev = NULL;
             }
             else if (mNext) {
                 mPrev->mNext = mNext;

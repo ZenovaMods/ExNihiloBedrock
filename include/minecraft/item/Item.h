@@ -115,10 +115,10 @@ protected:
     std::unique_ptr<CameraItemComponent> mCameraComponent;
     std::vector<std::function<void()>> mOnResetBAIcallbacks;
 public:
-    static bool* mInCreativeGroup;
-    static std::vector<ItemInstance>* mCreativeList;
-    static std::vector<std::vector<ItemInstance>>* mCreativeGroups;
-    static std::vector<CreativeGroupInfo>* mCreativeGroupInfo;
+    static bool& mInCreativeGroup;
+    static std::vector<ItemInstance>& mCreativeList;
+    static std::vector<std::vector<ItemInstance>>& mCreativeGroups;
+    static std::vector<CreativeGroupInfo>& mCreativeGroupInfo;
 
     Item(const std::string&, short);
     virtual ~Item();
@@ -244,7 +244,7 @@ public:
     static void addCreativeItem(Item*, short);
     static void addCreativeItem(const Block&);
     static void endCreativeGroup() {
-        *mInCreativeGroup = false;
+        mInCreativeGroup = false;
     }
 private:
     virtual bool _checkUseOnPermissions(Actor&, ItemInstance&, const FacingID&, const BlockPos&) const;

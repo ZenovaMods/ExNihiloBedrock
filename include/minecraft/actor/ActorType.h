@@ -136,6 +136,6 @@ enum class ActorType : int {
     Pebble = Projectile | 0x90
 };
 
-extern std::unordered_map<ActorType, ActorMapping>* ENTITY_TYPE_MAP;
+extern std::unordered_map<ActorType, ActorMapping>& ENTITY_TYPE_MAP;
 const HashedString& EntityCanonicalName(ActorType);
 std::string EntityTypeToString(ActorType, ActorTypeNamespaceRules);

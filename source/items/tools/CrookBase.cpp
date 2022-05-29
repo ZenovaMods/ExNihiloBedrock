@@ -8,7 +8,7 @@
 #include "../../registries/CrookRegistry.h"
 
 CrookBase::CrookBase(const std::string& name, int id, int maxUses)
-	: DiggerItem(name, id, 0, *VanillaItemTiers::WOOD, {}) {
+	: DiggerItem(name, id, 0, VanillaItemTiers::WOOD, {}) {
 
 	setMaxDamage(maxUses);
 	setCategory(CreativeItemCategory::TOOLS);

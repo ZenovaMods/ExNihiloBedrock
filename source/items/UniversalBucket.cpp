@@ -66,7 +66,7 @@ bool UniversalBucket::dispense(BlockSource& region, Container& container, int sl
 		if (_emptyBucket(region, contentsBlock->getDefaultState(), pos, nullptr, itemStack, face)) {
 			region.getLevel().broadcastLevelEvent(LevelEvent::SoundClick, pos, 1000, nullptr);
 			container.removeItem(slot, 1);
-			ItemStack emptyBucket(**VanillaItems::mBucket, 1, 0);
+			ItemStack emptyBucket(*VanillaItems::mBucket, 1, 0);
 			if (!container.addItemToFirstEmptySlot(emptyBucket))
 				DispenserBlock::ejectItem(region, pos, face, emptyBucket);
 			return true;
@@ -78,9 +78,9 @@ bool UniversalBucket::dispense(BlockSource& region, Container& container, int sl
 bool UniversalBucket::dispenseEmpty(BlockSource& region, Container& container, int slot, const Vec3& pos, FacingID face) {
 	const BlockLegacy& dispensedBlock = region.getLiquidBlock(pos).getLegacyBlock();
 	Fluid* fluid = FluidRegistry::getFluidFromBlock(dispensedBlock);
-	if (fluid && !container.getItem(slot).getAuxValue() && !region.getLiquidBlock(pos).getState<int>(*VanillaStates::LiquidDepth)) {
+	if (fluid && !container.getItem(slot).getAuxValue() && !region.getLiquidBlock(pos).getState<int>(VanillaStates::LiquidDepth)) {
 		if (dispensedBlock != region.getBlock(pos).getLegacyBlock())
-			region.setExtraBlock(pos, BedrockBlockTypes::mAir->get()->getDefaultState(), 3);
+			region.setExtraBlock(pos, BedrockBlockTypes::mAir->getDefaultState(), 3);
 		else
 			region.removeBlock(pos);
 		region.getLevel().broadcastLevelEvent(LevelEvent::SoundClick, pos, 1000, nullptr);
@@ -102,13 +102,13 @@ bool UniversalBucket::_useOn(ItemStack& instance, Actor& entity, BlockPos pos, F
 			placePos = placePos.neighbor(face);
 		}
 		const Block& blockTest = region.getBlock(placePos.below());
-		if (blockTest.getLegacyBlock() == **VanillaBlockTypes::mTopSnow) {
+		if (blockTest.getLegacyBlock() == *VanillaBlockTypes::mTopSnow) {
 			region.getLevel().broadcastDimensionEvent(region, LevelEvent::ParticlesDestroyBlock, placePos.below(), blockTest, nullptr);
 			region.removeBlock(placePos.below());
 			placePos = placePos.below();
 		}
 		if (_emptyBucket(region, contentsBlock->getDefaultState(), placePos, &entity, instance, face)) {
-			ItemStack emptyBucket(**VanillaItems::mBucket, 1, 0);
+			ItemStack emptyBucket(*VanillaItems::mBucket, 1, 0);
 			region.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketEmptyWater, entity.getAttachPos(ActorLocation::Feet, 0.0f), -1, {}, false, false);
 			entity.useItem(instance, ItemUseMethod::PourBucket, true);
 			if (entity.hasType(ActorType::Player) && (!entity.isCreative() || instance.hasUserData())) {
@@ -130,13 +130,13 @@ bool UniversalBucket::_emptyBucket(BlockSource& region, const Block& contents, c
 	if (_canEmptyBucketIntoBlock(oldBlock, extraBlock) || (placer == nullptr && oldBlock.getMaterial().getType() == MaterialType::Portal)) {
 		BlockPos behindPos = pos + (pos - pos.neighbor(face));
 		if (placer == nullptr || region.checkBlockPermissions(*placer, behindPos, face, instance, false)) {
-			if (oldBlock.canContainLiquid() && oldBlock.getLegacyBlock() != **BedrockBlockTypes::mAir) {
+			if (oldBlock.canContainLiquid() && oldBlock.getLegacyBlock() != *BedrockBlockTypes::mAir) {
 				region.setExtraBlock(pos, contents, 3);
 			}
 			else {
 				if (oldBlock.getLegacyBlock().waterSpreadCausesSpawn())
 					oldBlock.spawnResources(region, pos, 1.0f, 0);
-				if (oldBlock.getLegacyBlock() == **BedrockBlockTypes::mAir || !oldBlock.getMaterial().isSolid())
+				if (oldBlock.getLegacyBlock() == *BedrockBlockTypes::mAir || !oldBlock.getMaterial().isSolid())
 					region.setBlock(pos, contents, 3, nullptr);
 			}
 			return true;
@@ -148,7 +148,7 @@ bool UniversalBucket::_emptyBucket(BlockSource& region, const Block& contents, c
 bool UniversalBucket::_canEmptyBucketIntoBlock(const Block& block, const Block& extraBlock) const {
 	if (!block.getMaterial().isSolid() || block.canContainLiquid()) {
 		if (block.getMaterial().getType() != MaterialType::Portal) {
-			if (extraBlock.getLegacyBlock() == **BedrockBlockTypes::mAir)
+			if (extraBlock.getLegacyBlock() == *BedrockBlockTypes::mAir)
 				return true;
 		}
 	}
@@ -159,23 +159,23 @@ bool UniversalBucket::_takeLiquid(ItemStack& itemStack, Actor& entity, const Blo
 	BlockSource& region = entity.getRegion();
 	const Block& oldBlock = region.getLiquidBlock(pos);
 	Fluid* fluid = FluidRegistry::getFluidFromBlock(oldBlock.getLegacyBlock());
-	if (fluid && !oldBlock.getState<int>(*VanillaStates::LiquidDepth)) {
+	if (fluid && !oldBlock.getState<int>(VanillaStates::LiquidDepth)) {
 		const Block& aboveLiquidBlock = region.getLiquidBlock(pos.above());
 		const Block& aboveBlock = region.getBlock(pos.above());
 		bool shouldRemoveLiquid = true;
-		if (aboveBlock.isSolid() || !aboveLiquidBlock.getState<int>(*VanillaStates::LiquidDepth)) {
+		if (aboveBlock.isSolid() || !aboveLiquidBlock.getState<int>(VanillaStates::LiquidDepth)) {
 			shouldRemoveLiquid = false;
 			for (auto& it : Facing::ALL_EXCEPT[1]) {
 				const Block& block = region.getLiquidBlock(pos.neighbor(it));
-				if (!block.isSolid() && block.getState<int>(*VanillaStates::LiquidDepth)) {
+				if (!block.isSolid() && block.getState<int>(VanillaStates::LiquidDepth)) {
 					shouldRemoveLiquid = true;
 					break;
 				}
 			}
 		}
 		if (shouldRemoveLiquid) {
-			bool isUsingExtraData = region.getExtraBlock(pos).getLegacyBlock() != **BedrockBlockTypes::mAir;
-			region.setLiquidBlock(pos, BedrockBlockTypes::mAir->get()->getDefaultState(), isUsingExtraData, 3);
+			bool isUsingExtraData = region.getExtraBlock(pos).getLegacyBlock() != *BedrockBlockTypes::mAir;
+			region.setLiquidBlock(pos, BedrockBlockTypes::mAir->getDefaultState(), isUsingExtraData, 3);
 		}
 		entity.getLevel().broadcastSoundEvent(region, LevelSoundEvent::BucketFillWater, entity.getAttachPos(ActorLocation::Feet, 0.0f), -1, {}, 0, 0);
 		ItemStack filledBucket(*ENItems::universalBucket, 1, fluid->mId);

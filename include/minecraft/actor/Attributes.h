@@ -96,5 +96,5 @@ public:
 
 class SharedAttributes {
 public:
-	static Attribute* HEALTH;
+	static Attribute& HEALTH;
 };

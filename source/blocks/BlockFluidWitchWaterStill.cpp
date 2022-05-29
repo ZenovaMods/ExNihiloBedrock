@@ -14,7 +14,7 @@ BlockFluidWitchWaterStill::BlockFluidWitchWaterStill(const std::string& nameId, 
     setDestroyTime(100.0f);
     setLightBlock(2);
     setCategory(CreativeItemCategory::DECORATIONS);
-    addState(*VanillaStates::LiquidDepth);
+    addState(VanillaStates::LiquidDepth);
     setAllowsRunes(true);
     addProperty(BlockProperty::Liquid);
     addProperty(BlockProperty::CanBeBuiltOver);
@@ -31,10 +31,10 @@ void BlockFluidWitchWaterStill::entityInside(BlockSource& region, const BlockPos
 void BlockFluidWitchWaterStill::_setDynamic(BlockSource& region, const BlockPos& pos) const {
     bool usingExtraData = region.getBlock(pos).getLegacyBlock() != *this;
     auto& liquidBlock = region.getLiquidBlock(pos);
-    int depth = liquidBlock.getState<int>(*VanillaStates::LiquidDepth);
+    int depth = liquidBlock.getState<int>(VanillaStates::LiquidDepth);
 
     if (*this == liquidBlock.getLegacyBlock()) {
-        const Block* dynamicLiquid = ENBlocks::blockWitchwaterFlowing->get()->getDefaultState().setState(*VanillaStates::LiquidDepth, depth);
+        const Block* dynamicLiquid = ENBlocks::blockWitchwaterFlowing->get()->getDefaultState().setState(VanillaStates::LiquidDepth, depth);
         region.setLiquidBlock(pos, *dynamicLiquid, usingExtraData, 4);
         region.addToTickingQueue(pos, *dynamicLiquid, getTickDelay(region), 0);
     }

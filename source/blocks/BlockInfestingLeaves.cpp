@@ -22,7 +22,7 @@ BlockInfestingLeaves::BlockInfestingLeaves(const std::string& nameId, int id) : 
 
 Color BlockInfestingLeaves::getMapColor(BlockSource& region, const BlockPos& pos) const {
 	const Block& block = region.getBlock(pos);
-	OldLeafType type = block.hasState(*VanillaStates::OldLeafType) ? block.getState<OldLeafType>(*VanillaStates::OldLeafType) : OldLeafType::Oak;
+	OldLeafType type = block.hasState(VanillaStates::OldLeafType) ? block.getState<OldLeafType>(VanillaStates::OldLeafType) : OldLeafType::Oak;
 	Color result = Color::fromARGB(0x8A8A8A);
 	int totalRed = 0;
 	int totalGreen = 0;
@@ -55,7 +55,7 @@ Color BlockInfestingLeaves::getMapColor(BlockSource& region, const BlockPos& pos
 }
 
 int BlockInfestingLeaves::getColor(BlockSource& region, const BlockPos& pos, const Block& block) const {
-	OldLeafType type = block.hasState(*VanillaStates::OldLeafType) ? block.getState<OldLeafType>(*VanillaStates::OldLeafType) : OldLeafType::Oak;
+	OldLeafType type = block.hasState(VanillaStates::OldLeafType) ? block.getState<OldLeafType>(VanillaStates::OldLeafType) : OldLeafType::Oak;
 	if (isSeasonTinted(block, region, pos)) {
 		if (type == OldLeafType::Spruce)
 			return getSeasonsColor(region, pos, 1, 1).toARGB();
@@ -115,31 +115,31 @@ float BlockInfestingLeaves::getStringDropChance(BlockActor* leaf) const {
 void BlockInfestingLeaves::infestLeafBlock(BlockSource& region, const BlockPos& pos) {
 	const Block& block = region.getBlock(pos);
 
-	if (block.getLegacyBlock() == **VanillaBlockTypes::mLeaves || block.getLegacyBlock() == **VanillaBlockTypes::mLeaves2)
+	if (block.getLegacyBlock() == *VanillaBlockTypes::mLeaves || block.getLegacyBlock() == *VanillaBlockTypes::mLeaves2)
 		region.setBlock(pos, getBlockForLeaf(block, LeafType::Infesting), UPDATE_CLIENTS, nullptr);
 }
 
 const Block& BlockInfestingLeaves::getBlockForLeaf(const Block& leafBlock, LeafType leafType) {
-	const Block& oldLeafBlock = leafType == LeafType::Default ? **VanillaBlocks::mLeaves
+	const Block& oldLeafBlock = leafType == LeafType::Default ? *VanillaBlocks::mLeaves
 		: (leafType == LeafType::Infesting ? ENBlocks::infestingLeaves->get()->getDefaultState()
 		: ENBlocks::infestedLeaves->get()->getDefaultState());
-	const Block& newLeafBlock = leafType == LeafType::Default ? **VanillaBlocks::mLeaves2
+	const Block& newLeafBlock = leafType == LeafType::Default ? *VanillaBlocks::mLeaves2
 		: (leafType == LeafType::Infesting ? ENBlocks::infestingLeaves2->get()->getDefaultState()
 		: ENBlocks::infestedLeaves2->get()->getDefaultState());
-	if (leafBlock.hasState(*VanillaStates::OldLeafType))
-		return *oldLeafBlock.setState(*VanillaStates::OldLeafType, leafBlock.getState<OldLeafType>(*VanillaStates::OldLeafType));
-	else if (leafBlock.hasState(*VanillaStates::NewLeafType))
-		return *newLeafBlock.setState(*VanillaStates::NewLeafType, leafBlock.getState<NewLeafType>(*VanillaStates::NewLeafType));
+	if (leafBlock.hasState(VanillaStates::OldLeafType))
+		return *oldLeafBlock.setState(VanillaStates::OldLeafType, leafBlock.getState<OldLeafType>(VanillaStates::OldLeafType));
+	else if (leafBlock.hasState(VanillaStates::NewLeafType))
+		return *newLeafBlock.setState(VanillaStates::NewLeafType, leafBlock.getState<NewLeafType>(VanillaStates::NewLeafType));
 	return oldLeafBlock;
 }
 
 BlockInfestingLeavesOld::BlockInfestingLeavesOld(const std::string& nameId, int id) : BlockInfestingLeaves(nameId, id) {
-	addState(*VanillaStates::OldLeafType);
-	addState(*VanillaStates::UpdateBit);
+	addState(VanillaStates::OldLeafType);
+	addState(VanillaStates::UpdateBit);
 }
 
 int BlockInfestingLeavesOld::getVariant(const Block& block) const {
-	OldLeafType leafType = block.getState<OldLeafType>(*VanillaStates::OldLeafType);
+	OldLeafType leafType = block.getState<OldLeafType>(VanillaStates::OldLeafType);
 	return Zenova::enum_cast(leafType);
 }
 
@@ -149,12 +149,12 @@ BlockLegacy& BlockInfestingLeavesOld::init() {
 }
 
 BlockInfestingLeavesNew::BlockInfestingLeavesNew(const std::string& nameId, int id) : BlockInfestingLeaves(nameId, id) {
-	addState(*VanillaStates::NewLeafType);
-	addState(*VanillaStates::UpdateBit);
+	addState(VanillaStates::NewLeafType);
+	addState(VanillaStates::UpdateBit);
 }
 
 int BlockInfestingLeavesNew::getVariant(const Block& block) const {
-	NewLeafType leafType = block.getState<NewLeafType>(*VanillaStates::NewLeafType);
+	NewLeafType leafType = block.getState<NewLeafType>(VanillaStates::NewLeafType);
 	return Zenova::enum_cast(leafType);
 }
 

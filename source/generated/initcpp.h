@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_symbol_map.py
-// Sat May 28 2022 22:47:36 UTC
+// Wed Mar 29 2023 03:19:03 UTC
 
 #pragma once
 
@@ -232,4 +232,3 @@ extern "C" {
 }
 
 void InitBedrockPointers();
-void InitVersionPointers();

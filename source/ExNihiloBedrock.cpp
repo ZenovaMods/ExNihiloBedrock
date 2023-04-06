@@ -1,5 +1,5 @@
-#include "ExNihiloBedrock.h"
 #include "generated/initcpp.h"
+#include "Zenova.h"
 #include "Zenova/Minecraft.h"
 
 #include <iostream>
@@ -172,10 +172,9 @@ void initRecipes(Recipes* self, ResourcePackManager& resourcePackManager) {
 	OreRegistry::doRecipes(*self);
 }
 
-ExNihiloDefaultRecipes* ExNihiloBedrock::defaultRecipes;
+ExNihiloDefaultRecipes* defaultRecipes;
 
-
-void ExNihiloBedrock::Start() {
+MOD_FUNCTION void ModStart() {
 	Zenova_Info("Intializing Ex Nihilo and checking version");
 	Zenova::Platform::DebugPause();
 
@@ -204,8 +203,4 @@ void ExNihiloBedrock::Start() {
 		Zenova_VHook(BucketItem, dispense, &bucketDispense, &_bucketDispense);
 		Zenova_Hook(Recipes::init, &initRecipes, &_initRecipes);
 	}
-}
-
-MOD_FUNCTION Zenova::Mod* CreateMod() {
-	return new ExNihiloBedrock;
 }

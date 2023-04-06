@@ -1,5 +1,5 @@
 // This file was automatically generated using tools/process_symbol_map.py
-// Sat May 28 2022 22:47:36 UTC
+// Wed Mar 29 2023 03:19:03 UTC
 
 #include <array>
 #include <Zenova/Hook.h>
@@ -368,6 +368,7 @@ void* __1Container__UEAA_XZ_ptr;
 void* __1BaseActorRenderer__UEAA_XZ_ptr;
 
 void InitBedrockPointers() {
+	const Zenova::Version& versionId = Zenova::Minecraft::version();
 	__0Item__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__F_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x15614E0));
 	__0BlockPlanterItem__QEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HAEBVBlock___N_Z_ptr = reinterpret_cast<void*>(SlideAddress(0x1515440));
 	__0DiggerItem__IEAA_AEBV_$basic_string_DU_$char_traits_D_std__V_$allocator_D_2__std__HHAEBVTier_Item__AEBV_$vector_PEBVBlock__V_$allocator_PEBVBlock___std___2__Z_ptr = reinterpret_cast<void*>(SlideAddress(0x1547810));
@@ -595,14 +596,10 @@ void InitBedrockPointers() {
 	__1BaseActorRenderer__UEAA_XZ_ptr = reinterpret_cast<void*>(GetRealDtor(SlideAddress(0x2ACA290)));
 }
 
-void InitVersionPointers() {
-	const Zenova::Version& versionId = Zenova::Minecraft::version();
-}
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD fdwReason, LPVOID lpReserved) {
 	if(fdwReason == DLL_PROCESS_ATTACH) {
 		InitBedrockPointers();
-		InitVersionPointers();
 	}
 	return TRUE;
 }
